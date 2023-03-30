@@ -5,20 +5,11 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '9eb169ff151011b9968c51a6f9ababd5d97c9e26',
+        'reference' => '93822cb991843a7fdfc62f2a23f21c76e299745d',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
-        'arielmejiadev/larapex-charts' => array(
-            'pretty_version' => '4.1.0',
-            'version' => '4.1.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../arielmejiadev/larapex-charts',
-            'aliases' => array(),
-            'reference' => '9e1f7e08cb5a5fa662ff8c83464d8e78379b4031',
-            'dev_requirement' => false,
-        ),
         'brick/math' => array(
             'pretty_version' => '0.9.3',
             'version' => '0.9.3.0',
@@ -424,7 +415,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '9eb169ff151011b9968c51a6f9ababd5d97c9e26',
+            'reference' => '93822cb991843a7fdfc62f2a23f21c76e299745d',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -852,15 +843,6 @@
             'install_path' => __DIR__ . '/../ramsey/uuid',
             'aliases' => array(),
             'reference' => '8505afd4fea63b81a85d3b7b53ac3cb8dc347c28',
-            'dev_requirement' => false,
-        ),
-        'realrashid/sweet-alert' => array(
-            'pretty_version' => 'v5.1.0',
-            'version' => '5.1.0.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../realrashid/sweet-alert',
-            'aliases' => array(),
-            'reference' => 'fb837beaa52568fb3106d311ff3c7a7b8e543608',
             'dev_requirement' => false,
         ),
         'rhumsaa/uuid' => array(
