@@ -25,6 +25,7 @@ Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
 
 //global
 Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
+Route::get('/myClubs', [globalController::class, 'load_myClubs'])->name("myClubs");
 
 
 //user
