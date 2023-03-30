@@ -20,7 +20,7 @@ class globalController extends Controller
     {
         
 
-        return view('myClubs');
+        return view('myClubs/myclubs');
     }
 
 }
