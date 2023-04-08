@@ -16,6 +16,11 @@ class globalController extends Controller
 
         return view('home');
     }
+    public function load_myClubs()
+    {
+        
 
+        return view('myClubs/myclubs');
+    }
 
 }
