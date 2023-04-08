@@ -22,5 +22,12 @@ class globalController extends Controller
 
         return view('myClubs/myclubs');
     }
+    public function load_approvalProgress()
+    {
+        
+
+        return view('applicationApproval/approvalProgress');
+    }
+
 
 }
