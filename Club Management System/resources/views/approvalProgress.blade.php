@@ -21,7 +21,17 @@
 
 <body>
 
-    <a href="/views/approvalProgress.blade.php">Hello</a>
+    <div id = block>
+        <div id = title>
+            Approval Progress
+            <div id = application>
+                Application ID: <var>applicationId</var>
+                Application Name: <var>applicationName</var>
+            </div>
+            <div> </div>
+
+        </div>
+    </div>
 
 
 </body>
