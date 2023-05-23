@@ -21,7 +21,7 @@
 
 <body>
 
-    <a href="/views/approvalProgress.blade.php">Hello</a>
+    <a href="/views/approvalProgress.blade.php">Hello!</a>
 
 
 </body>
