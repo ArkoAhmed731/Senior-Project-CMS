@@ -32,14 +32,14 @@
 
     <div class="site-navbar py-2">
 
-      <div class="search-wrap">
+      {{-- <div class="search-wrap">
         <div class="container">
           <a href="#" class="search-close js-search-close"><span class="icon-close2"></span></a>
           <form action="#" method="post">
             <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
           </form>
         </div>
-      </div>
+      </div> --}}
 
       <div class="container">
         <div class="d-flex align-items-center justify-content-between">
@@ -59,28 +59,14 @@
               </ul>
             </nav>
           </div>
-          <div class="icons">
-            <a href="#" class="icons-btn d-inline-block js-search-open"><span class="icon-search"></span></a>
-           
-            </a>
-            <a href="#" class="site-menu-toggle js-menu-toggle ml-3 d-inline-block d-lg-none"><span
-                class="icon-menu"></span></a>
+          <div>
+            logout
           </div>
         </div>
       </div>
     </div>
   
-    <div class="site-section bg-success">
-      <div class="container">
-        <div class="row justify-content-center text-center">
-         <div class="col-lg-7">
-           <p class="mb-0"><a href="test.html" class="btn btn-outline-white">Request for diagnosis test</a></p> <br>
-           <p class="mb-0"><a href="test.html" class="btn btn-outline-white">Call an Ambulance</a></p>
-
-         </div>
-        </div>
-      </div>
-    </div>
+ 
     
     <div class="site-section bg-light">
       <div class="container">
@@ -93,36 +79,27 @@
           <div class="col-md-12 block-3 products-wrap">
             <div class="nonloop-block-3 owl-carousel">
 
+                <div class="text-center item mb-4 item-v2">
+                    <a href="shop-single.html"> <img src="images/ceevit-250mg.webp" alt="Image" height="300px"></a>
+                    <h3 class="text-dark"><a href="shop-single.html">Ceevit 250mg</a></h3>
+                    
+                  </div>
+             
               <div class="text-center item mb-4 item-v2">
-                <a href="shop-single.html"> <img src="images/napa-500.webp" alt="Image" height="300px"></a>
-                <h3 class="text-dark"><a href="shop-single.html">NAPA 500mg</a></h3>
-                <p class="price">10 Tablets</p>
-
-                <p class="price">BDT 12</p>
+                <a href="shop-single.html"> <img src="images/ceevit-250mg.webp" alt="Image" height="300px"></a>
+                <h3 class="text-dark"><a href="shop-single.html">Ceevit 250mg</a></h3>
+                
               </div>
-
               <div class="text-center item mb-4 item-v2">
-                <a href="shop-single.html"> <img src="images/fexo-120.webp" alt="Image" height="300px"></a>
-                <h3 class="text-dark"><a href="shop-single.html">Fexo 120mg</a></h3>
-                <p class="price">10 Tablets</p>
-
-                <p class="price">BDT 80</p>
-              </div>
-
-              <div class="text-center item mb-4 item-v2">
-                <a href="shop-single.html"> <img src="images/orsaline-n.webp" alt="Image" height="300px"></a>
-                <h3 class="text-dark"><a href="shop-single.html">Orsaline N</a></h3>
-                <p class="price"> 1 piece </p>
-
-                <p class="price">BDT 5</p>
+                <a href="shop-single.html"> <img src="images/ceevit-250mg.webp" alt="Image" height="300px"></a>
+                <h3 class="text-dark"><a href="shop-single.html">Ceevit 250mg</a></h3>
+                
               </div>
 
               <div class="text-center item mb-4 item-v2">
                 <a href="shop-single.html"> <img src="images/ceevit-250mg.webp" alt="Image" height="300px"></a>
                 <h3 class="text-dark"><a href="shop-single.html">Ceevit 250mg</a></h3>
-                <p class="price">10 Tablets</p>
-
-                <p class="price">BDT 19</p>
+                
               </div>
 
             </div>
@@ -131,8 +108,35 @@
       </div>
     </div>
 
- 
+  <div class="site-section bg-secondary">
+    <div class="d-flex justify-content-around">
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Info card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div> 
+         
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Info card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
 
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+              <h5 class="card-title">Info card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  
   
     <footer class="site-footer bg-dark">
       <div class="container">
