@@ -23,22 +23,25 @@
 <body>
 
     <div id = block>
-        <div id = title>
-            Approval Progress
-            <div id = applicationDiv>
-                Application ID: <var>applicationId</var>
-                <br>
-                Application Name: <var>applicationName</var>
-            </div>
+        Approval Progress
+        <div id = applicationDiv>
+            Application ID: <var>applicationId</var>
             <br>
-            <div id = viewApplicationDiv>
+            Application Name: <var>applicationName</var>
+            <br>
+            <div>
                 <button id="viewApplication" type="button" onclick="">View Application</button>
-            </div>
+                <br>
+             </div>
+        </div>
+        <br>      
+    </div>
+
+    <div id = progress>
+        <div id = "">
 
         </div>
     </div>
-
-
 </body>
 
 </html>
