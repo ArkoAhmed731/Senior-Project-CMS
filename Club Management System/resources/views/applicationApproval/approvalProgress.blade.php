@@ -26,7 +26,7 @@
             Approval Progress
             <div id = application>
                 Application ID: <var>applicationId</var>
-                Application Name: <var>applicationName</var>
+                Application Name: <var>applicationNames</var>
             </div>
             <div> </div>
 
