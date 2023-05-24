@@ -9,6 +9,7 @@
     <title>Laravel</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/approvalProgress.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -24,11 +25,15 @@
     <div id = block>
         <div id = title>
             Approval Progress
-            <div id = application>
+            <div id = applicationDiv>
                 Application ID: <var>applicationId</var>
-                Application Name: <var>applicationNames</var>
+                <br>
+                Application Name: <var>applicationName</var>
             </div>
-            <div> </div>
+            <br>
+            <div id = viewApplicationDiv>
+                <button id="viewApplication" type="button" onclick="">View Application</button>
+            </div>
 
         </div>
     </div>
