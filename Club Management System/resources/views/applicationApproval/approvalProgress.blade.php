@@ -38,8 +38,8 @@
     </div>
 
     <div id = progress>
-        <div id = "">
-
+        <div id = "Main departments">
+            <div id = "progress1"></div> 
         </div>
     </div>
 </body>
