@@ -1,14 +1,18 @@
-#title{
-    border: 5px;
-    border-color: black;
-    bord
+#applicationDiv{
+    border-style: groove;
+    /* border-color: black; */
+    padding: 10px;
+    overflow: auto;
 }
 
 #viewApplication{
     border-radius: 20px;
+    position: absolute;
+    right: 5px;
 }
 
-#viewApplicationDiv{
-    position: absolute;
-    right: 0px;
+.applicationDiv:after {
+    content:'';
+    display:block; /* or whatever else than inline */
+   clear:both;
 }
