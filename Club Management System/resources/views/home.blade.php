@@ -45,71 +45,59 @@
         <div class="d-flex align-items-center justify-content-between">
           <div class="logo">
             <div class="site-logo">
-              <a href="index.html">CMS</a>
+              <a href="index.html">CMS LOGO</a>
             </div>
           </div>
           <div class="main-nav d-none d-lg-block">
             <nav class="site-navigation text-right text-md-center" role="navigation">
               <ul class="site-menu js-clone-nav d-none d-lg-block">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">All medicines</a></li>
+                <li><a href="index.html">Home Icon</a></li>
+                <li><a href="shop.html">Saved Icon</a></li>
               
-                <li><a href="devices.html">Medical Devices</a></li>
-                <li><a href="test.html">Diagnosis Test</a></li>
+                <li><a href="devices.html">Notification Icon</a></li>
+                <li><a href="test.html">Settings Icon</a></li>
               </ul>
             </nav>
           </div>
           <div>
-            logout
+            logout Button
           </div>
         </div>
       </div>
     </div>
-  
- 
+  {{-- carousel --}}
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-30" src="images/demo-image.jpeg" alt="First slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-30" src="images/demo-image2.png" alt="Second slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-30" src="images/demo-image3.png" alt="Third slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      {{-- end --}}
     
-    <div class="site-section bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="title-section text-center col-12">
-            <h2>Pharmacy Products</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 block-3 products-wrap">
-            <div class="nonloop-block-3 owl-carousel">
-
-                <div class="text-center item mb-4 item-v2">
-                    <a href="shop-single.html"> <img src="images/ceevit-250mg.webp" alt="Image" height="300px"></a>
-                    <h3 class="text-dark"><a href="shop-single.html">Ceevit 250mg</a></h3>
-                    
-                  </div>
-             
-              <div class="text-center item mb-4 item-v2">
-                <a href="shop-single.html"> <img src="images/ceevit-250mg.webp" alt="Image" height="300px"></a>
-                <h3 class="text-dark"><a href="shop-single.html">Ceevit 250mg</a></h3>
-                
-              </div>
-              <div class="text-center item mb-4 item-v2">
-                <a href="shop-single.html"> <img src="images/ceevit-250mg.webp" alt="Image" height="300px"></a>
-                <h3 class="text-dark"><a href="shop-single.html">Ceevit 250mg</a></h3>
-                
-              </div>
-
-              <div class="text-center item mb-4 item-v2">
-                <a href="shop-single.html"> <img src="images/ceevit-250mg.webp" alt="Image" height="300px"></a>
-                <h3 class="text-dark"><a href="shop-single.html">Ceevit 250mg</a></h3>
-                
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <div class="site-section bg-secondary">
-    <div class="d-flex justify-content-around">
+    
+{{-- cards --}}
+  <div class="site-section bg-light d-flex justify-content-around">
         <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
             <div class="card-header">Header</div>
             <div class="card-body">
@@ -125,7 +113,6 @@
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </div>
-
           <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
             <div class="card-header">Header</div>
             <div class="card-body">
@@ -133,11 +120,20 @@
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
             </div>
           </div>
+          
+          <a href="/my-clubs">
+            <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                <div class="card-header">My Clubs</div>
+                <div class="card-body">
+                   <h5 class="card-title">Info card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+              </div>
+          </a>
         
-      </div>
     </div>
   
-  
+  {{-- footer --}}
     <footer class="site-footer bg-dark">
       <div class="container">
         <div class="row">
@@ -167,14 +163,16 @@
           <div class="col-md-12">
             <p>
               Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | OPDC
+              <script>document.write(new Date().getFullYear());</script> All rights reserved | CMS
             </p>
           </div>
 
         </div>
       </div>
     </footer>
-  </div>
+      {{-- footer end--}}
+
+  
 
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/jquery-ui.js"></script>
