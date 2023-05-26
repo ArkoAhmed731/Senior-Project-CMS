@@ -22,7 +22,7 @@
 
 </head>
 
-<body class="allCards">
+<body>
 
     <div class="site-wrap">
 
