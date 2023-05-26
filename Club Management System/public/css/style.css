@@ -4,7 +4,10 @@ body {
   color: #8c92a0;
   font-weight: 300;
   font-size: 16px;
-  background: #efefef; }
+  background: #efefef; 
+
+  padding: 10px;  /* added for approval progress blade */
+}
 
 ::-moz-selection {
   background: #000;

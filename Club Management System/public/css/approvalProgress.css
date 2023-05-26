@@ -8,7 +8,7 @@
 #viewApplication{
     border-radius: 20px;
     position: absolute;
-    right: 5px;
+    right: 15px;
 }
 
 .applicationDiv:after {

@@ -27,7 +27,7 @@ Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
 Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
 Route::get('/my-clubs', [globalController::class, 'load_myClubs'])->name("myClubs");
 Route::get('/approval-progress', [globalController::class, 'load_approvalProgress'])->name("approvalProgress");
-
+Route::get('/private-test', [globalController::class, 'load_privateTest'])->name("privateTest");
 
 //user
 

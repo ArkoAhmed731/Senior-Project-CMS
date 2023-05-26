@@ -29,5 +29,12 @@ class globalController extends Controller
         return view('applicationApproval/approvalProgress');
     }
 
+    public function load_privateTest()
+    {
+        
+
+        return view('applicationApproval/privateTest');
+    }
+
 
 }
