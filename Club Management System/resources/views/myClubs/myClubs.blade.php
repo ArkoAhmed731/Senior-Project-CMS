@@ -18,10 +18,11 @@
 
     <link rel="stylesheet" href="css/aos.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_myClubs.css">
 
 </head>
 
-<body>
+<body class="allCards">
 
     <div class="site-wrap">
 
@@ -37,9 +38,9 @@
                         <nav class="site-navigation text-right text-md-center" role="navigation">
                             <ul class="site-menu js-clone-nav d-none d-lg-block">
                                 <li><a href="index.html">Home</a></li>
-                                <li><a href="shop.html">All medicines</a></li>
-                                <li><a href="devices.html">Medical Devices</a></li>
-                                <li><a href="test.html">Diagnosis Test</a></li>
+                                <li><a href="shop.html">My Clubs</a></li>
+                                <li><a href="devices.html">Academic Calendar</a></li>
+                                <li><a href="test.html">Settings</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -50,30 +51,88 @@
             </div>
         </div>
 
-        <div class="site-section bg-secondary">
+        <div class="site-sectionbg-secondary">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-4 mb-4">
-                        <div class="card text-white bg-info">
-                            <div class="card-header">Header</div>
-                            <div class="card-body">
-                                <h5 class="card-title">Info card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
+                <div class="rowjustify-content-center">
+                    <div class="row-align-items-centre">
+                        <div class="col-lg-4 mb-4">
+                            <a href="card1.html">
+                                <div class="card text-white bg-info">
+                                    <div class="card-header">Club A</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Info card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <a href="card2.html">
+                                <div class="card text-white bg-info">
+                                    <div class="card-header">Club B</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Info card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 mb-4">
+                            <a href="card3.html">
+                                <div class="card text-white bg-info">
+                                    <div class="card-header">Club C</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Info card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card text-white bg-info">
-                            <div class="card-header">Header</div>
-                            <div class="card-body">
-                                <h5 class="card-title">Info card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="site-footer bg-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
+                        <div class="block-7">
+                            <h4 class="mb-4">About</h4>
                         </div>
                     </div>
-                    <div class="col-lg-4 mb-4">
-                        <div class="card text-white bg-info">
-                            <div class="card-header">Header</div>
-                            <div class="card-body">
-                                <h5 class="card-title">Info card title</h5>
-                                <p class="card-text">
+                    <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
+                        <h4 class="mb-4">Privacy Policy</h4>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="block-5 mb-5">
+                            <h4 class="mb-4">Contact Us</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row text-center bg-gray">
+                    <div class="col-md-12">
+                        <p>
+                            Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | OPDC
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

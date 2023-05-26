@@ -1,0 +1,18 @@
+.allCards{
+    background-color: white;
+    
+    align-items: center;
+    justify-content: center;
+}
+body {
+    line-height: 1.7;
+    color: #d8dde8;
+    font-weight: 300;
+    font-size: 16px;
+    background: #efefef; }
+.row-align-items-centre{
+    justify-content: center;
+    display: flexbox;
+    width: 150%;
+    align-items: center;
+}
