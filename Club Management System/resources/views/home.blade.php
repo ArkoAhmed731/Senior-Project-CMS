@@ -29,6 +29,7 @@
 
   <div class="site-wrap">
 
+  {{-- nav bar --}}
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <a class="navbar-brand" href="#">Navbar</a>
@@ -52,6 +53,9 @@
         
       </div>
     </nav>
+  {{-- nav bar end--}}
+
+
   {{-- carousel --}}
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -80,7 +84,7 @@
         </a>
       </div>
 
-      {{-- end --}}
+  {{-- carousel end --}}
     
     
 {{-- cards --}}
@@ -130,7 +134,10 @@
             </div>
           </div>
           
-  </div>    
+  </div>  
+  
+  {{-- cards end --}}
+
 
   
   {{-- footer --}}
