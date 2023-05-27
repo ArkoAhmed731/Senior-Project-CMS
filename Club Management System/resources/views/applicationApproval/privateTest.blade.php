@@ -23,7 +23,7 @@
 <body>
 
     <div id = block>
-        Approval Progress
+        <h1>Approval Progress</h1>
         <div id = applicationDiv>
             Application ID: <var>applicationId</var>
             <br>
@@ -45,13 +45,13 @@
         <div class="wrapper">
         <ul class="StepProgress">
             <div class="StepProgress-item is-done">
-                <strong>DOSA <button id="approveDetails" type="button" onclick="">details</button></strong></div>
+                <strong>DOSA <button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
             <div class="StepProgress-item is-done">
-                <strong>Dean<button id="approveDetails" type="button" onclick="">details</button></strong></div>
+                <strong>Dean<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
             <div class="StepProgress-item current">
-                <strong>VC</strong></div>
+                <strong>VC<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
             <div class="StepProgress-item current">
-                <strong>Department Head</strong></div>
+                <strong>Department Head<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
         </ul>
         </div>
     </div>

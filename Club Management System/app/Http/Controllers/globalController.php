@@ -36,5 +36,12 @@ class globalController extends Controller
         return view('applicationApproval/privateTest');
     }
 
+    public function load_applyForEvent()
+    {
+        
+
+        return view('applicationApproval/applyForEvent');
+    }
+
 
 }

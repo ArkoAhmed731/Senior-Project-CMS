@@ -12,8 +12,10 @@
   }
 
   #applicationDiv{
-    border-style: groove;
+    border-style: solid;
+    border-radius: 10px;
     /* border-color: black; */
+
     padding: 10px;
     /* overflow: auto; */
 }
@@ -279,11 +281,13 @@
     display: block;
 }
 
-#approveDetails{
-    border-radius: 20px;
-    float: right;
-    background-color: beige;
-    color: #333;
-    border: 2px solid #a7a795;
+#approveDetailsBtn{
+  margin-right: 5px;
+
+  border-radius: 20px;
+  float: right;
+  background-color: beige;
+  color: #333;
+  border: 2px solid #a7a795;
 }
   
