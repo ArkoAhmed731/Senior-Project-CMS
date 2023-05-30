@@ -30,33 +30,8 @@
 
   {{-- nav bar --}}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="#">CMS</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse pr-5" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto text-center nav-ul">
-          <li class="nav-item text-center active">
-            <a class="nav-link" href="#"><i class="bi bi-house-fill nav-icon-size"></i><br>Home <span class="sr-only">(current)</span></a> 
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-person-fill nav-icon-size"></i><br>My Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-bell-fill nav-icon-size"></i><br>Notification</a>
-          </li>
-         
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-box-arrow-right nav-icon-size"></i><br>Sign out</a>
-          </li>
-          
-        </ul>
-        
-      </div>
-    </nav>
-  {{-- nav bar end--}}
+  @include('menu.navBar')
+    {{-- nav bar end--}}
 
 
   {{-- carousel --}}
@@ -169,19 +144,7 @@
 
   
   {{-- footer --}}
-    <footer class="site-footer bg-secondary ">
-      <div class="d-flex justify-content-center p-5">
-        <a href="test.html" class=" m-2">About</a>
-         <a href="test.html" class="m-2">Privacy Policy</a>
-         <a href="test.html" class="m-2">Contact Us</a>
-        </div>
-
-<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-  <script>document.write(new Date().getFullYear());</script> All rights reserved | CMS
-
-</div>
-        
-      </footer>
+  @include('menu.footer')
 
  {{-- footer end     --}}
 
