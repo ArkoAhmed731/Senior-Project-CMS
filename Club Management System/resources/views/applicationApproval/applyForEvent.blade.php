@@ -8,8 +8,9 @@
 
     <title>Laravel</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> -->
-    <link rel="stylesheet" href="{{ asset('css/applyForEvent.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/applyForEvent.css') }}"> -->
+    <link rel="stylesheet" href="{{ asset('css/privateTest.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -50,8 +51,8 @@
 
       <div class="set">
         <div class="eventType">
-          <label for="eventType">Event Type</label>
-          <select id="eventType" name="eventType">
+          <label for="eventTypes">Event Type</label>
+          <select id="eventTypes" name="eventTypes">
             <option value="Activation"></option>
             <option value="Cultural"></option>
           </select>
@@ -59,13 +60,14 @@
 
         <div class="pets-birthday">
           <label for="pets-birthday">Event Date</label>
-          <input id="pets-birthday" placeholder="MM/DD/YYYY" type="text"></input>
+          <input id="pets-birthday" type="date"></input>
         </div>
       </div>
 
-    <div>
-        <label for="images" class="drop-container">
+    <div class="drop-container">
+        <label for="images" >
         <span class="drop-title">Drop files here</span>
+        <br>
             or
         <input type="file" id="images" accept="image/*" required>
         </label>
@@ -80,8 +82,9 @@
             <input id="pet-gender-male" name="pet-gender" type="radio" value="male"></input>
             <label for="pet-gender-male">Male</label>
           </div>
-        </div>
-        <div class="pets-spayed-neutered">
+        </div> -->
+
+        <!-- <div class="pets-spayed-neutered">
           <label for="pet-spayed">Spayed or Neutered</label>
           <div class="radio-container">
             <input id="pet-spayed" name="spayed-neutered" type="radio" value="spayed"></input>
