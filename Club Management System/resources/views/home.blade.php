@@ -10,7 +10,6 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   {{-- <link rel="stylesheet" href="fonts/icomoon/style.css"> --}}
-
   <link rel="stylesheet" href="css/bootstrap.min.css">
   {{-- <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css"> --}}
   {{-- <link rel="stylesheet" href="css/magnific-popup.css"> --}}
@@ -100,8 +99,9 @@
           <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
             <div class="card-header">Header</div>
             <div class="card-body">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text"></p>
+              <i class="bi bi-calendar-month-fill"></i>            
+               <h5 class="card-title">Info card title</h5>
+              <p class="card-text"> hello</p>
             </div>
           </div>
          
