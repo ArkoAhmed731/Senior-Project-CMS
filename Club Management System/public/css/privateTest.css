@@ -33,7 +33,7 @@
   }
   
   body {
-    margin: 2rem;
+    /* margin: 2rem; */
     font-family: 'Open Sans', sans-serif;
     color: var(--color-black);
   }
@@ -78,6 +78,7 @@
     text-align: center;
     border-bottom: 2px solid var(--color-gray-disabled);
   }
+
   .progress-bar li:first-child,
   .progress-bar li:last-child {
     flex: 1;
@@ -290,4 +291,3 @@
   color: #333;
   border: 2px solid #a7a795;
 }
-  

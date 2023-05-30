@@ -8,8 +8,9 @@
 
     <title>Laravel</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> -->
-    <link rel="stylesheet" href="{{ asset('css/applyForEvent.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/applyForEvent.css') }}"> -->
+    <link rel="stylesheet" href="{{ asset('css/privateTest.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
