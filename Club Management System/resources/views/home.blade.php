@@ -36,17 +36,18 @@
         <span class="navbar-toggler-icon"></span>
       </button>
     
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto text-center justify-content-center">
+      <div class="collapse navbar-collapse pr-5" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto text-center nav-ul">
           <li class="nav-item text-center active">
             <a class="nav-link" href="#"><i class="bi bi-house-fill nav-icon-size"></i><br>Home <span class="sr-only">(current)</span></a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-bell-fill nav-icon-size"></i><br>Notification</a>
+            <a class="nav-link" href="#"><i class="bi bi-person-fill nav-icon-size"></i><br>My Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-gear-fill nav-icon-size"></i><br>Settings</a>
+            <a class="nav-link" href="#"><i class="bi bi-bell-fill nav-icon-size"></i><br>Notification</a>
           </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-box-arrow-right nav-icon-size"></i><br>Sign out</a>
           </li>
