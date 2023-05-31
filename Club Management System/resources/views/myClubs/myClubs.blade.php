@@ -7,16 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
 
+    {{-- <link rel="stylesheet" href="fonts/icomoon/style.css"> --}}
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-    <link rel="stylesheet" href="css/jquery-ui.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    {{-- <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css"> --}}
+    {{-- <link rel="stylesheet" href="css/magnific-popup.css"> --}}
+    {{-- <link rel="stylesheet" href="css/jquery-ui.css"> --}}
+    {{-- <link rel="stylesheet" href="css/owl.carousel.min.css"> --}}
+    {{-- <link rel="stylesheet" href="css/owl.theme.default.min.css"> --}}
 
-    <link rel="stylesheet" href="css/aos.css">
+
+    {{-- <link rel="stylesheet" href="css/aos.css"> --}}
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_myClubs.css">
 
@@ -26,102 +28,107 @@
 
     <div class="site-wrap">
 
-        <div class="site-navbar py-2">
-            <div class="container">
-                <div class="d-flex align-items-center justify-content-between">
-                    <div class="logo">
-                        <div class="site-logo">
-                            <a href="index.html">CMS</a>
-                        </div>
-                    </div>
-                    <div class="main-nav d-none d-lg-block">
-                        <nav class="site-navigation text-right text-md-center" role="navigation">
-                            <ul class="site-menu js-clone-nav d-none d-lg-block">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="shop.html">My Clubs</a></li>
-                                <li><a href="devices.html">Academic Calendar</a></li>
-                                <li><a href="test.html">Settings</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <div>
-                        logout
-                    </div>
+        {{-- nav bar --}}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+            <a class="navbar-brand" href="#">CMS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        {{-- nav bar end--}}
+
+
+        {{-- cards --}}
+
+        <div class="card w-100">
+            <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
+                <div class=" card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </a>
+        </div>
+        <div class="card w-100">
+            <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
+                <div class=" card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </a>
+        </div>
+        <div class="card w-100">
+            <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
+                <div class=" card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </a>
+        </div>
+        <div class="card w-100">
+            <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
+                <div class=" card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </a>
+        </div>
+        <div class="card w-100">
+            <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
+                <div class=" card-header">Header</div>
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                </div>
+            </a>
+        </div>
+
+
+
+
+    </div>
+    {{-- cards end --}}
+
+    {{-- footer --}}
+    <footer class="site-footer bg-dark">
+        <div class="container">
+            <div class="d-flex justify-content-center">
+                <div class="p-2"><a href="test.html">About</a></div>
+                <div class="p-2"><a href="test.html">Privacy Policy</a></div>
+                <div class="p-2"><a href="test.html">Contact Us</a></div>
+            </div>
+            <hr>
+            <div class="row text-center bg-gray">
+                <div class="col-md-12">
+                    <p>
+                        Copyright &copy;
+                        <script>
+                            document.write(new Date().getFullYear());
+                        </script> All rights reserved | CMS
+                    </p>
                 </div>
             </div>
         </div>
+    </footer>
+    {{-- footer end--}}
 
-        <div class="site-sectionbg-secondary">
-            <div class="container">
-                <div class="rowjustify-content-center">
-                    <div class="row-align-items-centre">
-                        <div class="col-lg-4 mb-4">
-                            <a href="card1.html">
-                                <div class="card text-white bg-info">
-                                    <div class="card-header">Club A</div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Info card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 mb-4">
-                            <a href="card2.html">
-                                <div class="card text-white bg-info">
-                                    <div class="card-header">Club B</div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Info card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 mb-4">
-                            <a href="card3.html">
-                                <div class="card text-white bg-info">
-                                    <div class="card-header">Club C</div>
-                                    <div class="card-body">
-                                        <h5 class="card-title">Info card title</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="site-footer bg-dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-                        <div class="block-7">
-                            <h4 class="mb-4">About</h4>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mx-auto mb-5 mb-lg-0">
-                        <h4 class="mb-4">Privacy Policy</h4>
-                    </div>
-                    <div class="col-md-6 col-lg-3">
-                        <div class="block-5 mb-5">
-                            <h4 class="mb-4">Contact Us</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="row text-center bg-gray">
-                    <div class="col-md-12">
-                        <p>
-                            Copyright &copy;
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script> All rights reserved | OPDC
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
 
     <script src="js/jquery-3.3.1.min.js"></script>
