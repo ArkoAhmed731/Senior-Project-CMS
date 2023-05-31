@@ -56,78 +56,96 @@
     
     
 {{-- cards --}}
-  <div class="site-section d-flex align-content-center flex-wrap p-3">
+  <div class=" card-section site-section d-flex align-content-center flex-wrap p-3">
         {{-- single card --}}
-    <div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+    <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
             
            
-              <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+              <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>   
 
               <h6 class="card-title text-center">Academic Calender</h6>
            
-          </div> 
+         
+
+        </a>
  {{-- single card end--}}
 
-  
-
- 
- <div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+ <a href="my-clubs" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
             
            
-  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+  <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>   
 
-  <h6 class="card-title text-center">Academic Calender</h6>
+  <h6 class="card-title text-center">My Clubs</h6>
 
-</div> 
 
-<div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
             
            
-  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+  <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>   
 
-  <h6 class="card-title text-center">Academic Calender</h6>
+  <h6 class="card-title text-center">Club Reqruitment</h6>
 
-</div> 
 
-<div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
             
            
-  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+  <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>   
 
-  <h6 class="card-title text-center">Academic Calender</h6>
+  <h6 class="card-title text-center">Upcoming Events</h6>
 
-</div> 
 
-<div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
             
            
-  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+  <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>   
 
-  <h6 class="card-title text-center">Academic Calender</h6>
+  <h6 class="card-title text-center">Extra</h6>
 
-</div> 
 
-<div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
             
            
-  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+  <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>   
 
-  <h6 class="card-title text-center">Academic Calender</h6>
+  <h6 class="card-title text-center">Extra</h6>
 
-</div> 
 
-<div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
             
            
-  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+  <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>   
 
-  <h6 class="card-title text-center">Academic Calender</h6>
-
-</div> 
+  <h6 class="card-title text-center">Extra</h6>
 
 
-         
-          
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Extra</h6>
+
+
+
+</a>
 
           
   </div>  
@@ -135,7 +153,7 @@
   {{-- cards end --}}
 
 {{-- admin --}}
-<Div class="admin-panel">
+<div class="admin-panel">
   <h4 class="text-center">Admin Panel</h4>
 
 

@@ -17,14 +17,6 @@ body {
 
   padding: 10px;  /* added for approval progress blade */
 }
-/* will edit later */
-.card{
-  
-  }
-
-.card a:hover {
-    color: teal; }
-/* will edit later */
 
 .text-white {
   color: #fff !important; 
@@ -109,3 +101,15 @@ body {
       width: 70%;
       margin: auto;
     }
+
+    .admin-panel a:link { text-decoration: none; 
+       }
+
+      .admin-panel a:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; }
+
+ .card-section a:link { text-decoration: none; 
+ }
+
+ .card-section a:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; }
