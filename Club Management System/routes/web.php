@@ -29,11 +29,10 @@ Route::get('/my-clubs', [globalController::class, 'load_myClubs'])->name("myClub
 Route::get('/approval-progress', [globalController::class, 'load_approvalProgress'])->name("approvalProgress");
 Route::get('/private-test', [globalController::class, 'load_privateTest'])->name("privateTest");
 Route::get('/apply-for-event', [globalController::class, 'load_applyForEvent'])->name("applyForEvent");
+Route::get('/club-activities', [globalController::class, 'load_clubActivities'])->name("clubActivities");
 
 //user
 
 //club admin
 
 //footer
-
-
