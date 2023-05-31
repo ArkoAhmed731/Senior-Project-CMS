@@ -30,29 +30,8 @@
 
   {{-- nav bar --}}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          
-        </ul>
-        
-      </div>
-    </nav>
-  {{-- nav bar end--}}
+  @include('menu.navBar')
+    {{-- nav bar end--}}
 
 
   {{-- carousel --}}
@@ -87,52 +66,76 @@
     
     
 {{-- cards --}}
-  <div class="site-section bg-light d-flex align-content-center flex-wrap p-4">
-        <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text"></p>
-            </div>
-          </div> 
+  <div class="site-section bg-light d-flex align-content-center flex-wrap p-3">
+        {{-- single card --}}
+    <div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+              <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
 
-          <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <i class="bi bi-calendar-month-fill"></i>            
-               <h5 class="card-title">Info card title</h5>
-              <p class="card-text"> hello</p>
-            </div>
-          </div>
+              <h6 class="card-title text-center">Academic Calender</h6>
+           
+          </div> 
+ {{-- single card end--}}
+ 
+ <div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Academic Calender</h6>
+
+</div> 
+
+<div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Academic Calender</h6>
+
+</div> 
+
+<div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Academic Calender</h6>
+
+</div> 
+
+<div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Academic Calender</h6>
+
+</div> 
+
+<div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Academic Calender</h6>
+
+</div> 
+
+<div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-calendar-month-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Academic Calender</h6>
+
+</div> 
+
+
          
-          <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text"></p>
-            </div>
-          </div>
-          <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text"></p>
-            </div>
-          </div>
-          <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text"></p>
-            </div>
-          </div>
-          <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text"></p>
-            </div>
-          </div>
+          
+
           
   </div>  
   
@@ -141,27 +144,9 @@
 
   
   {{-- footer --}}
-    <footer class="site-footer bg-dark">
-      <div class="container">
-        <div class="d-flex justify-content-center">
-          <div class="p-2"><a href="test.html">About</a></div>
-          <div class="p-2"><a href="test.html">Privacy Policy</a></div>
-          <div class="p-2"><a href="test.html">Contact Us</a></div>
-        </div>
-<hr>
+  @include('menu.footer')
 
-        <div class="row text-center bg-gray">
-          <div class="col-md-12">
-            <p>
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | CMS
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </footer>
-      {{-- footer end--}}
+ {{-- footer end     --}}
 
   
 

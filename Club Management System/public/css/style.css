@@ -1,4 +1,11 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+.nav-icon-size{
+  font-size: 2em;  
+}
+.card-icon-size{
+  font-size: 4em;  
+}
+
 
 Base
 body {
@@ -10,7 +17,14 @@ body {
 
   padding: 10px;  /* added for approval progress blade */
 }
+/* will edit later */
+.card{
+  
+  }
 
+.card a:hover {
+    color: teal; }
+/* will edit later */
 
 .text-white {
   color: #fff !important; 
@@ -22,6 +36,9 @@ body {
 }
 
 
+.nav-ul{
+  margin: auto;
+}
 
 
 .site-section {
@@ -36,30 +53,19 @@ body {
   }
 
 
-.site-footer {
-  padding: 6em 0; 
-}
-  .site-footer ul li {
-    margin-bottom: 10px; 
-  }
-    .site-footer ul li a {
-      color: #5c626e; 
+
+    .site-footer a {
+      color: white; 
     }
-      .site-footer ul li a:hover {
-        color: white; 
-      }
-  .site-footer .footer-heading {
-    font-size: 1.2rem;
-    color: #000;
-    margin-bottom: 1rem; 
-  }
+   
+
 
 
 
 
 /* Blocks */
 .site-wrap {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   background: #fff;
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
