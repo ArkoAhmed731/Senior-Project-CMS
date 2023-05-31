@@ -56,7 +56,7 @@
     
     
 {{-- cards --}}
-  <div class="site-section bg-light d-flex align-content-center flex-wrap p-3">
+  <div class="site-section d-flex align-content-center flex-wrap p-3">
         {{-- single card --}}
     <div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
             
@@ -67,6 +67,9 @@
            
           </div> 
  {{-- single card end--}}
+
+  
+
  
  <div class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
             
@@ -131,7 +134,33 @@
   
   {{-- cards end --}}
 
+{{-- admin --}}
+<Div class="admin-panel">
+  <h4 class="text-center">Admin Panel</h4>
 
+
+  <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+      <div class="card-body d-flex justify-content-between">
+          <h5 class="card-title">Create Post</h5><i class="bi bi-caret-right-fill"></i>
+      </div>
+  </a>
+
+  <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+    <div class="card-body d-flex justify-content-between">
+        <h5 class="card-title">Application Progress</h5><i class="bi bi-caret-right-fill"></i>
+    </div>
+</a>
+
+<a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+  <div class="card-body d-flex d-flex justify-content-between">
+      <h5 class="card-title">View Event Application</h5><i class="bi bi-caret-right-fill"></i>
+  </div>
+</a>
+  
+  
+</div>
+
+  {{-- admin end --}}
   
   {{-- footer --}}
   @include('menu.footer')

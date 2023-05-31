@@ -104,3 +104,8 @@ body {
       position: absolute; } 
     }
   
+
+    .admin-panel{
+      width: 70%;
+      margin: auto;
+    }
