@@ -79,7 +79,7 @@
         <div class="wrapper">
         <ul class="StepProgress">
             <div class="StepProgress-item is-done">
-                <strong>DOSA <button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
+                <strong>DOSA<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
             <div class="StepProgress-item is-done">
                 <strong>Dean<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
             <div class="StepProgress-item current">
