@@ -9,17 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  {{-- <link rel="stylesheet" href="fonts/icomoon/style.css"> --}}
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  {{-- <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css"> --}}
-  {{-- <link rel="stylesheet" href="css/magnific-popup.css"> --}}
-  {{-- <link rel="stylesheet" href="css/jquery-ui.css"> --}}
-  {{-- <link rel="stylesheet" href="css/owl.carousel.min.css"> --}}
-  {{-- <link rel="stylesheet" href="css/owl.theme.default.min.css"> --}}
-
-
-  {{-- <link rel="stylesheet" href="css/aos.css"> --}}
-
   <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -30,29 +20,8 @@
 
   {{-- nav bar --}}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          
-        </ul>
-        
-      </div>
-    </nav>
-  {{-- nav bar end--}}
+  @include('menu.navBar')
+    {{-- nav bar end--}}
 
 
   {{-- carousel --}}
@@ -87,81 +56,134 @@
     
     
 {{-- cards --}}
-  <div class="site-section bg-light d-flex align-content-center flex-wrap p-4">
-        <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text"></p>
-            </div>
-          </div> 
+  <div class=" card-section site-section d-flex align-content-center flex-wrap p-3">
+        {{-- single card --}}
+    <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+              <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>   
 
-          <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <i class="bi bi-calendar-month-fill"></i>            
-               <h5 class="card-title">Info card title</h5>
-              <p class="card-text"> hello</p>
-            </div>
-          </div>
+              <h6 class="card-title text-center">Academic Calender</h6>
+           
          
-          <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text"></p>
-            </div>
-          </div>
-          <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text"></p>
-            </div>
-          </div>
-          <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text"></p>
-            </div>
-          </div>
-          <div class="card text-white bg-info m-3 p-3" style="max-width: 18rem;">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-              <h5 class="card-title">Info card title</h5>
-              <p class="card-text"></p>
-            </div>
-          </div>
+
+        </a>
+ {{-- single card end--}}
+
+ <a href="my-clubs" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">My Clubs</h6>
+
+
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Club Reqruitment</h6>
+
+
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Upcoming Events</h6>
+
+
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Extra</h6>
+
+
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Extra</h6>
+
+
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Extra</h6>
+
+
+
+</a>
+
+<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            
+           
+  <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>   
+
+  <h6 class="card-title text-center">Extra</h6>
+
+
+
+</a>
+
           
   </div>  
   
   {{-- cards end --}}
 
+{{-- admin --}}
+<div class="admin-panel">
+  <h4 class="text-center">Admin Panel</h4>
 
+
+  <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+      <div class="card-body d-flex justify-content-between">
+          <h5 class="card-title">Create Post</h5><i class="bi bi-caret-right-fill"></i>
+      </div>
+  </a>
+
+  <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+    <div class="card-body d-flex justify-content-between">
+        <h5 class="card-title">Application Progress</h5><i class="bi bi-caret-right-fill"></i>
+    </div>
+</a>
+
+<a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+  <div class="card-body d-flex d-flex justify-content-between">
+      <h5 class="card-title">View Event Application</h5><i class="bi bi-caret-right-fill"></i>
+  </div>
+</a>
+  
+  
+</div>
+
+  {{-- admin end --}}
   
   {{-- footer --}}
-    <footer class="site-footer bg-dark">
-      <div class="container">
-        <div class="d-flex justify-content-center">
-          <div class="p-2"><a href="test.html">About</a></div>
-          <div class="p-2"><a href="test.html">Privacy Policy</a></div>
-          <div class="p-2"><a href="test.html">Contact Us</a></div>
-        </div>
-<hr>
+  @include('menu.footer')
 
-        <div class="row text-center bg-gray">
-          <div class="col-md-12">
-            <p>
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | CMS
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </footer>
-      {{-- footer end--}}
+ {{-- footer end     --}}
 
   
 
