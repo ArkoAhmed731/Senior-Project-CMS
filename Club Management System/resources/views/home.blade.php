@@ -163,7 +163,7 @@
       </div>
   </a>
 
-  <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+  <a href="approval-progress" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
     <div class="card-body d-flex justify-content-between">
         <h5 class="card-title">Application Progress</h5><i class="bi bi-caret-right-fill"></i>
     </div>

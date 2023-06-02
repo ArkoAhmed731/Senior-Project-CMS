@@ -6,6 +6,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+<!-- progress bar -->
+<link href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+        rel="stylesheet" />
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+    </script>
+<!-- progress bar -->
+
+
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   {{-- <link rel="stylesheet" href="fonts/icomoon/style.css"> --}}
 
@@ -20,7 +37,10 @@
   {{-- <link rel="stylesheet" href="css/aos.css"> --}}
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="{{ asset('css/privateTest.css') }}">
+  <link rel="stylesheet" href="css/privateTest.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  
 
 </head>
 
@@ -31,12 +51,24 @@
   {{-- nav bar --}}
   @include('menu.navBar')
   
-  <!-- {{-- nav bar end--}} -->
+  {{-- nav bar end--}}
 
 
   <div id = block>
         <h1>Approval Progress</h1>
-        <progress value="0" max="100" style="--value: 0; --max: 100;"></progress>
+
+        <div class="progress progress-striped active">
+          <div class="progress-bar progress-bar-success"
+            style="width: 0%">
+          </div>
+        </div>
+
+        <script>
+          $(".progress-bar").animate({
+                width: "70%",
+          }, 2500);
+        </script>
+
         <div id = applicationDiv>
             Application ID: <var>applicationId</var>
             <br>
@@ -50,13 +82,13 @@
         <br>      
     </div>
 
-    <div id = progress>
+    <!-- <div id = progress> -->
     <div id = "Main departments">
 
 
-    <div style="margin-left:10px">
+      <div style="margin-left:10px">
         <div class="wrapper">
-        <ul class="StepProgress">
+          <ul class="StepProgress">
             <div class="StepProgress-item is-done">
                 <strong>DOSA<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
             <div class="StepProgress-item is-done">
@@ -65,9 +97,25 @@
                 <strong>VC<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
             <div class="StepProgress-item current">
                 <strong>Department Head<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+      <div style="margin-left:10px">
+        <div class="wrapper2">
+        <ul class="StepProgress2">
+            <div class="StepProgress-item is-done">
+                <strong>ONM</strong></div>
+            <div class="StepProgress-item is-done">
+                <strong>Facilities</strong></div>
+            <div class="StepProgress-item current">
+                <strong>Security</strong></div>
+            <div class="StepProgress-item current">
+                <strong>MPR</strong></div>
         </ul>
         </div>
-    </div>
+      </div>
 
 
   
