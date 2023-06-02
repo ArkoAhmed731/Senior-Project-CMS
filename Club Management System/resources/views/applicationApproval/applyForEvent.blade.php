@@ -38,9 +38,9 @@
     <header>
       <h1>Write a clearly understandable application for best results </h1>
       <div class="set">
-        <div class="pets-name">
-          <label for="pets-name">Event Name</label>
-          <input id="pets-name" placeholder="Your event's name" type="text"></input>
+        <div class="eventName">
+          <label for="eventName">Event Name</label>
+          <input id="eventName" placeholder="Your event's name" type="text"></input>
         </div>
 
         <!-- <div class="pets-photo">
@@ -49,28 +49,60 @@
           </button>
           <label for="pets-upload">Upload a photo</label>
         </div> -->
+
+        <div class="eventDate">
+          <label for="eventDate">Event Date</label>
+          <input id="eventDate" type="date"></input>
+        </div>
+
       </div>
 
       <div class="set">
         <div class="eventType">
-          <label for="eventTypes">Event Type</label>
-          <select id="eventTypes" name="eventTypes">
-            <option value="Activation"></option>
-            <option value="Cultural"></option>
+          <label for="eventType">Event Type</label>
+          <select id="eventType" name="eventType">
+            <option value="Activation">Activation</option>
+            <option value="Cultural">Cultural</option>
           </select>
         </div>
 
-        <div class="pets-birthday">
-          <label for="pets-birthday">Event Date</label>
-          <input id="pets-birthday" type="date"></input>
-        </div>
+        <!-- <div class="eventDate">
+          <label for="eventDate">Event Date</label>
+          <input id="eventDate" type="date"></input>
+        </div> -->
       </div>
+
+    <div class="departments">
+    <label for="selectDepartments">Select Departments</label>
+    <br>
+    <div class="checkbox-container">
+      <input id="selectDepartmentsFacilities" name="selectDepartments" type="checkbox" value="0-25"></input>
+        <label for="selectDepartmentsFacilities">Facilities</label>
+      <input id="selectDepartmentsONM" name="selectDepartments" type="checkbox" value="25-50"></input>
+        <label for="selectDepartmentsONM">ONM</label>
+      <input id="selectDepartmentsMPR" name="selectDepartments" type="checkbox" value="50-100"></input>
+        <label for="selectDepartmentsMPR">MPR</label>
+      <input id="selectDepartmentsSecurity" name="selectDepartments" type="checkbox" value="100+"></input>
+        <label for="selectDepartmentsSecurity">Security</label>
+      <input id="selectDepartmentsCITS" name="selectDepartments" type="checkbox" value="100+"></input>
+        <label for="selectDepartmentsCITS">CITS</label>
+      <input id="selectDepartmentsFinance" name="selectDepartments" type="checkbox" value="100+"></input>
+        <label for="selectDepartmentsFinance">Finance</label>
+      <input id="selectDepartmentsCGPAR" name="selectDepartments" type="checkbox" value="100+"></input>
+        <label for="selectDepartmentsCGPAR">CGPAR</label>
+      <input id="selectDepartmentsAdministration" name="selectDepartments" type="checkbox" value="100+"></input>
+        <label for="selectDepartmentsAdministration">Administration</label>
+      <input id="selectDepartmentsCouncil" name="selectDepartments" type="checkbox" value="100+"></input>
+        <label for="selectDepartmentsCouncil">Council Affairs</label>
+    </div>
+  </div>
+
 
     <div class="drop-container">
         <label for="images" >
         <span class="drop-title">Drop files here</span>
         <br>
-            or
+        &emsp; &emsp; &emsp; or
         <input type="file" id="images" accept="image/*" required>
         </label>
     </div>

@@ -1,4 +1,3 @@
-
 :root {
     --color-white: #fff;
     --color-black: #333;
@@ -77,6 +76,12 @@
   margin-bottom: 20px;
   
   padding: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row;
+
 }
 
 
@@ -92,8 +97,12 @@
   position: relative;
   padding-left: 45px;
   list-style: none;
+
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  /* flex-direction: row; */
+  
   /* flex-direction: row; */
 }
 .StepProgress::before {
@@ -176,3 +185,40 @@
   border: 2px solid #C296B6;
 }
 
+
+/* ``````````````````````````````
+othere departments
+`````````````````````````````` */
+.otherDepartments{
+    margin: auto;
+    width: 50%;
+}
+
+
+.checkbox-container {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    display: inline-block;
+    padding: 5px;
+  }
+  .checkbox-container label {
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: 0.2s all ease-in-out;
+    width: 120px;
+  }
+  .checkbox-container input[type="radio"] {
+    display: none;
+  }
+  .checkbox-container input[type="radio"]:checked + label {
+    background: #F7B1AB;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
