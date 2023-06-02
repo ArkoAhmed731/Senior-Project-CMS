@@ -9,8 +9,9 @@
     <title>Laravel</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/applyForEvent.css') }}"> -->
-    <link rel="stylesheet" href="{{ asset('css/privateTest.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/applyForEvent.css') }}">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="{{ asset('css/privateTest.css') }}"> -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -22,16 +23,17 @@
 </head>
 
 <body>
+
+<div class="site-wrap">
+
+  {{-- nav bar --}}
+  @include('menu.navBar')
+  
+  {{-- nav bar end--}}
+
+
 <div class="signup-container">
-  <div class="left-container">
-    <h1>
-      <i class="fas fa-paw"></i>
-      IUB CMS
-    </h1>
-    <div class="puppy">
-      <img src="images/applyForEventImage.jpg"/>
-    </div>
-  </div>
+  
   <div class="right-container">
     <header>
       <h1>Write a clearly understandable application for best results </h1>
@@ -72,43 +74,8 @@
         <input type="file" id="images" accept="image/*" required>
         </label>
     </div>
-
-      <!-- <div class="set">
-        <div class="pets-gender">
-          <label for="pet-gender-female">Gender</label>
-          <div class="radio-container">
-            <input id="pet-gender-female" name="pet-gender" type="radio" value="female"></input>
-            <label for="pet-gender-female">Female</label>
-            <input id="pet-gender-male" name="pet-gender" type="radio" value="male"></input>
-            <label for="pet-gender-male">Male</label>
-          </div>
-        </div> -->
-
-        <!-- <div class="pets-spayed-neutered">
-          <label for="pet-spayed">Spayed or Neutered</label>
-          <div class="radio-container">
-            <input id="pet-spayed" name="spayed-neutered" type="radio" value="spayed"></input>
-            <label for="pet-spayed">Spayed</label>
-            <input id="pet-neutered" name="spayed-neutered" type="radio" value="neutered"></input>
-            <label for="pet-neutered">Neutered</label>
-          </div>
-        </div>
-      </div>
-      <div class="pets-weight">
-        <label for="pet-weight-0-25">Weight</label>
-        <div class="radio-container">
-          <input id="pet-weight-0-25" name="pet-weight" type="radio" value="0-25"></input>
-          <label for="pet-weight-0-25">0-25 lbs</label>
-          <input id="pet-weight-25-50" name="pet-weight" type="radio" value="25-50"></input>
-          <label for="pet-weight-25-50">25-50 lbs</label>
-          <input id="pet-weight-50-100" name="pet-weight" type="radio" value="50-100"></input>
-          <label for="pet-weight-50-100">50-100 lbs</label>
-          <input id="pet-weight-100-plus" name="pet-weight" type="radio" value="100+"></input>
-          <label for="pet-weight-100-plus">100+ lbs</label>
-        </div>
-      </div> -->
-
     </header>
+
     <footer>
       <div class="set">
         <button id="back">Back</button>
@@ -117,6 +84,22 @@
     </footer>
   </div>
 </div>
+
+{{-- footer --}}
+     @include('menu.footer')
+      {{-- footer end--}}
+
+  
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
 
     
 </body>
