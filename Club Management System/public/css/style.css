@@ -15,7 +15,8 @@ body {
   font-size: 16px;
   background: #efefef; 
 
-  padding: 10px;  /* added for approval progress blade */
+  padding: 10px;  /*added for approval progress blade*/
+  
 }
 
 .text-white {
@@ -47,7 +48,7 @@ body {
 
 
     .site-footer a {
-      color: white; 
+      color: white;
     }
    
     .carousel .item {

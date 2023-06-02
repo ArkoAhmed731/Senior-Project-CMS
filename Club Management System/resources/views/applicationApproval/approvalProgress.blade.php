@@ -29,30 +29,9 @@
   <div class="site-wrap">
 
   {{-- nav bar --}}
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          
-        </ul>
-        
-      </div>
-    </nav>
-  {{-- nav bar end--}}
+  @include('menu.navBar')
+  
+  <!-- {{-- nav bar end--}} -->
 
 
   <div id = block>
@@ -93,26 +72,7 @@
 
   
   {{-- footer --}}
-    <footer class="site-footer bg-dark">
-      <div class="container">
-        <div class="d-flex justify-content-center">
-          <div class="p-2"><a href="test.html">About</a></div>
-          <div class="p-2"><a href="test.html">Privacy Policy</a></div>
-          <div class="p-2"><a href="test.html">Contact Us</a></div>
-        </div>
-<hr>
-
-        <div class="row text-center bg-gray">
-          <div class="col-md-12">
-            <p>
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | CMS
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </footer>
+     @include('menu.footer')
       {{-- footer end--}}
 
   
