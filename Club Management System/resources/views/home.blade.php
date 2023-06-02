@@ -52,7 +52,7 @@
         </a>
       </div>
 
-  {{-- carousel end --}}
+     {{-- carousel end --}}
     
     
 {{-- cards --}}
@@ -92,7 +92,7 @@
 
 </a>
 
-<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+<a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
             
            
   <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>   
