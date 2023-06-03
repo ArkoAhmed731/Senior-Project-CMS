@@ -50,10 +50,7 @@
           <label for="pets-upload">Upload a photo</label>
         </div> -->
 
-        <div class="eventDate">
-          <label for="eventDate">Event Date</label>
-          <input id="eventDate" type="date"></input>
-        </div>
+        
 
       </div>
 
@@ -66,10 +63,10 @@
           </select>
         </div>
 
-        <!-- <div class="eventDate">
+        <div class="eventDate">
           <label for="eventDate">Event Date</label>
           <input id="eventDate" type="date"></input>
-        </div> -->
+        </div>
       </div>
 
     <div class="departments">

@@ -59,7 +59,7 @@
 
         <div class="progress progress-striped active">
           <div class="progress-bar progress-bar-success"
-            style="width: 0%">
+            style="width: 0%"> 70%
           </div>
         </div>
 
@@ -87,7 +87,9 @@
 
 
       <div style="margin-left:10px">
+      Main Departments
         <div class="wrapper">
+          
           <ul class="StepProgress">
             <div class="StepProgress-item is-done">
                 <strong>DOSA<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
@@ -103,6 +105,7 @@
     </div>
 
       <div style="margin-left:10px">
+      Other Departments
         <div class="wrapper2">
         <ul class="StepProgress2">
             <div class="StepProgress-item is-done">
@@ -113,24 +116,12 @@
                 <strong>Security</strong></div>
             <div class="StepProgress-item current">
                 <strong>MPR</strong></div>
+                
         </ul>
         </div>
       </div>
     
-  <div class="otherDepartments">
-    <label for="pet-weight-0-25">Other Departments</label>
-    <br>
-    <div class="checkbox-container">
-      <input id="pet-weight-0-25" name="pet-weight" type="checkbox" value="0-25"></input>
-      <label for="pet-weight-0-25">0-25 lbs</label>
-      <input id="pet-weight-25-50" name="pet-weight" type="checkbox" value="25-50"></input>
-      <label for="pet-weight-25-50">25-50 lbs</label>
-      <input id="pet-weight-50-100" name="pet-weight" type="checkbox" value="50-100"></input>
-      <label for="pet-weight-50-100">50-100 lbs</label>
-      <input id="pet-weight-100-plus" name="pet-weight" type="checkbox" value="100+"></input>
-      <label for="pet-weight-100-plus">100+ lbs</label>
-    </div>
-  </div>
+  
 
   
   {{-- footer --}}

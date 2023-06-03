@@ -58,23 +58,7 @@ body {
 .right-container label, .right-container input, .right-container .pets-photo {
   width: 176px;
 }
-.right-container .pets-photo {
-  align-items: center;
-  display: grid;
-  grid-template-areas: ". .";
-}
-.right-container .pets-photo button {
-  border: none;
-  border-radius: 50%;
-  height: 38px;
-  margin-right: 10px;
-  outline: none;
-  width: 38px;
-}
-.right-container .pets-photo button i {
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 16px;
-}
+
 .right-container .otherDepartments .radio-container {
   display: flex;
   justify-content: space-between;
@@ -114,47 +98,26 @@ body {
   display: block;
   margin-bottom: 5px;
 }
-.radio-container {
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  display: inline-block;
-  padding: 5px;
-}
-.radio-container label {
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 2px;
-  display: inline-block;
-  height: 26px;
-  line-height: 26px;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  transition: 0.2s all ease-in-out;
-  width: 80px;
-}
-.radio-container input[type="radio"] {
-  display: none;
-}
-.radio-container input[type="radio"]:checked + label {
-  background: #F7B1AB;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+
+.eventName input{
+  width: 300px;
 }
 
-select {
+
+.eventType select {
     margin-bottom: 10px;
     margin-top: 10px;
+    width: 200px;
   }
 
-.eventType{
+/* .eventType{
     display: flex;
     align-items: center;
     justify-content: center;
     
     height: 25px;
     background-color: #f1f1f1;
-}
+} */
 
 
 /* ``````````````````````````````
@@ -197,7 +160,7 @@ othere departments
 .checkbox-container input[type="checkbox"] {
   display: none;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  /* border-radius: 5px; */
+
 
   
 }
@@ -205,11 +168,10 @@ othere departments
 .checkbox-container input[type="checkbox"]:checked + label {
   /* background: #F7B1AB; */
   background: #17a2b8;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  backface-visibility: hidden;
-  /* animation: checked 200ms ease 1; */
-  /* transition: all 2s ease-in-out; */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
 
+  border-radius: 10px;
   box-shadow: 2.5px 5px 9px #888888;
 }
 
@@ -217,12 +179,24 @@ othere departments
 /* sssssssssssssssss */
 
 .checkbox-container input[type='checkbox'] + label{
-  transition: all .4s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
-.checkbox-container input[type='checkbox'] + label:hover, input[type='checkbox']:focus + label{
+.checkbox-container input[type='checkbox'] + label:hover, .checkbox-container input[type='checkbox']:focus + label{
   color: #ffffff;
   background: #17a2b8;
+  transform: scale(0.9);
+
+  border-radius: 10px;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label:hover, .checkbox-container input[type='checkbox']:focus + label {
+  background: #17a2b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgb(0, 0, 0);
+
+  border-radius: 10px;
+  box-shadow: 2.5px 5px 9px #888888;
   transform: scale(0.9);
 }
 
@@ -256,7 +230,7 @@ upload file css
   }
   
   .drop-container:hover {
-    background: #17a2b8;
+    background: #20c997;
     border-color: #111;
   }
   
