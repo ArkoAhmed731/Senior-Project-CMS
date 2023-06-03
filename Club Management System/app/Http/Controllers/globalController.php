@@ -50,5 +50,14 @@ class globalController extends Controller
         return view('clubEvents/upcomingEvents');
     }
 
+    public function load_eventPage()
+    {
+        
+
+        return view('clubEvents/eventPage');
+    }
+
 
 }
+
+
