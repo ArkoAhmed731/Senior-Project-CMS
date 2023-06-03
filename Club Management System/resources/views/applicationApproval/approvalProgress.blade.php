@@ -59,7 +59,7 @@
 
         <div class="progress progress-striped active">
           <div class="progress-bar progress-bar-success"
-            style="width: 0%">
+            style="width: 0%"> 70%
           </div>
         </div>
 
@@ -87,7 +87,9 @@
 
 
       <div style="margin-left:10px">
+      Main Departments
         <div class="wrapper">
+          
           <ul class="StepProgress">
             <div class="StepProgress-item is-done">
                 <strong>DOSA<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
@@ -103,6 +105,7 @@
     </div>
 
       <div style="margin-left:10px">
+      Other Departments
         <div class="wrapper2">
         <ul class="StepProgress2">
             <div class="StepProgress-item is-done">
@@ -113,10 +116,12 @@
                 <strong>Security</strong></div>
             <div class="StepProgress-item current">
                 <strong>MPR</strong></div>
+                
         </ul>
         </div>
       </div>
-
+    
+  
 
   
   {{-- footer --}}
