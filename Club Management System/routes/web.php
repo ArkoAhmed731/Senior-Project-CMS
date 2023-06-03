@@ -32,6 +32,10 @@ Route::get('/apply-for-event', [globalController::class, 'load_applyForEvent'])-
 Route::get('/club-activities', [globalController::class, 'load_clubActivities'])->name("clubActivities");
 Route::get('/upcoming-events', [globalController::class, 'load_upcomingEvents'])->name("upcomingEvents");
 Route::get('/event-page', [globalController::class, 'load_eventPage'])->name("eventPage");
+Route::get('/club-recruitment', [globalController::class, 'load_clubRecruitment'])->name("clubRecruitment");
+Route::get('/recruitment-post', [globalController::class, 'load_recruitmentPost'])->name("recruitmentPost");
+
+
 
 
 

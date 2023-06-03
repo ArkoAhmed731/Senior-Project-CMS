@@ -20,17 +20,16 @@
 
     <div class=" rounded bg-secondary text-white p-4 m-3 w-75 mx-auto">
 
-       <h3 class="text-center ">Event name</h3>
-        <h5 class="text-center ">by Club Name</h5>
+        <h3 class="text-center ">Club Name</h3>
 
     </div>
     <div class=" mx-auto p-4 ">
 
-        <h5 class=" "><b>Date: </b>5 Jan 2023</h5>
+        <h5 class=" "><b>Date: </b>4-7 Jan 2023</h5>
 
-        <h5 class=" "><b>Time: </b>3:00PM-5:00PM</h5>
+        <h5 class=" "><b>Time: </b>9:00AM-3:00AM</h5>
 
-        <img src="images/eventImage/music-club-flash-mob.jpg" class=" rounded img-fluid mx-auto" alt="Responsive image">
+        <img src="images/eventImage/cricket-club-recruitment.jpg" class=" rounded img-fluid mx-auto" alt="Responsive image">
         <p class=" mt-3"><b>Description: </b>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
             Why do we use it?

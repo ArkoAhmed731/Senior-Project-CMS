@@ -81,12 +81,12 @@
 
 </a>
 
-<a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+<a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
             
            
   <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>   
 
-  <h6 class="card-title text-center">Club Reqruitment</h6>
+  <h6 class="card-title text-center">Club Recruitment</h6>
 
 
 
