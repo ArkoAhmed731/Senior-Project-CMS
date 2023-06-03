@@ -52,7 +52,7 @@ class globalController extends Controller
 
     public function load_eventPage()
     {
-        return view('clubEvents/eventPage');
+        return view('clubEvents/eventPost');
     }
 
     public function load_clubRecruitment()

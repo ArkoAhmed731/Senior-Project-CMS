@@ -40,7 +40,7 @@
     </a>
   </div>
     <div class= "m-2 card-section">
-    <a href="event-page " class="card text-white bg-info m-auto w-90" >
+    <a href="event-post" class="card text-white bg-info m-auto w-90" >
         <div class="card-body d-flex justify-content-between">
         <div class="p-2 pt-5 border-right border-2" style="width: 30%"><h3 class=text-center>5<h3><p class=text-center>Jan</p></div>
           <div class="p-2" style="width: 60%"><h3 class="">Musical Flashmob</h3>
@@ -53,7 +53,7 @@
   </div>
 
   <div class= "m-2 card-section">
-    <a href="event-page " class="card text-white bg-info m-auto w-90" >
+    <a href="event-post" class="card text-white bg-info m-auto w-90" >
       <div class="card-body d-flex justify-content-between">
         <div class="p-2 pt-5 border-right border-2" style="width: 30%"><h3 class=text-center>26<h3><p class=text-center>Feb</p></div>
           <div class="p-2" style="width: 60%"><h3 class="">Event Name</h3>
@@ -67,7 +67,7 @@
  
 
   <div class= "m-2 card-section">
-    <a href="event-page " class="card text-white bg-info m-auto w-90" >
+    <a href="event-post" class="card text-white bg-info m-auto w-90" >
       <div class="card-body d-flex justify-content-between">
         <div class="p-2 pt-5 border-right border-2" style="width: 30%"><h3 class=text-center>7<h3><p class=text-center>Nov</p></div>
           <div class="p-2" style="width: 60%"><h3 class="">Event Name</h3>

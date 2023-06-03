@@ -25,15 +25,17 @@ Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
 
 //global
 Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
+Route::get('/upcoming-events', [globalController::class, 'load_upcomingEvents'])->name("upcomingEvents");
+Route::get('/event-post', [globalController::class, 'load_eventPost'])->name("eventPost");
+Route::get('/club-recruitment', [globalController::class, 'load_clubRecruitment'])->name("clubRecruitment");
+Route::get('/recruitment-post', [globalController::class, 'load_recruitmentPost'])->name("recruitmentPost");
+
 Route::get('/my-clubs', [globalController::class, 'load_myClubs'])->name("myClubs");
 Route::get('/approval-progress', [globalController::class, 'load_approvalProgress'])->name("approvalProgress");
 Route::get('/private-test', [globalController::class, 'load_privateTest'])->name("privateTest");
 Route::get('/apply-for-event', [globalController::class, 'load_applyForEvent'])->name("applyForEvent");
 Route::get('/club-activities', [globalController::class, 'load_clubActivities'])->name("clubActivities");
-Route::get('/upcoming-events', [globalController::class, 'load_upcomingEvents'])->name("upcomingEvents");
-Route::get('/event-page', [globalController::class, 'load_eventPage'])->name("eventPage");
-Route::get('/club-recruitment', [globalController::class, 'load_clubRecruitment'])->name("clubRecruitment");
-Route::get('/recruitment-post', [globalController::class, 'load_recruitmentPost'])->name("recruitmentPost");
+
 
 
 
