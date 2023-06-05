@@ -117,7 +117,7 @@
         </div>
       </div>
     
-  <div class="otherDepartments">
+  <!-- <div class="otherDepartments">
     <label for="pet-weight-0-25">Other Departments</label>
     <br>
     <div class="checkbox-container">
@@ -129,7 +129,7 @@
       <label for="pet-weight-50-100">50-100 lbs</label>
       <input id="pet-weight-100-plus" name="pet-weight" type="checkbox" value="100+"></input>
       <label for="pet-weight-100-plus">100+ lbs</label>
-    </div>
+    </div> -->
   </div>
 
   
