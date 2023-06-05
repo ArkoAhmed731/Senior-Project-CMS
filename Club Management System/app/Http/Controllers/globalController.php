@@ -50,7 +50,7 @@ class globalController extends Controller
         return view('clubEvents/upcomingEvents');
     }
 
-    public function load_eventPage()
+    public function load_eventPost()
     {
         return view('clubEvents/eventPost');
     }
@@ -65,7 +65,10 @@ class globalController extends Controller
         return view('recruitment/recruitmentPost');
     }
 
-
+    public function load_test()
+    {
+        return view('test');
+    }
 
 
 

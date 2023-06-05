@@ -27,7 +27,7 @@
  <div class=" p-3">
 
   <div class= "m-2 card-section">
-    <a href="event-page " class="card text-white bg-info m-auto w-90" >
+    <a href="event-post" class="card text-white bg-info m-auto w-90" >
       <div class="card-body d-flex justify-content-between">
         <div class="p-2 pt-5 border-right border-2" style="width: 30%"><h3 class=text-center>12<h3><p class=text-center>Aug</p></div>
           <div class="p-2" style="width: 60%"><h3 class="">Musical Flashmob</h3>
