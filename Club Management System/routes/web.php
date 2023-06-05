@@ -36,6 +36,8 @@ Route::get('/private-test', [globalController::class, 'load_privateTest'])->name
 Route::get('/apply-for-event', [globalController::class, 'load_applyForEvent'])->name("applyForEvent");
 Route::get('/club-activities', [globalController::class, 'load_clubActivities'])->name("clubActivities");
 Route::get('/test', [globalController::class, 'load_test'])->name("test");
+Route::get('/test2', [globalController::class, 'load_test2'])->name("test2");
+
 
 
 

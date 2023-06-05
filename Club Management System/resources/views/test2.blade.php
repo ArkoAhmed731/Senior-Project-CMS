@@ -34,9 +34,10 @@
 
 <div class="signup-container">
   
-  <div class="right-container">
+  <div class="right-container bg-light p-4">
     <header>
-      <h1>Write a clearly understandable application for best results </h1>
+      <h2>Apply for Event</h2>
+      <b>N.B. Write a clearly understandable application for best results </b>
       <div class="set">
         <div class="eventName">
           <label for="eventName">Event Name</label>
@@ -58,6 +59,20 @@
         <div class="eventType">
           <label for="eventType">Event Type</label>
           <select id="eventType" name="eventType">
+            <option value="Activation">Seminar</option>
+            <option value="Activation">Festival</option>
+            <option value="Activation">Exhibitions</option>
+            <option value="Activation">Workshop</option>
+            <option value="Activation">Sports</option>
+            <option value="Activation">Competition</option>
+            <option value="Activation">Charity</option>
+            <option value="Activation">Show</option>
+            <option value="Activation">Party</option>
+
+
+
+
+
             <option value="Activation">Activation</option>
             <option value="Cultural">Cultural</option>
           </select>
@@ -105,14 +120,15 @@
     </div>
     </header>
 
-    <footer>
-      <div class="set">
-        <button id="back">Back</button>
-        <button id="next">Next</button>
-      </div>
-    </footer>
-  </div>
+    
+        <button id="next" class="submit-button">Submit</button>
+   
 </div>
+</div>
+</div>
+
+
+
 
 {{-- footer --}}
      @include('menu.footer')

@@ -70,6 +70,11 @@ class globalController extends Controller
         return view('test');
     }
 
+    public function load_test2()
+    {
+        return view('test2');
+    }
+
 
 
 
