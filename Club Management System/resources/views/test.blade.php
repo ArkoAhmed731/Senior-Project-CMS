@@ -55,19 +55,9 @@
 
 
   <div id = block>
-        <h1>Approval Progress</h1>
+        <h2 class="text-center">Approval Progress</h2>
 
-        <div class="progress progress-striped active">
-          <div class="progress-bar progress-bar-success"
-            style="width: 0%"> 70%
-          </div>
-        </div>
-
-        <script>
-          $(".progress-bar").animate({
-                width: "70%",
-          }, 2500);
-        </script>
+      
 
         <div id = applicationDiv>
             Application ID: <var>applicationId</var>
@@ -82,30 +72,52 @@
         <br>      
     </div>
 
+    <div class="progress progress-striped active mx-4 mb-4">
+        <div class="progress-bar progress-bar-success"
+          style="width: 0%"> 70%
+        </div>
+      </div>
+
+      <script>
+        $(".progress-bar").animate({
+              width: "70%",
+        }, 2500);
+      </script>
+
     <!-- <div id = progress> -->
     <div id = "Main departments">
 
+        <h4 class="text-center">Main Departments</h4>
 
       <div style="margin-left:10px">
-      Main Departments
+      {{-- Main Departments --}}
         <div class="wrapper">
           
-          <ul class="StepProgress">
-            <div class="StepProgress-item is-done">
-                <strong>DOSA<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
-            <div class="StepProgress-item is-done">
-                <strong>Dean<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
-            <div class="StepProgress-item current">
-                <strong>VC<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
-            <div class="StepProgress-item current">
-                <strong>Department Head<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
+          <ul class="StepProgress ">
+            <div class="StepProgress-item mb-2 is-done">
+                <strong>DOSA<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
+            </div>
+
+            <div class="StepProgress-item mb-2 is-done">
+                <strong>Dean<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
+            </div>
+
+            <div class="StepProgress-item mb-2 current">
+                <strong>VC<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
+            </div>
+
+            <div class="StepProgress-item mb-2 current">
+                <strong>Department Head<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
+            </div>
           </ul>
         </div>
       </div>
     </div>
 
+
+    <h4 class="text-center">Other Departments</h4>
+
       <div style="margin-left:10px">
-      Other Departments
         <div class="wrapper2">
         <ul class="StepProgress2">
             <div class="StepProgress-item is-done">
@@ -120,13 +132,12 @@
         </ul>
         </div>
       </div>
-    
-  
 
-  
-  {{-- footer --}}
-     @include('menu.footer')
-      {{-- footer end--}}
+  </div>
+
+  @include('menu.footer')
+
+
 
   
 

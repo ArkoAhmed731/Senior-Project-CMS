@@ -45,6 +45,46 @@ class globalController extends Controller
     public function load_clubActivities()
     {
 
+    public function load_upcomingEvents()
+    {
+        
+
+        return view('clubEvents/upcomingEvents');
+    }
+
+    public function load_eventPost()
+    {
+        return view('clubEvents/eventPost');
+    }
+
+    public function load_clubRecruitment()
+    {
+        return view('recruitment/clubRecruitment');
+    }
+
+    public function load_recruitmentPost()
+    {
+        return view('recruitment/recruitmentPost');
+    }
+
+    public function load_test()
+    {
+        return view('test');
+    }
+
+    public function load_test2()
+    {
+        return view('test2');
+    }
+
+
+
+
+
+
+
+
+
 
         return view('myClubs/clubActivities');
     }
@@ -55,3 +95,5 @@ class globalController extends Controller
         return view('myClubs/viewPost');
     }
 }
+
+

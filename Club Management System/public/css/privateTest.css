@@ -1,4 +1,3 @@
-
 :root {
     --color-white: #fff;
     --color-black: #333;
@@ -14,7 +13,8 @@
   }
 
   #applicationDiv{
-    border-style: solid;
+    margin: auto;
+    width: 90%;
     border-radius: 10px;
     /* border-color: black; */
     background-color: white;
@@ -33,7 +33,9 @@
     /* position: absolute;
     right: 0px; */
     float: right;
-    background-color: #C296B6;
+    /* background-color: #6c757d; */
+    /* border-color: #6c757d; */
+    /* color: white; */
 }
 
   
@@ -44,40 +46,24 @@
 
 .wrapper {
     margin: auto;
-    width: 60%;
+    width: 90%;
     /* text-align: center; */
     /* width: 330px; */
     font-family: 'Helvetica';
     font-size: 20px;
 
     /* add */
-    border-style: solid;
+    /* border-style: solid; */
     border-radius: 20px;
-    border-width: 2px;
-    /* box-shadow: 5px 5px #888888; */
+    /* border-width: 2px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
     margin-bottom: 20px;
     
     padding: 10px;
     /* background-color: #17a2b8; */
 }
 
-.wrapper2 {
-  margin: auto;
-  width: 50%;
-  /* text-align: center; */
-  /* width: 330px; */
-  font-family: 'Helvetica';
-  font-size: 10px;
 
-  /* add */
-  border-style: solid;
-  border-radius: 20px;
-  border-width: 2px;
-  box-shadow: 5px 5px #888888;
-  margin-bottom: 20px;
-  
-  padding: 10px;
-}
 
 
 .StepProgress {
@@ -92,8 +78,12 @@
   position: relative;
   padding-left: 45px;
   list-style: none;
+
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  /* flex-direction: row; */
+  
   /* flex-direction: row; */
 }
 .StepProgress::before {
@@ -109,9 +99,9 @@
     position: relative;
     counter-increment: list;
 }
-.StepProgress-item:not(:last-child) {
+/* .StepProgress-item:not(:last-child) {
     padding-bottom: 50px;
-}
+} */
 .StepProgress-item::before {
     display: inline-block;
     content: '';
@@ -171,8 +161,53 @@
 
   border-radius: 20px;
   float: right;
-  background-color: #C296B6;
-  color: #333;
-  border: 2px solid #C296B6;
+  background-color: #6c757d;
+  color: #ffffff;
+  border: 2px solid #6c757d;
 }
 
+
+/* ``````````````````````````````
+othere departments
+`````````````````````````````` */
+.otherDepartments{
+    margin: auto;
+    width: 50%;
+}
+
+.wrapper2 {
+  margin: auto;
+  width: 90%;
+  /* text-align: center; */
+  /* width: 330px; */
+  font-family: 'Helvetica';
+  font-size: 10px;
+
+  /* add */
+  /* border-style: solid; */
+  border-radius: 20px;
+  /* border-width: 2px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
+  margin-bottom: 20px;
+  
+  padding: 20px;
+
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row; */
+}
+
+.StepProgress2 {
+    
+  position: relative;
+  padding-left: 45px;
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* flex-direction: row; */
+  
+  /* flex-direction: row; */
+}
