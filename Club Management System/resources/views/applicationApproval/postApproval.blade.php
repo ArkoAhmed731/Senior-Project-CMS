@@ -39,6 +39,8 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/privateTest.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="css/postApproval.css">
 
   
 
@@ -55,7 +57,7 @@
 
 
   <div id = block>
-        <h2 class="text-center">Approval Progress</h2>
+        <h2 class="text-center">Post Approval</h2>
 
       
 
@@ -85,55 +87,23 @@
       </script>
 
     <!-- <div id = progress> -->
-    <div id = "Main departments">
+    <div id = "Application Details">
 
-        <h4 class="text-center">Main Departments</h4>
+        <h4 class="text-center">Application Details</h4>
 
       <div style="margin-left:10px">
       {{-- Main Departments --}}
         <div class="wrapper">
+          <!-- <h6>Event Type</h6> -->
+          <div class="eventType">
+            <label for="eventType"><h6>Event Type</h6></label>
+            <output id="eventType" placeholder="sss" name="eventType" type="text"></output>
+            eventType.value="sss"
+          </div>
           
-          <ul class="StepProgress ">
-            <div class="StepProgress-item mb-2 is-done">
-                <strong>DOSA<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
-            </div>
-
-            <div class="StepProgress-item mb-2 is-done">
-                <strong>Dean<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
-            </div>
-
-            <div class="StepProgress-item mb-2 current">
-                <strong>VC<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
-            </div>
-
-            <div class="StepProgress-item mb-2 current">
-                <strong>Department Head<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
-            </div>
-          </ul>
         </div>
       </div>
     </div>
-
-
-    <h4 class="text-center">Other Departments</h4>
-
-      <div style="margin-left:10px">
-        <div class="wrapper2">
-        <ul class="StepProgress2">
-            <div class="StepProgress-item is-done">
-                <strong>ONM</strong></div>
-            <div class="StepProgress-item is-done">
-                <strong>Facilities</strong></div>
-            <div class="StepProgress-item current">
-                <strong>Security</strong></div>
-            <div class="StepProgress-item current">
-                <strong>MPR</strong></div>
-            <div class="StepProgress-item current">
-                <strong>MPR</strong></div>
-                
-        </ul>
-        </div>
-      </div>
 
   </div>
 
