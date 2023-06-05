@@ -85,7 +85,7 @@
       </div>
 
     <div class="departments">
-    <label for="selectDepartments">Select Departments</label>
+    <label for="selectDepartments">Select Receiving Departments</label>
     <br>
     <div class="checkbox-container">
       <input id="selectDepartmentsFacilities" name="selectDepartments" type="checkbox" value="0-25"></input>
