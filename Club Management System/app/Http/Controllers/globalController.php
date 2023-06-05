@@ -44,10 +44,12 @@ class globalController extends Controller
     }
     public function load_clubActivities()
     {
+        return view('myClubs/clubActivities');
+    }
 
     public function load_upcomingEvents()
     {
-        
+
 
         return view('clubEvents/upcomingEvents');
     }
@@ -86,8 +88,7 @@ class globalController extends Controller
 
 
 
-        return view('myClubs/clubActivities');
-    }
+
     public function load_viewPost()
     {
 
@@ -95,5 +96,3 @@ class globalController extends Controller
         return view('myClubs/viewPost');
     }
 }
-
-
