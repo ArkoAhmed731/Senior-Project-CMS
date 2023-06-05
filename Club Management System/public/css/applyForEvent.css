@@ -27,15 +27,17 @@ body {
 
 .right-container {
   /* align-items: center; */
-  background: #f9c7c2;
+  /* background: #f9c7c2; */
   display: grid;
   grid-template-areas: "." ".";
   width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .right-container h1:nth-of-type(1) {
   color: rgba(0, 0, 0, 0.8);
   font-size: 28px;
   font-weight: 600;
+  
 }
 .right-container .set {
   display: flex;
@@ -64,13 +66,13 @@ body {
   justify-content: space-between;
   width: 100%;
 }
-.right-container footer {
-  align-items: center;
+/* .right-container footer {
   background: #fff;
   display: grid;
   padding: 5px 40px;
-}
-.right-container footer button {
+} */
+.submit-button {
+margin: auto;
   border: 1px solid rgba(0, 0, 0, 0.2);
   height: 38px;
   line-height: 38px;
@@ -78,11 +80,13 @@ body {
   border-radius: 19px;
   font-family: 'Montserrat', sans-serif;
 }
-.right-container footer #back {
+
+.submit-button:hover  {
+
   background: #fff;
   transition: 0.2s all ease-in-out;
 }
-.right-container footer #back:hover {
+/* .right-container footer #back:hover {
   background: #171A2B;
   color: white;
 }
@@ -93,7 +97,7 @@ body {
 }
 .right-container footer #next:hover {
   background: #171A2B;
-}
+} */
 .eventName label, .eventTypes label, .eventType label, .eventDate label {
   display: block;
   margin-bottom: 5px;
@@ -216,7 +220,7 @@ upload file css
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100px;
+    height: 200px;
     /* width: 100%; */
     padding: 20px;
     border-radius: 10px;

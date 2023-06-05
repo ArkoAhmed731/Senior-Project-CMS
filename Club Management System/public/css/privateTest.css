@@ -13,7 +13,8 @@
   }
 
   #applicationDiv{
-    border-style: solid;
+    margin: auto;
+    width: 90%;
     border-radius: 10px;
     /* border-color: black; */
     background-color: white;
@@ -45,17 +46,17 @@
 
 .wrapper {
     margin: auto;
-    width: 60%;
+    width: 90%;
     /* text-align: center; */
     /* width: 330px; */
     font-family: 'Helvetica';
     font-size: 20px;
 
     /* add */
-    border-style: solid;
+    /* border-style: solid; */
     border-radius: 20px;
-    border-width: 2px;
-    box-shadow: 5px 5px #888888;
+    /* border-width: 2px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
     margin-bottom: 20px;
     
     padding: 10px;
@@ -98,9 +99,9 @@
     position: relative;
     counter-increment: list;
 }
-.StepProgress-item:not(:last-child) {
+/* .StepProgress-item:not(:last-child) {
     padding-bottom: 50px;
-}
+} */
 .StepProgress-item::before {
     display: inline-block;
     content: '';
@@ -176,20 +177,20 @@ othere departments
 
 .wrapper2 {
   margin: auto;
-  width: 50%;
+  width: 90%;
   /* text-align: center; */
   /* width: 330px; */
   font-family: 'Helvetica';
   font-size: 10px;
 
   /* add */
-  border-style: solid;
+  /* border-style: solid; */
   border-radius: 20px;
-  border-width: 2px;
-  box-shadow: 5px 5px #888888;
+  /* border-width: 2px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
   margin-bottom: 20px;
   
-  padding: 10px;
+  padding: 20px;
 
   /* display: flex;
   flex-wrap: wrap;
