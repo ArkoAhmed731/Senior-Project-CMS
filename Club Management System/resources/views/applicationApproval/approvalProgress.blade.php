@@ -6,6 +6,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+<!-- progress bar -->
+<link href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+        rel="stylesheet" />
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+    </script>
+<!-- progress bar -->
+
+
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   {{-- <link rel="stylesheet" href="fonts/icomoon/style.css"> --}}
 
@@ -20,7 +37,10 @@
   {{-- <link rel="stylesheet" href="css/aos.css"> --}}
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="{{ asset('css/privateTest.css') }}">
+  <link rel="stylesheet" href="css/privateTest.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  
 
 </head>
 
@@ -29,35 +49,26 @@
   <div class="site-wrap">
 
   {{-- nav bar --}}
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          
-        </ul>
-        
-      </div>
-    </nav>
+  @include('menu.navBar')
+  
   {{-- nav bar end--}}
 
 
   <div id = block>
         <h1>Approval Progress</h1>
-        <progress value="0" max="100" style="--value: 0; --max: 100;"></progress>
+
+        <div class="progress progress-striped active">
+          <div class="progress-bar progress-bar-success"
+            style="width: 0%">
+          </div>
+        </div>
+
+        <script>
+          $(".progress-bar").animate({
+                width: "70%",
+          }, 2500);
+        </script>
+
         <div id = applicationDiv>
             Application ID: <var>applicationId</var>
             <br>
@@ -71,48 +82,45 @@
         <br>      
     </div>
 
-    <div id = progress>
+    <!-- <div id = progress> -->
     <div id = "Main departments">
 
 
-    <div style="margin-left:10px">
+      <div style="margin-left:10px">
         <div class="wrapper">
-        <ul class="StepProgress">
+          <ul class="StepProgress">
             <div class="StepProgress-item is-done">
-                <strong>DOSA <button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
+                <strong>DOSA<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
             <div class="StepProgress-item is-done">
                 <strong>Dean<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
             <div class="StepProgress-item current">
                 <strong>VC<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
             <div class="StepProgress-item current">
                 <strong>Department Head<button id="approveDetailsBtn" type="button" onclick="">details</button></strong></div>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+      <div style="margin-left:10px">
+        <div class="wrapper2">
+        <ul class="StepProgress2">
+            <div class="StepProgress-item is-done">
+                <strong>ONM</strong></div>
+            <div class="StepProgress-item is-done">
+                <strong>Facilities</strong></div>
+            <div class="StepProgress-item current">
+                <strong>Security</strong></div>
+            <div class="StepProgress-item current">
+                <strong>MPR</strong></div>
         </ul>
         </div>
-    </div>
+      </div>
 
 
   
   {{-- footer --}}
-    <footer class="site-footer bg-dark">
-      <div class="container">
-        <div class="d-flex justify-content-center">
-          <div class="p-2"><a href="test.html">About</a></div>
-          <div class="p-2"><a href="test.html">Privacy Policy</a></div>
-          <div class="p-2"><a href="test.html">Contact Us</a></div>
-        </div>
-<hr>
-
-        <div class="row text-center bg-gray">
-          <div class="col-md-12">
-            <p>
-              Copyright &copy;
-              <script>document.write(new Date().getFullYear());</script> All rights reserved | CMS
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </footer>
+     @include('menu.footer')
       {{-- footer end--}}
 
   

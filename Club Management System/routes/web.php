@@ -30,6 +30,7 @@ Route::get('/approval-progress', [globalController::class, 'load_approvalProgres
 Route::get('/private-test', [globalController::class, 'load_privateTest'])->name("privateTest");
 Route::get('/apply-for-event', [globalController::class, 'load_applyForEvent'])->name("applyForEvent");
 Route::get('/club-activities', [globalController::class, 'load_clubActivities'])->name("clubActivities");
+Route::get('/view-post', [globalController::class, 'load_viewPost'])->name("viewPost");
 
 //user
 

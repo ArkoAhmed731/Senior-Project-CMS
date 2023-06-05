@@ -35,8 +35,9 @@
 
         {{-- cards --}}
 
-        <div class="card w-100">
+        <div class="card w-100 d-flex justify-content-between">
             <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
+                <div class="flex-container"><i class="bi bi-caret-right-fill"></i></div>
                 <div class=" card-header">Header</div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
@@ -82,27 +83,23 @@
         </div>
 
 
+        {{-- cards end --}}
 
+        {{-- footer --}}
 
-    </div>
-    {{-- cards end --}}
+        @include('menu.footer')
 
-    {{-- footer --}}
+        {{-- footer end--}}
 
-    @include('menu.footer')
-
-    {{-- footer end--}}
-
-
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/main.js"></script>
+        < <script src="js/jquery-3.3.1.min.js">
+            </script>
+            <script src="js/jquery-ui.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/owl.carousel.min.js"></script>
+            <script src="js/jquery.magnific-popup.min.js"></script>
+            <script src="js/aos.js"></script>
+            <script src="js/main.js"></script>
 
 </body>
 
