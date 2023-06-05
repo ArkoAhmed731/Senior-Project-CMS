@@ -38,6 +38,9 @@ Route::get('/apply-for-event', [globalController::class, 'load_applyForEvent'])-
 Route::get('/post-approval', [globalController::class, 'load_postApproval'])->name("postApproval");
 
 Route::get('/club-activities', [globalController::class, 'load_clubActivities'])->name("clubActivities");
+<<<<<<< HEAD
+Route::get('/view-post', [globalController::class, 'load_viewPost'])->name("viewPost");
+=======
 Route::get('/test', [globalController::class, 'load_test'])->name("test");
 Route::get('/test2', [globalController::class, 'load_test2'])->name("test2");
 
@@ -47,6 +50,7 @@ Route::get('/test2', [globalController::class, 'load_test2'])->name("test2");
 
 
 
+>>>>>>> e77c2c2c87f9fd1d897558a2b348c55034f0a631
 
 //user
 
