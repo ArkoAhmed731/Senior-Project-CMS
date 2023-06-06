@@ -42,6 +42,7 @@ class globalController extends Controller
 
         return view('applicationApproval/applyForEvent');
     }
+
     public function load_clubActivities()
     {
         return view('myClubs/clubActivities');
