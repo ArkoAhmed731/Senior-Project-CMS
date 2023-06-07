@@ -31,6 +31,7 @@ Route::get('/club-recruitment', [globalController::class, 'load_clubRecruitment'
 Route::get('/recruitment-post', [globalController::class, 'load_recruitmentPost'])->name("recruitmentPost");
 
 Route::get('/my-clubs', [globalController::class, 'load_myClubs'])->name("myClubs");
+Route::get('/my-profile', [globalController::class, 'load_myProfile'])->name("myProfile");
 
 Route::get('/approval-progress', [globalController::class, 'load_approvalProgress'])->name("approvalProgress");
 Route::get('/private-test', [globalController::class, 'load_privateTest'])->name("privateTest");

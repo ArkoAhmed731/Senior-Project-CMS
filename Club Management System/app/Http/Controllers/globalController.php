@@ -84,6 +84,10 @@ class globalController extends Controller
     {
         return view('test2');
     }
+    public function load_myProfile()
+    {
+        return view('myClubs/myProfile');
+    }
 
 
 
