@@ -40,7 +40,7 @@ Route::get('/post-approval', [globalController::class, 'load_postApproval'])->na
 Route::get('/club-activities', [globalController::class, 'load_clubActivities'])->name("clubActivities");
 Route::get('/view-post', [globalController::class, 'load_viewPost'])->name("viewPost");
 Route::get('/test', [globalController::class, 'load_test'])->name("test");
-Route::get('/test2', [globalController::class, 'load_test2'])->name("test2");
+Route::get('/create-post', [globalController::class, 'load_createPost'])->name("createPost");
 
 
 

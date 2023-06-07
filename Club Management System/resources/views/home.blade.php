@@ -159,9 +159,16 @@
 
   <a href="/apply-for-event" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
       <div class="card-body d-flex justify-content-between">
-          <h5 class="card-title">Create Post</h5><i class="bi bi-caret-right-fill"></i>
+          <h5 class="card-title">Apply For Event</h5><i class="bi bi-caret-right-fill"></i>
       </div>
   </a>
+
+  <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+    <div class="card-body d-flex justify-content-between">
+        <h5 class="card-title">Create Post for XYZ Club</h5><i class="bi bi-caret-right-fill"></i>
+    </div>
+</a>
+
 
   <a href="approval-progress" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
     <div class="card-body d-flex justify-content-between">
