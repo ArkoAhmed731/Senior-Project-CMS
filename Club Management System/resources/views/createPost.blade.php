@@ -35,15 +35,15 @@
 <div class="signup-container">
   
   <div class="right-container bg-light p-4">
-    <header>
-      <h2>Apply for Event</h2>
-      <b>N.B. Write a clearly understandable application for best results </b>
+      <h2 class="mx-auto">Create Post</h2>
       <div class="set">
         <div class="eventName">
-          <label for="eventName">Event Name</label>
-          <input id="eventName" placeholder="Your event's name" type="text"></input>
+          <input id="eventName" placeholder="Post title" type="text">
+
         </div>
 
+        
+       
         <!-- <div class="pets-photo">
           <button id="pets-upload">
             <i class="fas fa-camera-retro"></i>
@@ -54,9 +54,11 @@
         
 
       </div>
+          <input id="eventName" placeholder="Description" type="text" class="p-3 mb-3">
 
       <div class="set">
         <div class="eventType">
+
           <label for="eventType">Event Type</label>
           <select id="eventType" name="eventType">
             <option value="Activation">Seminar</option>
@@ -84,44 +86,20 @@
         </div>
       </div>
 
-    <div class="departments">
-    <label for="selectDepartments">Select Receiving Departments</label>
-    <br>
-    <div class="checkbox-container">
-      <input id="selectDepartmentsFacilities" name="selectDepartments" type="checkbox" value="0-25"></input>
-        <label for="selectDepartmentsFacilities">Facilities</label>
-      <input id="selectDepartmentsONM" name="selectDepartments" type="checkbox" value="25-50"></input>
-        <label for="selectDepartmentsONM">ONM</label>
-      <input id="selectDepartmentsMPR" name="selectDepartments" type="checkbox" value="50-100"></input>
-        <label for="selectDepartmentsMPR">MPR</label>
-      <input id="selectDepartmentsSecurity" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsSecurity">Security</label>
-      <input id="selectDepartmentsCITS" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsCITS">CITS</label>
-      <input id="selectDepartmentsFinance" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsFinance">Finance</label>
-      <input id="selectDepartmentsCGPAR" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsCGPAR">CGPAR</label>
-      <input id="selectDepartmentsAdministration" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsAdministration">Administration</label>
-      <input id="selectDepartmentsCouncil" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsCouncil">Council Affairs</label>
-    </div>
-  </div>
+  
 
 
     <div class="drop-container">
         <label for="images" >
-        <span class="drop-title">Drop files here</span>
+        <span class="drop-title">Drop Poster Here</span>
         <br>
         &emsp; &emsp; &emsp; or
         <input type="file" id="images" accept="image/*" required>
         </label>
     </div>
-    </header>
 
     
-        <button id="next" class="submit-button">Submit</button>
+    <button id="next" class="submit-button mx-auto m-3">Submit</button>
    
 </div>
 </div>

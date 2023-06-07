@@ -96,14 +96,19 @@
           <ul class="StepProgress ">
             <div class="StepProgress-item mb-2 is-done">
                 <strong>DOSA<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
+                <hr>
             </div>
 
             <div class="StepProgress-item mb-2 is-done">
                 <strong>Dean<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
+                <hr>
+
             </div>
 
             <div class="StepProgress-item mb-2 current">
                 <strong>VC<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
+                <hr>
+
             </div>
 
             <div class="StepProgress-item mb-2 current">

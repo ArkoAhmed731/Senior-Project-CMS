@@ -80,9 +80,9 @@ class globalController extends Controller
         return view('test');
     }
 
-    public function load_test2()
+    public function load_createPost()
     {
-        return view('test2');
+        return view('createPost');
     }
     public function load_myProfile()
     {
