@@ -35,8 +35,7 @@
 <div class="signup-container">
   
   <div class="right-container bg-light p-4">
-    <header>
-      <h2>Apply for Event</h2>
+      <h2 class="mx-auto">Apply for Event</h2>
       <b>N.B. Write a clearly understandable application for best results </b>
       <div class="set">
         <div class="eventName">
@@ -85,7 +84,7 @@
       </div>
 
     <div class="departments">
-    <label for="selectDepartments">Select Receiving Departments</label>
+    <label for="selectDepartments">Select Departments</label>
     <br>
     <div class="checkbox-container">
       <input id="selectDepartmentsFacilities" name="selectDepartments" type="checkbox" value="0-25"></input>
@@ -118,10 +117,9 @@
         <input type="file" id="images" accept="image/*" required>
         </label>
     </div>
-    </header>
 
     
-        <button id="next" class="submit-button">Submit</button>
+    <button id="next" class="submit-button mx-auto m-3">Submit</button>
    
 </div>
 </div>
