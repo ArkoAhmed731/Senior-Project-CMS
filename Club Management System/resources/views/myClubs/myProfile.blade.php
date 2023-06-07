@@ -44,7 +44,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-md-6">Name</div>
-                        <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                        <div class="col-md-6"></div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
