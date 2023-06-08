@@ -12,10 +12,24 @@ class globalController extends Controller
 
     public function load_homePage()
     {
-
-
         return view('home');
     }
+
+    public function load_login()
+    {
+        return view('login/login');
+    }
+
+    public function load_signup()
+    {
+        return view('login/signup');
+    }
+
+    public function load_forgotPassword()
+    {
+        return view('login/forgotPassword');
+    }
+
     public function load_myClubs()
     {
 
@@ -42,11 +56,12 @@ class globalController extends Controller
 
         return view('applicationApproval/applyForEvent');
     }
+
     public function load_clubActivities()
     {
         return view('myClubs/clubActivities');
     }
-    
+
     public function load_postApproval()
     {
         return view('applicationApproval/postApproval');
@@ -54,7 +69,7 @@ class globalController extends Controller
 
     public function load_upcomingEvents()
     {
-        
+
 
         return view('clubEvents/upcomingEvents');
     }
@@ -79,13 +94,16 @@ class globalController extends Controller
         return view('test');
     }
 
-    public function load_test2()
+    public function load_createPost()
     {
-        return view('test2');
+        return view('applicationApproval/createPost');
+    }
+    public function load_myProfile()
+    {
+        return view('myClubs/myProfile');
     }
 
 
-        
     public function load_viewPost()
     {
 
@@ -93,5 +111,3 @@ class globalController extends Controller
         return view('myClubs/viewPost');
     }
 }
-
-

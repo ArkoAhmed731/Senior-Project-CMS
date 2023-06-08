@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
-  <a class="navbar-brand text-white" href="#">CMS</a>
+  <a class="navbar-brand text-white" href="/">CMS</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -10,14 +10,14 @@
         <a class="nav-link text-white" href="/"><i class="bi bi-house-fill nav-icon-size"></i><br>Home <span class="sr-only">(current)</span></a> 
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="#"><i class="bi bi-person-fill nav-icon-size"></i><br>My Profile</a>
+        <a class="nav-link text-white" href="/my-profile"><i class="bi bi-person-fill nav-icon-size"></i><br>My Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="#"><i class="bi bi-bell-fill nav-icon-size"></i><br>Notification</a>
+        <a class="nav-link text-white" href="/notification"><i class="bi bi-bell-fill nav-icon-size"></i><br>Notification</a>
       </li>
      
       <li class="nav-item">
-        <a class="nav-link text-white" href="#"><i class="bi bi-box-arrow-right nav-icon-size"></i><br>Sign out</a>
+        <a class="nav-link text-white" href="/login"><i class="bi bi-box-arrow-right nav-icon-size"></i><br>Sign out</a>
       </li>
       
     </ul>
