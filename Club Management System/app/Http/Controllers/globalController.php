@@ -17,17 +17,17 @@ class globalController extends Controller
 
     public function load_login()
     {
-        return view('login');
+        return view('login/login');
     }
 
     public function load_signup()
     {
-        return view('signup');
+        return view('login/signup');
     }
 
     public function load_forgotPassword()
     {
-        return view('forgotPassword');
+        return view('login/forgotPassword');
     }
 
     public function load_myClubs()
@@ -96,7 +96,7 @@ class globalController extends Controller
 
     public function load_createPost()
     {
-        return view('createPost');
+        return view('applicationApproval/createPost');
     }
     public function load_myProfile()
     {
