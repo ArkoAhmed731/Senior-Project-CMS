@@ -44,7 +44,9 @@ class globalController extends Controller
     }
     public function load_clubActivities()
     {
-
+        return view('myClubs/clubActivities');
+    }
+    
     public function load_postApproval()
     {
         return view('applicationApproval/postApproval');
@@ -83,16 +85,7 @@ class globalController extends Controller
     }
 
 
-
-
-
-
-
-
-
-
-        return view('myClubs/clubActivities');
-    }
+        
     public function load_viewPost()
     {
 
