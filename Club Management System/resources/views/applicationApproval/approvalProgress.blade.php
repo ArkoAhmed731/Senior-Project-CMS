@@ -37,7 +37,7 @@
   {{-- <link rel="stylesheet" href="css/aos.css"> --}}
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/privateTest.css">
+  <link rel="stylesheet" href="css/approvalProgress.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
 
   

@@ -37,21 +37,12 @@
   <div class="right-container bg-light p-4">
       <h2 class="mx-auto">Apply for Event</h2>
       <b>N.B. Write a clearly understandable application for best results </b>
+      
       <div class="set">
         <div class="eventName">
           <label for="eventName">Event Name</label>
           <input id="eventName" placeholder="Your event's name" type="text"></input>
-        </div>
-
-        <!-- <div class="pets-photo">
-          <button id="pets-upload">
-            <i class="fas fa-camera-retro"></i>
-          </button>
-          <label for="pets-upload">Upload a photo</label>
-        </div> -->
-
-        
-
+        </div>      
       </div>
 
       <div class="set">
@@ -67,11 +58,6 @@
             <option value="Activation">Charity</option>
             <option value="Activation">Show</option>
             <option value="Activation">Party</option>
-
-
-
-
-
             <option value="Activation">Activation</option>
             <option value="Cultural">Cultural</option>
           </select>
@@ -81,6 +67,13 @@
           <label for="eventDate">Event Date</label>
           <input id="eventDate" type="date"></input>
         </div>
+      </div>
+
+      <div class="set">
+        <div class="eventSummary">
+          <label for="eventSummary">Event Name</label>
+          <input id="eventSummary" placeholder="Write a short description about the event" type="text"></input>
+        </div>      
       </div>
 
     <div class="departments">
