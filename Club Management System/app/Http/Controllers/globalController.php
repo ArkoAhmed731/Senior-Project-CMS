@@ -12,10 +12,24 @@ class globalController extends Controller
 
     public function load_homePage()
     {
-
-
         return view('home');
     }
+
+    public function load_login()
+    {
+        return view('login');
+    }
+
+    public function load_signup()
+    {
+        return view('signup');
+    }
+
+    public function load_forgotPassword()
+    {
+        return view('forgotPassword');
+    }
+
     public function load_myClubs()
     {
 
