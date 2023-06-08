@@ -98,6 +98,10 @@ class globalController extends Controller
     {
         return view('createPost');
     }
+    public function load_myProfile()
+    {
+        return view('myClubs/myProfile');
+    }
 
 
 

@@ -35,12 +35,12 @@
 
         {{-- cards --}}
 
-        <div class="card w-100 d-flex justify-content-between">
+        <div class="card w-100">
             <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
-                <div class="flex-container"><i class="bi bi-caret-right-fill"></i></div>
                 <div class=" card-header">Header</div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <div class="d-flex flex-row-reverse"><i class="bi bi-caret-right-fill"></i></div>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
             </a>
@@ -50,6 +50,7 @@
                 <div class=" card-header">Header</div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <div class="d-flex flex-row-reverse"><i class="bi bi-caret-right-fill"></i></div>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
             </a>
@@ -59,6 +60,7 @@
                 <div class=" card-header">Header</div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <div class="d-flex flex-row-reverse"><i class="bi bi-caret-right-fill"></i></div>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
             </a>
@@ -68,6 +70,7 @@
                 <div class=" card-header">Header</div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <div class="d-flex flex-row-reverse"><i class="bi bi-caret-right-fill"></i></div>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
             </a>
@@ -77,6 +80,7 @@
                 <div class=" card-header">Header</div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
+                    <div class="d-flex flex-row-reverse"><i class="bi bi-caret-right-fill"></i></div>
                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 </div>
             </a>
