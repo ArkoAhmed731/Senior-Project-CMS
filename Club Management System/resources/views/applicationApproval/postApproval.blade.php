@@ -78,7 +78,7 @@
         <div class="progress-bar progress-bar-success"
           style="width: 0%"> 70%
         </div>
-      </div>
+    </div>
 
       <script>
         $(".progress-bar").animate({

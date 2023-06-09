@@ -25,6 +25,12 @@ Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
 
 //global
 Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
+Route::get('/login', [globalController::class, 'load_login'])->name("login");
+Route::get('/signup', [globalController::class, 'load_signup'])->name("signup");
+Route::get('/forgot-password', [globalController::class, 'load_forgotPassword'])->name("forgotPassword");
+
+
+
 Route::get('/upcoming-events', [globalController::class, 'load_upcomingEvents'])->name("upcomingEvents");
 Route::get('/event-post', [globalController::class, 'load_eventPost'])->name("eventPost");
 Route::get('/club-recruitment', [globalController::class, 'load_clubRecruitment'])->name("clubRecruitment");
