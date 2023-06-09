@@ -88,7 +88,10 @@ class globalController extends Controller
     {
         return view('myClubs/myProfile');
     }
-
+    public function load_editMyProfile()
+    {
+        return view('myClubs/editMyProfile');
+    }
 
 
 
