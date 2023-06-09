@@ -50,7 +50,7 @@
                                     <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
 
                                     <div class="col-md-12">Email ID</div>
-                                    <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div>
+                                    <div class="col-md-12"><label class="labels">Joined Clubs</label><input type="text" class="form-control" placeholder="education" value=""></div>
                                 </div>
                                 <div class="row mt-3">
 
