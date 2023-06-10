@@ -58,7 +58,7 @@
         {{-- cards --}}
         <div class=" card-section site-section d-flex align-content-center flex-wrap p-3">
             {{-- single card --}}
-            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
 
 
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
