@@ -45,7 +45,7 @@
 
                             <div class="col-md-6">Name</div>
 
-
+                            <div class="col-md-12"> Student ID</div>
 
                             <div class="col-md-12">Mobile Number</div>
 
@@ -53,7 +53,7 @@
                             <div class="col-md-12">Email ID</div>
 
                             <div>
-                                <div class="col-md-12">Joined Clubs</div>
+
                                 <div class="d-flex flex-row-reverse">
                                     <div class="col-md-12">Position In Club</div>
                                 </div>
@@ -62,7 +62,9 @@
                         </div>
 
                     </div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Profile</button></div>
+                    <a href="edit-my-profile">
+                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Profile</button></div>
+                    </a>
                 </div>
             </div>
 
