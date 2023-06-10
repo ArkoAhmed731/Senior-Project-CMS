@@ -37,28 +37,28 @@
 
         <div class="card w-100">
             <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
-                <div class=" card-header">Header</div>
+                <div class=" card-header">Debate Club</div>
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">Club Meeting</h5>
+                    <p class="card-text">Meeting will be held in 24th June 2 PM.</p>
                 </div>
             </a>
         </div>
         <div class="card w-100">
             <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
-                <div class=" card-header">Header</div>
+                <div class=" card-header">Music Club</div>
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">Audition</h5>
+                    <p class="card-text">Auduition at the gallery from 10am to 3pm .</p>
                 </div>
             </a>
         </div>
         <div class="card w-100">
             <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
-                <div class=" card-header">Header</div>
+                <div class=" card-header">Jukti</div>
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">TechFest</h5>
+                    <p class="card-text">TechFest on 24, 25 and 26th june</p>
                 </div>
             </a>
         </div>

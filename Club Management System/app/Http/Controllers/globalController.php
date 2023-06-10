@@ -113,4 +113,9 @@ class globalController extends Controller
 
         return view('myClubs/viewPost');
     }
+
+    public function load_viewProfile()
+    {
+        return view('myClubs/viewProfile');
+    }
 }

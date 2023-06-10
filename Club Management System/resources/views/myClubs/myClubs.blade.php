@@ -37,51 +37,51 @@
 
         <div class="card w-100">
             <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
-                <div class=" card-header">Header</div>
+
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Music Club</h5>
                     <div class="d-flex flex-row-reverse"><i class="bi bi-caret-right-fill"></i></div>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">we need more good musicians</p>
                 </div>
             </a>
         </div>
         <div class="card w-100">
             <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
-                <div class=" card-header">Header</div>
+
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Photography club</h5>
                     <div class="d-flex flex-row-reverse"><i class="bi bi-caret-right-fill"></i></div>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">Photowalk Coming soon</p>
                 </div>
             </a>
         </div>
         <div class="card w-100">
             <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
-                <div class=" card-header">Header</div>
+
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Debate Club</h5>
                     <div class="d-flex flex-row-reverse"><i class="bi bi-caret-right-fill"></i></div>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">No new Updates</p>
                 </div>
             </a>
         </div>
         <div class="card w-100">
             <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
-                <div class=" card-header">Header</div>
+
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Cricket Club</h5>
                     <div class="d-flex flex-row-reverse"><i class="bi bi-caret-right-fill"></i></div>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">Where do we practice?</p>
                 </div>
             </a>
         </div>
         <div class="card w-100">
             <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 80%;">
-                <div class=" card-header">Header</div>
+
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
+                    <h5 class="card-title">Chess Club</h5>
                     <div class="d-flex flex-row-reverse"><i class="bi bi-caret-right-fill"></i></div>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <p class="card-text">Chess in nothing like war.</p>
                 </div>
             </a>
         </div>
