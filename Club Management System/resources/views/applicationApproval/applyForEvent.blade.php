@@ -69,10 +69,11 @@
         </div>
       </div>
 
-      <div class="set">
+      <div class="setSummary">
         <div class="eventSummary">
           <label for="eventSummary">Event Name</label>
-          <input id="eventSummary" placeholder="Write a short description about the event" type="text"></input>
+          <!-- <input id="eventSummary" placeholder="Write a short description about the event" type="text"></input> -->
+          <textarea name="eventSummary" id="eventSummary" placeholder="Write a short description about the event" cols="30" rows="2"></textarea>
         </div>      
       </div>
 
