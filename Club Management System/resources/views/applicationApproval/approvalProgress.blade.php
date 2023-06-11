@@ -60,9 +60,9 @@
       
 
         <div id = applicationDiv>
-            Application ID: <var>applicationId</var>
+            Application ID: 118130
             <br>
-            Application Name: <var>applicationName</var>
+            Application Name: Application for pahela baishakh concert
             <br>
             <div>
                 <button id="viewApplication" type="button" onclick="">View Application</button>
@@ -142,6 +142,7 @@
 
   </div>
 
+  </div>
   @include('menu.footer')
 
 

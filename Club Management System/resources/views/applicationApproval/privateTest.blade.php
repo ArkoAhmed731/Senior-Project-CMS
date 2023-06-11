@@ -1,160 +1,384 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CMS</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>CMS</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/applyForEvent.css') }}"> -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('css/privateTest.css') }}">
-    <script src="{{ asset('js/app.js') }}" defer></script>
+  <script src="jquery-1.9.1.min.js"></script>
+<!-- progress bar -->
+<link href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+        rel="stylesheet" />
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+    </script>
+<!-- progress bar -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  {{-- <link rel="stylesheet" href="fonts/icomoon/style.css"> --}}
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  {{-- <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css"> --}}
+  {{-- <link rel="stylesheet" href="css/magnific-popup.css"> --}}
+  {{-- <link rel="stylesheet" href="css/jquery-ui.css"> --}}
+  {{-- <link rel="stylesheet" href="css/owl.carousel.min.css"> --}}
+  {{-- <link rel="stylesheet" href="css/owl.theme.default.min.css"> --}}
+
+
+  {{-- <link rel="stylesheet" href="css/aos.css"> --}}
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/privateTest.css">
+
+  
+
 </head>
 
 <body>
 
 <div class="site-wrap">
 
-  {{-- nav bar --}}
+<header>
+{{-- nav bar --}}
   @include('menu.navBar')
   
   {{-- nav bar end--}}
+</header>
 
+  <nav id="sidebar">
+    <ul class="dots">
+    <li>
+      <a href="#">
+        <span class="glyphicon glyphicon-user" data-launch-view="clubNotifications"><mark>23</mark></span>
+      </a>  
+    </li>
+    
+    <li>
+      <a href="#">
+      <span class="glyphicon glyphicon-envelope" data-launch-view="messageNotification"><mark class="big swing">7</mark></span>
+      </a>  
+    </li>
+    <li>
+      <a href="#">
+      <span class="glyphicon glyphicon-time" data-launch-view="approvalProgressNotification"><mark class="rubberBand">99</mark></span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+      <span class="glyphicon glyphicon-list-alt" data-launch-view="followedClubs"></span>
+      </a>
+    </li>    
+    <li>
+      <a href="#">
+      <span class="glyphicon glyphicon-calendar"><mark class="green wobble">99+</mark></span>
+      </a>
+    </li>      
+    <li>
+      <a href="#">
+      <span class="glyphicon glyphicon-random"><mark class="blue tada">13</mark></span>
+      </a>
+      </li>        
+    </ul> 
+  </nav>
 
-<div class="signup-container">
-  
-  <div class="right-container bg-light p-4">
-      <h2 class="mx-auto">Apply for Event</h2>
-      <b>N.B. Write a clearly understandable application for best results </b>
-      
-      <div class="set">
-        <div class="eventName">
-          <label for="eventName">Event Name</label>
-          <input id="eventName" placeholder="Your event's name" type="text"></input>
-        </div>      
-      </div>
+<main>
+  <!-- <h1>Press an icon in the sidebar!</h1> -->
+  <!-- <p>Move cursor over icon on the left to animate marks</p>
+  <ul>
+    <li>To change mark color use following class's: <code>.green, .blue</code></li>
+    <li>Marks are prepare to handle with two-digit numbers from <code>0 to 99</code>. If your number is greater than 99 use logic to display <code>99+</code>.</li>
+  </ul> -->
+  <!-- <meter value="2" min="0" max="10">2 out of 10</meter><br>
+  <meter value="0.6">60%</meter>   -->
 
-      <div class="set">
-        <div class="eventType">
-          <label for="eventType">Event Type</label>
-          <select id="eventType" name="eventType">
-            <option value="Activation">Seminar</option>
-            <option value="Activation">Festival</option>
-            <option value="Activation">Exhibitions</option>
-            <option value="Activation">Workshop</option>
-            <option value="Activation">Sports</option>
-            <option value="Activation">Competition</option>
-            <option value="Activation">Charity</option>
-            <option value="Activation">Show</option>
-            <option value="Activation">Party</option>
-            <option value="Activation">Activation</option>
-            <option value="Cultural">Cultural</option>
-          </select>
-        </div>
+  <div class="view" id = "testy">
+  <h1>You have notifications! <br> Press an icon in the sidebar!</h1>
 
-        <div class="eventDate">
-          <label for="eventDate">Event Date</label>
-          <input id="eventDate" type="date"></input>
-        </div>
-      </div>
-
-      <div class="setSummary">
-        <div class="eventSummary">
-          <label for="eventSummary">Event Summary</label>
-          <textarea name="eventSummary" id="eventSummary" placeholder="Write a short description about the event" cols="30" rows="2"></textarea>
-        </div>      
-      </div>
-
-    <div class="departments">
-    <label for="selectDepartments">Select Departments</label>
-    <br>
-    <div class="checkbox-container">
-      <input id="selectDepartmentsFacilities" name="selectDepartments" type="checkbox" value="0-25"></input>
-        <label for="selectDepartmentsFacilities">Facilities</label>
-      <input id="selectDepartmentsONM" name="selectDepartments" type="checkbox" value="25-50"></input>
-        <label for="selectDepartmentsONM">ONM</label>
-      <input id="selectDepartmentsMPR" name="selectDepartments" type="checkbox" value="50-100"></input>
-        <label for="selectDepartmentsMPR">MPR</label>
-      <input id="selectDepartmentsSecurity" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsSecurity">Security</label>
-      <input id="selectDepartmentsCITS" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsCITS">CITS</label>
-      <input id="selectDepartmentsFinance" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsFinance">Finance</label>
-      <input id="selectDepartmentsCGPAR" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsCGPAR">CGPAR</label>
-      <input id="selectDepartmentsAdministration" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsAdministration">Administration</label>
-      <input id="selectDepartmentsCouncil" name="selectDepartments" type="checkbox" value="100+"></input>
-        <label for="selectDepartmentsCouncil">Council Affairs</label>
-    </div>
   </div>
 
 
-    <!-- <div class="drop-container">
-        <label for="images" >
-        <span class="drop-title">Drop files here</span>
-        <br>
-        &emsp; &emsp; &emsp; or
-        <input type="file" id="images" accept="image/*" required>
-        </label>
-    </div> -->
+  <div class="view hide" id = "clubNotifications">
+    <h1>Club Notifications</h1>
+    <div class=" p-3">
 
-<div class="dropContainer">
-  <form class="form">
-    <div class="file-upload-wrapper" data-text="Select your file or drag it here">
-      <input name="file-upload-field" type="file" class="file-upload-field" value="">
+      <div class="m-2 card-section">
+        <a href="#" class="card text-white bg-info m-auto w-90">
+          <div class="card-body d-flex justify-content-between">
+            <div class="p-2 pt-5 border-right border-2" style="width: 30%">
+                <h3 class=text-center>12<h3>
+                        <p class=text-center>Aug</p>
+            </div>
+            <div class="p-2" style="width: 60%">
+                <h3 class="">Musical Flashmob</h3>
+                <h6 class=" text-truncate">IUB Music Club</h6>
+
+                <p class=" text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic
+                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                    desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>10:00AM-5:00PM</p>
+            </div>
+            <div class="p-5" style="width: 10%"><i class="bi bi-caret-right-fill"></i></div>
+          </div>
+        </a>
+      </div>
+      <div class="m-2 card-section">
+        <a href="#" class="card text-white bg-info m-auto w-90">
+          <div class="card-body d-flex justify-content-between">
+            <div class="p-2 pt-5 border-right border-2" style="width: 30%">
+                <h3 class=text-center>5<h3>
+                        <p class=text-center>Jan</p>
+            </div>
+            <div class="p-2" style="width: 60%">
+                <h3 class="">Musical Flashmob</h3>
+                <p class=" text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic
+                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                    desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>10:00AM-5:00PM</p>
+            </div>
+            <div class="p-5" style="width: 10%"><i class="bi bi-caret-right-fill"></i></div>
+          </div>
+        </a>
+      </div>
+
+      <div class="m-2 card-section">
+        <a href="#" class="card text-white bg-info m-auto w-90">
+          <div class="card-body d-flex justify-content-between">
+            <div class="p-2 pt-5 border-right border-2" style="width: 30%">
+                <h3 class=text-center>26<h3>
+                        <p class=text-center>Feb</p>
+            </div>
+            <div class="p-2" style="width: 60%">
+                <h3 class="">Event Name</h3>
+                <p class=" text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic
+                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                    desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>10:00AM-5:00PM</p>
+            </div>
+            <div class="p-5" style="width: 10%"><i class="bi bi-caret-right-fill"></i></div>
+          </div>
+        </a>
+      </div>
+
+
+
+
     </div>
-  </form>
-</div>
+
+  </div>
+
+  <div class="view hide" id = "messageNotification">
+    <h1>Message Notifications</h1>
+    <div class=" p-3">
+
+      <div class="m-2 card-section">
+        <a href="#" class="card text-white bg-info m-auto w-90">
+          <div class="card-body d-flex justify-content-between">
+            <div class="p-2 pt-5 border-right border-2" style="width: 30%">
+                <h3 class=text-center>12<h3>
+                        <p class=text-center>Aug</p>
+            </div>
+            <div class="p-2" style="width: 60%">
+                <h3 class="">DOSA</h3>
+                <h6 class=" text-truncate">Event approval</h6>
+
+                <p class=" text-truncate">We are requesting you change your requirement and apply again.</p>
+                <!-- <p>10:00AM-5:00PM</p> -->
+            </div>
+            <div class="p-5" style="width: 10%"><i class="bi bi-caret-right-fill"></i></div>
+          </div>
+        </a>
+      </div>
 
 
-    
-    <button id="next" class="submit-button mx-auto m-3">Submit</button>
-   
-</div>
-</div>
-</div>
+    </div>
+
+  </div>
+
+  <div class="view hide" id = "approvalProgressNotification">
+    <h1>Approval Progress Notifications</h1>
+    <div class=" p-3">
+
+      <div class="m-2 card-section">
+        <a href="/approval-progress" class="card text-white bg-info m-auto w-90">
+          <div class="card-body d-flex justify-content-between">
+            <div class="p-2 pt-5 border-right border-2" style="width: 30%">
+                <h3 class=text-center>12<h3>
+                        <p class=text-center>Aug</p>
+            </div>
+            <div class="p-2" style="width: 60%">
+                <h3 class="">Application for pahela baishakh concert</h3>
+                <h6 class=" text-truncate">IUB Music Club</h6>
+
+                <p class=" text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic
+                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                    desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>10:00AM-5:00PM</p>
+            </div>
+            <div class="p-5" style="width: 10%"><i class="bi bi-caret-right-fill"></i></div>
+          </div>
+        </a>
+      </div>
+      <div class="m-2 card-section">
+        <a href="#" class="card text-white bg-info m-auto w-90">
+          <div class="card-body d-flex justify-content-between">
+            <div class="p-2 pt-5 border-right border-2" style="width: 30%">
+                <h3 class=text-center>5<h3>
+                        <p class=text-center>Jan</p>
+            </div>
+            <div class="p-2" style="width: 60%">
+                <h3 class="">Musical Flashmob</h3>
+                <p class=" text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic
+                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                    desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>10:00AM-5:00PM</p>
+            </div>
+            <div class="p-5" style="width: 10%"><i class="bi bi-caret-right-fill"></i></div>
+          </div>
+        </a>
+      </div>
 
 
 
 
-{{-- footer --}}
-     @include('menu.footer')
-      {{-- footer end--}}
 
-  
+    </div>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
+  </div>
 
-  <script src="js/main.js"></script>
 
-<script>
+  <div class="view hide" id = "followedClubs">
+    <h1>Followed Clubs</h1>
+    <div class=" p-3">
 
-  $("form").on("change", ".file-upload-field", function(){ 
-    $(this).parent(".file-upload-wrapper").attr("data-text",         $(this).val().replace(/.*(\/|\\)/, '') );
+      <!-- <div class="m-2 card-section">
+        <a href="event-post" class="card text-white bg-info m-auto w-90">
+          <div class="card-body d-flex justify-content-between">
+            <div class="p-2 pt-5 border-right border-2" style="width: 30%">
+                <h3 class=text-center>12<h3>
+                        <p class=text-center>Aug</p>
+            </div>
+            <div class="p-2" style="width: 60%">
+                <h3 class="">Application for pahela baishakh concert</h3>
+                <h6 class=" text-truncate">IUB Music Club</h6>
+
+                <p class=" text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting
+                    industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen
+                    book. It has survived not only five centuries, but also the leap into electronic
+                    typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                    release of Letraset sheets containing Lorem Ipsum passages, and more recently with
+                    desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p>10:00AM-5:00PM</p>
+            </div>
+            <div class="p-5" style="width: 10%"><i class="bi bi-caret-right-fill"></i></div>
+          </div>
+        </a>
+      </div> -->
+      
+
+
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+</main>
+
+
+
+<!-- <footer>
+@include('menu.footer')
+</footer> -->
+
+
+
+
+
+
+
+
+
+<!-- `````````````````````
+clickable sidebar to show differenet views
+ -->
+
+<!-- <script>
+  $(document).ready(function (e) {
+
+function showView(viewName) {
+    $('.view').hide();
+$('#' + viewName).show();
+}
+
+$('[data-launch-view]').click(function (e) {
+    e.preventDefault();
+    var viewName = $(this).attr('data-launch-view');
+    showView(viewName);
 });
 
+});
+</script> -->
+
+
+<script>
+ $(document).ready(function () {
+  function showView(viewName) {
+    $('.view').not('#' + viewName).hide();
+    $('#' + viewName).fadeIn(300);
+  }
+
+  $('[data-launch-view]').click(function (e) {
+    e.preventDefault();
+    var viewName = $(this).attr('data-launch-view');
+    showView(viewName);
+  });
+});
 </script>
 
-    
+
+
+
+
+
+
 </body>
 
 </html>

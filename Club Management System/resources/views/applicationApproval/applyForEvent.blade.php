@@ -9,9 +9,9 @@
     <title>CMS</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/applyForEvent.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/applyForEvent.css') }}"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="{{ asset('css/privateTest.css') }}"> -->
+    <link rel="stylesheet" href="{{ asset('css/privateTest.css') }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -71,8 +71,7 @@
 
       <div class="setSummary">
         <div class="eventSummary">
-          <label for="eventSummary">Event Name</label>
-          <!-- <input id="eventSummary" placeholder="Write a short description about the event" type="text"></input> -->
+          <label for="eventSummary">Event Summary</label>
           <textarea name="eventSummary" id="eventSummary" placeholder="Write a short description about the event" cols="30" rows="2"></textarea>
         </div>      
       </div>
@@ -103,14 +102,23 @@
   </div>
 
 
-    <div class="drop-container">
+    <!-- <div class="drop-container">
         <label for="images" >
         <span class="drop-title">Drop files here</span>
         <br>
         &emsp; &emsp; &emsp; or
         <input type="file" id="images" accept="image/*" required>
         </label>
+    </div> -->
+
+<div class="dropContainer">
+  <form class="form">
+    <div class="file-upload-wrapper" data-text="Select your file or drag it here">
+      <input name="file-upload-field" type="file" class="file-upload-field" value="">
     </div>
+  </form>
+</div>
+
 
     
     <button id="next" class="submit-button mx-auto m-3">Submit</button>
@@ -137,6 +145,14 @@
   <script src="js/aos.js"></script>
 
   <script src="js/main.js"></script>
+
+<script>
+
+  $("form").on("change", ".file-upload-field", function(){ 
+    $(this).parent(".file-upload-wrapper").attr("data-text",         $(this).val().replace(/.*(\/|\\)/, '') );
+});
+
+</script>
 
     
 </body>
