@@ -28,6 +28,8 @@ Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
 Route::get('/login', [globalController::class, 'load_login'])->name("login");
 Route::get('/signup', [globalController::class, 'load_signup'])->name("signup");
 Route::get('/forgot-password', [globalController::class, 'load_forgotPassword'])->name("forgotPassword");
+Route::get('/club-admin', [globalController::class, 'load_clubAdmin'])->name("clubAdmin");
+
 
 
 
