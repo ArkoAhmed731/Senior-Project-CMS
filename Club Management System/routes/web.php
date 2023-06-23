@@ -17,7 +17,15 @@ use App\Http\Controllers\globalController;
 |
 */
 
-
+//Database connection check
+Route::get('/connection', function () {
+    try {
+        DB::connection()->getPdo();
+        return 'connected successfully';
+    } catch (\Exception $ex) {
+        dd($ex->getMessage());
+    }
+});
 
 //forms 
 Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
