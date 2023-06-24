@@ -22,36 +22,52 @@
         {{-- nav bar end --}}
 
         <h4 class="text-center m-4">Edit Club</h4>
+        <button type="button" class="btn btn-info mx-auto d-block">Add Member</button>
+
 
         <div class="table-responsive{-sm|-md|-lg|-xl}  p-5">
 
         <table class="table table-hover table-bordered">
             <thead class="thead-dark">
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
+                  <th scope="col">ID</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Gender</th>
+                  <th scope="col">Contact number</th>
+                  <th scope="col">Position</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>1820713</td>
+                  <td>Azwad</td>
+                  <td>azwad@gmail.com</td>
+                  <td>01938123123</td>
+
+                  <td>Member</td>
+
                 </tr>
                 <tr>
                   <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
+                  <td>1830723</td>
+                  <td>Rahat</td>
+                  <td>rahat@gmail.com</td>
+                  <td>0172123123</td>
+
+                  <td>Vice President</td>
+
                 </tr>
                 <tr>
                   <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
+                  <td>2020713</td>
+                  <td>Arko</td>
+                  <td>arko@gmail.com</td>
+                  <td>01548123123</td>
+
+                  <td>President</td>
+
                 </tr>
               </tbody>
           </table>
@@ -61,11 +77,12 @@
 
 
 
-          
+
 
     </div>
 
-    <input class="btn btn-info mx-auto d-block m-3" type="submit">
+    <button type="button" class="btn btn-info mx-auto d-block m-3">Save</button>
+
 
 
 
