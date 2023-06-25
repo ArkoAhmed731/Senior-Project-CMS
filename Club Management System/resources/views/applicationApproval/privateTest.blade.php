@@ -77,7 +77,7 @@
       <span class="glyphicon glyphicon-list-alt" data-launch-view="followedClubs"></span>
       </a>
     </li>    
-    <li>
+    <!-- <li>
       <a href="#">
       <span class="glyphicon glyphicon-calendar"><mark class="green wobble">99+</mark></span>
       </a>
@@ -86,19 +86,11 @@
       <a href="#">
       <span class="glyphicon glyphicon-random"><mark class="blue tada">13</mark></span>
       </a>
-      </li>        
+      </li>         -->
     </ul> 
   </nav>
 
 <main>
-  <!-- <h1>Press an icon in the sidebar!</h1> -->
-  <!-- <p>Move cursor over icon on the left to animate marks</p>
-  <ul>
-    <li>To change mark color use following class's: <code>.green, .blue</code></li>
-    <li>Marks are prepare to handle with two-digit numbers from <code>0 to 99</code>. If your number is greater than 99 use logic to display <code>99+</code>.</li>
-  </ul> -->
-  <!-- <meter value="2" min="0" max="10">2 out of 10</meter><br>
-  <meter value="0.6">60%</meter>   -->
 
   <div class="view" id = "testy">
   <h1>You have notifications! <br> Press an icon in the sidebar!</h1>
