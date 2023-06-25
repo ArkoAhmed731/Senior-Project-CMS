@@ -165,7 +165,7 @@
 
             <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">Create Post for XYZ Club</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">Create Post for a Club</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
@@ -178,7 +178,7 @@
 
             <a href="/post-approval" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex d-flex justify-content-between">
-                    <h5 class="card-title">View Event Application</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">View Applications</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 

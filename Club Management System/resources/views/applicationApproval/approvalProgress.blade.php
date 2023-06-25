@@ -55,7 +55,7 @@
 
 
   <div id = block>
-        <h2 class="text-center">Approval Progress</h2>
+        <h2 class="text-center">Application Approval Progress</h2>
 
       
 
