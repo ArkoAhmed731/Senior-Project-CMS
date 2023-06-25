@@ -153,11 +153,11 @@
         {{-- cards end --}}
 
         {{-- admin --}}
-        <div class="admin-panel bg-danger">
+        <div class="admin-panel shadow-lg p-3 mb-2 bg-white rounded">
             <h4 class="text-center">Club Admin</h4>
 
             <div class="dropdown text-center">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button class="btn btn-secondary dropdown-toggle p-3 px-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Select Club
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -193,7 +193,7 @@
 
         </div>
 
-        <div class="admin-panel bg-success">
+        <div class="admin-panel shadow-lg p-3 mb-2 bg-white rounded">
             <h4 class="text-center">Applications</h4>
             <a href="/post-approval" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex d-flex justify-content-between">
@@ -205,7 +205,7 @@
 
         </div>
 
-        <div class="admin-panel bg-success">
+        <div class="admin-panel shadow-lg p-3 mb-2 bg-white rounded">
             <h4 class="text-center">Super Admin</h4>
             <a href="/create-account" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex d-flex justify-content-between">
