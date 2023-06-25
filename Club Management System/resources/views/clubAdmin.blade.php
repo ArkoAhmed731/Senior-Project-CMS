@@ -21,7 +21,7 @@
         @include('menu.navBar')
         {{-- nav bar end --}}
 
-        <h4 class="text-center m-4">Edit Club</h4>
+        <h4 class="text-center m-4">Edit Club Members</h4>
         <button type="button" class="btn btn-info mx-auto d-block">Add Member</button>
 
 

@@ -59,6 +59,10 @@
             </div>
 
             <div class="buttonsA">
+
+                {{-- Edit button --}}
+                <a class="btn btn-info" href="approval-progress" role="button">Check Status</a>
+
                 <button class="approve-btn">Approve</button>
                 <button class="disapprove-btn">Decline</button>
             </div>

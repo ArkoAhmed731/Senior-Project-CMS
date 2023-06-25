@@ -48,26 +48,17 @@
                 <input id="eventName" placeholder="Description" type="text" class="p-3 mb-3">
 
                 <div class="set">
+                    
                     <div class="eventType">
 
-                        <label for="eventType">Event Type</label>
+                        <label for="eventType">Post Type</label>
                         <select id="eventType" name="eventType">
-                            <option value="Activation">Seminar</option>
-                            <option value="Activation">Festival</option>
-                            <option value="Activation">Exhibitions</option>
+                            <option value="Activation">Only for Club Members</option>
+                            <option value="Activation">Recruitment</option>
+                            <option value="Activation">Event</option>
                             <option value="Activation">Workshop</option>
-                            <option value="Activation">Sports</option>
-                            <option value="Activation">Competition</option>
-                            <option value="Activation">Charity</option>
-                            <option value="Activation">Show</option>
-                            <option value="Activation">Party</option>
-
-
-
-
-
-                            <option value="Activation">Activation</option>
-                            <option value="Cultural">Cultural</option>
+                            <option value="Activation">Seminar</option>
+                           
                         </select>
                     </div>
 
