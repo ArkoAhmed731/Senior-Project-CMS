@@ -2,29 +2,14 @@
 
 All notable changes to `ignition` will be documented in this file
 
-## 1.8.1 - 2023-06-06
-
-- Bump ignition-ui to 4.5.0, changes:
-- Add job section
-- Add command section
-
-### What's Changed
-
-- Bump dependabot/fetch-metadata from 1.4.0 to 1.5.1 by @dependabot in https://github.com/spatie/ignition/pull/293
-
-**Full Changelog**: https://github.com/spatie/ignition/compare/1.8.0...1.8.1
-
 ## 1.8.0 - 2023-05-25
 
 ### What's Changed
 
 - Bump Ignition-UI to 4.4.0 which includes following changes:
 - - Add support for custom context
-- 
 - - Add support for exception context
-- 
 - - Show SQL bindings inline in debug section
-- 
 - 
 - Add support for custom context, exception context (and query bindings) by @rubenvanassche in https://github.com/spatie/ignition/pull/286
 - Add PHPStorm via IDE Remote Control editor link by @raveren in https://github.com/spatie/ignition/pull/262
@@ -52,13 +37,10 @@ All notable changes to `ignition` will be documented in this file
 - - Add indicator for AI-generated solutions
 - 
 - 
-- 
 - - Add support for rendering markdown in solutions
 - 
 - 
-- 
 - - Fix vendor frame grouping on Windows
-- 
 - 
 - 
 - 
@@ -146,7 +128,6 @@ All notable changes to `ignition` will be documented in this file
 - 
 - 
 - 
-- 
 - JS bundle is no longer compressed to make debugging easier
 
 **Full Changelog**: https://github.com/spatie/ignition/compare/1.3.0...1.3.1
@@ -157,7 +138,6 @@ All notable changes to `ignition` will be documented in this file
 
 - Use Ignition UI v4 by @AlexVanderbist in https://github.com/spatie/ignition/pull/129
 - - Bump Ignition UI version to 4.0.1
-- 
 - 
 - 
 - 
@@ -247,19 +227,6 @@ All notable changes to `ignition` will be documented in this file
 - 
 - 
 - 
-- - 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 - - - Fixed selecting exceptions without accidentally collapsing the error card
 - - 
 - 
@@ -327,19 +294,6 @@ All notable changes to `ignition` will be documented in this file
 - 
 - 
 - - 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- - 
-- 
 - 
 - 
 - 
@@ -441,20 +395,6 @@ All notable changes to `ignition` will be documented in this file
 - 
 - 
 - 
-- 
-- - 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
 - - Refactor error occurrence context items types
 - 
 - 
@@ -467,9 +407,7 @@ All notable changes to `ignition` will be documented in this file
 - 
 - 
 - 
-- 
 - - Log error to console when sharing to Flare goes wrong
-- 
 - 
 - 
 - 

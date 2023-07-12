@@ -38,6 +38,10 @@ class FeaturesTest extends AbstractTestCase
 
     public function testAnalysesWithoutErrors(): void
     {
+        if (version_compare(PHP_VERSION, '8.3.0-dev', '>=')) {
+            $this->markTestSkipped('Memory allocation failure to be fixed.');
+        }
+
         $this->assertStringContainsString(
             '[OK] No errors',
             $this->analyze(__DIR__.'/project.neon')
@@ -46,6 +50,10 @@ class FeaturesTest extends AbstractTestCase
 
     public function testAnalysesWithAnError(): void
     {
+        if (version_compare(PHP_VERSION, '8.3.0-dev', '>=')) {
+            $this->markTestSkipped('Memory allocation failure to be fixed.');
+        }
+
         $this->assertStringContainsString(
             '22     Static call to instance method Carbon\Carbon::foo().',
             $this->analyze(__DIR__.'/bad-project.neon')

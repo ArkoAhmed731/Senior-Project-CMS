@@ -1309,9 +1309,6 @@ class RequestTest extends TestCase
 
         $req = new Request([], ['foo' => 'bar'], [], [], [], [], json_encode(['baz' => 'qux']));
         $this->assertSame(['foo' => 'bar'], $req->getPayload()->all());
-
-        $req = new Request([], [], [], [], [], [], '');
-        $this->assertSame([], $req->getPayload()->all());
     }
 
     /**

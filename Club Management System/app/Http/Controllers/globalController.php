@@ -123,4 +123,9 @@ class globalController extends Controller
     {
         return view('myClubs/viewProfile');
     }
+
+    public function load_notification()
+    {
+        return view('notification');
+    }
 }

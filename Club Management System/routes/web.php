@@ -61,7 +61,7 @@ Route::get('/view-post', [globalController::class, 'load_viewPost'])->name("view
 Route::get('/test', [globalController::class, 'load_test'])->name("test");
 Route::get('/create-post', [globalController::class, 'load_createPost'])->name("createPost");
 
-
+Route::get('/notification', [globalController::class, 'load_notification'])->name("notification");
 
 
 

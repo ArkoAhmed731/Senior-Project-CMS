@@ -106,9 +106,9 @@
             <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
 
 
-                <i class="bi bi-book-half card-icon-size text-center mb-2"></i>
+                <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
 
-                <h6 class="card-title text-center">Workshops</h6>
+                <h6 class="card-title text-center">Extra</h6>
 
 
 
@@ -117,9 +117,9 @@
             <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
 
 
-                <i class="bi bi-lightbulb-fill card-icon-size text-center mb-2"></i>
+                <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
 
-                <h6 class="card-title text-center">Seminars</h6>
+                <h6 class="card-title text-center">Extra</h6>
 
 
 
@@ -153,25 +153,9 @@
         {{-- cards end --}}
 
         {{-- admin --}}
-        <div class="admin-panel shadow-lg p-3 mb-2 bg-white rounded">
-            <h4 class="text-center">Club Admin</h4>
+        <div class="admin-panel">
+            <h4 class="text-center">Admin Panel</h4>
 
-            <div class="dropdown text-center">
-                <button class="btn btn-secondary dropdown-toggle p-3 px-5" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Select Club
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">IUB Debate Club</a>
-                  <a class="dropdown-item" href="#">IUB Music Club</a>
-                  <a class="dropdown-item" href="#">IUB Chess Club</a>
-                </div>
-              </div>
-
-            <a href="/club-admin" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
-                <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">Edit Club Members</h5><i class="bi bi-caret-right-fill"></i>
-                </div>
-            </a> 
 
             <a href="/apply-for-event" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
@@ -181,43 +165,23 @@
 
             <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">Create Post</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">Create Post for XYZ Club</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
 
-            
+            <a href="approval-progress" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Application Progress</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
 
-            
-
-
-        </div>
-
-        <div class="admin-panel shadow-lg p-3 mb-2 bg-white rounded">
-            <h4 class="text-center">Applications</h4>
             <a href="/post-approval" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex d-flex justify-content-between">
-                    <h5 class="card-title">View Applications</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">View Event Application</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
-            
-        
 
-        </div>
-
-        <div class="admin-panel shadow-lg p-3 mb-2 bg-white rounded">
-            <h4 class="text-center">Super Admin</h4>
-            <a href="/create-account" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
-                <div class="card-body d-flex d-flex justify-content-between">
-                    <h5 class="card-title">Create Account</h5><i class="bi bi-caret-right-fill"></i>
-                </div>
-            </a>
-            
-            <a href="/manage-clubs" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
-                <div class="card-body d-flex d-flex justify-content-between">
-                    <h5 class="card-title">Manage Clubs</h5><i class="bi bi-caret-right-fill"></i>
-                </div>
-            </a>
 
         </div>
 

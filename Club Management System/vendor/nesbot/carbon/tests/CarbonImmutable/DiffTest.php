@@ -307,19 +307,19 @@ class DiffTest extends AbstractTestCase
     public function testDiffInWeekdaysPositive()
     {
         $dt = Carbon::createFromDate(2000, 1, 1);
-        $this->assertSame(21, $dt->diffInWeekdays($dt->copy()->addMonth()));
+        $this->assertSame(21, $dt->diffInWeekdays($dt->copy()->endOfMonth()));
     }
 
     public function testDiffInWeekdaysNegativeNoSign()
     {
         $dt = Carbon::createFromDate(2000, 1, 31);
-        $this->assertSame(20, $dt->diffInWeekdays($dt->copy()->startOfMonth()));
+        $this->assertSame(21, $dt->diffInWeekdays($dt->copy()->startOfMonth()));
     }
 
     public function testDiffInWeekdaysNegativeWithSign()
     {
         $dt = Carbon::createFromDate(2000, 1, 31);
-        $this->assertSame(-20, $dt->diffInWeekdays($dt->copy()->startOfMonth(), false));
+        $this->assertSame(-21, $dt->diffInWeekdays($dt->copy()->startOfMonth(), false));
     }
 
     public function testDiffInWeekendDaysPositive()

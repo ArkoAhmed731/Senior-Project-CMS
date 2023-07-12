@@ -60,7 +60,7 @@
       
 
         <div id = applicationDiv>
-            Application IDss: <var>applicationId</var>
+            Application IDsssss: <var>applicationId</var>
             <br>
             Application Name: <var>applicationName</var>
             <br>

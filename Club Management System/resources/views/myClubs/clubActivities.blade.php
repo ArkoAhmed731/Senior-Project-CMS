@@ -30,7 +30,7 @@
 
         {{-- nav bar --}}
         @include('menu.navBar')
-        {{-- nav bar end --}}
+        {{-- nav bar end--}}
 
 
         {{-- cards --}}
@@ -69,24 +69,23 @@
 
 
         {{-- cards end --}}
-    </div>
 
-    {{-- footer --}}
+        {{-- footer --}}
 
-    @include('menu.footer')
+        @include('menu.footer')
 
-    {{-- footer end --}}
-
+        {{-- footer end--}}
 
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script src="js/main.js"></script>
+
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery-ui.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/aos.js"></script>
+        <script src="js/main.js"></script>
 
 </body>
 

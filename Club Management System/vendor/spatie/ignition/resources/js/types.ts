@@ -1,4 +1,4 @@
-import { ErrorSolution, IgnitionConfig, ViewContext, LogLevel, ErrorFrameArgument } from '@flareapp/ignition-ui';
+import { ErrorSolution, IgnitionConfig, ViewContext, LogLevel } from '@flareapp/ignition-ui';
 
 export type IgniteData = {
     report: IgnitionErrorOccurrence;
@@ -12,7 +12,6 @@ export type IgniteData = {
     appEnv: string;
     appDebug: boolean;
 };
-
 
 // The data the PHP Ignition package passes to the client. Needs to be transformed to ErrorOccurrence to be rendered in Ignition.
 export type IgnitionErrorOccurrence = {
@@ -38,7 +37,6 @@ export type IgnitionErrorOccurrence = {
         code_snippet: Record<number, string>;
         file: string;
         application_frame: boolean;
-        arguments: Array<ErrorFrameArgument>|null;
     }>;
     context: {
         request: {
