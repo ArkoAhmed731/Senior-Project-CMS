@@ -30,6 +30,11 @@ class globalController extends Controller
         return view('login/forgotPassword');
     }
 
+    public function load_clubAdmin()
+    {
+        return view('clubAdmin');
+    }
+
     public function load_myClubs()
     {
 
@@ -117,5 +122,10 @@ class globalController extends Controller
     public function load_viewProfile()
     {
         return view('myClubs/viewProfile');
+    }
+
+    public function load_notification()
+    {
+        return view('notification');
     }
 }

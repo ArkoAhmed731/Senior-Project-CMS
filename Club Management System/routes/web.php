@@ -17,7 +17,15 @@ use App\Http\Controllers\globalController;
 |
 */
 
-
+//Database connection check
+Route::get('/connection', function () {
+    try {
+        DB::connection()->getPdo();
+        return 'connected successfully';
+    } catch (\Exception $ex) {
+        dd($ex->getMessage());
+    }
+});
 
 //forms 
 Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
@@ -28,6 +36,8 @@ Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
 Route::get('/login', [globalController::class, 'load_login'])->name("login");
 Route::get('/signup', [globalController::class, 'load_signup'])->name("signup");
 Route::get('/forgot-password', [globalController::class, 'load_forgotPassword'])->name("forgotPassword");
+Route::get('/club-admin', [globalController::class, 'load_clubAdmin'])->name("clubAdmin");
+
 
 
 
@@ -51,7 +61,7 @@ Route::get('/view-post', [globalController::class, 'load_viewPost'])->name("view
 Route::get('/test', [globalController::class, 'load_test'])->name("test");
 Route::get('/create-post', [globalController::class, 'load_createPost'])->name("createPost");
 
-
+Route::get('/notification', [globalController::class, 'load_notification'])->name("notification");
 
 
 
