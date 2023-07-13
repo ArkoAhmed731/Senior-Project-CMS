@@ -8,9 +8,11 @@ $_SERVER['argv'][] = '--process-isolation';
 $_SERVER['argv'][] = __DIR__ . '/../../_files/NothingTest.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
 
 R                                                                   1 / 1 (100%)
 
@@ -23,5 +25,5 @@ This test did not perform any assertions
 
 %s:%d
 
-OK, but incomplete, skipped, or risky tests!
+OK, but there are issues!
 Tests: 1, Assertions: 0, Risky: 1.

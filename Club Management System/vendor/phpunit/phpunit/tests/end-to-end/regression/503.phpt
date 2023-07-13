@@ -7,9 +7,11 @@ $_SERVER['argv'][] = '--no-configuration';
 $_SERVER['argv'][] = __DIR__ . '/503/Issue503Test.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
 
 F                                                                   1 / 1 (100%)
 
@@ -17,7 +19,7 @@ Time: %s, Memory: %s
 
 There was 1 failure:
 
-1) Issue503Test::testCompareDifferentLineEndings
+1) PHPUnit\TestFixture\Issue503Test::testCompareDifferentLineEndings
 Failed asserting that two strings are identical.
 --- Expected
 +++ Actual

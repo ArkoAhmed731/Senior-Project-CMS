@@ -9,9 +9,11 @@ $_SERVER['argv'][] = '--colors=always';
 
 require_once __DIR__ . '/../../bootstrap.php';
 
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
 
 ...                                                                 3 / 3 (100%)
 

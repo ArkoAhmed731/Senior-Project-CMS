@@ -9,20 +9,18 @@ $_SERVER['argv'][] = 'trueOnly';
 $_SERVER['argv'][] = __DIR__ . '/498/Issue498Test.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-E                                                                   1 / 1 (100%)
+Runtime: %s
 
-Time: %s, Memory: %s
+There was 1 PHPUnit error:
 
-There was 1 error:
+1) PHPUnit\TestFixture\Issue498Test::shouldBeFalse
+The data provider specified for PHPUnit\TestFixture\Issue498Test::shouldBeFalse is invalid
+Can't create the data
 
-1) Error
-The data provider specified for Issue498Test::shouldBeFalse is invalid.
-Exception: Can't create the data
-%sIssue498Test.php:%d
+%s:%d
 
-ERRORS!
-Tests: 1, Assertions: 0, Errors: 1.
+No tests executed!

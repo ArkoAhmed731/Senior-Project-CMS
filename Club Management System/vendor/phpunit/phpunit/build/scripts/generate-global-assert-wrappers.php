@@ -27,7 +27,6 @@ use DOMElement;
 use PHPUnit\Framework\Constraint\Constraint;
 use PHPUnit\Framework\ExpectationFailedException;
 use PHPUnit\Framework\MockObject\Rule\AnyInvokedCount as AnyInvokedCountMatcher;
-use PHPUnit\Framework\MockObject\Rule\InvokedAtIndex as InvokedAtIndexMatcher;
 use PHPUnit\Framework\MockObject\Rule\InvokedAtLeastCount as InvokedAtLeastCountMatcher;
 use PHPUnit\Framework\MockObject\Rule\InvokedAtLeastOnce as InvokedAtLeastOnceMatcher;
 use PHPUnit\Framework\MockObject\Rule\InvokedAtMostCount as InvokedAtMostCountMatcher;
@@ -39,6 +38,7 @@ use PHPUnit\Framework\MockObject\Stub\ReturnCallback as ReturnCallbackStub;
 use PHPUnit\Framework\MockObject\Stub\ReturnSelf as ReturnSelfStub;
 use PHPUnit\Framework\MockObject\Stub\ReturnStub;
 use PHPUnit\Framework\MockObject\Stub\ReturnValueMap as ReturnValueMapStub;
+use PHPUnit\Util\Xml\XmlException;
 ';
 
 $usedClasses = [];
@@ -48,11 +48,15 @@ $class = new ReflectionClass(Assert::class);
 $constraintMethods = '';
 
 foreach ($class->getMethods() as $method) {
-    if (!$method->hasReturnType() || $method->getReturnType()->isBuiltin()) {
+    $returnType = $method->getReturnType();
+
+    assert($returnType instanceof ReflectionNamedType || $returnType instanceof ReflectionUnionType);
+
+    if ($returnType instanceof ReflectionNamedType && $returnType->isBuiltin()) {
         continue;
     }
 
-    $returnType = new ReflectionClass($method->getReturnType()->getName());
+    $returnType = new ReflectionClass($returnType->getName());
 
     if (!$returnType->isSubclassOf(Constraint::class)) {
         continue;
@@ -62,7 +66,7 @@ foreach ($class->getMethods() as $method) {
 
     $constraintMethods .= \sprintf(
         "if (!function_exists('PHPUnit\Framework\\" . $method->getName() . "')) {\n%s\n{\n    return Assert::%s(...\\func_get_args());\n}\n}\n\n",
-        \str_replace('public static ', '', \trim($lines[$method->getStartLine() - 1])),
+        \str_replace('final public static ', '', \trim($lines[$method->getStartLine() - 1])),
         $method->getName()
     );
 }
@@ -87,10 +91,10 @@ foreach ($class->getMethods() as $method) {
     $docComment = \str_replace(
         ['*/', '     *'],
         ["*\n * @no-named-arguments Parameter names are not covered by the backward compatibility promise for PHPUnit\n * @see Assert::" . $method->getName() . "\n */", ' *'],
-        $method->getDocComment()
+        (string) $method->getDocComment()
     );
 
-    $signature = \str_replace('public static ', '', \trim($lines[$method->getStartLine() - 1]));
+    $signature = \str_replace('final public static ', '', \trim($lines[$method->getStartLine() - 1]));
     $body      = "{\n    Assert::" . $method->getName() . "(...\\func_get_args());\n}";
 
     $buffer .= "if (!function_exists('PHPUnit\Framework\\" . $method->getName() . "')) {\n";
@@ -178,19 +182,8 @@ if (!function_exists('PHPUnit\Framework\atMost')) {
     }
 }
 
-if (!function_exists('PHPUnit\Framework\at')) {
-    /**
-     * Returns a matcher that matches when the method is executed
-     * at the given index.
-     */
-    function at(int $index): InvokedAtIndexMatcher
-    {
-        return new InvokedAtIndexMatcher($index);
-    }
-}
-
 if (!function_exists('PHPUnit\Framework\returnValue')) {
-    function returnValue($value): ReturnStub
+    function returnValue(mixed $value): ReturnStub
     {
         return new ReturnStub($value);
     }
@@ -211,7 +204,7 @@ if (!function_exists('PHPUnit\Framework\returnArgument')) {
 }
 
 if (!function_exists('PHPUnit\Framework\returnCallback')) {
-    function returnCallback($callback): ReturnCallbackStub
+    function returnCallback(callable $callback): ReturnCallbackStub
     {
         return new ReturnCallbackStub($callback);
     }
@@ -242,9 +235,9 @@ if (!function_exists('PHPUnit\Framework\onConsecutiveCalls')) {
      */
     function onConsecutiveCalls(): ConsecutiveCallsStub
     {
-        $args = \func_get_args();
+        $arguments = \func_get_args();
 
-        return new ConsecutiveCallsStub($args);
+        return new ConsecutiveCallsStub($arguments);
     }
 }
 

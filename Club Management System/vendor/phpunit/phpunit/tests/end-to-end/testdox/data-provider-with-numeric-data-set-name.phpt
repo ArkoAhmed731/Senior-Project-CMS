@@ -4,30 +4,23 @@ TestDox: Default output; Data Provider with numeric data set name; No TestDox me
 <?php declare(strict_types=1);
 $_SERVER['argv'][] = '--do-not-cache-result';
 $_SERVER['argv'][] = '--no-configuration';
+$_SERVER['argv'][] = '--no-progress';
 $_SERVER['argv'][] = '--testdox';
 $_SERVER['argv'][] = '--colors=never';
 $_SERVER['argv'][] = __DIR__ . '/_files/DataProviderWithNumericDataSetNameTest.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
 
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-Data Provider With Numeric Data Set Name (PHPUnit\TestFixture\TestDox\DataProviderWithNumericDataSetName)
- ✔ Something that works with data set #0
- ✘ Something that does not work with data set #0
-   │
-   │ Failed asserting that false is true.
-   │
-   │ %s:%d
-   │
+Runtime:       %s
 
 Time: %s, Memory: %s
 
-Summary of non-successful tests:
-
 Data Provider With Numeric Data Set Name (PHPUnit\TestFixture\TestDox\DataProviderWithNumericDataSetName)
+ ✔ Something that works with data set #0
  ✘ Something that does not work with data set #0
    │
    │ Failed asserting that false is true.

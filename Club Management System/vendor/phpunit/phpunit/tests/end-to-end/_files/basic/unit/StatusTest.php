@@ -9,9 +9,9 @@
  */
 namespace PHPUnit\SelfTest\Basic;
 
+use PHPUnit\Framework\Attributes\RequiresPhp;
 use PHPUnit\Framework\TestCase;
-use PHPUnit\Framework\Warning;
-use PHPUnit\TestFixture\AnInterface;
+use PHPUnit\TestFixture\MockObject\AnInterface;
 use RuntimeException;
 
 /**
@@ -54,14 +54,9 @@ class StatusTest extends TestCase
     {
     }
 
-    public function testWarning(): void
-    {
-        throw new Warning;
-    }
-
     public function testSuccessWithMessage(): void
     {
-        $this->assertTrue(true, '"success with custom message"');
+        $this->assertTrue(true, 'success with custom message');
     }
 
     public function testFailureWithMessage(): void
@@ -79,6 +74,11 @@ class StatusTest extends TestCase
         $this->markTestIncomplete('incomplete with custom message');
     }
 
+    #[RequiresPhp('> 9000')]
+    public function testSkippedByMetadata(): void
+    {
+    }
+
     public function testSkippedWithMessage(): void
     {
         $this->markTestSkipped('skipped with custom message');
@@ -87,10 +87,5 @@ class StatusTest extends TestCase
     public function testRiskyWithMessage(): void
     {
         // Custom messages not implemented for risky status
-    }
-
-    public function testWarningWithMessage(): void
-    {
-        throw new Warning('warning with custom message');
     }
 }

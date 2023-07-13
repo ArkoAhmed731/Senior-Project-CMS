@@ -1,10 +1,5 @@
 --TEST--
 https://github.com/sebastianbergmann/phpunit/issues/3967
---SKIPIF--
-<?php declare(strict_types=1);
-if ((new ReflectionMethod(Exception::class, '__clone'))->isFinal()) {
-    print 'skip: PHP >= 8.1 required';
-}
 --FILE--
 <?php declare(strict_types=1);
 interface Bar extends \Throwable
@@ -18,7 +13,7 @@ interface Baz extends Bar
 
 require_once __DIR__ . '/../../../bootstrap.php';
 
-$generator = new \PHPUnit\Framework\MockObject\Generator;
+$generator = new \PHPUnit\Framework\MockObject\Generator\Generator;
 
 $mock = $generator->generate(
     'Baz',
@@ -28,15 +23,16 @@ $mock = $generator->generate(
     true
 );
 
-print $mock->getClassCode();
+print $mock->classCode();
 --EXPECT--
 declare(strict_types=1);
 
-class MockBaz extends Exception implements Baz, PHPUnit\Framework\MockObject\MockObject
+class MockBaz extends Exception implements Baz, PHPUnit\Framework\MockObject\MockObjectInternal
 {
-    use \PHPUnit\Framework\MockObject\Api;
+    use \PHPUnit\Framework\MockObject\StubApi;
+    use \PHPUnit\Framework\MockObject\MockObjectApi;
     use \PHPUnit\Framework\MockObject\Method;
-    use \PHPUnit\Framework\MockObject\UnmockedCloneMethodWithVoidReturnType;
+    use \PHPUnit\Framework\MockObject\UnmockedCloneMethod;
 
     public function foo(): string
     {

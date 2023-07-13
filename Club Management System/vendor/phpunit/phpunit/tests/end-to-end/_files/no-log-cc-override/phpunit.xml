@@ -2,7 +2,6 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="../../../../phpunit.xsd"
          bootstrap="NoLogNoCc.php"
-         verbose="false"
          colors="false"
          cacheResult="false">
     <!--
@@ -23,7 +22,5 @@
         <teamcity outputFile="php://stdout"/>
         <testdoxHtml outputFile="php://stdout"/>
         <testdoxText outputFile="php://stdout"/>
-        <testdoxXml outputFile="php://stdout"/>
-        <text outputFile="php://stdout"/>
     </logging>
 </phpunit>

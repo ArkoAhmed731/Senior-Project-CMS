@@ -4,30 +4,23 @@ TestDox: Default output; Test name in snake-case notation; No TestDox metadata
 <?php declare(strict_types=1);
 $_SERVER['argv'][] = '--do-not-cache-result';
 $_SERVER['argv'][] = '--no-configuration';
+$_SERVER['argv'][] = '--no-progress';
 $_SERVER['argv'][] = '--testdox';
 $_SERVER['argv'][] = '--colors=never';
 $_SERVER['argv'][] = __DIR__ . '/_files/SnakeCaseTest.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
 
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-Snake Case (PHPUnit\TestFixture\TestDox\SnakeCase)
- ✔ Something that works
- ✘ Something that does not work
-   │
-   │ Failed asserting that false is true.
-   │
-   │ %sSnakeCaseTest.php:%d
-   │
+Runtime:       %s
 
 Time: %s, Memory: %s
 
-Summary of non-successful tests:
-
 Snake Case (PHPUnit\TestFixture\TestDox\SnakeCase)
+ ✔ Something that works
  ✘ Something that does not work
    │
    │ Failed asserting that false is true.

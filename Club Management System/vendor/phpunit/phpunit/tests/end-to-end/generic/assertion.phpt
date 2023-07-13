@@ -16,9 +16,11 @@ $_SERVER['argv'][] = '--no-configuration';
 $_SERVER['argv'][] = __DIR__ . '/../../_files/AssertionExampleTest.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
 
 F                                                                   1 / 1 (100%)
 
@@ -26,13 +28,11 @@ Time: %s, Memory: %s
 
 There was 1 failure:
 
-1) AssertionExampleTest::testOne
-assert(false) in %sAssertionExample.php:%d
+1) PHPUnit\TestFixture\AssertionExampleTest::testOne
+assert(false)
 
-Caused by
-AssertionError: assert(false) in %sAssertionExample.php:%d
-Stack trace:
-%A
+%s:%i
+%s:%i
 
 FAILURES!
 Tests: 1, Assertions: 1, Failures: 1.

@@ -7,13 +7,15 @@ $_SERVER['argv'][] = '--no-configuration';
 $_SERVER['argv'][] = __DIR__ . '/1374/Issue1374Test.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
 
 S                                                                   1 / 1 (100%)
 
 Time: %s, Memory: %s
 
-OK, but incomplete, skipped, or risky tests!
+OK, but some tests were skipped!
 Tests: 1, Assertions: 0, Skipped: 1.

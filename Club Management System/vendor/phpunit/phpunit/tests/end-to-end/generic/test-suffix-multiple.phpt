@@ -9,17 +9,11 @@ $_SERVER['argv'][] = '.test.php,.my.php';
 $_SERVER['argv'][] = __DIR__ . '/../../_files/';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-Warning:       Abstract test case classes with "Test" suffix are deprecated (PHPUnit\TestFixture\AbstractTest)
-Warning:       Test case class not matching filename is deprecated
-               in %sBankAccountTest.test.php
-               Class name was 'BankAccountWithCustomExtensionTest', expected 'BankAccountTest'
-Warning:       Test case class not matching filename is deprecated
-               in %sConcreteTest.my.php
-               Class name was 'ConcreteWithMyCustomExtensionTest', expected 'ConcreteTest'
+Runtime: %s
 
 .....                                                               5 / 5 (100%)
 

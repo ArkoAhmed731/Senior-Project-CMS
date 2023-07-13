@@ -7,7 +7,7 @@ on:
 name: CI
 
 env:
-  COMPOSER_ROOT_VERSION: "9.6-dev"
+  COMPOSER_ROOT_VERSION: "10.3-dev"
 
 permissions:
   contents: read
@@ -66,7 +66,7 @@ jobs:
 
     env:
       PHP_EXTENSIONS: none, curl, dom, json, libxml, mbstring, openssl, phar, soap, tokenizer, xml, xmlwriter
-      PHP_INI_VALUES: assert.exception=1, zend.assertions=1, error_reporting=-1, log_errors_max_len=0, display_errors=On
+      PHP_INI_VALUES: memory_limit=-1, assert.exception=1, zend.assertions=1, error_reporting=-1, log_errors_max_len=0, display_errors=On
 
     continue-on-error: ${{ matrix.experimental }}
 
@@ -78,9 +78,6 @@ jobs:
           - windows-latest
 
         php-version:
-          - "7.3"
-          - "7.4"
-          - "8.0"
           - "8.1"
           - "8.2"
 
@@ -97,7 +94,7 @@ jobs:
             experimental: true
 
     steps:
-      - name: Configure git to avoid issues with line endings
+      - name: Configure Git to avoid issues with line endings
         if: matrix.os == 'windows-latest'
         run: git config --global core.autocrlf false
 
@@ -140,9 +137,6 @@ jobs:
           - windows-latest
 
         php-version:
-          - "7.3"
-          - "7.4"
-          - "8.0"
           - "8.1"
           - "8.2"
 
@@ -159,7 +153,7 @@ jobs:
             experimental: true
 
     steps:
-      - name: Configure git to avoid issues with line endings
+      - name: Configure Git to avoid issues with line endings
         if: matrix.os == 'windows-latest'
         run: git config --global core.autocrlf false
 
@@ -172,6 +166,7 @@ jobs:
           php-version: ${{ matrix.php-version }}
           extensions: ${{ env.PHP_EXTENSIONS }}
           ini-values: ${{ env.PHP_INI_VALUES }}
+          coverage: pcov
           tools: none
 
       - name: Install dependencies with Composer
@@ -272,12 +267,8 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "7.3"
-          - "7.4"
-          - "8.0"
           - "8.1"
           - "8.2"
-          - "8.3"
 
         coverage:
           - pcov

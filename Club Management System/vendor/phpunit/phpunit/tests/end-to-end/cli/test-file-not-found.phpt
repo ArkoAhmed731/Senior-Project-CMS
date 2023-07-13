@@ -5,8 +5,8 @@ Test incorrect testFile is reported
 --FILE--
 <?php declare(strict_types=1);
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-Cannot open file "nonExistingFile.php".
+Test file "nonExistingFile.php" not found

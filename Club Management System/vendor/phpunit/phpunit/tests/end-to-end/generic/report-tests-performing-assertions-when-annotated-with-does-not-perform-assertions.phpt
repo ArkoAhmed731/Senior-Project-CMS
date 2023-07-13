@@ -7,9 +7,11 @@ $_SERVER['argv'][] = '--no-configuration';
 $_SERVER['argv'][] = __DIR__ . '/../../_files/DoesNotPerformAssertionsButPerformingAssertionsTest.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
 
 R                                                                   1 / 1 (100%)
 
@@ -18,7 +20,9 @@ Time: %s, Memory: %s
 There was 1 risky test:
 
 1) PHPUnit\TestFixture\DoesNotPerformAssertionsButPerformingAssertionsTest::testFalseAndTrueAreStillFine
-This test is annotated with "@doesNotPerformAssertions" but performed 2 assertions
+This test is not expected to perform assertions but performed 2 assertions
 
-OK, but incomplete, skipped, or risky tests!
+%s:%d
+
+OK, but there are issues!
 Tests: 1, Assertions: 2, Risky: 1.

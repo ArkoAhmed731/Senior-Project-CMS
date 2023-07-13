@@ -7,12 +7,15 @@ $_SERVER['argv'][] = '-c';
 $_SERVER['argv'][] = __DIR__ . '/../../_files/DataProviderIssue2859/phpunit.xml';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-.                                                                   1 / 1 (100%)
+Runtime: %s
+Configuration: %s
+
+..                                                                  2 / 2 (100%)
 
 Time: %s, Memory: %s
 
-OK (1 test, 1 assertion)
+OK (2 tests, 2 assertions)

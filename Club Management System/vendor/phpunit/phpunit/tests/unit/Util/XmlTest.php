@@ -13,19 +13,29 @@ use function chr;
 use function ord;
 use function sprintf;
 use DOMDocument;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Small;
 use PHPUnit\Framework\TestCase;
+use PHPUnit\TextUI\XmlConfiguration\ValidationResult;
 
-/**
- * @small
- *
- * @covers \PHPUnit\Util\Xml
- * @covers \PHPUnit\Util\Xml\ValidationResult
- */
+#[CoversClass(Xml::class)]
+#[CoversClass(ValidationResult::class)]
+#[Small]
 final class XmlTest extends TestCase
 {
-    /**
-     * @dataProvider charProvider
-     */
+    public static function charProvider(): array
+    {
+        $data = [];
+
+        for ($i = 0; $i < 256; $i++) {
+            $data[] = [chr($i)];
+        }
+
+        return $data;
+    }
+
+    #[DataProvider('charProvider')]
     public function testPrepareString(string $char): void
     {
         $e = null;
@@ -48,68 +58,5 @@ final class XmlTest extends TestCase
                 DOMDocument::class,
             ),
         );
-    }
-
-    public function charProvider(): array
-    {
-        $data = [];
-
-        for ($i = 0; $i < 256; $i++) {
-            $data[] = [chr($i)];
-        }
-
-        return $data;
-    }
-
-    /**
-     * @testdox Nested xmlToVariable()
-     */
-    public function testNestedXmlToVariable(): void
-    {
-        $xml = '<array><element key="a"><array><element key="b"><string>foo</string></element></array></element><element key="c"><string>bar</string></element></array>';
-        $dom = new DOMDocument;
-        $dom->loadXML($xml);
-
-        $expected = [
-            'a' => [
-                'b' => 'foo',
-            ],
-            'c' => 'bar',
-        ];
-
-        $actual = Xml::xmlToVariable($dom->documentElement);
-
-        $this->assertSame($expected, $actual);
-    }
-
-    /**
-     * @testdox xmlToVariable() can handle multiple of the same argument type
-     */
-    public function testXmlToVariableCanHandleMultipleOfTheSameArgumentType(): void
-    {
-        $xml = '<object class="PHPUnit\TestFixture\SampleClass"><arguments><string>a</string><string>b</string><string>c</string></arguments></object>';
-        $dom = new DOMDocument;
-        $dom->loadXML($xml);
-
-        $expected = ['a' => 'a', 'b' => 'b', 'c' => 'c'];
-
-        $actual = Xml::xmlToVariable($dom->documentElement);
-
-        $this->assertSame($expected, (array) $actual);
-    }
-
-    /**
-     * @testdox xmlToVariable() can construct objects with constructor arguments recursively
-     */
-    public function testXmlToVariableCanConstructObjectsWithConstructorArgumentsRecursively(): void
-    {
-        $xml = '<object class="Exception"><arguments><string>one</string><integer>0</integer><object class="Exception"><arguments><string>two</string></arguments></object></arguments></object>';
-        $dom = new DOMDocument;
-        $dom->loadXML($xml);
-
-        $actual = Xml::xmlToVariable($dom->documentElement);
-
-        $this->assertEquals('one', $actual->getMessage());
-        $this->assertEquals('two', $actual->getPrevious()->getMessage());
     }
 }

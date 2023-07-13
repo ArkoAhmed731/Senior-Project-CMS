@@ -8,17 +8,14 @@ $_SERVER['argv'][] = __DIR__ . '/../../_files/OneClassPerFile/wrongClassName/';
 
 require_once __DIR__ . '/../../bootstrap.php';
 
-PHPUnit\TextUI\Command::main();
-?>
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-Warning:       Test case class not matching filename is deprecated
-               in %sWrongClassNameTest.php
-               Class name was 'WrongClassNameBar', expected 'WrongClassNameTest'
+Runtime: %s
 
-.                                                                   1 / 1 (100%)
+There was 1 PHPUnit test runner warning:
 
-Time: %s, Memory: %s
+1) Class WrongClassNameTest cannot be found in %sWrongClassNameTest.php
 
-OK (1 test, 1 assertion)
+No tests executed!

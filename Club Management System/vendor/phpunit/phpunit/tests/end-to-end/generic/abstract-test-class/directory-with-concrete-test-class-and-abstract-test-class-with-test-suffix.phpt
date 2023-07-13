@@ -7,14 +7,19 @@ $_SERVER['argv'][] = '--no-configuration';
 $_SERVER['argv'][] = __DIR__ . '/../../../_files/abstract/with-test-suffix';
 
 require_once __DIR__ . '/../../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-Warning:       Abstract test case classes with "Test" suffix are deprecated (PHPUnit\TestFixture\AbstractTest)
+Runtime: %s
 
 .                                                                   1 / 1 (100%)
 
 Time: %s, Memory: %s
 
-OK (1 test, 1 assertion)
+There was 1 PHPUnit test runner warning:
+
+1) Class PHPUnit\TestFixture\AbstractTest declared in %sAbstractTest.php is abstract
+
+WARNINGS!
+Tests: 1, Assertions: 1, Warnings: 1.

@@ -8,9 +8,12 @@ $_SERVER['argv'][] = __DIR__ . '/../_files/force-covers-annotation/phpunit.xml';
 $_SERVER['argv'][] = __DIR__ . '/../_files/force-covers-annotation/tests/Test.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
+Configuration: %s
 
 R                                                                   1 / 1 (100%)
 
@@ -18,8 +21,10 @@ Time: %s, Memory: %s
 
 There was 1 risky test:
 
-1) Test::testOne
-This test does not have a @covers annotation but is expected to have one
+1) PHPUnit\TestFixture\Test::testOne
+This test does not define a code coverage target but is expected to do so
 
-OK, but incomplete, skipped, or risky tests!
+%s:%d
+
+OK, but there are issues!
 Tests: 1, Assertions: 1, Risky: 1.

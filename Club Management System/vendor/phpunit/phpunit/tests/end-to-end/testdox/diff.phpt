@@ -4,15 +4,20 @@ TestDox: Diff
 <?php declare(strict_types=1);
 $_SERVER['argv'][] = '--do-not-cache-result';
 $_SERVER['argv'][] = '--no-configuration';
+$_SERVER['argv'][] = '--no-progress';
 $_SERVER['argv'][] = '--testdox';
 $_SERVER['argv'][] = '--colors=never';
 $_SERVER['argv'][] = __DIR__ . '/_files/DiffTest.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
 
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime:       %s
+
+Time: %s, Memory: %s
 
 Diff (PHPUnit\TestFixture\TestDox\Diff)
  ✘ Something that does not work
@@ -29,9 +34,6 @@ Diff (PHPUnit\TestFixture\TestDox\Diff)
    │
    │ %sDiffTest.php:%d
    │
-
-Time: %s, Memory: %s
-
 
 FAILURES!
 Tests: 1, Assertions: 1, Failures: 1.

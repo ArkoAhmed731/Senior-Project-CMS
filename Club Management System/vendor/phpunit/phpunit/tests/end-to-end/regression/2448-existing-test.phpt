@@ -9,9 +9,11 @@ $_SERVER['argv'][] = 'Test.php';
 \chdir(__DIR__ . '/2448');
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main(false);
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
 
 .                                                                   1 / 1 (100%)
 

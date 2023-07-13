@@ -32,6 +32,10 @@ use ArrayIterator;
 use ArrayObject;
 use DateTime;
 use DateTimeZone;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
+use PHPUnit\Framework\Attributes\Small;
 use PHPUnit\TestFixture\Author;
 use PHPUnit\TestFixture\Book;
 use PHPUnit\TestFixture\ClassWithToString;
@@ -39,14 +43,13 @@ use PHPUnit\TestFixture\ObjectEquals\ValueObject;
 use PHPUnit\TestFixture\SampleArrayAccess;
 use PHPUnit\TestFixture\SampleClass;
 use PHPUnit\TestFixture\Struct;
-use PHPUnit\Util\Xml\Exception as XmlException;
 use PHPUnit\Util\Xml\Loader as XmlLoader;
+use PHPUnit\Util\Xml\XmlException;
 use SplObjectStorage;
 use stdClass;
 
-/**
- * @small
- */
+#[CoversClass(Assert::class)]
+#[Small]
 final class AssertTest extends TestCase
 {
     public static function validInvalidJsonDataprovider(): array
@@ -57,11 +60,66 @@ final class AssertTest extends TestCase
         ];
     }
 
+    public static function equalProvider(): array
+    {
+        // same |= equal
+        return array_merge(self::equalValues(), self::sameValues());
+    }
+
+    public static function notEqualProvider(): array
+    {
+        return self::notEqualValues();
+    }
+
+    public static function sameProvider(): array
+    {
+        return self::sameValues();
+    }
+
+    public static function notSameProvider(): array
+    {
+        // not equal |= not same
+        // equal, ¬same |= not same
+        return array_merge(self::notEqualValues(), self::equalValues());
+    }
+
+    public static function assertStringContainsStringIgnoringLineEndingsProvider(): array
+    {
+        return [
+            ["b\nc", "b\r\nc"],
+            ["b\nc", "a\r\nb\r\nc\r\nd"],
+        ];
+    }
+
+    public static function assertStringEqualsStringIgnoringLineEndingsProvider(): array
+    {
+        return [
+            'lf-crlf'   => ["a\nb", "a\r\nb"],
+            'cr-crlf'   => ["a\rb", "a\r\nb"],
+            'crlf-crlf' => ["a\r\nb", "a\r\nb"],
+            'lf-cr'     => ["a\nb", "a\rb"],
+            'cr-cr'     => ["a\rb", "a\rb"],
+            'crlf-cr'   => ["a\r\nb", "a\rb"],
+            'lf-lf'     => ["a\nb", "a\nb"],
+            'cr-lf'     => ["a\rb", "a\nb"],
+            'crlf-lf'   => ["a\r\nb", "a\nb"],
+        ];
+    }
+
+    public static function assertStringEqualsStringIgnoringLineEndingsProviderNegative(): array
+    {
+        return [
+            ["a\nb", 'ab'],
+            ["a\rb", 'ab'],
+            ["a\r\nb", 'ab'],
+        ];
+    }
+
     public function testFail(): void
     {
         try {
             $this->fail();
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -82,20 +140,6 @@ final class AssertTest extends TestCase
         $this->assertContainsOnlyInstancesOf(Book::class, $test2);
     }
 
-    public function testAssertArrayHasKeyThrowsExceptionForInvalidFirstArgument(): void
-    {
-        $this->expectException(Exception::class);
-
-        $this->assertArrayHasKey(null, []);
-    }
-
-    public function testAssertArrayHasKeyThrowsExceptionForInvalidSecondArgument(): void
-    {
-        $this->expectException(Exception::class);
-
-        $this->assertArrayHasKey(0, null);
-    }
-
     public function testAssertArrayHasIntegerKey(): void
     {
         $this->assertArrayHasKey(0, ['foo']);
@@ -103,20 +147,6 @@ final class AssertTest extends TestCase
         $this->expectException(AssertionFailedError::class);
 
         $this->assertArrayHasKey(1, ['foo']);
-    }
-
-    public function testAssertArrayNotHasKeyThrowsExceptionForInvalidFirstArgument(): void
-    {
-        $this->expectException(Exception::class);
-
-        $this->assertArrayNotHasKey(null, []);
-    }
-
-    public function testAssertArrayNotHasKeyThrowsExceptionForInvalidSecondArgument(): void
-    {
-        $this->expectException(Exception::class);
-
-        $this->assertArrayNotHasKey(0, null);
     }
 
     public function testAssertArrayNotHasIntegerKey(): void
@@ -200,6 +230,34 @@ final class AssertTest extends TestCase
         $this->assertArrayNotHasKey('bar', $array);
     }
 
+    public function testAssertIsList(): void
+    {
+        $this->assertIsList([0, 1, 2]);
+
+        $this->expectException(AssertionFailedError::class);
+
+        $this->assertIsList([0 => 0, 2 => 2, 3 => 3]);
+    }
+
+    public function testAssertIsListWithEmptyArray(): void
+    {
+        $this->assertIsList([]);
+    }
+
+    public function testAssertIsListFailsWithStringKeys(): void
+    {
+        $this->expectException(AssertionFailedError::class);
+
+        $this->assertIsList(['string' => 0]);
+    }
+
+    public function testAssertIsListFailsForTypesOtherThanArray(): void
+    {
+        $this->expectException(AssertionFailedError::class);
+
+        $this->assertIsList(null);
+    }
+
     public function testAssertArrayContainsOnlyIntegers(): void
     {
         $this->assertContainsOnly('integer', [1, 2, 3]);
@@ -236,129 +294,56 @@ final class AssertTest extends TestCase
         $this->assertNotContainsOnly(stdClass::class, [new stdClass]);
     }
 
-    public function equalProvider(): array
-    {
-        // same |= equal
-        return array_merge($this->equalValues(), $this->sameValues());
-    }
-
-    public function notEqualProvider()
-    {
-        return $this->notEqualValues();
-    }
-
-    public function sameProvider(): array
-    {
-        return $this->sameValues();
-    }
-
-    public function notSameProvider(): array
-    {
-        // not equal |= not same
-        // equal, ¬same |= not same
-        return array_merge($this->notEqualValues(), $this->equalValues());
-    }
-
-    /**
-     * @dataProvider equalProvider
-     *
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     * @throws ExpectationFailedException
-     */
-    public function testAssertEqualsSucceeds($a, $b): void
+    #[DataProvider('equalProvider')]
+    public function testAssertEqualsSucceeds(mixed $a, mixed $b): void
     {
         $this->assertEquals($a, $b);
     }
 
-    /**
-     * @dataProvider notEqualProvider
-     *
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     * @throws ExpectationFailedException
-     */
-    public function testAssertEqualsFails($a, $b): void
+    #[DataProvider('notEqualProvider')]
+    public function testAssertEqualsFails(mixed $a, mixed $b): void
     {
         $this->expectException(AssertionFailedError::class);
 
         $this->assertEquals($a, $b);
     }
 
-    /**
-     * @dataProvider notEqualProvider
-     *
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     * @throws ExpectationFailedException
-     */
-    public function testAssertNotEqualsSucceeds($a, $b): void
+    #[DataProvider('notEqualProvider')]
+    public function testAssertNotEqualsSucceeds(mixed $a, mixed $b): void
     {
         $this->assertNotEquals($a, $b);
     }
 
-    /**
-     * @testdox assertNotEquals($a, $b) with delta $delta, canoicalize $canonicalize, ignoreCase $ignoreCase
-     *
-     * @dataProvider equalProvider
-     *
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     * @throws ExpectationFailedException
-     */
-    public function testAssertNotEqualsFails($a, $b): void
+    #[DataProvider('equalProvider')]
+    public function testAssertNotEqualsFails(mixed $a, mixed $b): void
     {
         $this->expectException(AssertionFailedError::class);
 
         $this->assertNotEquals($a, $b);
     }
 
-    /**
-     * @testdox assertNotSame($a, $b) fails
-     *
-     * @dataProvider sameProvider
-     *
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     * @throws ExpectationFailedException
-     */
-    public function testAssertSameSucceeds($a, $b): void
+    #[DataProvider('sameProvider')]
+    public function testAssertSameSucceeds(mixed $a, mixed $b): void
     {
         $this->assertSame($a, $b);
     }
 
-    /**
-     * @testdox assertNotSame($a, $b)
-     *
-     * @dataProvider notSameProvider
-     *
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     * @throws ExpectationFailedException
-     */
-    public function testAssertSameFails($a, $b): void
+    #[DataProvider('notSameProvider')]
+    public function testAssertSameFails(mixed $a, mixed $b): void
     {
         $this->expectException(AssertionFailedError::class);
 
         $this->assertSame($a, $b);
     }
 
-    /**
-     * @testdox assertSame($a, $b) fails
-     *
-     * @dataProvider notSameProvider
-     *
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     * @throws ExpectationFailedException
-     */
-    public function testAssertNotSameSucceeds($a, $b): void
+    #[DataProvider('notSameProvider')]
+    public function testAssertNotSameSucceeds(mixed $a, mixed $b): void
     {
         $this->assertNotSame($a, $b);
     }
 
-    /**
-     * @testdox assertSame($a, $b)
-     *
-     * @dataProvider sameProvider
-     *
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     * @throws ExpectationFailedException
-     */
-    public function testAssertNotSameFails($a, $b): void
+    #[DataProvider('sameProvider')]
+    public function testAssertNotSameFails(mixed $a, mixed $b): void
     {
         $this->expectException(AssertionFailedError::class);
 
@@ -434,9 +419,6 @@ final class AssertTest extends TestCase
         $this->assertXmlStringEqualsXmlString('<foo/>', '<bar/>');
     }
 
-    /**
-     * @ticket 1860
-     */
     public function testAssertXmlStringEqualsXmlString2(): void
     {
         $this->expectException(XmlException::class);
@@ -444,9 +426,6 @@ final class AssertTest extends TestCase
         $this->assertXmlStringEqualsXmlString('<a></b>', '<c></d>');
     }
 
-    /**
-     * @ticket 1860
-     */
     public function testAssertXmlStringEqualsXmlString3(): void
     {
         $expected = <<<'XML'
@@ -567,7 +546,7 @@ XML;
 
         try {
             $this->assertDirectoryIsNotReadable($dirName);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
         }
 
         rmdir($dirName);
@@ -597,7 +576,7 @@ XML;
 
         try {
             $this->assertDirectoryIsNotWritable($dirName);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
         }
 
         rmdir($dirName);
@@ -649,7 +628,7 @@ XML;
 
         try {
             $this->assertFileIsNotReadable($tempFile);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
         }
 
         unlink($tempFile);
@@ -667,7 +646,7 @@ XML;
 
         try {
             $this->assertFileIsNotWritable($tempFile);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
         }
 
         unlink($tempFile);
@@ -733,6 +712,8 @@ XML;
 
         $this->expectException(AssertionFailedError::class);
 
+        /* @noinspection PhpUnitAssertCanBeReplacedWithFailInspection */
+        /* @noinspection PhpUnitAssertTrueWithIncompatibleTypeArgumentInspection */
         $this->assertTrue(false);
     }
 
@@ -753,6 +734,7 @@ XML;
 
         $this->expectException(AssertionFailedError::class);
 
+        /* @noinspection PhpUnitAssertCanBeReplacedWithFailInspection */
         $this->assertFalse(true);
     }
 
@@ -871,7 +853,7 @@ XML;
 
         try {
             $this->assertLessThan(1, 2);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -887,9 +869,7 @@ XML;
         $this->assertLessThanOrEqual(1, 2);
     }
 
-    /**
-     * @doesNotPerformAssertions
-     */
+    #[DoesNotPerformAssertions]
     public function testAssertThatAnything(): void
     {
         $this->assertThat('anything', $this->anything());
@@ -910,9 +890,7 @@ XML;
         $this->assertThat('{}', $this->isJson());
     }
 
-    /**
-     * @doesNotPerformAssertions
-     */
+    #[DoesNotPerformAssertions]
     public function testAssertThatAnythingAndAnything(): void
     {
         $this->assertThat(
@@ -924,9 +902,7 @@ XML;
         );
     }
 
-    /**
-     * @doesNotPerformAssertions
-     */
+    #[DoesNotPerformAssertions]
     public function testAssertThatAnythingOrAnything(): void
     {
         $this->assertThat(
@@ -938,9 +914,7 @@ XML;
         );
     }
 
-    /**
-     * @doesNotPerformAssertions
-     */
+    #[DoesNotPerformAssertions]
     public function testAssertThatAnythingXorNotAnything(): void
     {
         $this->assertThat(
@@ -975,6 +949,11 @@ XML;
     public function testAssertThatArrayHasKey(): void
     {
         $this->assertThat(['foo' => 'bar'], $this->arrayHasKey('foo'));
+    }
+
+    public function testAssertThatArrayIsList(): void
+    {
+        $this->assertThat([0, 1, 2], $this->isList());
     }
 
     public function testAssertThatEqualTo(): void
@@ -1039,10 +1018,7 @@ XML;
     {
         $this->assertThat(
             null,
-            $this->callback(static function ($other)
-            {
-                return true;
-            }),
+            $this->callback(static fn ($other) => true),
         );
     }
 
@@ -1171,13 +1147,6 @@ XML;
         );
     }
 
-    public function testAssertStringStartsNotWithThrowsException2(): void
-    {
-        $this->expectException(Exception::class);
-
-        $this->assertStringStartsNotWith('', null);
-    }
-
     public function testAssertStringStartsWith(): void
     {
         $this->assertStringStartsWith('prefix', 'prefixfoo');
@@ -1212,6 +1181,33 @@ XML;
         $this->expectException(AssertionFailedError::class);
 
         $this->assertStringEndsNotWith('suffix', 'foosuffix');
+    }
+
+    #[DataProvider('assertStringContainsStringIgnoringLineEndingsProvider')]
+    public function testAssertStringContainsStringIgnoringLineEndings(string $needle, string $haystack): void
+    {
+        $this->assertStringContainsStringIgnoringLineEndings($needle, $haystack);
+    }
+
+    public function testNotAssertStringContainsStringIgnoringLineEndings(): void
+    {
+        $this->expectException(ExpectationFailedException::class);
+
+        $this->assertStringContainsStringIgnoringLineEndings("b\nc", "\r\nc\r\n");
+    }
+
+    #[DataProvider('assertStringEqualsStringIgnoringLineEndingsProvider')]
+    public function testAssertStringEqualsStringIgnoringLineEndings(string $expected, string $actual): void
+    {
+        $this->assertStringEqualsStringIgnoringLineEndings($expected, $actual);
+    }
+
+    #[DataProvider('assertStringEqualsStringIgnoringLineEndingsProviderNegative')]
+    public function testAssertStringEqualsStringIgnoringLineEndingsNegative(string $expected, string $actual): void
+    {
+        $this->expectException(ExpectationFailedException::class);
+
+        $this->assertStringEqualsStringIgnoringLineEndings($expected, $actual);
     }
 
     public function testAssertStringMatchesFormat(): void
@@ -1270,7 +1266,7 @@ XML;
     {
         try {
             $this->markTestSkipped('skipped');
-        } catch (SkippedTestError $e) {
+        } catch (SkippedTest $e) {
             $this->assertEquals('skipped', $e->getMessage());
 
             return;
@@ -1297,19 +1293,6 @@ XML;
         $this->assertCount(2, new ArrayIterator([1, 2, 3]));
     }
 
-    public function testAssertCountThrowsExceptionIfElementIsNotCountable(): void
-    {
-        try {
-            $this->assertCount(2, '');
-        } catch (Exception $e) {
-            $this->assertEquals('Argument #2 of PHPUnit\Framework\Assert::assertCount() must be a countable or iterable', $e->getMessage());
-
-            return;
-        }
-
-        $this->fail();
-    }
-
     public function testAssertNotCount(): void
     {
         $this->assertNotCount(2, [1, 2, 3]);
@@ -1317,13 +1300,6 @@ XML;
         $this->expectException(AssertionFailedError::class);
 
         $this->assertNotCount(2, [1, 2]);
-    }
-
-    public function testAssertNotCountThrowsExceptionIfElementIsNotCountable(): void
-    {
-        $this->expectException(Exception::class);
-
-        $this->assertNotCount(2, '');
     }
 
     public function testAssertSameSize(): void
@@ -1335,32 +1311,6 @@ XML;
         $this->assertSameSize([1, 2], [1, 2, 3]);
     }
 
-    public function testAssertSameSizeThrowsExceptionIfExpectedIsNotCountable(): void
-    {
-        try {
-            $this->assertSameSize('a', []);
-        } catch (Exception $e) {
-            $this->assertEquals('Argument #1 of PHPUnit\Framework\Assert::assertSameSize() must be a countable or iterable', $e->getMessage());
-
-            return;
-        }
-
-        $this->fail();
-    }
-
-    public function testAssertSameSizeThrowsExceptionIfActualIsNotCountable(): void
-    {
-        try {
-            $this->assertSameSize([], '');
-        } catch (Exception $e) {
-            $this->assertEquals('Argument #2 of PHPUnit\Framework\Assert::assertSameSize() must be a countable or iterable', $e->getMessage());
-
-            return;
-        }
-
-        $this->fail();
-    }
-
     public function testAssertNotSameSize(): void
     {
         $this->assertNotSameSize([1, 2], [1, 2, 3]);
@@ -1370,31 +1320,11 @@ XML;
         $this->assertNotSameSize([1, 2], [3, 4]);
     }
 
-    public function testAssertNotSameSizeThrowsExceptionIfExpectedIsNotCountable(): void
-    {
-        $this->expectException(Exception::class);
-
-        $this->assertNotSameSize('a', []);
-    }
-
-    public function testAssertNotSameSizeThrowsExceptionIfActualIsNotCountable(): void
-    {
-        $this->expectException(Exception::class);
-
-        $this->assertNotSameSize([], '');
-    }
-
-    /**
-     * @testdox Assert JSON
-     */
     public function testAssertJson(): void
     {
         $this->assertJson('{}');
     }
 
-    /**
-     * @testdox Assert JSON string equals JSON string
-     */
     public function testAssertJsonStringEqualsJsonString(): void
     {
         $expected = '{"Mascott" : "Tux"}';
@@ -1404,13 +1334,8 @@ XML;
         $this->assertJsonStringEqualsJsonString($expected, $actual, $message);
     }
 
-    /**
-     * @dataProvider validInvalidJsonDataprovider
-     *
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     * @throws ExpectationFailedException
-     */
-    public function testAssertJsonStringEqualsJsonStringErrorRaised($expected, $actual): void
+    #[DataProvider('validInvalidJsonDataprovider')]
+    public function testAssertJsonStringEqualsJsonStringErrorRaised(string $expected, string $actual): void
     {
         $this->expectException(AssertionFailedError::class);
 
@@ -1426,15 +1351,8 @@ XML;
         $this->assertJsonStringNotEqualsJsonString($expected, $actual, $message);
     }
 
-    /**
-     * @testdox Assert JSON string equals equals JSON string raised $_dataName
-     *
-     * @dataProvider validInvalidJsonDataprovider
-     *
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     * @throws ExpectationFailedException
-     */
-    public function testAssertJsonStringNotEqualsJsonStringErrorRaised($expected, $actual): void
+    #[DataProvider('validInvalidJsonDataprovider')]
+    public function testAssertJsonStringNotEqualsJsonStringErrorRaised(string $expected, string $actual): void
     {
         $this->expectException(AssertionFailedError::class);
 
@@ -1601,7 +1519,7 @@ XML;
 
         try {
             $this->assertIsArray(null);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1614,7 +1532,7 @@ XML;
 
         try {
             $this->assertIsBool(null);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1627,7 +1545,7 @@ XML;
 
         try {
             $this->assertIsFloat(null);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1640,7 +1558,7 @@ XML;
 
         try {
             $this->assertIsInt(null);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1653,7 +1571,7 @@ XML;
 
         try {
             $this->assertIsNumeric('abc');
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1666,7 +1584,7 @@ XML;
 
         try {
             $this->assertIsObject(null);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1679,7 +1597,7 @@ XML;
 
         try {
             $this->assertIsResource(null);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1696,7 +1614,7 @@ XML;
 
         try {
             $this->assertIsClosedResource(null);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1709,7 +1627,7 @@ XML;
 
         try {
             $this->assertIsString(null);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1722,7 +1640,7 @@ XML;
 
         try {
             $this->assertIsScalar(new stdClass);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1737,7 +1655,7 @@ XML;
 
         try {
             $this->assertIsCallable(null);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1750,7 +1668,7 @@ XML;
 
         try {
             $this->assertIsIterable(null);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1763,7 +1681,7 @@ XML;
 
         try {
             $this->assertIsNotArray([]);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1776,7 +1694,7 @@ XML;
 
         try {
             $this->assertIsNotBool(true);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1789,7 +1707,7 @@ XML;
 
         try {
             $this->assertIsNotFloat(0.0);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1802,7 +1720,7 @@ XML;
 
         try {
             $this->assertIsNotInt(1);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1815,7 +1733,7 @@ XML;
 
         try {
             $this->assertIsNotNumeric('1.0');
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1828,7 +1746,7 @@ XML;
 
         try {
             $this->assertIsNotObject(new stdClass);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1841,7 +1759,7 @@ XML;
 
         try {
             $this->assertIsNotResource(fopen(__FILE__, 'r'));
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1857,13 +1775,13 @@ XML;
 
         try {
             $this->assertIsNotClosedResource($resource);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
         try {
             $this->assertIsNotResource($resource);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1876,7 +1794,7 @@ XML;
 
         try {
             $this->assertIsNotScalar(true);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1889,7 +1807,7 @@ XML;
 
         try {
             $this->assertIsNotString('');
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1904,7 +1822,7 @@ XML;
             $this->assertIsNotCallable(static function (): void
             {
             });
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1917,7 +1835,7 @@ XML;
 
         try {
             $this->assertIsNotIterable([]);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -1993,7 +1911,7 @@ XML;
 
         try {
             $this->assertStringContainsString('barbara', 'foobarbaz');
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -2006,7 +1924,7 @@ XML;
 
         try {
             $this->assertStringNotContainsString('bar', 'foobarbaz');
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -2019,7 +1937,7 @@ XML;
 
         try {
             $this->assertStringContainsStringIgnoringCase('BARBARA', 'foobarbaz');
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -2032,7 +1950,7 @@ XML;
 
         try {
             $this->assertStringNotContainsStringIgnoringCase('BAR', 'foobarbaz');
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -2048,7 +1966,7 @@ XML;
 
         try {
             $this->assertContains(new stdClass, $iterable);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -2064,7 +1982,7 @@ XML;
 
         try {
             $this->assertNotContains($object, $iterable);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -2083,7 +2001,7 @@ XML;
 
         try {
             $this->assertContainsEquals($b, [$a]);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -2102,7 +2020,7 @@ XML;
 
         try {
             $this->assertNotContainsEquals($a, [$a]);
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
@@ -2115,14 +2033,14 @@ XML;
 
         try {
             $this->assertObjectEquals(new ValueObject(1), new ValueObject(2));
-        } catch (AssertionFailedError $e) {
+        } catch (AssertionFailedError) {
             return;
         }
 
         $this->fail();
     }
 
-    protected function sameValues(): array
+    protected static function sameValues(): array
     {
         $object   = new SampleClass(4, 8, 15);
         $file     = TEST_FILES_PATH . 'foo.xml';
@@ -2157,7 +2075,7 @@ XML;
         ];
     }
 
-    protected function notEqualValues(): array
+    protected static function notEqualValues(): array
     {
         // cyclic dependencies
         $book1                  = new Book;
@@ -2304,7 +2222,7 @@ XML;
         ];
     }
 
-    protected function equalValues(): array
+    protected static function equalValues(): array
     {
         // cyclic dependencies
         $book1                  = new Book;

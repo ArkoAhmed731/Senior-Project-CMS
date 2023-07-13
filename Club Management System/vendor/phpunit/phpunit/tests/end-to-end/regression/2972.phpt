@@ -7,13 +7,11 @@ $_SERVER['argv'][] = '--no-configuration';
 $_SERVER['argv'][] = __DIR__ . '/2972/';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-Warning:       Test case class not matching filename is deprecated
-               in %sunconventiallyNamedIssue2972Test.php
-               Class name was 'Issue2972Test', expected 'unconventiallyNamedIssue2972Test'
+Runtime: %s
 
 ..                                                                  2 / 2 (100%)
 

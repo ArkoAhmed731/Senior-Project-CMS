@@ -7,23 +7,30 @@ $_SERVER['argv'][] = '--no-configuration';
 $_SERVER['argv'][] = __DIR__ . '/2137/Issue2137Test.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-EE                                                                  2 / 2 (100%)
+Runtime: %s
 
-Time: %s, Memory: %s
+There were 2 PHPUnit errors:
 
-There were 2 errors:
+1) PHPUnit\TestFixture\Issue2137Test::testBrandService
+The data provider specified for PHPUnit\TestFixture\Issue2137Test::testBrandService is invalid
+Data set #0 is invalid
 
-1) Error
-The data provider specified for Issue2137Test::testBrandService is invalid.
-Data set #0 is invalid.
+%s:%d
 
-2) Error
-The data provider specified for Issue2137Test::testSomethingElseInvalid is invalid.
-Data set #0 is invalid.
+2) PHPUnit\TestFixture\Issue2137Test::testSomethingElseInvalid
+The data provider specified for PHPUnit\TestFixture\Issue2137Test::testSomethingElseInvalid is invalid
+Data set #0 is invalid
 
-ERRORS!
-Tests: 2, Assertions: 0, Errors: 2.
+%s:%d
+
+--
+
+There was 1 PHPUnit test runner warning:
+
+1) No tests found in class "PHPUnit\TestFixture\Issue2137Test".
+
+No tests executed!

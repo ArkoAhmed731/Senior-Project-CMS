@@ -1,7 +1,9 @@
-PHPUnit %s by Sebastian Bergmann and contributors.
+PHPUnit %s Sebastian Bergmann and contributors.
 
 Runtime:       %s
 Configuration: %sconfiguration.basic.xml
+
+Time: %s, Memory: %s
 
 [4mSet Up Before Class (PHPUnit\SelfTest\Basic\SetUpBeforeClass)[0m
  [33m✘[0m One [33m %f [2mms[0m
@@ -13,7 +15,7 @@ Configuration: %sconfiguration.basic.xml
 
  [36m↩[0m Two [36m %f [2mms[0m
    [36m┐[0m
-   [36m├[0m [36mTest skipped because of an error in hook method[0m
+   [36m├[0m [36mThis test was skipped due to an error in a hook method[0m
    [36m┴[0m
 
 [4mSet Up (PHPUnit\SelfTest\Basic\SetUp)[0m
@@ -60,8 +62,6 @@ Configuration: %sconfiguration.basic.xml
  [33m☢[0m Risky [33m %f [2mms[0m
    [33m┐[0m
    [33m├[0m [33mThis test did not perform any assertions%w[0m
-   [33m├[0m%w
-   [33m├[0m [33m%stests%eend-to-end%e_files%ebasic%eunit%eStatusTest.php:%d[0m%w
    [33m┴[0m
 
  [33m⚠[0m Warning [33m %f [2mms[0m
@@ -102,8 +102,6 @@ Configuration: %sconfiguration.basic.xml
  [33m☢[0m Risky with message [33m %f [2mms[0m
    [33m┐[0m
    [33m├[0m [33mThis test did not perform any assertions%w[0m
-   [33m├[0m%w
-   [33m├[0m [33m%stests%eend-to-end%e_files%ebasic%eunit%eStatusTest.php:%d[0m%w
    [33m┴[0m
 
  [33m⚠[0m Warning with message [33m %f [2mms[0m
@@ -123,8 +121,6 @@ Configuration: %sconfiguration.basic.xml
    [31m│[0m
    [31m╵[0m %stests[2m%e[22mend-to-end[2m%e[22m_files[2m%e[22mbasic[2m%e[22munit[2m%e[22mTearDownAfterClassTest.php[2m:[22m[34m%d[0m
    [31m┴[0m
-
-Time: %s, Memory: %s
 
 
 [37;41mERRORS![0m

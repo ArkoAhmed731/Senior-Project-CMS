@@ -12,40 +12,18 @@ namespace PHPUnit\Framework;
 use function array_reduce;
 use function file_get_contents;
 use function preg_match_all;
+use PHPUnit\Framework\Attributes\CoversNothing;
+use PHPUnit\Framework\Attributes\DataProvider;
 
+#[CoversNothing]
 final class FunctionsTest extends TestCase
 {
-    private static $globalAssertionFunctions = [];
+    private static array $globalAssertionFunctions = [];
 
-    public static function setUpBeforeClass(): void
+    public static function provideStaticAssertionMethodNames(): array
     {
         preg_match_all(
-            '/function (assert[^ \(]+)/',
-            file_get_contents(
-                __DIR__ . '/../../../../src/Framework/Assert/Functions.php',
-            ),
-            $matches,
-        );
-
-        self::$globalAssertionFunctions = $matches[1];
-    }
-
-    /**
-     * @dataProvider provideStaticAssertionMethodNames
-     */
-    public function testGlobalFunctionsFileContainsAllStaticAssertions(string $methodName): void
-    {
-        Assert::assertContains(
-            $methodName,
-            self::$globalAssertionFunctions,
-            "Mapping for Assert::{$methodName} is missing in Functions.php",
-        );
-    }
-
-    public function provideStaticAssertionMethodNames(): array
-    {
-        preg_match_all(
-            '/public static function (assert[^ \(]+)/',
+            '/public static function (assert[^ (]+)/',
             file_get_contents(
                 __DIR__ . '/../../../../src/Framework/Assert.php',
             ),
@@ -61,6 +39,29 @@ final class FunctionsTest extends TestCase
                 return $functionNames;
             },
             [],
+        );
+    }
+
+    public static function setUpBeforeClass(): void
+    {
+        preg_match_all(
+            '/function (assert[^ (]+)/',
+            file_get_contents(
+                __DIR__ . '/../../../../src/Framework/Assert/Functions.php',
+            ),
+            $matches,
+        );
+
+        self::$globalAssertionFunctions = $matches[1];
+    }
+
+    #[DataProvider('provideStaticAssertionMethodNames')]
+    public function testGlobalFunctionsFileContainsAllStaticAssertions(string $methodName): void
+    {
+        Assert::assertContains(
+            $methodName,
+            self::$globalAssertionFunctions,
+            "Mapping for Assert::{$methodName} is missing in Functions.php",
         );
     }
 }

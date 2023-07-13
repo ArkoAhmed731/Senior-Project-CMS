@@ -9,40 +9,15 @@
  */
 namespace PHPUnit\Framework;
 
-use PHPUnit\TestFixture\EmptyDataProviderTest;
-use PHPUnit\TestFixture\ModifiedConstructorTestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\TestFixture\TestWithAnnotations;
 use ReflectionClass;
 
-/**
- * @covers \PHPUnit\Framework\TestBuilder
- */
+#[CoversClass(TestBuilder::class)]
 final class TestBuilderTest extends TestCase
 {
-    public function testCreateTestForTestClassWithModifiedConstructor(): void
-    {
-        $test = (new TestBuilder)->build(new ReflectionClass(ModifiedConstructorTestCase::class), 'testCase');
-        $this->assertInstanceOf(ModifiedConstructorTestCase::class, $test);
-    }
-
-    public function testCreateWithEmptyData(): void
-    {
-        $test = (new TestBuilder)->build(new ReflectionClass(EmptyDataProviderTest::class), 'testCase');
-        $this->assertInstanceOf(DataProviderTestSuite::class, $test);
-        /* @var DataProviderTestSuite $test */
-        $this->assertInstanceOf(SkippedTestCase::class, $test->getGroupDetails()['default'][0]);
-    }
-
-    /**
-     * @dataProvider provideWithAnnotations
-     */
-    public function testWithAnnotations(string $methodName): void
-    {
-        $test = (new TestBuilder)->build(new ReflectionClass(TestWithAnnotations::class), $methodName);
-        $this->assertInstanceOf(TestWithAnnotations::class, $test);
-    }
-
-    public function provideWithAnnotations(): array
+    public static function provideWithAnnotations(): array
     {
         return [
             ['testThatInteractsWithGlobalVariables'],
@@ -51,21 +26,28 @@ final class TestBuilderTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provideWithAnnotationsAndDataProvider
-     */
-    public function testWithAnnotationsAndDataProvider(string $methodName): void
-    {
-        $test = (new TestBuilder)->build(new ReflectionClass(TestWithAnnotations::class), $methodName);
-        $this->assertInstanceOf(DataProviderTestSuite::class, $test);
-    }
-
-    public function provideWithAnnotationsAndDataProvider(): array
+    public static function provideWithAnnotationsAndDataProvider(): array
     {
         return [
             ['testThatInteractsWithGlobalVariablesWithDataProvider'],
             ['testThatInteractsWithStaticAttributesWithDataProvider'],
             ['testInSeparateProcessWithDataProvider'],
         ];
+    }
+
+    #[DataProvider('provideWithAnnotations')]
+    public function testWithAnnotations(string $methodName): void
+    {
+        $test = (new TestBuilder)->build(new ReflectionClass(TestWithAnnotations::class), $methodName);
+
+        $this->assertInstanceOf(TestWithAnnotations::class, $test);
+    }
+
+    #[DataProvider('provideWithAnnotationsAndDataProvider')]
+    public function testWithAnnotationsAndDataProvider(string $methodName): void
+    {
+        $test = (new TestBuilder)->build(new ReflectionClass(TestWithAnnotations::class), $methodName);
+
+        $this->assertInstanceOf(DataProviderTestSuite::class, $test);
     }
 }

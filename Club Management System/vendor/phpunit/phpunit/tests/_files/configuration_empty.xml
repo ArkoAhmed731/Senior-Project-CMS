@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
-<phpunit bootstrap=""
-         testSuiteLoaderFile=""
-         printerFile="">
+<phpunit bootstrap="">
   <testsuites>
     <testsuite name="My Test Suite">
       <directory></directory>
@@ -19,15 +17,18 @@
     </exclude>
   </groups>
 
+  <source>
+   <include>
+    <directory></directory>
+    <file></file>
+   </include>
+   <exclude>
+    <directory></directory>
+    <file></file>
+   </exclude>
+  </source>
+
   <coverage>
-    <include>
-      <directory></directory>
-      <file></file>
-    </include>
-    <exclude>
-      <directory></directory>
-      <file></file>
-    </exclude>
   </coverage>
 
   <logging>

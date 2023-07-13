@@ -9,17 +9,16 @@
  */
 namespace PHPUnit\Util\PHP;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Small;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
-/**
- * @small
- */
+#[CoversClass(AbstractPhpProcess::class)]
+#[Small]
 final class AbstractPhpProcessTest extends TestCase
 {
-    /**
-     * @var AbstractPhpProcess|\PHPUnit\Framework\MockObject\MockObject
-     */
-    private $phpProcess;
+    private null|AbstractPhpProcess|MockObject $phpProcess;
 
     protected function setUp(): void
     {

@@ -1,5 +1,5 @@
 --TEST--
-https://github.com/sebastianbergmann/phpunit/issues/5020
+GH-5020: Load PSR-0 tests
 --FILE--
 <?php declare(strict_types=1);
 $_SERVER['argv'][] = '--do-not-cache-result';
@@ -7,9 +7,11 @@ $_SERVER['argv'][] = '--no-configuration';
 $_SERVER['argv'][] = __DIR__ . '/5020/Under/Score/Issue5020Test.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
 
 .                                                                   1 / 1 (100%)
 

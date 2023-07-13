@@ -7,11 +7,11 @@ $_SERVER['argv'][] = '--no-configuration';
 $_SERVER['argv'][] = 'Test.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main(false);
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-Cannot open file "Test.php".
+Test file "Test.php" not found
 --CLEAN--
 <?php declare(strict_types=1);
 unlink(__DIR__ . '/2448/.phpunit.result.cache');

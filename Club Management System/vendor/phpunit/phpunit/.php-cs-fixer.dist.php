@@ -14,7 +14,7 @@ $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__ . '/tests/_files')
     ->in(__DIR__ . '/tests/end-to-end')
     ->in(__DIR__ . '/tests/unit')
-    ->notName('InterfaceWithMethodReturningDisjunctiveNormalFormType.php')
+    ->notName('DeprecatedPhpFeatureTest.php')
     ->notName('ReadonlyClass.php')
     ->notName('*.phpt');
 
@@ -30,6 +30,10 @@ $config->setFinder($finder)
         'binary_operator_spaces' => [
             'operators' => [
                 '=' => 'align_single_space_minimal',
+                '+=' => 'align_single_space_minimal',
+                '-=' => 'align_single_space_minimal',
+                '*=' => 'align_single_space_minimal',
+                '/=' => 'align_single_space_minimal',
                 '=>' => 'align_single_space_minimal',
             ],
         ],
@@ -66,7 +70,7 @@ $config->setFinder($finder)
             'elements' => [
                 'const' => 'none',
                 'method' => 'one',
-                'property' => 'one'
+                'property' => 'only_if_meta'
             ]
         ],
         'class_definition' => true,
@@ -99,6 +103,7 @@ $config->setFinder($finder)
         'function_declaration' => true,
         'function_to_constant' => true,
         'function_typehint_space' => true,
+        'get_class_to_class_keyword' => true,
         'global_namespace_import' => [
             'import_classes' => true,
             'import_constants' => true,
@@ -127,6 +132,7 @@ $config->setFinder($finder)
             'on_multiline' => 'ensure_fully_multiline',
         ],
         'method_chaining_indentation' => true,
+        'modernize_strpos' => true,
         'modernize_types_casting' => true,
         'multiline_comment_opening_closing' => true,
         'multiline_whitespace_before_semicolons' => true,
@@ -187,6 +193,7 @@ $config->setFinder($finder)
         'no_unused_imports' => true,
         'no_useless_concat_operator' => true,
         'no_useless_else' => true,
+        'no_useless_nullsafe_operator' => true,
         'no_useless_return' => true,
         'no_useless_sprintf' => true,
         'no_whitespace_before_comma_in_array' => true,
@@ -194,6 +201,7 @@ $config->setFinder($finder)
         'non_printable_character' => true,
         'normalize_index_brace' => true,
         'object_operator_without_whitespace' => true,
+        'octal_notation' => true,
         'operator_linebreak' => [
             'only_booleans' => true,
             'position' => 'end',
@@ -309,10 +317,14 @@ $config->setFinder($finder)
         'trailing_comma_in_multiline' => [
             'elements' => [
                 'arguments',
-                'arrays'
+                'arrays',
+                'match',
             ]
         ],
         'trim_array_spaces' => true,
+        'types_spaces' => [
+            'space' => 'none',
+        ],
         'unary_operator_spaces' => true,
         'visibility_required' => [
             'elements' => [

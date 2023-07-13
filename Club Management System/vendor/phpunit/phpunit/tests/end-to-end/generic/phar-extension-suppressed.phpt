@@ -1,5 +1,5 @@
 --TEST--
-phpunit --configuration tests/_files/phpunit-example-extension --no-extensions
+phpunit --configuration tests/_files/phar-extension-bootstrap/phpunit.xml --no-extensions
 --SKIPIF--
 <?php declare(strict_types=1);
 if (extension_loaded('xdebug')) {
@@ -9,10 +9,19 @@ if (extension_loaded('xdebug')) {
 <?php declare(strict_types=1);
 $_SERVER['argv'][] = '--do-not-cache-result';
 $_SERVER['argv'][] = '--configuration';
-$_SERVER['argv'][] = __DIR__ . '/../../_files/phpunit-example-extension';
+$_SERVER['argv'][] = __DIR__ . '/../_files/phar-extension/phpunit.xml';
 $_SERVER['argv'][] = '--no-extensions';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
-Fatal error: Trait %sPHPUnit\ExampleExtension\TestCaseTrait%s not found in %s
+PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
+Configuration: %s
+
+.                                                                   1 / 1 (100%)
+
+Time: %s, Memory: %s
+
+OK (1 test, 1 assertion)

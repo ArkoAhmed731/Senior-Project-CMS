@@ -8,9 +8,11 @@ $_SERVER['argv'][] = __DIR__ . '/3904/Issue3904Test.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
 
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
 
 .                                                                   1 / 1 (100%)
 

@@ -9,13 +9,14 @@
  */
 namespace PHPUnit\Runner\Filter;
 
+use PHPUnit\Framework\Attributes\CoversClass;
+use PHPUnit\Framework\Attributes\Small;
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\TestSuite;
 use PHPUnit\TestFixture\BankAccountTest;
 
-/**
- * @small
- */
+#[CoversClass(NameFilterIterator::class)]
+#[Small]
 final class NameFilterIteratorTest extends TestCase
 {
     public function testCaseSensitiveMatch(): void
@@ -30,7 +31,7 @@ final class NameFilterIteratorTest extends TestCase
 
     private function createFilter(string $filter): NameFilterIterator
     {
-        $suite = new TestSuite;
+        $suite = TestSuite::empty('test suite name');
         $suite->addTest(new BankAccountTest('testBalanceIsInitiallyZero'));
 
         $iterator = new NameFilterIterator($suite->getIterator(), $filter);

@@ -7,21 +7,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-class Issue2137Test extends PHPUnit\Framework\TestCase
-{
-    /**
-     * @dataProvider provideBrandService
-     *
-     * @throws \PHPUnit\Framework\ExpectationFailedException
-     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
-     * @throws Exception
-     */
-    public function testBrandService($provided, $expected): void
-    {
-        $this->assertSame($provided, $expected);
-    }
+namespace PHPUnit\TestFixture;
 
-    public function provideBrandService()
+use PHPUnit\Framework\TestCase;
+use stdClass;
+
+class Issue2137Test extends TestCase
+{
+    public static function provideBrandService()
     {
         return [
             // [true, true]
@@ -35,6 +28,18 @@ class Issue2137Test extends PHPUnit\Framework\TestCase
      * @throws \PHPUnit\Framework\ExpectationFailedException
      * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      * @throws Exception
+     */
+    public function testBrandService($provided, $expected): void
+    {
+        $this->assertSame($provided, $expected);
+    }
+
+    /**
+     * @dataProvider provideBrandService
+     *
+     * @throws \Exception
+     * @throws \PHPUnit\Framework\ExpectationFailedException
+     * @throws \SebastianBergmann\RecursionContext\InvalidArgumentException
      */
     public function testSomethingElseInvalid($provided, $expected): void
     {

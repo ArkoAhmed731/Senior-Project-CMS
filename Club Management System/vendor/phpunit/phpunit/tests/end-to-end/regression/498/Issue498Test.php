@@ -7,10 +7,32 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+namespace PHPUnit\TestFixture;
+
+use Exception;
 use PHPUnit\Framework\TestCase;
 
 class Issue498Test extends TestCase
 {
+    public static function shouldBeTrueDataProvider()
+    {
+        // throw new Exception("Can't create the data");
+        return [
+            [true],
+            [false],
+        ];
+    }
+
+    public static function shouldBeFalseDataProvider()
+    {
+        throw new Exception("Can't create the data");
+
+        return [
+            [true],
+            [false],
+        ];
+    }
+
     /**
      * @test
      *
@@ -33,24 +55,5 @@ class Issue498Test extends TestCase
     public function shouldBeFalse($testData): void
     {
         $this->assertFalse(false);
-    }
-
-    public function shouldBeTrueDataProvider()
-    {
-        // throw new Exception("Can't create the data");
-        return [
-            [true],
-            [false],
-        ];
-    }
-
-    public function shouldBeFalseDataProvider()
-    {
-        throw new Exception("Can't create the data");
-
-        return [
-            [true],
-            [false],
-        ];
     }
 }

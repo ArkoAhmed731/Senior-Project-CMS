@@ -4,30 +4,23 @@ TestDox: Default output; TestDox metadata
 <?php declare(strict_types=1);
 $_SERVER['argv'][] = '--do-not-cache-result';
 $_SERVER['argv'][] = '--no-configuration';
+$_SERVER['argv'][] = '--no-progress';
 $_SERVER['argv'][] = '--testdox';
 $_SERVER['argv'][] = '--colors=never';
 $_SERVER['argv'][] = __DIR__ . '/_files/MetadataTest.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
 
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-Text from class-level TestDox metadata
- ✔ Text from method-level TestDox metadata for successful test
- ✘ Text from method-level TestDox metadata for failing test
-   │
-   │ Failed asserting that false is true.
-   │
-   │ %s:%d
-   │
+Runtime:       %s
 
 Time: %s, Memory: %s
 
-Summary of non-successful tests:
-
 Text from class-level TestDox metadata
+ ✔ Text from method-level TestDox metadata for successful test
  ✘ Text from method-level TestDox metadata for failing test
    │
    │ Failed asserting that false is true.

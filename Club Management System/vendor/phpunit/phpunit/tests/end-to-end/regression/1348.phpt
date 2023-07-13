@@ -13,9 +13,11 @@ $_SERVER['argv'][]  = '--process-isolation';
 $_SERVER['argv'][]  = __DIR__ . '/1348/Issue1348Test.php';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
 
 .
 STDOUT does not break test result
@@ -25,7 +27,7 @@ Time: %s, Memory: %s
 
 There was 1 error:
 
-1) Issue1348Test::testSTDERR
+1) PHPUnit\TestFixture\Issue1348Test::testSTDERR
 PHPUnit\Framework\Exception: STDERR works as usual.
 
 ERRORS!

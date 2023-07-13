@@ -9,13 +9,11 @@ $_SERVER['argv'][] = '.test.php';
 $_SERVER['argv'][] = __DIR__ . '/../../_files/';
 
 require_once __DIR__ . '/../../bootstrap.php';
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
-Warning:       Test case class not matching filename is deprecated
-               in %sBankAccountTest.test.php
-               Class name was 'BankAccountWithCustomExtensionTest', expected 'BankAccountTest'
+Runtime: %s
 
 ...                                                                 3 / 3 (100%)
 

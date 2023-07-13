@@ -9,9 +9,11 @@ $_SERVER['argv'][] = \realpath(__DIR__ . '/_files/MultiDependencyTest.php');
 
 require_once __DIR__ . '/../../bootstrap.php';
 
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
+
+Runtime: %s
 
 .....                                                               5 / 5 (100%)
 

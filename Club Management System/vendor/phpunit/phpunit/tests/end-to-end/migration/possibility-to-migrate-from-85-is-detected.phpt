@@ -8,17 +8,20 @@ $_SERVER['argv'][] = __DIR__ . '/_files/possibility-to-migrate-from-85-is-detect
 
 require_once __DIR__ . '/../../bootstrap.php';
 
-PHPUnit\TextUI\Command::main();
+(new PHPUnit\TextUI\Application)->run($_SERVER['argv']);
 --EXPECTF--
 PHPUnit %s by Sebastian Bergmann and contributors.
 
 Runtime:       PHP %s
 Configuration: %sphpunit.xml
-Warning:       Your XML configuration validates against a deprecated schema.
-Suggestion:    Migrate your XML configuration using "--migrate-configuration"!
 
 .                                                                   1 / 1 (100%)
 
 Time: %s, Memory: %s
 
-OK (1 test, 1 assertion)
+There was 1 PHPUnit test runner deprecation:
+
+1) Your XML configuration validates against a deprecated schema. Migrate your XML configuration using "--migrate-configuration"!
+
+OK, but there are issues!
+Tests: 1, Assertions: 1, Deprecations: 1.
