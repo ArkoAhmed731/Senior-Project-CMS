@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+/* * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  align-items: center;
+  background: #D8AA96;
+  color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 100vh;
+  justify-items: center;
+  width: 50%;
+
+  background-color: ;
+ }  */
+
+
+.signup-container {
+  display: grid;
+  justify-items: center;
+  /* grid-template-areas: "left right"; */
+  max-width: 100%;
+}
+
+.right-container {
+  /* align-items: center; */
+  /* background: #f9c7c2; */
+  display: grid;
+  grid-template-areas: "." ".";
+  width: 500px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.right-container h1:nth-of-type(1) {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 28px;
+  font-weight: 600;
+  
+}
+.right-container .set {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  /* margin-bottom: 50px; */
+}
+
+.right-container .setSummary {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  margin-bottom: 50px;
+}
+
+.right-container input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+}
+.right-container input, .right-container label {
+  color: rgba(0, 0, 0, 0.8);
+}
+.right-container header {
+  padding: 30px;
+}
+.right-container label, .right-container input, .right-container .pets-photo {
+  width: 176px;
+}
+
+.right-container .otherDepartments .radio-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+
+.submit-button {
+  margin: auto;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 38px;
+  line-height: 38px;
+  width: 100px;
+  border-radius: 19px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.submit-button:hover  {
+
+  background: #fff;
+  transition: 0.2s all ease-in-out;
+}
+
+.eventName label, .eventTypes label, .eventType label, .eventDate label eventSummary label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.eventName input{
+  width: 300px;
+}
+/* eventSummary */
+
+
+.eventSummary input{
+  width: 100%;
+  height: 100%;
+}
+
+.eventSummary textarea{
+  width: 100%;
+  height: 100%;
+  
+}
+
+.eventType select {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 200px;
+
+    margin-right: 40px;
+  }
+
+/* .eventType{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    height: 25px;
+    background-color: #f1f1f1;
+} */
+
+
+/* ``````````````````````````````
+othere departments
+`````````````````````````````` */
+.otherDepartments{
+  margin: auto;
+  width: 50%;
+}
+
+
+.checkbox-container {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px;
+
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+
+  box-shadow: 5px 10px 18px #888888;
+}
+.checkbox-container label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 2px;
+  padding: 0;
+  text-align: center;
+  transition: 0.2s all ease-in-out;
+  width: 120px;
+
+  
+}
+
+.checkbox-container input[type="checkbox"] {
+  display: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+
+  
+}
+
+.checkbox-container input[type="checkbox"]:checked + label {
+  /* background: #F7B1AB; */
+  background: #17a2b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+
+  border-radius: 10px;
+  box-shadow: 2.5px 5px 9px #888888;
+}
+
+/* added */
+/* sssssssssssssssss */
+
+.checkbox-container input[type='checkbox'] + label{
+  transition: all .2s ease-in-out;
+}
+
+.checkbox-container input[type='checkbox'] + label:hover, .checkbox-container input[type='checkbox']:focus + label{
+  color: #ffffff;
+  background: #17a2b8;
+  transform: scale(0.9);
+
+  border-radius: 10px;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label:hover, .checkbox-container input[type='checkbox']:focus + label {
+  background: #17a2b8;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgb(0, 0, 0);
+
+  border-radius: 10px;
+  box-shadow: 2.5px 5px 9px #888888;
+  transform: scale(0.9);
+}
+
+
+
+
+/* ``````````````````````````````````````````````````````````````````````````````````````````````````````````````
+```````````````````````````````````````````````````````
+upload file css
+```````````````````````````````````````````````````````
+``````````````````````````````````````````````````````` */
+
+.drop-container {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    /* width: 100%; */
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #555;
+    color: #444;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+
+    background: #eee;
+    box-shadow: 2.5px 5px 9px #888888;
+  }
+  
+  .drop-container:hover {
+    background: #20c997;
+    border-color: #111;
+  }
+  
+  .drop-container:hover .drop-title {
+    color: #222;
+  }
+  
+  .drop-title {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+  }
+
+
+
+  /* ``````````````````````````````````````
+  dropzone
+  `````````````````````````````````````````
+  `````````````````````````````````````````
+  ````````````````````````````````````````` */
+
+
+  @import "bourbon";
+ @import url(https://fonts.googleapis.com/css?family=Lato:400,700,300);
+ /* body {
+	 font-family: 'Lato', sans-serif;
+} */
+ .dropContainer {
+	 /* position: absolute;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0; */
+
+     align-items: center;
+     justify-content: center;
+     display: flex;
+     margin: auto;
+     width: 100%;
+
+}
+ .form {
+	 width: 400px;
+
+     margin: auto;
+     width: 80%;
+
+}
+ .file-upload-wrapper {
+	 position: relative;
+	 width: 100%;
+	 height: 60px;
+}
+ .file-upload-wrapper:after {
+	 content: attr(data-text);
+	 font-size: 18px;
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 background: #fff;
+	 padding: 10px 15px;
+	 display: block;
+	 width: calc(100% - 40px);
+	 pointer-events: none;
+	 z-index: 20;
+	 height: 40px;
+	 line-height: 40px;
+	 color: #999;
+	 border-radius: 5px 10px 10px 5px;
+	 font-weight: 300;
+
+   /* word-wrap: break-word; */
+   overflow:hidden;
+}
+ .file-upload-wrapper:before {
+	 content: 'Upload';
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 display: inline-block;
+	 height: 60px;
+	 background: #4daf7c;
+	 color: #fff;
+	 font-weight: 700;
+	 z-index: 25;
+	 font-size: 16px;
+	 line-height: 60px;
+	 padding: 0 15px;
+	 text-transform: uppercase;
+	 pointer-events: none;
+	 border-radius: 0 5px 5px 0;
+
+   /* word-wrap: break-word; */
+}
+ .file-upload-wrapper:hover:before {
+	 background: #3d8c63;
+}
+ .file-upload-wrapper input {
+	 opacity: 0;
+	 position: absolute;
+	 top: 0;
+	 right: 0;
+	 bottom: 0;
+	 left: 0;
+	 z-index: 99;
+	 height: 40px;
+	 margin: 0;
+	 padding: 0;
+	 display: block;
+	 cursor: pointer;
+	 width: 100%;
+
+   /* word-wrap: break-word; */
+}
+ .sprucecss {
+	 align-items: flex-start;
+	 background-color: #000;
+	 border-radius: 0.25rem;
+	 box-shadow: 0 0 0.5rem #000;
+	 color: #444;
+	 display: flex;
+	 flex-direction: column;
+	 gap: 0.5rem;
+	 inset: auto auto 1rem 1rem;
+	 line-height: 1.5;
+	 max-width: 11rem;
+	 padding: 1.5rem;
+	 position: fixed;
+	 text-decoration: none;
+}
+ .sprucecss img {
+	 height: 1.5rem;
+	 width: auto;
+}
+ 
+input.file-upload-field{
+    height: 100%;
+    /* word-wrap: break-word; */
+}

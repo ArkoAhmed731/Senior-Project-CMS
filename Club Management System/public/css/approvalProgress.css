@@ -1,0 +1,213 @@
+:root {
+    --color-white: #fff;
+    --color-black: #333;
+    --color-gray: #75787b;
+    --color-gray-light: #bbb;
+    --color-gray-disabled: #e8e8e8;
+    --color-green: #53a318;
+    --color-green-dark: #383;
+    --font-size-small: .75rem;
+    --font-size-default: .875rem;
+    --color-green-light: #4ee44e;
+    --color-eastern-blue: #17a2b8;
+  }
+
+  #applicationDiv{
+    margin: auto;
+    width: 90%;
+    border-radius: 10px;
+    /* border-color: black; */
+    background-color: white;
+    padding: 10px;
+    /* overflow: auto; */
+    background-color: #17a2b8;
+}
+
+/* .totalProgress{
+  background-color: #15a1b7be;
+} */
+
+
+#viewApplication{
+    border-radius: 20px;
+    /* position: absolute;
+    right: 0px; */
+    float: right;
+    /* background-color: #6c757d; */
+    /* border-color: #6c757d; */
+    /* color: white; */
+}
+
+  
+/* ````````````````````````````````````````````````````````````` */
+/* 1``````````````````````````````````````````````` */
+/* VERTICAL PROGRESS BAR CSS */
+/* ``````````````````````````````` */
+
+.wrapper {
+    margin: auto;
+    width: 60%;
+    /* text-align: center; */
+    /* width: 330px; */
+    font-family: 'Helvetica';
+    font-size: 20px;
+
+    /* add */
+    /* border-style: solid; */
+    border-radius: 20px;
+    /* border-width: 2px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
+    margin-bottom: 20px;
+    
+    padding: 10px;
+    /* background-color: #17a2b8; */
+}
+
+
+
+
+.StepProgress {
+    
+    position: relative;
+    padding-left: 45px;
+    list-style: none;
+}
+
+.StepProgress2 {
+    
+  position: relative;
+  padding-left: 45px;
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* flex-direction: row; */
+  
+  /* flex-direction: row; */
+}
+.StepProgress::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 15px;
+    width: 10px;
+    height: 100%;
+}
+.StepProgress-item {
+    position: relative;
+    counter-increment: list;
+}
+/* .StepProgress-item:not(:last-child) {
+    padding-bottom: 50px;
+} */
+.StepProgress-item::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    left: -30px;
+    height: 100%;
+    width: 10px;
+}
+.StepProgress-item::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: -43px;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #CCC;
+    border-radius: 50%;
+    background-color: black;
+}
+/* .StepProgress-item.is-done::before {
+    border-left: 2px solid var(--color-green-light);
+} */
+.StepProgress-item.is-done::after {
+    content: "✔";
+    font-size: 15px;
+    color: white;
+    text-align: center;
+    border: 2px solid var(--color-eastern-blue);
+    background-color: var(--color-eastern-blue);
+  
+}
+/* .StepProgress-item.current::before {
+    border-left: 2px solid red;
+} */
+.StepProgress-item.current::after {
+    /* content: counter(list); */
+    content: "X";
+    padding-top: 1px;
+    width: 25px;
+    height: 25px;
+    top: -4px;
+    left: -43px;
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    border: 2px solid var(--color-eastern-blue);
+    background-color:var(--color-eastern-blue);
+}
+.StepProgress strong {
+    display: block;
+}
+
+#approveDetailsBtn{
+  margin-right: 5px;
+  font-size: 13px;
+
+  border-radius: 20px;
+  float: right;
+  background-color: #6c757d;
+  color: #ffffff;
+  border: 2px solid #6c757d;
+}
+
+
+/* ``````````````````````````````
+othere departments
+`````````````````````````````` */
+.otherDepartments{
+    margin: auto;
+    width: 50%;
+}
+
+.wrapper2 {
+  margin: auto;
+  width: 90%;
+  /* text-align: center; */
+  /* width: 330px; */
+  font-family: 'Helvetica';
+  font-size: 10px;
+
+  /* add */
+  /* border-style: solid; */
+  border-radius: 20px;
+  /* border-width: 2px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;    
+  margin-bottom: 20px;
+  
+  padding: 20px;
+
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-direction: row; */
+}
+
+.StepProgress2 {
+    
+  position: relative;
+  padding-left: 45px;
+  list-style: none;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* flex-direction: row; */
+  
+  /* flex-direction: row; */
+}
