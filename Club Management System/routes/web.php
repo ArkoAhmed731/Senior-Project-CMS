@@ -5,6 +5,7 @@ use App\Http\Controllers\formController;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\globalController;
+use App\Http\Controllers\LaravelCrud;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,12 @@ Route::get('/create-post', [globalController::class, 'load_createPost'])->name("
 Route::get('/notification', [globalController::class, 'load_notification'])->name("notification");
 
 
+//crud test all
+Route::get('crud', [LaravelCrud::class, 'index']);
+Route::post('add', [LaravelCrud::class, 'add']);
+Route::get('edit/{id}', [LaravelCrud::class, 'edit']);
+Route::post('update', [LaravelCrud::class, 'update'])->name('update');
+Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
 
 
 
