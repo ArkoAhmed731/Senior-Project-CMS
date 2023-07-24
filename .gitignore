@@ -1,7 +1,11 @@
-/azwad/
+azwad.html
 rahat/
 vendor/
+Club Management System/.env
 .env
+
+
+
 
 
 
@@ -26,3 +30,4 @@ vendor/
 # Homestead.json
 # /.vagrant
 # .phpunit.result.cache
+
