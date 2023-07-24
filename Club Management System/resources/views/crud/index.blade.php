@@ -104,7 +104,7 @@
       <td>
         <div class = "btn-group">
           <a href="edit/{{ $item->id }}" class="btn btn-primary btn-xs">Edit</a>
-          <a href="" class="btn btn-danger btn-xs">Delete</a>
+          <a href="delete/{{ $item->id }}" class="btn btn-danger btn-xs">Delete</a>
         </div>
       </td>
     </tr>

@@ -29,7 +29,7 @@
 
 
 
-<form action="add" method="post"> 
+<form action="{{ route('update') }}" method="post"> 
 
 @csrf
   <div class="form-group">

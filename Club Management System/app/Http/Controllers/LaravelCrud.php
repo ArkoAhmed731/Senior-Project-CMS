@@ -59,6 +59,40 @@ class LaravelCrud extends Controller
 
         return view ('crud.edit', $data);
 
+        
+
+    }
+
+    function update(Request $request){
+        $request->validate([
+            'id'=>'required',
+            'name'=>'required',
+            'email'=>'required|email|unique:club2',
+            'contact'=>'required'
+        ]);
+
+        $updating = DB::table('club2')
+            ->where('id', $request->input('id'))
+            ->update([
+                'id'=> $request->input('id'),
+                'name'=> $request->input('name'),
+                'email'=> $request->input('email'),
+                'contact'=> $request->input('contact'),
+                'gender'=> $request->input('gender'),
+                'position'=> $request->input('position')
+            ]);
+            
+            return redirect('crud');
+
+    }
+
+    function delete($id){
+
+        $delete = DB::table('club2')
+            ->where('id', $id)
+            ->delete();
+
+        return redirect('crud');
     }
 
 
