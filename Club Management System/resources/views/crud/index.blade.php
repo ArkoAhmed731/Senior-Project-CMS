@@ -78,6 +78,43 @@
   </div>
 
 </form>
+
+<br>
+
+<table class = "table table-hover">
+  <thread>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Contact</th>
+    <th>Gender</th>
+    <th>Position</th>
+    <th>Actions</th>
+  </thread>
+  <tbody>
+
+    @foreach ($list as $item)
+    <tr>
+      <td>{{ $item->id }}</td>
+      <td>{{ $item->name }}</td>
+      <td>{{ $item->email }}</td>
+      <td>{{ $item->contact }}</td>
+      <td>{{ $item->gender }}</td>
+      <td>{{ $item->position }}</td>
+      <td>
+        <div class = "btn-group">
+          <a href="edit/{{ $item->id }}" class="btn btn-primary btn-xs">Edit</a>
+          <a href="" class="btn btn-danger btn-xs">Delete</a>
+        </div>
+      </td>
+    </tr>
+    @endforeach
+    
+  </tbody>
+  
+
+</table>
+
 </div>
 </body>
 </html>

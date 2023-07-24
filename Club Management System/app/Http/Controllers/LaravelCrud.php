@@ -12,7 +12,11 @@ class LaravelCrud extends Controller
     //
     function index()
     {
-        return view('crud.index');
+        $data = array(
+            'list' => DB::table('club2')->get()
+        );
+
+        return view('crud.index', $data);
     }
 
     function add(Request $request) 
@@ -40,6 +44,20 @@ class LaravelCrud extends Controller
         }else{
             return back() ->with('fail', 'FAIL!');
         }
+
+    }
+
+    function edit($id){
+        
+        $row = DB::table('club2')
+            ->where('id', $id)
+            ->first();
+        $data = [
+            'Info'=> $row,
+            'Title'=> 'Edit'
+        ];
+
+        return view ('crud.edit', $data);
 
     }
 
