@@ -80,3 +80,17 @@ Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
 //club admin
 
 //footer
+
+
+// routes/web.php
+
+// routes/web.php
+
+use App\Http\Controllers\ClubController;
+
+Route::get('/create-club', [ClubController::class, 'createClubForm'])->name('showCreateForm');
+Route::post('/create-club', [ClubController::class, 'createClub'])->name('createClub');
+
+
+
+
