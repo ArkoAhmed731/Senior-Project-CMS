@@ -82,9 +82,8 @@ Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
 //footer
 
 
-// routes/web.php
 
-// routes/web.php
+// Super Admin
 
 use App\Http\Controllers\ClubController;
 
