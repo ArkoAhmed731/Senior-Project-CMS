@@ -50,9 +50,10 @@ class globalController extends Controller
 
     public function load_privateTest()
     {
+        $club_names = DB::table('club_list')->select('club_id','club_name')->get();
+        
 
-
-        return view('applicationApproval/privateTest');
+        return view('applicationApproval/privateTest', compact('club_names'));
     }
 
     public function load_applyForEvent()

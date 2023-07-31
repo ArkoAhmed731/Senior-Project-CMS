@@ -66,11 +66,14 @@ Route::get('/notification', [globalController::class, 'load_notification'])->nam
 
 
 //crud test all
-Route::get('crud', [LaravelCrud::class, 'index']);
+// Route::get('crud', [LaravelCrud::class, 'index']);
 Route::post('add', [LaravelCrud::class, 'add']);
 Route::get('edit/{id}', [LaravelCrud::class, 'edit']);
 Route::post('update', [LaravelCrud::class, 'update'])->name('update');
 Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
+
+Route::post('crud/{id}', [LaravelCrud::class, 'index']);
+Route::get('crud/{id}', [LaravelCrud::class, 'index']);
 
 
 

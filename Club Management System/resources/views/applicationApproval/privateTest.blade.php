@@ -1,78 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CMS Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>CMS</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/applyForEvent.css') }}">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="{{ asset('css/privateTest.css') }}"> -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
-    <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
-
-    {{-- 
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.min.css"> --}}
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <link rel="stylesheet" href="css/login.css"> -->
-    <link rel="stylesheet" href="css/privateTest.css">
-
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
 
-    <div class="wrapper">
-        <div class="logo">
-            <img src="images/iub-logo.jpg" alt="">
-        </div>
-        <div class="text-center mt-4 name">
-            Club Management System(CMS)
-        </div>
-        <form class="p-3 mt-3">
-            <div class="form-field d-flex align-items-center">
-                <span class="far fa-user"></span>
-                <input type="text" name="email" id="email" placeholder="Email address">
-            </div>
-            <div class="form-field d-flex align-items-center">
-                <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password">
-            </div>
+<div class="site-wrap">
 
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              User type
-              </button>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </div>
+  {{-- nav bar --}}
+  @include('menu.navBar')
+  
+  {{-- nav bar end--}}
 
-            <script>$('.dropdown-toggle').dropdown()</script>
 
-            <button class="btn mt-3">Login</button>
-            
-        </form>
-
-        <div class="alert alert-danger" role="alert">
-            Email address & Password combination failed
-        </div>
-
-        <div class="text-center fs-6">
-            <a href="forgot-password">Forget password?</a> or <a href="signup">Sign up</a>
-        </div>
+<div class="signup-container">
+  
+  @if(Session::get('success'))
+    <div class = "alert alert-success">
+        {{ Session::get('success') }}
     </div>
+  @endif
+
+  @if(Session::get('fail'))
+    <div class = "alert alert-danger">
+        {{ Session::get('fail') }}
+    </div>
+  @endif
+
+  <div class="right-container bg-light p-4">
+    <h2 class="mx-auto">Select club</h2>
+    <br>
+    <select name="select_club" id="select_club">
+      <option selected="true" disabled="disabled">Please Select</option>
+      @foreach($club_names as $club_list)
+        <option value="{{ $club_list->club_id }}">{{ $club_list->club_name}}
+      @endforeach
+    </select>
+
+      <br><br>
+    <div class = "btn-group">
+      <a href="../crud/{{ $club_list->club_name }}" class="btn btn-primary btn-xs">GO</a>
+     </div>
+    
+  
+</div>
+</div>
 
 
-    @include('menu.footer')
 
 
+{{-- footer --}}
+     @include('menu.footer')
+      {{-- footer end--}}
 
+  
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+
+  <script src="js/main.js"></script>
+
+    
 </body>
 
 </html>

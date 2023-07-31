@@ -10,13 +10,14 @@ use Illuminate\Support\Facades\DB;
 class LaravelCrud extends Controller
 {
     //
-    function index()
+    function index($club_name)
     {
         $data = array(
-            'list' => DB::table('club2')->get()
+            'list' => DB::table($club_name)->get()
         );
 
-        return view('crud.index', $data);
+
+        return view('crud.index', $data, compact('club_name'));
     }
 
     function add(Request $request) 
@@ -24,19 +25,19 @@ class LaravelCrud extends Controller
         // return $request->input();
 
         $request->validate([
-            'id'=>'required',
-            'name'=>'required',
-            'email'=>'required|email|unique:club2',
-            'contact'=>'required'
+            'user_id'=>'required',
+            'user_name'=>'required',
+            'user_email'=>'required|email|unique',
+            'contact_number'=>'required'
         ]);
 
-        $query = DB::table('club2')->insert([
-            'id'=>$request->input('id'),
-            'name'=>$request->input('name'),
-            'email'=>$request->input('email'),
-            'contact'=>$request->input('contact'),
+        $query = DB::table($club_name)->insert([
+            'user_id'=>$request->input('user_id'),
+            'user_name'=>$request->input('user_name'),
+            'user_email'=>$request->input('user_email'),
+            'contact_number'=>$request->input('contact_number'),
             'gender'=>$request->input('gender'),
-            'position'=>$request->input('position')
+            'club_position'=>$request->input('club_position')
         ]);
 
         if ($query){

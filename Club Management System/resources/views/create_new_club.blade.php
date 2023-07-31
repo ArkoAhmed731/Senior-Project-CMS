@@ -17,6 +17,8 @@
         <form method="post" action="{{ route('createClub') }}">
             @csrf
             <div class="form-group text-center">
+                <input type="number" name="club_id" id="club_id" class="form-control" placeholder="Enter Club id here" required>
+                <br>
                 <input type="text" name="club_name" id="club_name" class="form-control" placeholder="Enter Club Name here" required>
             </div>
             <div class="text-center">
