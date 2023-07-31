@@ -85,9 +85,8 @@ Route::get('crud/{id}', [LaravelCrud::class, 'index']);
 //footer
 
 
-// routes/web.php
 
-// routes/web.php
+// Super Admin
 
 use App\Http\Controllers\ClubController;
 
