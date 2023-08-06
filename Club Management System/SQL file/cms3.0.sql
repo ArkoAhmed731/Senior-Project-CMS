@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Aug 07, 2023 at 01:21 AM
+-- Generation Time: Aug 07, 2023 at 03:07 AM
 -- Server version: 5.7.34
 -- PHP Version: 7.4.21
 
@@ -43,8 +43,57 @@ CREATE TABLE `applications` (
 --
 
 INSERT INTO `applications` (`application_id`, `application_title`, `application_type`, `application_date`, `application_description`, `applicant_name`, `created_at`, `updated_at`) VALUES
-(1, 'IUB music club concert', 'concert', '2023-08-12', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Azwad', '2023-08-06 13:10:30', '2023-08-06 13:10:30'),
-(2, 'IUB pohela boishak festival', 'Festival', '2023-08-12', 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of \"de Finibus Bonorum et Malorum\" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", comes from a line in section 1.10.32.', 'Rahat', '2023-08-06 13:12:21', '2023-08-06 13:12:21');
+(19, 'IUB music club concert', 'concert', '2023-08-12', 'adasdsad', 'dasdasds', '2023-08-06 15:00:38', '2023-08-06 15:00:38'),
+(20, 'IUB music club concert', 'program', '2023-08-19', 'fdsfdsfadsfadsf', 'Arko', '2023-08-06 15:03:41', '2023-08-06 15:03:41'),
+(21, 'IUB Warfaze concert', 'dasdas', '2023-08-19', 'fdfdsf', 'fdfdfdsf', '2023-08-06 15:06:12', '2023-08-06 15:06:12');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `application_19`
+--
+
+CREATE TABLE `application_19` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `ONM_status` enum('pending','approved','declined') DEFAULT 'pending',
+  `ONM_response` varchar(200) DEFAULT NULL,
+  `CITS_status` enum('pending','approved','declined') DEFAULT 'pending',
+  `CITS_response` varchar(200) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `application_20`
+--
+
+CREATE TABLE `application_20` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `ONM_status` enum('pending','approved','declined') DEFAULT 'pending',
+  `ONM_response` varchar(200) DEFAULT NULL,
+  `CITS_status` enum('pending','approved','declined') DEFAULT 'pending',
+  `CITS_response` varchar(200) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `application_21`
+--
+
+CREATE TABLE `application_21` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `ONM_status` enum('pending','approved','declined') DEFAULT 'pending',
+  `ONM_response` varchar(200) DEFAULT NULL,
+  `CITS_status` enum('pending','approved','declined') DEFAULT 'pending',
+  `CITS_response` varchar(200) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -285,6 +334,24 @@ ALTER TABLE `applications`
   ADD PRIMARY KEY (`application_id`);
 
 --
+-- Indexes for table `application_19`
+--
+ALTER TABLE `application_19`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `application_20`
+--
+ALTER TABLE `application_20`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `application_21`
+--
+ALTER TABLE `application_21`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `chess club`
 --
 ALTER TABLE `chess club`
@@ -342,7 +409,25 @@ ALTER TABLE `ww`
 -- AUTO_INCREMENT for table `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `application_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `application_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `application_19`
+--
+ALTER TABLE `application_19`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `application_20`
+--
+ALTER TABLE `application_20`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `application_21`
+--
+ALTER TABLE `application_21`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `chess club`
