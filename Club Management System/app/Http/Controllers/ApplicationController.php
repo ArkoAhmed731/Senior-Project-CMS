@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Application; // Make sure to use the correct namespace for the Application model
+use App\Models\Application; 
 
 class ApplicationController extends Controller
 {

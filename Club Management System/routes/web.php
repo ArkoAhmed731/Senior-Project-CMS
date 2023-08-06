@@ -86,7 +86,7 @@ Route::get('crud/{id}', [LaravelCrud::class, 'index']);
 
 
 
-// Super Admin
+// Super Admin Create club
 
 use App\Http\Controllers\ClubController;
 
@@ -94,6 +94,8 @@ Route::get('/create-club', [ClubController::class, 'createClubForm'])->name('sho
 Route::post('/create-club', [ClubController::class, 'createClub'])->name('createClub');
 
 
+
+// Create Application
 use App\Http\Controllers\ApplicationController;
 
 Route::get('/applications/create', [ApplicationController::class, 'create'])->name('applications.create');
