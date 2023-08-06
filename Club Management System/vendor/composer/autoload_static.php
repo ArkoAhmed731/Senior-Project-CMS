@@ -551,7 +551,8 @@ class ComposerStaticInit89ef3004facbea72972626349fa0b150
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Http\\Controllers\\Club1Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Club1Controller.php',
+        'App\\Http\\Controllers\\ApplicationController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApplicationController.php',
+        'App\\Http\\Controllers\\ClubController' => __DIR__ . '/../..' . '/app/Http/Controllers/ClubController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\LaravelCrud' => __DIR__ . '/../..' . '/app/Http/Controllers/LaravelCrud.php',
         'App\\Http\\Controllers\\adminController' => __DIR__ . '/../..' . '/app/Http/Controllers/adminController.php',

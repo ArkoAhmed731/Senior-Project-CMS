@@ -94,5 +94,8 @@ Route::get('/create-club', [ClubController::class, 'createClubForm'])->name('sho
 Route::post('/create-club', [ClubController::class, 'createClub'])->name('createClub');
 
 
+use App\Http\Controllers\ApplicationController;
 
+Route::get('/applications/create', [ApplicationController::class, 'create'])->name('applications.create');
+Route::post('/applications/store', [ApplicationController::class, 'store'])->name('applications.store');
 
