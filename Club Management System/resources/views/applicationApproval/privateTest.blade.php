@@ -49,17 +49,27 @@
   <div class="right-container bg-light p-4">
     <h2 class="mx-auto">Select club</h2>
     <br>
-    <select name="select_club" id="select_club">
-      <option selected="true" disabled="disabled">Please Select</option>
-      @foreach($club_names as $club_list)
-        <option value="{{ $club_list->club_id }}">{{ $club_list->club_name}}
-      @endforeach
-    </select>
-
+    
+    <!-- <form action="getClub" method = "get"> -->
+      <select name="select_club" id="select_club">
+        <option selected="true" disabled="disabled">Please Select</option>
+        @foreach($club_names as $club_list)
+          <option value="{{ $club_list->club_id }}"
+          {{ $club_list->club_id }}>{{ $club_list->club_name}}
+          </option>
+        @endforeach
+      </select>
+      <script>
+        var e = document.getElementById("select_club");
+        var value = e.value;
+        var text = e.options[e.selectedIndex].text;
+      </script>
       <br><br>
-    <div class = "btn-group">
-      <a href="../crud/{{ $club_list->club_name }}" class="btn btn-primary btn-xs">GO</a>
-     </div>
+      <div class = "btn-group">
+        <a href="../crud/{{ $club_list->club_name }}" class="btn btn-primary btn-xs">GO</a>
+        <!-- <button name = "submit" type="submit" class="btn btn-primary">Go</button> -->
+      </div>
+      <!-- </form> -->
     
   
 </div>

@@ -20,6 +20,13 @@ class LaravelCrud extends Controller
         return view('crud.index', $data, compact('club_name'));
     }
 
+    function getClub(Request $request)
+    {
+        $club_name = $request->input('select_club');
+
+        return view('crud.index', $club_name);
+    }
+
     function add(Request $request) 
     {
         // return $request->input();

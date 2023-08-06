@@ -75,6 +75,8 @@ Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
 Route::post('crud/{id}', [LaravelCrud::class, 'index']);
 Route::get('crud/{id}', [LaravelCrud::class, 'index']);
 
+Route::get('crud/{id}', [LaravelCrud::class, 'getClub']);
+
 
 
 
