@@ -157,9 +157,9 @@
             <h4 class="text-center">Admin Panel</h4>
 
 
-            <a href="/apply-for-event" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+            <a href="/applications/create" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">Apply For Event</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">Create Application</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
