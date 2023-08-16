@@ -1,100 +1,68 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/index.css">
 
-    <title>CMS</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/applyForEvent.css') }}">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="{{ asset('css/privateTest.css') }}"> -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+    <title>Chess Club new user</title>
 </head>
-
 <body>
 
-<div class="site-wrap">
-
-  {{-- nav bar --}}
-  @include('menu.navBar')
-  
-  {{-- nav bar end--}}
+<div class = "he">Submitted Applications</div>
 
 
-<div class="signup-container">
-  
-  @if(Session::get('success'))
+<div class = "container">
+
+@if(Session::get('success'))
     <div class = "alert alert-success">
         {{ Session::get('success') }}
     </div>
-  @endif
+@endif
 
-  @if(Session::get('fail'))
+@if(Session::get('fail'))
     <div class = "alert alert-danger">
         {{ Session::get('fail') }}
     </div>
-  @endif
+@endif
 
-  <div class="right-container bg-light p-4">
-    <h2 class="mx-auto">Select club</h2>
-    <br>
+<br>
+
+<table class = "table table-hover">
+  <thread>
+    <th>application_id</th>
+    <th>application_title</th>
+    <th>application_type</th>
+    <th>application_date</th>
+    <th>application_description</th>
+    <th>applicant_name</th>
+    <th>Actions</th>
+  </thread>
+  <tbody>
+
+    @foreach ($applications as $item)
+    <tr>
+      <td>{{ $item->application_id }}</td>
+      <td>{{ $item->application_title }}</td>
+      <td>{{ $item->application_type }}</td>
+      <td>{{ $item->application_date }}</td>
+      <td>{{ $item->application_description }}</td>
+      <td>{{ $item->applicant_name }}</td>
+      <td>
+        <div class = "btn-group">
+          <a href="testProgress/{{ $item->application_id }}" class="btn btn-primary btn-xs">See Details</a>
+          
+        </div>
+      </td>
+    </tr>
+    @endforeach
     
-    <!-- <form action="getClub" method = "get"> -->
-      <select name="select_club" id="select_club">
-        <option selected="true" disabled="disabled">Please Select</option>
-        @foreach($club_names as $club_list)
-          <option value="{{ $club_list->club_id }}"
-          {{ $club_list->club_id }}>{{ $club_list->club_name}}
-          </option>
-        @endforeach
-      </select>
-      <script>
-        var e = document.getElementById("select_club");
-        var value = e.value;
-        var text = e.options[e.selectedIndex].text;
-      </script>
-      <br><br>
-      <div class = "btn-group">
-        <a href="../crud/{{ $club_list->club_name }}" class="btn btn-primary btn-xs">GO</a>
-        <!-- <button name = "submit" type="submit" class="btn btn-primary">Go</button> -->
-      </div>
-      <!-- </form> -->
-    
-  
-</div>
-</div>
-
-
-
-
-{{-- footer --}}
-     @include('menu.footer')
-      {{-- footer end--}}
-
+  </tbody>
   
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
+</table>
 
-  <script src="js/main.js"></script>
-
-    
+</div>
 </body>
-
 </html>

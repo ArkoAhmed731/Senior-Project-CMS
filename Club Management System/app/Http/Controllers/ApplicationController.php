@@ -19,7 +19,7 @@ class ApplicationController extends Controller
     }
 
     public function store(Request $request)
-{
+    {
     $validatedData = $request->validate([
         'application_title' => 'required|max:200',
         'application_type' => 'required',
@@ -63,6 +63,6 @@ class ApplicationController extends Controller
     )");
 
     return redirect()->route('applications.create')->with('success', 'Application submitted successfully!');
-}
+    }
 
 }

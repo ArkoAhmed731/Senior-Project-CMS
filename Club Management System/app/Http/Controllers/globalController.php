@@ -50,11 +50,21 @@ class globalController extends Controller
 
     public function load_privateTest()
     {
-        $club_names = DB::table('club_list')->select('club_id','club_name')->get();
-        $selectedID = 2;
+        
 
-        return view('applicationApproval/privateTest', compact('club_names', 'selectedID'));
+        $applications = DB::table('applications')->get();
+
+        return view('applicationApproval/privateTest', ['applications' => $applications]);
     }
+
+    // Not yet connected... Only used in testing phase.. Can delete if not needed
+    // public function load_chooseClub()
+    // {
+    //     $club_names = DB::table('club_list')->select('club_id','club_name')->get();
+    //     $selectedID = 2;
+
+    //     return view('applicationApproval/privateTest', compact('club_names', 'selectedID'));
+    // }
 
     public function load_applyForEvent()
     {

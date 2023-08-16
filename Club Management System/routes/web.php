@@ -53,7 +53,7 @@ Route::get('/edit-my-profile', [globalController::class, 'load_editMyProfile'])-
 Route::get('/view-profile', [globalController::class, 'load_viewProfile'])->name("viewProfile");
 
 Route::get('/approval-progress', [globalController::class, 'load_approvalProgress'])->name("approvalProgress");
-Route::get('/private-test', [globalController::class, 'load_privateTest'])->name("privateTest");
+// Route::get('/private-test', [globalController::class, 'load_privateTest'])->name("privateTest");
 Route::get('/apply-for-event', [globalController::class, 'load_applyForEvent'])->name("applyForEvent");
 Route::get('/post-approval', [globalController::class, 'load_postApproval'])->name("postApproval");
 
@@ -75,7 +75,7 @@ Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
 Route::post('crud/{id}', [LaravelCrud::class, 'index']);
 Route::get('crud/{id}', [LaravelCrud::class, 'index']);
 
-Route::get('crud/{id}', [LaravelCrud::class, 'getClub']);
+// Route::get('crud/{id}', [LaravelCrud::class, 'getClub']);
 
 
 
@@ -103,3 +103,13 @@ use App\Http\Controllers\ApplicationController;
 Route::get('/applications/create', [ApplicationController::class, 'create'])->name('applications.create');
 Route::post('/applications/store', [ApplicationController::class, 'store'])->name('applications.store');
 
+
+
+// Approval
+
+use App\Http\Controllers\approvalController;
+
+// Route::get('/applications/create', [approvalController::class, 'create'])->name('applications.create');
+Route::get('/private-test', [approvalController::class, 'index']);
+Route::get('/testProgress', [approvalController::class, 'testProgress']);
+// Route::get('/testProgress/{id}', [LaravelCrud::class, 'edit']);
