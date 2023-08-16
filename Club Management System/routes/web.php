@@ -97,11 +97,20 @@ Route::post('/create-club', [ClubController::class, 'createClub'])->name('create
 
 
 
-// Create Application
-use App\Http\Controllers\ApplicationController;
+// // Create Application
+// use App\Http\Controllers\ApplicationController;
 
-Route::get('/applications/create', [ApplicationController::class, 'create'])->name('applications.create');
-Route::post('/applications/store', [ApplicationController::class, 'store'])->name('applications.store');
+// Route::get('/applications/create', [ApplicationController::class, 'create'])->name('applications.create');
+// Route::post('/applications/store', [ApplicationController::class, 'store'])->name('applications.store');
+
+use App\Http\Controllers\ApplicationInfoController;
+
+
+// Route for displaying the application creation form
+Route::get('/applications/create', [ApplicationInfoController::class, 'create'])->name('applications.create');
+
+// Route for storing the application data
+Route::post('/applications', [ApplicationInfoController::class, 'store'])->name('applications.store');
 
 
 
