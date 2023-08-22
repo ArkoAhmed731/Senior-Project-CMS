@@ -39,9 +39,9 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/testProgress.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
-
   
-
+  
+  
 </head>
 
 <body>
@@ -59,10 +59,9 @@
 
       
 
-        <div id = applicationDiv>
-            Application ID: 118130
-            <br>
-            Application Name: Application for pahela baishakh concert
+        <div id = applicationDiv >
+            Application ID: <input tabindex="0" name = "application_id" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" value="" >
+            Application Name: <input tabindex="0" name = "application_id" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_title }}" >
             <br>
             <div>
                 <button id="viewApplication" type="button" onclick="">View Application</button>
@@ -72,12 +71,15 @@
         <br>      
     </div>
 
+
     <div class="progress progress-striped active mx-4 mb-4">
         <div class="progress-bar progress-bar-success"
-          style="width: 0%"> 70%
+           
+            aria-valuemin="0" aria-valuemax="100">70%
         </div>
-      </div>
-
+    </div>
+    
+    
       <script>
         $(".progress-bar").animate({
               width: "70%",
@@ -94,12 +96,12 @@
         <div class="wrapper">
           
           <ul class="StepProgress ">
-            <div class="StepProgress-item mb-2 is-done">
+            <div class="StepProgress-item mb-2 current">
                 <strong>DOSA<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
                 <hr>
             </div>
 
-            <div class="StepProgress-item mb-2 is-done">
+            <div class="StepProgress-item mb-2 current">
                 <strong>Dean<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
                 <hr>
 

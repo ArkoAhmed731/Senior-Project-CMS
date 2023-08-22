@@ -111,7 +111,7 @@
 
             </div>
 
-            <div class="StepProgress-item mb-2 current">
+            <div class="StepProgress-item mb-2 is-done">
                 <strong>Department Head<button id="approveDetailsBtn" type="button" onclick="">details</button></strong>
             </div>
           </ul>

@@ -120,5 +120,9 @@ use App\Http\Controllers\approvalController;
 
 // Route::get('/applications/create', [approvalController::class, 'create'])->name('applications.create');
 Route::get('/private-test', [approvalController::class, 'index']);
-Route::get('/testProgress', [approvalController::class, 'testProgress']);
+Route::get('/testProgress/{id}', [approvalController::class, 'testProgress']);
+Route::get('/post-approval/{id}', [approvalController::class, 'postApproval']);
+// Route::post('/testProgress', [approvalController::class, 'testProgress']);
 // Route::get('/testProgress/{id}', [LaravelCrud::class, 'edit']);
+Route::post('approve_update', [approvalController::class, 'approve_update'])->name('approve_update');
+

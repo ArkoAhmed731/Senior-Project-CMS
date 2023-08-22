@@ -35,8 +35,61 @@
 
   <h1>Application Approval Page</h1>
 
+
 <div class="application">
-  <h2>Event Application</h2>
+
+
+  <form action="{{ route('approve_update') }}" method="post"> 
+
+  @csrf
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Application ID</label>
+      <input name = "application_id" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_id }}" >
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">application_title</label>
+      <input name = "name" type="text"  readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_title }}">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">application_type</label>
+      <input name = "email" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_type }}">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">application_date</label>
+      <input name = "contact" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_date }}">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">application_description</label>
+      <input name = "contact" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_description }}">
+    </div>
+
+    <div class="form-group">
+      <label for="exampleFormControlInput1">applicant_name</label>    
+      <input name = "contact" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->applicant_name }}">
+    </div>
+
+
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button name = "approve_button" type="submit" class="btn btn-primary">Approve</button>
+      </div>    
+    </div>
+    <br>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button name = "decline_button" type="submit" class="btn btn-secondary">Decline</button>
+      </div>
+    </div>
+    
+  </form>
+
+
+
+<!-- <h2>Event Application</h2>
   <p><strong>Name:</strong> Abdus Salam</p>
   <p><strong>Email:</strong> absudsalam@example.com</p>
   <p><strong>Event:</strong> Concert for the rohingyas</p>
@@ -44,8 +97,6 @@
   <p></p>
 
   <div class="file">
-    <!-- <strong>Application File:</strong>
-    <a href="#" class="file-link">Download</a> -->
 
     <button class="downloadFile"><a href="#" class="file-link">Download Application</a></button>
   </div>
@@ -53,7 +104,7 @@
   <div class="buttonsA">
     <button class="approve-btn">Approve</button>
     <button class="disapprove-btn">Decline</button>
-  </div>
+  </div> -->
 </div>
 
 <!-- Additional application divs can be added here -->

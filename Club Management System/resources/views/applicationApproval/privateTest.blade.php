@@ -51,7 +51,8 @@
       <td>{{ $item->applicant_name }}</td>
       <td>
         <div class = "btn-group">
-          <a href="testProgress/{{ $item->application_id }}" class="btn btn-primary btn-xs">See Details</a>
+          <a href="post-approval/{{ $item->application_id }}" class="btn btn-primary btn-xs">Respond</a>
+          <a href="testProgress/{{ $item->application_id }}" class="btn btn-secondary btn-xs">View Progress</a>
           
         </div>
       </td>
