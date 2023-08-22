@@ -22,10 +22,31 @@ class approvalController extends Controller
         $row = DB::table('application_info')
         ->where('application_id', $id)
         ->first();
-        $data = [
-            'Info'=> $row,
-            'Title'=> 'Edit'
-        ];
+
+        $countOnes = 0;
+        $countNotOnes = 0;
+
+        if ($row) {
+            foreach ($row as $columnName => $value) {
+                // Check if the column is numeric and has value 1
+                if ($columnName !== 'application_id' && is_numeric($value) && $value === 1) {
+                    $countOnes++;
+                } else if ($columnName !== 'application_id' && is_numeric($value) && $value != 1 && $value != 3) {
+                    $countNotOnes++;
+                }
+            }
+        }
+            $totalColumns = $countNotOnes + $countOnes;
+            $percentageOnes = round(($countOnes / $totalColumns) * 100);
+            // $percentageOnes = $countOnes;
+
+            $data = [
+                'Info' => $row,
+                // variable page title
+                // 'Title' => 'Edit',
+                'percentageOnes' => $percentageOnes
+                
+            ];
 
         return view ('applicationApproval.testProgress', $data);
 
@@ -36,30 +57,11 @@ class approvalController extends Controller
         $row = DB::table('application_info')
             ->where('application_id', $id)
             ->first();
-            
-            $a = 40;
-            $totalColumns = 1;
-            $countOnes = 1;
-            $countNotOnes = 1;
-
-            if ($row) {
-                foreach ($row as $columnName => $value) {
-                    if ($value === '1') {
-                        $countOnes++;
-                    } elseif ($value === '2' || $value === '0') {
-                        $countNotOnes++;
-                    }
-                }
-            }
-
-            $totalColumns = $countOnes + $countNotOnes;
-            $percentageOnes = ($countOnes / $totalColumns) * 100;
 
             $data = [
                 'Info' => $row,
                 // variable page title
                 // 'Title' => 'Edit',
-                // 'percentageOnes' => $percentageOnes
                 
             ];
 

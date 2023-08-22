@@ -60,7 +60,7 @@
       
 
         <div id = applicationDiv >
-            Application ID: <input tabindex="0" name = "application_id" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" value="" >
+            Application ID: <input tabindex="0" name = "application_id" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" value="{{ $Info->application_id }}" >
             Application Name: <input tabindex="0" name = "application_id" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_title }}" >
             <br>
             <div>
@@ -75,15 +75,15 @@
     <div class="progress progress-striped active mx-4 mb-4">
         <div class="progress-bar progress-bar-success"
            
-            aria-valuemin="0" aria-valuemax="100">70%
+            aria-valuemin="0" aria-valuemax="100">{{ $percentageOnes }}%
         </div>
     </div>
     
     
       <script>
         $(".progress-bar").animate({
-              width: "70%",
-        }, 2500);
+              width: "{{ $percentageOnes }}%",
+        }, 1500);
       </script>
 
     <!-- <div id = progress> -->
