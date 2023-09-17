@@ -9,15 +9,17 @@ use Illuminate\Support\Facades\DB;
 
 class approvalController extends Controller
 {
-    //
+    //show all applications
     function index()
     {
         $applications = DB::table('application_info')->get();
 
-        return view('applicationApproval/privateTest', ['applications' => $applications]);
+        return view('applicationApproval/viewAllApplications', ['applications' => $applications]);
     }
 
-    function testProgress($id)
+
+    //calculate progress of the application
+    function calculateProgress($id)
     {
         $row = DB::table('application_info')
         ->where('application_id', $id)
@@ -48,7 +50,7 @@ class approvalController extends Controller
                 
             ];
 
-        return view ('applicationApproval.testProgress', $data);
+        return view ('applicationApproval.applicationApprovalProgress', $data);
 
     }
 

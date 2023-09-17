@@ -7,6 +7,9 @@ use App\Http\Controllers\adminController;
 use App\Http\Controllers\globalController;
 use App\Http\Controllers\LaravelCrud;
 
+use App\Http\Controllers\approvalController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -65,6 +68,7 @@ Route::get('/create-post', [globalController::class, 'load_createPost'])->name("
 Route::get('/notification', [globalController::class, 'load_notification'])->name("notification");
 
 
+// /////////////////////////////
 //crud test all
 // Route::get('crud', [LaravelCrud::class, 'index']);
 Route::post('add', [LaravelCrud::class, 'add']);
@@ -77,7 +81,8 @@ Route::get('crud/{id}', [LaravelCrud::class, 'index']);
 
 // Route::get('crud/{id}', [LaravelCrud::class, 'getClub']);
 
-
+//crud test all
+// /////////////////////////////
 
 
 //user
@@ -88,12 +93,28 @@ Route::get('crud/{id}', [LaravelCrud::class, 'index']);
 
 
 
+
+// /////////////////////////////
+// Super Admin routes
+
 // Super Admin Create club
 
 use App\Http\Controllers\ClubController;
 
 Route::get('/create-club', [ClubController::class, 'createClubForm'])->name('showCreateForm');
 Route::post('/create-club', [ClubController::class, 'createClub'])->name('createClub');
+// Super Admin Create club
+
+
+
+// SupAdmin view all applications
+Route::get('/view-all-applications', [approvalController::class, 'index']);
+// SupAdmin view all applications
+
+// /////////////////////////////
+
+
+
 
 
 
@@ -113,16 +134,12 @@ Route::get('/applications/create', [ApplicationInfoController::class, 'create'])
 Route::post('/applications', [ApplicationInfoController::class, 'store'])->name('applications.store');
 
 
+//////////////////////////////////
+// Approval progress
 
-// Approval
+Route::get('/application-approval-progress/{id}', [approvalController::class, 'calculateProgress']);
 
-use App\Http\Controllers\approvalController;
-
-// Route::get('/applications/create', [approvalController::class, 'create'])->name('applications.create');
-Route::get('/private-test', [approvalController::class, 'index']);
-Route::get('/testProgress/{id}', [approvalController::class, 'testProgress']);
 Route::get('/post-approval/{id}', [approvalController::class, 'postApproval']);
-// Route::post('/testProgress', [approvalController::class, 'testProgress']);
-// Route::get('/testProgress/{id}', [LaravelCrud::class, 'edit']);
+
 Route::post('approve_update', [approvalController::class, 'approve_update'])->name('approve_update');
 
