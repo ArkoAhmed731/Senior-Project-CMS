@@ -6,7 +6,7 @@ use App\Http\Controllers\userController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\globalController;
 use App\Http\Controllers\LaravelCrud;
-
+use App\Http\Controllers\NewUserRequestsController;
 use App\Http\Controllers\approvalController;
 
 
@@ -39,6 +39,13 @@ Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
 Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
 Route::get('/login', [globalController::class, 'load_login'])->name("login");
 Route::get('/signup', [globalController::class, 'load_signup'])->name("signup");
+// Route::post('/signup', 'NewUserRequestsController@store')->name('signup.store');
+// Route::get('/signup', 'NewUserRequestsController@signup')->name('signup');
+
+Route::post('/signup', [NewUserRequestsController::class, 'store'])->name('signup.store');
+// Route::get('/signup', 'YourController@yourMethod')->name('signup');
+
+
 Route::get('/forgot-password', [globalController::class, 'load_forgotPassword'])->name("forgotPassword");
 Route::get('/club-admin', [globalController::class, 'load_clubAdmin'])->name("clubAdmin");
 
