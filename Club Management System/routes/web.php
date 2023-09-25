@@ -8,20 +8,10 @@ use App\Http\Controllers\globalController;
 use App\Http\Controllers\LaravelCrud;
 use App\Http\Controllers\NewUserRequestsController;
 use App\Http\Controllers\approvalController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController; // Make sure to include HomeController
 
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
-//Database connection check
+// Database connection check
 Route::get('/connection', function () {
     try {
         DB::connection()->getPdo();
@@ -31,122 +21,43 @@ Route::get('/connection', function () {
     }
 });
 
-//forms 
+// Forms
 Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
 
+// Authentication routes
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'login']); // Removed the name('login') for POST login
 
-//global
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+// Home route (protected by middleware)
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+
+// Global routes
 Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
-Route::get('/login', [globalController::class, 'load_login'])->name("login");
 Route::get('/signup', [globalController::class, 'load_signup'])->name("signup");
-// Route::post('/signup', 'NewUserRequestsController@store')->name('signup.store');
-// Route::get('/signup', 'NewUserRequestsController@signup')->name('signup');
-
 Route::post('/signup', [NewUserRequestsController::class, 'store'])->name('signup.store');
-// Route::get('/signup', 'YourController@yourMethod')->name('signup');
-
-
 Route::get('/forgot-password', [globalController::class, 'load_forgotPassword'])->name("forgotPassword");
 Route::get('/club-admin', [globalController::class, 'load_clubAdmin'])->name("clubAdmin");
+// ... Other global routes ...
 
-
-
-
-Route::get('/upcoming-events', [globalController::class, 'load_upcomingEvents'])->name("upcomingEvents");
-Route::get('/event-post', [globalController::class, 'load_eventPost'])->name("eventPost");
-Route::get('/club-recruitment', [globalController::class, 'load_clubRecruitment'])->name("clubRecruitment");
-Route::get('/recruitment-post', [globalController::class, 'load_recruitmentPost'])->name("recruitmentPost");
-
-Route::get('/my-clubs', [globalController::class, 'load_myClubs'])->name("myClubs");
-Route::get('/my-profile', [globalController::class, 'load_myProfile'])->name("myProfile");
-Route::get('/edit-my-profile', [globalController::class, 'load_editMyProfile'])->name("editMyProfile");
-Route::get('/view-profile', [globalController::class, 'load_viewProfile'])->name("viewProfile");
-
-Route::get('/approval-progress', [globalController::class, 'load_approvalProgress'])->name("approvalProgress");
-// Route::get('/private-test', [globalController::class, 'load_privateTest'])->name("privateTest");
-Route::get('/apply-for-event', [globalController::class, 'load_applyForEvent'])->name("applyForEvent");
-Route::get('/post-approval', [globalController::class, 'load_postApproval'])->name("postApproval");
-
-Route::get('/club-activities', [globalController::class, 'load_clubActivities'])->name("clubActivities");
-Route::get('/view-post', [globalController::class, 'load_viewPost'])->name("viewPost");
-Route::get('/test', [globalController::class, 'load_test'])->name("test");
-Route::get('/create-post', [globalController::class, 'load_createPost'])->name("createPost");
-
-Route::get('/notification', [globalController::class, 'load_notification'])->name("notification");
-
-
-// /////////////////////////////
-//crud test all
-// Route::get('crud', [LaravelCrud::class, 'index']);
+// CRUD routes
 Route::post('add', [LaravelCrud::class, 'add']);
 Route::get('edit/{id}', [LaravelCrud::class, 'edit']);
 Route::post('update', [LaravelCrud::class, 'update'])->name('update');
 Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
 
-Route::post('crud/{id}', [LaravelCrud::class, 'index']);
-Route::get('crud/{id}', [LaravelCrud::class, 'index']);
-
-// Route::get('crud/{id}', [LaravelCrud::class, 'getClub']);
-
-//crud test all
-// /////////////////////////////
-
-
-//user
-
-//club admin
-
-//footer
-
-
-
-
-// /////////////////////////////
 // Super Admin routes
-
-// Super Admin Create club
-
-use App\Http\Controllers\ClubController;
-
 Route::get('/create-club', [ClubController::class, 'createClubForm'])->name('showCreateForm');
 Route::post('/create-club', [ClubController::class, 'createClub'])->name('createClub');
-// Super Admin Create club
 
-
-
-// SupAdmin view all applications
 Route::get('/view-all-applications', [approvalController::class, 'index']);
-// SupAdmin view all applications
 
-// /////////////////////////////
-
-
-
-
-
-
-// // Create Application
-// use App\Http\Controllers\ApplicationController;
-
-// Route::get('/applications/create', [ApplicationController::class, 'create'])->name('applications.create');
-// Route::post('/applications/store', [ApplicationController::class, 'store'])->name('applications.store');
-
-use App\Http\Controllers\ApplicationInfoController;
-
-
-// Route for displaying the application creation form
+// Application routes
 Route::get('/applications/create', [ApplicationInfoController::class, 'create'])->name('applications.create');
-
-// Route for storing the application data
 Route::post('/applications', [ApplicationInfoController::class, 'store'])->name('applications.store');
 
-
-//////////////////////////////////
-// Approval progress
-
+// Approval progress routes
 Route::get('/application-approval-progress/{id}', [approvalController::class, 'calculateProgress']);
-
 Route::get('/post-approval/{id}', [approvalController::class, 'postApproval']);
-
 Route::post('approve_update', [approvalController::class, 'approve_update'])->name('approve_update');
-

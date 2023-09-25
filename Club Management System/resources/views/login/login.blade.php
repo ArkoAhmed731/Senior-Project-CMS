@@ -20,6 +20,8 @@
 
 </head>
 
+
+
 <body>
 
     <div class="wrapper">
@@ -29,42 +31,35 @@
         <div class="text-center mt-4 name">
             Club Management System(CMS)
         </div>
-        <form class="p-3 mt-3">
+        <form method="POST" action="{{ route('login') }}" class="p-3 mt-3">
+            @csrf
             <div class="form-field d-flex align-items-center">
-                <span class="far fa-user"></span>
-                <input type="text" name="email" id="email" placeholder="Email address">
+                <i class="far fa-user"></i>
+                <input type="email" name="email" id="email" placeholder="Email address" class="form-control">
             </div>
             <div class="form-field d-flex align-items-center">
-                <span class="fas fa-key"></span>
-                <input type="password" name="password" id="pwd" placeholder="Password">
+                <i class="fas fa-key"></i>
+                <input type="password" name="password" id="pwd" placeholder="Password" class="form-control">
             </div>
-            <button class="btn mt-3">Login</button>
+            <button type="submit" class="btn mt-3">Login</button>
         </form>
-
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
+        
+        
+        @if ($errors->any())
+            <div class="alert alert-danger mt-3">
+                {{ $errors->first() }}
             </div>
         @endif
-
-
-        <div class="alert alert-danger" role="alert">
-            Email address & Password combination failed
-        </div>
 
         <div class="text-center fs-6">
             <a href="{{ route('signup') }}">Sign up</a>
         </div>
-
-
-
     </div>
-
 
     @include('menu.footer')
 
-
-
 </body>
+
+
 
 </html>
