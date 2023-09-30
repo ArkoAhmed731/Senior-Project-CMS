@@ -1,16 +1,15 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ApplicationInfo;
 
-class ApplicationInfoController extends Controller
+class EventsController extends Controller
 {
     public function create()
     {
-        return view('applications.create');
+        return view('clubEvents.createEvent');
     }
 
     public function store(Request $request)
@@ -40,5 +39,4 @@ class ApplicationInfoController extends Controller
 
         return redirect()->back()->with('success', 'Application created successfully.');
     }
-
 }

@@ -1,3 +1,7 @@
+<!--  -->
+<!-- approve or decline an application by individual departments -->
+<!--  -->
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <html>

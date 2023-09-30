@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/viewAllApplications.css">
 
     <title>Chess Club new user</title>
 </head>
@@ -53,7 +53,8 @@
         <div class = "btn-group">
           <a href="post-approval/{{ $item->application_id }}" class="btn btn-primary btn-xs">Respond</a>
           <a href="application-approval-progress/{{ $item->application_id }}" class="btn btn-secondary btn-xs">View Progress</a>
-          <a href="" class="btn btn-danger btn-xs">Delete</a>
+          <a href="" class="btn btn-info btn-xs">Edit</a>
+          <a href="delete/{{ $item->application_id }}" class="btn btn-danger btn-xs">Delete</a>
           
         </div>
       </td>
@@ -66,5 +67,6 @@
 </table>
 
 </div>
+
 </body>
 </html>

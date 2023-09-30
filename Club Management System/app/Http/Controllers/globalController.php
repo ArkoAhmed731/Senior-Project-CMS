@@ -52,9 +52,9 @@ class globalController extends Controller
     {
         
 
-        $applications = DB::table('applications')->get();
+        // $applications = DB::table('applications')->get();
 
-        return view('applicationApproval/privateTest', ['applications' => $applications]);
+        // return view('applicationApproval/privateTest', ['applications' => $applications]);
     }
 
     // Not yet connected... Only used in testing phase.. Can delete if not needed

@@ -106,10 +106,13 @@ Route::post('/create-club', [ClubController::class, 'createClub'])->name('create
 // Super Admin Create club
 
 
+//
+// SupAdmin view,edit,delete applications
 
-// SupAdmin view all applications
 Route::get('/view-all-applications', [approvalController::class, 'index']);
-// SupAdmin view all applications
+Route::get('/edit-application/{id}', [approvalController::class, 'edit']);
+//Route::post('update', [approvalController::class, 'update'])->name('update');
+Route::get('delete/{id}', [approvalController::class, 'delete']);
 
 // /////////////////////////////
 
@@ -143,3 +146,8 @@ Route::get('/post-approval/{id}', [approvalController::class, 'postApproval']);
 
 Route::post('approve_update', [approvalController::class, 'approve_update'])->name('approve_update');
 
+//////////////////////////////////
+
+
+// Create,edit Upcoming Events
+Route::get('/clubEvents/createEvent', [EventsController::class, 'create'])->name('clubEvents.createEvent');

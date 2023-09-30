@@ -17,8 +17,37 @@ class approvalController extends Controller
         return view('applicationApproval/viewAllApplications', ['applications' => $applications]);
     }
 
+    // delete application from database
+    function delete($id){
 
-    //calculate progress of the application
+        $delete = DB::table('application_info')
+            ->where('application_id', $id)
+            ->delete();
+
+        return back();
+
+
+    }
+
+    // show edit page for an application
+    function edit($id){
+        
+        // $row = DB::table('club2')
+        //     ->where('id', $id)
+        //     ->first();
+        // $data = [
+        //     'Info'=> $row,
+        //     'Title'=> 'Edit'
+        // ];
+
+        return redirect('applicationApproval/viewAllApplications');
+
+        
+
+    }
+
+
+    //calculate progress of an application
     function calculateProgress($id)
     {
         $row = DB::table('application_info')
@@ -70,6 +99,7 @@ class approvalController extends Controller
         return view ('applicationApproval.postApproval', $data);
     }
 
+    //currently only updates onm_status
     function approve_update(Request $request){
         
         //Application approval/decline function

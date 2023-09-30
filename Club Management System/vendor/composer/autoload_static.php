@@ -365,8 +365,8 @@ class ComposerStaticInit89ef3004facbea72972626349fa0b150
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -559,10 +559,12 @@ class ComposerStaticInit89ef3004facbea72972626349fa0b150
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
-        'App\\Http\\Controllers\\Club1Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Club1Controller.php',
+        'App\\Http\\Controllers\\ApplicationInfoController' => __DIR__ . '/../..' . '/app/Http/Controllers/ApplicationInfoController.php',
+        'App\\Http\\Controllers\\ClubController' => __DIR__ . '/../..' . '/app/Http/Controllers/ClubController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\LaravelCrud' => __DIR__ . '/../..' . '/app/Http/Controllers/LaravelCrud.php',
         'App\\Http\\Controllers\\adminController' => __DIR__ . '/../..' . '/app/Http/Controllers/adminController.php',
+        'App\\Http\\Controllers\\approvalController' => __DIR__ . '/../..' . '/app/Http/Controllers/approvalController.php',
         'App\\Http\\Controllers\\globalController' => __DIR__ . '/../..' . '/app/Http/Controllers/globalController.php',
         'App\\Http\\Controllers\\userController' => __DIR__ . '/../..' . '/app/Http/Controllers/userController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -576,8 +578,11 @@ class ComposerStaticInit89ef3004facbea72972626349fa0b150
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Http\\Middleware\\logInAuth' => __DIR__ . '/../..' . '/app/Http/Middleware/logInAuth.php',
         'App\\Http\\Middleware\\userAuth' => __DIR__ . '/../..' . '/app/Http/Middleware/userAuth.php',
+        'App\\Models\\Application' => __DIR__ . '/../..' . '/app/Models/Application.php',
+        'App\\Models\\ApplicationInfo' => __DIR__ . '/../..' . '/app/Models/ApplicationInfo.php',
         'App\\Models\\Club1' => __DIR__ . '/../..' . '/app/Models/Club1.php',
         'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
+        'App\\Models\\Department' => __DIR__ . '/../..' . '/app/Models/Department.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\users' => __DIR__ . '/../..' . '/app/Models/users.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<div class = "he">{{$Title}}</div>
+<!-- <div class = "he">{{$Title}}</div> -->
 
 
 <div class = "container">
