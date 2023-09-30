@@ -13,6 +13,10 @@ body {
     background: #ecf0f3;
 }
 
+
+
+
+
 .wrapper {
     max-width: 350px;
     min-height: 500px;
@@ -69,6 +73,29 @@ body {
 .wrapper .form-field .fas {
     color: #555;
 }
+
+
+/* Add this CSS code to style the gender field */
+.wrapper .form-field.gender {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px 10px 10px;
+}
+
+.wrapper .form-field.gender label {
+    margin-right: 10px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.wrapper .form-field.gender input[type="radio"] {
+    margin-right: 5px;
+    width: auto;
+    height: auto;
+}
+
+/* Rest of your CSS remains unchanged */
+
 
 .wrapper .btn {
     box-shadow: none;
