@@ -57,7 +57,15 @@ class AuthController extends Controller
     
         $request->session()->invalidate();
     
-        return $this->loggedOut($request) ?: redirect('/');
+        return $this->loggedOut($request) ?: redirect('/login');
     }
+
+    // public function getRole(Request $request)
+    // {
+    //     $role = auth()->user()->user_type;
+
+    //     return ($role);
+
+    // }
     
 }

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ClubController extends Controller
 {
@@ -56,4 +57,57 @@ class ClubController extends Controller
 
         return redirect()->route('showCreateForm');
     }
+
+
+    ///////////////
+    // Club admin functions
+    //////////////
+
+
+    public function load_manageMembers()
+    {
+        $clubName = Auth::user()->user_name;
+
+        $data = array(
+            'list' => DB::table($clubName)->get()
+        );
+        // return view('myClubs\manage-members', $data, compact('clubName'));
+        return view ('myClubs.manageMembers', $data);
+    }
+
+    
+    function deleteMember($id){
+
+        $clubName = Auth::user()->user_name;
+
+        $delete = DB::table('clubName')
+            ->where('user_id', $id)
+            ->delete();
+
+        return back();
+    }
+
+    
+    function load_addMembers(){
+
+        return view ('myClubs/addMembers');
+    }
+
+    public function store(Request $request)
+    {
+        $clubName = Auth::user()->user_name;
+
+        // Assuming $data contains the fields you want to insert
+        $data = $request->all();
+
+        // Use the DB facade to insert data into the dynamically determined table
+        DB::table($clubName)->insert([
+            'field1' => $data['field1'], 
+            'field2' => $data['field2'],
+            
+        ]);
+
+        return redirect()->back()->with('success', 'Member added successfully.');
+    }
+
 }

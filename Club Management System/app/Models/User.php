@@ -24,5 +24,11 @@ class User extends Authenticatable
         'user_type',
     ];
 
+    public function getRole($user_type)
+    {
+        return $this->user_type == $user_type;
+
+    }
+
     // Add any additional relationships or methods as needed
 }

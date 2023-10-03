@@ -11,6 +11,11 @@ use App\Http\Controllers\approvalController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController; // Make sure to include HomeController
 
+use App\Http\Controllers\ClubController;
+use App\Http\Controllers\ApplicationInfoController;
+
+
+
 // Database connection check
 Route::get('/connection', function () {
     try {
@@ -39,6 +44,7 @@ Route::get('/signup', [globalController::class, 'load_signup'])->name("signup");
 Route::post('/signup', [NewUserRequestsController::class, 'store'])->name('signup.store');
 Route::get('/forgot-password', [globalController::class, 'load_forgotPassword'])->name("forgotPassword");
 Route::get('/club-admin', [globalController::class, 'load_clubAdmin'])->name("clubAdmin");
+
 // ... Other global routes ...
 
 // CRUD routes
@@ -51,18 +57,7 @@ Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
 Route::get('/create-club', [ClubController::class, 'createClubForm'])->name('showCreateForm');
 Route::post('/create-club', [ClubController::class, 'createClub'])->name('createClub');
 
-<<<<<<< HEAD
-
-//
-// SupAdmin view,edit,delete applications
-
 Route::get('/view-all-applications', [approvalController::class, 'index']);
-Route::get('/edit-application/{id}', [approvalController::class, 'edit']);
-//Route::post('update', [approvalController::class, 'update'])->name('update');
-Route::get('delete/{id}', [approvalController::class, 'delete']);
-=======
-Route::get('/view-all-applications', [approvalController::class, 'index']);
->>>>>>> 2b3496189e78730eca5b3a75e2777208074cdf7e
 
 // Application routes
 Route::get('/applications/create', [ApplicationInfoController::class, 'create'])->name('applications.create');
@@ -72,12 +67,8 @@ Route::post('/applications', [ApplicationInfoController::class, 'store'])->name(
 Route::get('/application-approval-progress/{id}', [approvalController::class, 'calculateProgress']);
 Route::get('/post-approval/{id}', [approvalController::class, 'postApproval']);
 Route::post('approve_update', [approvalController::class, 'approve_update'])->name('approve_update');
-<<<<<<< HEAD
 
-//////////////////////////////////
-
-
-// Create,edit Upcoming Events
-Route::get('/clubEvents/createEvent', [EventsController::class, 'create'])->name('clubEvents.createEvent');
-=======
->>>>>>> 2b3496189e78730eca5b3a75e2777208074cdf7e
+// Club Admin routes
+Route::get('/myClubs/manage-members', [ClubController::class, 'load_manageMembers'])->name("manageMembers");
+Route::get('/myClubs/add-members', [ClubController::class, 'load_addMembers'])->name("addMembers");
+Route::post('/myClubs/add-members', [ClubController::class, 'load_addMembers'])->name('club.addMembers');

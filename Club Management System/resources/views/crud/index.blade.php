@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/index.css">
 
-    <title>Chess Club new user</title>
+    <title></title>
 </head>
 <body>
 

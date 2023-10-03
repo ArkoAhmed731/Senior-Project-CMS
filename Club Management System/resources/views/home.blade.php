@@ -53,109 +53,47 @@
 
 
         {{-- carousel end --}}
+        
+        <!-- //////////// -->
+        <!-- super admin view -->
+        <!-- ///////////// -->
+        @if(Auth::user()->user_type === 'super admin')
 
+        <!-- {{-- cards --}} -->
+        <div class= " card-section site-section d-flex justify-content-between flex-wrap p-3 ">
 
-        {{-- cards --}}
-        <div class=" card-section site-section d-flex align-content-center flex-wrap p-3">
-            {{-- single card --}}
+            <!-- {{-- single card --}} -->
             <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
-
-
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
-
                 <h6 class="card-title text-center">Academic Calender</h6>
-
-
-
             </a>
-            {{-- single card end --}}
+            <!-- {{-- single card end --}} -->
 
-            <a href="my-clubs" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
-
-
-                <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>
-
-                <h6 class="card-title text-center">My Clubs</h6>
-
-
-
-            </a>
-
-            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
-
-
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
-
-                <h6 class="card-title text-center">Club Recruitment</h6>
-
-
-
+                <h6 class="card-title text-center">Manage Clubs</h6>
             </a>
 
-            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
-
-
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
-
-                <h6 class="card-title text-center">Upcoming Events</h6>
-
-
-
+                <h6 class="card-title text-center">Manage Posts</h6>
             </a>
 
-            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
-
-
-                <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
-
-                <h6 class="card-title text-center">Extra</h6>
-
-
-
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Manage Users</h6>
             </a>
-
-            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
-
-
-                <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
-
-                <h6 class="card-title text-center">Extra</h6>
-
-
-
-            </a>
-
-            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
-
-
-                <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
-
-                <h6 class="card-title text-center">Extra</h6>
-
-
-
-            </a>
-
-            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
-
-
-                <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
-
-                <h6 class="card-title text-center">Extra</h6>
-
-
-
-            </a>
-
-
         </div>
+        <!-- {{-- cards end --}} -->
 
-        {{-- cards end --}}
-
-        {{-- admin --}}
         <div class="admin-panel">
             <h4 class="text-center">Admin Panel</h4>
-
+          
+            <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Create Post for Club</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
 
             <a href="/applications/create" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
@@ -163,32 +101,94 @@
                 </div>
             </a>
 
-            <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
-                <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">Create Post for XYZ Club</h5><i class="bi bi-caret-right-fill"></i>
-                </div>
-            </a>
-
-
             <a href="view-all-applications" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">View All Applications</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
-            <a href="/post-approval" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
-                <div class="card-body d-flex d-flex justify-content-between">
-                    <h5 class="card-title">View Event Application</h5><i class="bi bi-caret-right-fill"></i>
+        </div>
+
+        
+        <!-- ///////////// -->
+        <!-- general user view -->
+        @elseif(Auth::user()->user_type === 'general')
+        
+        <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Academic Calender</h6>
+            </a>
+            
+            <a href="my-clubs" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">My Clubs</h6>
+            </a>
+
+            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Club Recruitment</h6>
+            </a>
+
+            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Upcoming Events</h6>
+            </a>
+
+            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">What's New?</h6>
+            </a>
+        </div>
+
+
+        <!-- ///////////// -->
+        <!-- club admin view -->
+        @elseif(Auth::user()->user_type === 'club admin')
+
+        <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">                
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Academic Calender</h6>
+            </a>
+            
+            <a href="" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Manage club</h6>
+            </a>
+
+            <a href="myClubs/manage-members" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Manage Members</h6>
+            </a>
+        </div>
+
+        <div class="admin-panel">
+            <h4 class="text-center">Application & Post Management</h4>          
+            <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Create Post</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
+            <a href="/applications/create" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Create Application</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
 
+            <a href="view-all-applications" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Submitted applications</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
         </div>
 
+            
+        @endif 
+    
     </div>
 
-
-    {{-- admin end --}}
 
     {{-- footer --}}
     @include('menu.footer')
