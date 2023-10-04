@@ -80,7 +80,7 @@ class ClubController extends Controller
 
         $clubName = Auth::user()->user_name;
 
-        $delete = DB::table('clubName')
+        $delete = DB::table($clubName)
             ->where('user_id', $id)
             ->delete();
 
@@ -88,12 +88,12 @@ class ClubController extends Controller
     }
 
     
-    function load_addMembers(){
+    function load_addMember(){
 
-        return view ('myClubs/addMembers');
+        return view ('myClubs.addMember');
     }
 
-    public function store(Request $request)
+    public function addNewMember(Request $request)
     {
         $clubName = Auth::user()->user_name;
 
@@ -102,8 +102,12 @@ class ClubController extends Controller
 
         // Use the DB facade to insert data into the dynamically determined table
         DB::table($clubName)->insert([
-            'field1' => $data['field1'], 
-            'field2' => $data['field2'],
+            'user_id' => $data['member_id'], 
+            'user_name' => $data['member_name'],
+            'user_email' => $data['email'],
+            'contact_number' => $data['contact_number'],
+            'gender' => $data['gender'],
+            'club_position' => $data['club_position'],
             
         ]);
 
