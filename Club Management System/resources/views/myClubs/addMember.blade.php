@@ -43,39 +43,30 @@
 
                 <!-- Application Type (Combo Box) -->
                 <div class="form-group">
-                    <label for="application_type">Application Type</label>
-                    <select class="form-control" id="application_type" name="application_type" required>
-                        <option value="">Select Application Type</option>
-                        <option value="General application">General Application</option>
-                        <option value="Seminar">Seminar</option>
-                        <option value="Festival">Festival</option>
-                        <option value="Exhibitions">Exhibitions</option>
-                        <option value="Workshop">Workshop</option>
-                        <option value="Sports">Sports</option>
-                        <option value="Competition">Competition</option>
-                        <option value="Charity">Charity</option>
-                        <option value="Show">Show</option>
-                        <option value="Party">Party</option>
-                        <option value="Cultural">Cultural</option>
-                        <option value="Others">Others</option>
+                    <label for="application_type">Gender</label>
+                    <select class="form-control" id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
                     </select>
                 </div>
-                <!-- Application Date -->
+
                 <div class="form-group">
-                    <input type="date" class="form-control" id="application_date" name="application_date" placeholder="Application Date" required>
+                    <label for="application_type">Club Postition</label>
+                    <select class="form-control" id="club_position" name="club_position" required>
+                        <option value="">Select Members position in club</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Treasurer">Treasurer</option>
+                        <option value="Vice President">Vice President</option>
+                        <option value="President">President</option>
+                    </select>
                 </div>
-                <!-- Application Description -->
-                <div class="form-group">
-                    <textarea class="form-control" id="application_description" name="application_description" placeholder="Application Description" required></textarea>
-                </div>
-                <!-- Applicant Name -->
-                <div class="form-group">
-                    <input type="text" class="form-control" id="applicant_name" name="applicant_name" placeholder="Applicant Name" required>
-                </div>
+                
                 
 
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary bg-info">Create</button>
+                    <button type="submit" class="btn btn-primary bg-info">Add Member</button>
                 </div>
             </form>
             @if (session('success'))

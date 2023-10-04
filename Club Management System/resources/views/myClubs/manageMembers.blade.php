@@ -48,7 +48,7 @@
       <td>{{ $members->club_position }}</td>
       <td>
         <div class = "btn-group">
-          <a href="" class="btn btn-info btn-xs">Edit</a>
+          <a href="" class="btn btn-primary btn-xs">Edit</a>
           <a href="delete/{{ $members->user_id }}" class="btn btn-danger btn-xs">Delete</a>
           
         </div>
@@ -61,11 +61,7 @@
 
 </table>
 
-<!-- <div class = "addUser">
-  <button type="button" class="btn btn-primary">Primary</button>
-</div> -->
-
-<a href="/myClubs/addMember" class="card text-white bg-info m-3 p-3" style="max-width: auto;">
+<a href="/myClubs/add-member" class="card text-white bg-info m-3 p-3" style="max-width: auto;">
     <div class="card-body d-flex justify-content-between">
       <h5 class="card-title">Add Member</h5><i class="bi bi-caret-right-fill"></i>
     </div>

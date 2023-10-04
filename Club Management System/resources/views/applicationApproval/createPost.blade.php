@@ -60,11 +60,6 @@
                             <option value="Activation">Charity</option>
                             <option value="Activation">Show</option>
                             <option value="Activation">Party</option>
-
-
-
-
-
                             <option value="Activation">Activation</option>
                             <option value="Cultural">Cultural</option>
                         </select>

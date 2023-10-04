@@ -70,5 +70,6 @@ Route::post('approve_update', [approvalController::class, 'approve_update'])->na
 
 // Club Admin routes
 Route::get('/myClubs/manage-members', [ClubController::class, 'load_manageMembers'])->name("manageMembers");
-Route::get('/myClubs/add-members', [ClubController::class, 'load_addMembers'])->name("addMembers");
-Route::post('/myClubs/add-members', [ClubController::class, 'load_addMembers'])->name('club.addMembers');
+Route::get('/myClubs/add-member', [ClubController::class, 'load_addMember'])->name("addMember");
+Route::post('/myClubs/add-member', [ClubController::class, 'addNewMember'])->name('club.addNewMember');
+Route::post('/delete/{id}', [ClubController::class, 'deleteMember'])->name('deleteMember');
