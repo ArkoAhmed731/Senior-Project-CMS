@@ -6,13 +6,36 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class approvalController extends Controller
 {
-    //show all applications
+    //show applications
     function index()
     {
-        $applications = DB::table('application_info')->get();
+        $userType = Auth::user()->user_type;
+
+        if($userType == "super admin"){
+            $applications = DB::table('application_info')->get();
+        }
+
+        else if($userType == "club admin"){
+            $clubName = Auth::user()->user_name;
+
+            $applications = DB::table('application_info')
+            ->where ('club_name', $clubName)
+            ->get();
+        }
+
+        else if($userType == "official"){
+            $deptName = Auth::user()->user_name;
+            $columnName = $deptName . "_status";
+
+            $applications = DB::table('application_info')
+            ->where($columnName, '!=', '3')
+            ->get();
+        }
+        
 
         return view('applicationApproval/viewAllApplications', ['applications' => $applications]);
     }
@@ -106,6 +129,8 @@ class approvalController extends Controller
         //status == 1 == approved
         // status == 2 == declined
         // 
+        $clubName = Auth::user()->user_name;
+        $columnName = $clubName . "_status";
     
         try {
             if (isset($_POST['approve_button'])) {
@@ -118,7 +143,7 @@ class approvalController extends Controller
                     ->where('application_id', $request->input('application_id'))
                     //need to check if status == 3/0
                     ->update([
-                        'onm_status'=> '1'
+                        $columnName=> '1'
                     ]);
                 
                 // Debugging output to check if update succeeded
@@ -131,14 +156,14 @@ class approvalController extends Controller
                 $updating = DB::table('application_info')
                     ->where('application_id', $request->input('application_id'))  
                     ->update([
-                        'onm_status'=> '2'
+                        $columnName=> '2'
                     ]);
             } else {
                 // No button pressed
             }
             
             // Redirect to 'private-test' page
-            return redirect('private-test');
+            return redirect('/view-submitted-applications');
 
         } catch (\Exception $e) {
             // Log the exception for debugging

@@ -5,7 +5,7 @@ body{
 
 
 
-.container{
+.container-fluid{
     background-color: white;
     margin-top: 50px;
     border-radius: 10px;
@@ -16,7 +16,7 @@ body{
 
 .he{
     margin: auto;
-    width: 50%;
+    
     font-size: 50px;
     text-align: center;
     border-radius: 20px;

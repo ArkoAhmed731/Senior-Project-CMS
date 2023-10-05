@@ -13,7 +13,7 @@ class ClubController extends Controller
 {
     public function createClubForm()
     {
-        return view('create_new_club');
+        return view('superAdmin/create_new_club');
     }
 
     public function createClub(Request $request)
@@ -55,7 +55,7 @@ class ClubController extends Controller
             Session::flash('error', "Club '$clubName' '$clubID' table already exists!");
         }
 
-        return redirect()->route('showCreateForm');
+        return redirect()->route('manageClubs');
     }
 
 
@@ -134,16 +134,18 @@ class ClubController extends Controller
 
 
     function updateMember(Request $request){
+
+        $clubName = Auth::user()->user_name;
+
         $request->validate([
             'member_id'=>'required',
             'member_name'=>'required',
-            'email'=>'required|email|unique:club2',
+            'email'=>'required|email|unique:{$clubName}',
             'contact_number'=>'required',
             'gender'=>'required',
             'club_position'=>'required'
         ]);
 
-        $clubName = Auth::user()->user_name;
 
         $updating = DB::table($clubName)
             ->where('user_id', $request->input('member_id'))

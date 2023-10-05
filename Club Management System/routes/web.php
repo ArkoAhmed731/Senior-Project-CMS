@@ -16,6 +16,7 @@ use App\Http\Controllers\ApplicationInfoController;
 
 
 
+
 // Database connection check
 Route::get('/connection', function () {
     try {
@@ -54,10 +55,23 @@ Route::post('update', [LaravelCrud::class, 'update'])->name('update');
 // Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
 
 // Super Admin routes
-Route::get('/create-club', [ClubController::class, 'createClubForm'])->name('showCreateForm');
-Route::post('/create-club', [ClubController::class, 'createClub'])->name('createClub');
-
 Route::get('/view-all-applications', [approvalController::class, 'index']);
+
+Route::get('/superAdmin/manage-users', [adminController::class, 'load_manageUsers'])->name('manageUsers');
+Route::get('/superAdmin/add-user', [adminController::class, 'load_addUser'])->name("addUser");
+Route::post('/superAdmin/add-user', [adminController::class, 'addNewUser'])->name('superAdmin.addNewUser');
+Route::get('/delete/{id}', [adminController::class, 'deleteUser'])->name('superAdmin.deleteUser');
+Route::get('/superAdmin/edit-user/{id}', [adminController::class, 'load_editUser'])->name("superAdmin.editUser");
+Route::post('/superAdmin/edit-user/{id}', [adminController::class, 'updateUser'])->name('superAdmin.updateUser');
+
+Route::get('/superAdmin/manage-clubs', [adminController::class, 'load_manageClubs'])->name('manageClubs');
+Route::get('/superAdmin/add-club', [ClubController::class, 'createClubForm'])->name('showCreateForm');
+Route::post('/superAdmin/add-club', [ClubController::class, 'createClub'])->name('createClub');
+Route::post('/delete/{id}', [adminController::class, 'deleteClub'])->name('superAdmin.deleteClub');
+Route::get('/superAdmin/edit-club/{id}', [adminController::class, 'load_editClub'])->name("superAdmin.editClub");
+Route::post('/superAdmin/edit-club/{id}', [adminController::class, 'updateClub'])->name("superAdmin.updateClub");
+
+
 
 // Application routes
 Route::get('/applications/create', [ApplicationInfoController::class, 'create'])->name('applications.create');

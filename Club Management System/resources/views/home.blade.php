@@ -69,7 +69,7 @@
             </a>
             <!-- {{-- single card end --}} -->
 
-            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/superAdmin/manage-clubs" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Manage Clubs</h6>
             </a>
@@ -79,7 +79,7 @@
                 <h6 class="card-title text-center">Manage Posts</h6>
             </a>
 
-            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/superAdmin/manage-users" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Manage Users</h6>
             </a>
@@ -180,6 +180,39 @@
             <a href="view-all-applications" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Submitted applications</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
+        </div>
+
+        <!-- ///////////// -->
+        <!-- departments/offcial view -->
+        @elseif(Auth::user()->user_type === 'official')
+
+        <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">                
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Academic Calender</h6>
+            </a>
+            
+
+            <a href="myClubs/manage-members" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Manage Ms</h6>
+            </a>
+        </div>
+
+        <div class="admin-panel">
+            <h4 class="text-center">Application & Post Management</h4>          
+            <a href="" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">View submitted Posts</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
+
+
+            <a href="view-all-applications" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">View Submitted applications</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
         </div>

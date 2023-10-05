@@ -6,11 +6,11 @@
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/manageUsers.css">
 
-    <title>Chess Club new user</title>
+    <title>Add new user</title>
 </head>
 <body>
 
-<div class = "he">Current Members</div>
+<div class = "he">All Active Clubs</div>
 
 
 <div class="container-fluid">
@@ -34,28 +34,21 @@
 
 <table class="table table-hover ">
   <thread>
-    <th>user_id</th>
-    <th>user_name</th>
-    <th>contact_number</th>
-    <th>gender</th>
-    <th>club_position</th>
+    <th>club_id</th>
+    <th>club_name</th>
   </thread>
   <tbody>
 
-    @foreach ($list as $members)
+    @foreach ($list as $club)
     <tr>
-      <td>{{ $members->user_id }}</td>
-      <td>{{ $members->user_name }}</td>
-      <td>{{ $members->contact_number }}</td>
-      <td>{{ $members->gender }}</td>
-      <td>{{ $members->club_position }}</td>
+      <td>{{ $club->club_id }}</td>
+      <td>{{ $club->club_name }}</td>
       <td>
         <div class = "btn-group">
-          <!-- <a href="" class="btn btn-primary btn-xs">Edit</a> -->
-          <!-- <a href="delete/{{ $members->user_id }}" class="btn btn-danger btn-xs">Delete</a> -->
-
-          <a href="{{ route('club.editMember', $members->user_id) }}" class="btn btn-primary btn-xs">Edit</a>
-          <a href="{{ route('club.deleteMember', $members->user_id) }}" class="btn btn-danger btn-xs">Delete</a>
+          <a href="{{ route('superAdmin.editClub', $club->club_id) }}" class="btn btn-primary btn-xs">Edit</a>
+          
+          
+          <a href="delete/{{ $club->club_id }}" class="btn btn-danger btn-xs">Delete</a>
           
         </div>
       </td>
@@ -70,9 +63,9 @@
 
 <div class="row justify-content-center">
         <div class="col-12 col-md-auto">
-            <a href="/myClubs/add-member" class="card text-white bg-info m-3 p-3 text-center">
+            <a href="/superAdmin/add-club" class="card text-white bg-info m-3 p-3 text-center">
                 <div class="card-body">
-                    <h5 class="card-title">Add Member</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">Add Club</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
         </div>
