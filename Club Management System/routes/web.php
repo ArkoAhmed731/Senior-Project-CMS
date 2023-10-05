@@ -51,7 +51,7 @@ Route::get('/club-admin', [globalController::class, 'load_clubAdmin'])->name("cl
 Route::post('add', [LaravelCrud::class, 'add']);
 Route::get('edit/{id}', [LaravelCrud::class, 'edit']);
 Route::post('update', [LaravelCrud::class, 'update'])->name('update');
-Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
+// Route::get('delete/{id}', [LaravelCrud::class, 'delete']);
 
 // Super Admin routes
 Route::get('/create-club', [ClubController::class, 'createClubForm'])->name('showCreateForm');
@@ -72,4 +72,6 @@ Route::post('approve_update', [approvalController::class, 'approve_update'])->na
 Route::get('/myClubs/manage-members', [ClubController::class, 'load_manageMembers'])->name("manageMembers");
 Route::get('/myClubs/add-member', [ClubController::class, 'load_addMember'])->name("addMember");
 Route::post('/myClubs/add-member', [ClubController::class, 'addNewMember'])->name('club.addNewMember');
-Route::post('/delete/{id}', [ClubController::class, 'deleteMember'])->name('deleteMember');
+Route::get('/delete/{id}', [ClubController::class, 'deleteMember'])->name('club.deleteMember');
+Route::get('/myClubs/edit-member/{id}', [ClubController::class, 'load_editMember'])->name("club.editMember");
+Route::post('/myClubs/edit-member/{id}', [ClubController::class, 'updateMember'])->name("club.updateMember");

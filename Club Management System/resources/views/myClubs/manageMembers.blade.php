@@ -13,7 +13,7 @@
 <div class = "he">Current Members</div>
 
 
-<div class = "container">
+<div class="container-fluid">
 
 @if(Session::get('success'))
     <div class = "alert alert-success">
@@ -29,7 +29,10 @@
 
 <br>
 
-<table class = "table table-hover">
+@csrf
+<div class="table-responsive">
+
+<table class="table table-hover ">
   <thread>
     <th>user_id</th>
     <th>user_name</th>
@@ -48,8 +51,11 @@
       <td>{{ $members->club_position }}</td>
       <td>
         <div class = "btn-group">
-          <a href="" class="btn btn-primary btn-xs">Edit</a>
-          <a href="delete/{{ $members->user_id }}" class="btn btn-danger btn-xs">Delete</a>
+          <!-- <a href="" class="btn btn-primary btn-xs">Edit</a> -->
+          <!-- <a href="delete/{{ $members->user_id }}" class="btn btn-danger btn-xs">Delete</a> -->
+
+          <a href="{{ route('club.editMember', $members->user_id) }}" class="btn btn-primary btn-xs">Edit</a>
+          <a href="{{ route('club.deleteMember', $members->user_id) }}" class="btn btn-danger btn-xs">Delete</a>
           
         </div>
       </td>
@@ -60,12 +66,17 @@
   
 
 </table>
+</div>
 
-<a href="/myClubs/add-member" class="card text-white bg-info m-3 p-3" style="max-width: auto;">
-    <div class="card-body d-flex justify-content-between">
-      <h5 class="card-title">Add Member</h5><i class="bi bi-caret-right-fill"></i>
+<div class="row justify-content-center">
+        <div class="col-12 col-md-auto">
+            <a href="/myClubs/add-member" class="card text-white bg-info m-3 p-3 text-center">
+                <div class="card-body">
+                    <h5 class="card-title">Add Member</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
+        </div>
     </div>
-</a>
 
 </div>
 

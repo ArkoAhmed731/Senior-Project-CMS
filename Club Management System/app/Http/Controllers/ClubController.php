@@ -59,6 +59,8 @@ class ClubController extends Controller
     }
 
 
+
+
     ///////////////
     // Club admin functions
     //////////////
@@ -81,8 +83,9 @@ class ClubController extends Controller
         $clubName = Auth::user()->user_name;
 
         $delete = DB::table($clubName)
-            ->where('user_id', $id)
-            ->delete();
+            ->where('user_id', $id);
+
+        $delete->delete();
 
         return back();
     }
@@ -112,6 +115,53 @@ class ClubController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Member added successfully.');
+    }
+
+    function load_editMember($id){
+
+        $clubName = Auth::user()->user_name;
+
+        $row = DB::table($clubName)
+            ->where('user_id', $id)
+            ->first();
+        
+        $data = [
+            'Info'=> $row
+        ];
+
+        return view ('myClubs.editMember', $data);
+    }
+
+
+    function updateMember(Request $request){
+        $request->validate([
+            'member_id'=>'required',
+            'member_name'=>'required',
+            'email'=>'required|email|unique:club2',
+            'contact_number'=>'required',
+            'gender'=>'required',
+            'club_position'=>'required'
+        ]);
+
+        $clubName = Auth::user()->user_name;
+
+        $updating = DB::table($clubName)
+            ->where('user_id', $request->input('member_id'))
+            ->update([
+                'user_id'=> $request->input('member_id'),
+                'user_name'=> $request->input('member_name'),
+                'user_email'=> $request->input('email'),
+                'contact_number'=> $request->input('contact_number'),
+                'gender'=> $request->input('gender'),
+                'club_position'=> $request->input('club_position')
+            ]);
+            
+            
+        // $data = array(
+        //     'list' => DB::table($clubName)->get()
+        // );
+        
+        return back() ->with('success', 'Successfull!!!!');
     }
 
 }
