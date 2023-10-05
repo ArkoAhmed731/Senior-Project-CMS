@@ -14,6 +14,7 @@ class ApplicationInfo extends Model
         'application_date',
         'application_description',
         'applicant_name',
+        'club_name',
         'onm_status',
         'cits_status',
         'facilities_status',

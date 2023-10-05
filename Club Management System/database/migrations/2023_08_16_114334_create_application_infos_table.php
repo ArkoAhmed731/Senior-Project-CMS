@@ -15,6 +15,7 @@ class CreateApplicationInfosTable extends Migration
             $table->date('application_date');
             $table->text('application_description');
             $table->string('applicant_name');
+            $table->string('club_name');
 
             // Department statuses
             $table->tinyInteger('onm_status')->default(3);
