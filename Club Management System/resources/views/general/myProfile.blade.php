@@ -63,7 +63,9 @@
 
                     </div>
                     <a href="edit-my-profile">
-                        <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Edit Profile</button></div>
+                        <div class="mt-5 text-center">
+                            <button class="btn btn-primary profile-button" type="button">Edit Profile</button>
+                        </div>
                     </a>
                 </div>
             </div>

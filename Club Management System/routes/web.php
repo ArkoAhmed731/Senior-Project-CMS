@@ -45,6 +45,7 @@ Route::get('/signup', [globalController::class, 'load_signup'])->name("signup");
 Route::post('/signup', [NewUserRequestsController::class, 'store'])->name('signup.store');
 Route::get('/forgot-password', [globalController::class, 'load_forgotPassword'])->name("forgotPassword");
 Route::get('/club-admin', [globalController::class, 'load_clubAdmin'])->name("clubAdmin");
+Route::get('/my-profile', [globalController::class, 'load_myProfile'])->name("general.myProfile");
 
 // ... Other global routes ...
 
@@ -76,6 +77,8 @@ Route::post('/superAdmin/edit-club/{id}', [adminController::class, 'updateClub']
 // Application routes
 Route::get('/applications/create', [ApplicationInfoController::class, 'create'])->name('applications.create');
 Route::post('/applications', [ApplicationInfoController::class, 'store'])->name('applications.store');
+Route::get('/applications/edit-application/{id}', [approvalController::class, 'load_editApplication'])->name('applications.editApplication');
+Route::post('/applications/edit-application/{id}', [approvalController::class, 'updateApplication'])->name("applications.updateApplication");
 
 // Approval progress routes
 Route::get('/application-approval-progress/{id}', [approvalController::class, 'calculateProgress']);
@@ -89,3 +92,4 @@ Route::post('/myClubs/add-member', [ClubController::class, 'addNewMember'])->nam
 Route::get('/delete/{id}', [ClubController::class, 'deleteMember'])->name('club.deleteMember');
 Route::get('/myClubs/edit-member/{id}', [ClubController::class, 'load_editMember'])->name("club.editMember");
 Route::post('/myClubs/edit-member/{id}', [ClubController::class, 'updateMember'])->name("club.updateMember");
+

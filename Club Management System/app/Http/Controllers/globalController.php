@@ -117,10 +117,18 @@ class globalController extends Controller
     {
         return view('applicationApproval/createPost');
     }
+
     public function load_myProfile()
     {
-        return view('myClubs/myProfile');
+        $userName = Auth::user()->user_name;
+
+        $data = [DB::table('users')
+        ->where('user_id', $userName)
+        ->get()];
+
+        return view('general.myProfile', $data);
     }
+
     public function load_editMyProfile()
     {
         return view('myClubs/editMyProfile');
@@ -128,8 +136,6 @@ class globalController extends Controller
 
     public function load_viewPost()
     {
-
-
         return view('myClubs/viewPost');
     }
 

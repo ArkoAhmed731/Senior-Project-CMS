@@ -13,7 +13,7 @@
     <title>CMS</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/postApproval.css') }}">
+    <!-- <link rel="stylesheet" href="{{ asset('css/postApproval.css') }}"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>

@@ -62,6 +62,17 @@
                 <div class="form-group">
                     <input type="text" class="form-control" id="applicant_name" name="applicant_name" placeholder="Applicant Name" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="club_name">Choose Club</label>
+                    <select class="form-control" id="club_name" name="club_name" required>
+                        <option value="">Select Club</option>
+                        @foreach ($Info as $row)
+                            <option value="{{ $row->club_name }}">{{ $row->club_name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <!-- Department Selection -->
                 <div class="form-group shadow p-3 m-5 bg-white rounded">
                     <h3 class="text-center">Select Departments</h3>

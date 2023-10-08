@@ -5,12 +5,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ApplicationInfo;
+use Illuminate\Support\Facades\DB;
 
 class ApplicationInfoController extends Controller
 {
     public function create()
     {
-        return view('applications.create');
+        $row = DB::table('club_list')
+        ->get();
+        
+        $data = [
+            'Info'=> $row
+        ];
+
+        return view ('applications.create', $data);
     }
 
     public function store(Request $request)

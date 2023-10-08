@@ -53,22 +53,50 @@ class approvalController extends Controller
     }
 
     // show edit page for an application
-    function edit($id){
+    function load_editApplication($id){
+
+        $row = DB::table('application_info')
+            ->where('application_id', $id)
+            ->first();
         
-        // $row = DB::table('club2')
-        //     ->where('id', $id)
-        //     ->first();
-        // $data = [
-        //     'Info'=> $row,
-        //     'Title'=> 'Edit'
-        // ];
+        $data = [
+            'Info'=> $row
+        ];
 
-        return redirect('applicationApproval/viewAllApplications');
-
-        
-
+        return view ('applications.editApplication', $data);
     }
 
+    function updateApplication(Request $request){
+
+
+        $request->validate([
+            'application_title'=>'required',
+            'application_type'=>'required',
+            'application_date'=>'required',
+            'applicant_name'=>'required',
+            'application_description'=>'required',
+            'club_name'=>'required'
+        ]);
+
+
+        $updating = DB::table('application_info')
+            ->where('application_id', $request->input('application_id'))
+            ->update([
+                'user_id'=> $request->input('member_id'),
+                'user_name'=> $request->input('member_name'),
+                'user_email'=> $request->input('email'),
+                'contact_number'=> $request->input('contact_number'),
+                'gender'=> $request->input('gender'),
+                'club_position'=> $request->input('club_position')
+            ]);
+            
+            
+        // $data = array(
+        //     'list' => DB::table($clubName)->get()
+        // );
+        
+        return back() ->with('success', 'Successfull!!!!');
+    }
 
     //calculate progress of an application
     function calculateProgress($id)
@@ -163,7 +191,7 @@ class approvalController extends Controller
             }
             
             // Redirect to 'private-test' page
-            return redirect('/view-submitted-applications');
+            return redirect('/view-all-applications');
 
         } catch (\Exception $e) {
             // Log the exception for debugging

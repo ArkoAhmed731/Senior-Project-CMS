@@ -25,43 +25,55 @@
                     </ul>
                 </div>
             @endif
-            <form method="POST" action="{{ route('applications.store') }}">
+            <form method="POST" action="{{ route('applications.update', $Info->application_id) }}">
                 @csrf
                 <!-- Application Title -->
                 <div class="form-group">
-                    <input type="text" class="form-control" id="application_title" name="application_title" placeholder="Application Title" required>
+                    <input type="text" class="form-control" id="application_title" name="application_title" value="{{ $Info->application_title }}" required>
                 </div>
                 <!-- Application Type (Combo Box) -->
                 <div class="form-group">
                     <label for="application_type">Application Type</label>
                     <select class="form-control" id="application_type" name="application_type" required>
                         <option value="">Select Application Type</option>
-                        <option value="General application">General Application</option>
-                        <option value="Seminar">Seminar</option>
-                        <option value="Festival">Festival</option>
-                        <option value="Exhibitions">Exhibitions</option>
-                        <option value="Workshop">Workshop</option>
-                        <option value="Sports">Sports</option>
-                        <option value="Competition">Competition</option>
-                        <option value="Charity">Charity</option>
-                        <option value="Show">Show</option>
-                        <option value="Party">Party</option>
-                        <option value="Cultural">Cultural</option>
-                        <option value="Others">Others</option>
+                        <option value="General application" {{ $Info->gender === "General application" ? "selected" : "" }}>General Application</option>
+                        <option value="Seminar" {{ $Info->gender === "Seminar" ? "selected" : "" }}>Seminar</option>
+                        <option value="Festival" {{ $Info->gender === "Festival" ? "selected" : "" }}>Festival</option>
+                        <option value="Exhibitions" {{ $Info->gender === "Exhibitions" ? "selected" : "" }}>Exhibitions</option>
+                        <option value="Workshop" {{ $Info->gender === "Workshop" ? "selected" : "" }}>Workshop</option>
+                        <option value="Sports" {{ $Info->gender === "Sports" ? "selected" : "" }}>Sports</option>
+                        <option value="Competition" {{ $Info->gender === "Competition" ? "selected" : "" }}>Competition</option>
+                        <option value="Charity" {{ $Info->gender === "Charity" ? "selected" : "" }}>Charity</option>
+                        <option value="Show" {{ $Info->gender === "Show" ? "selected" : "" }}>Show</option>
+                        <option value="Party" {{ $Info->gender === "Party" ? "selected" : "" }}>Party</option>
+                        <option value="Cultural" {{ $Info->gender === "Cultural" ? "selected" : "" }}>Cultural</option>
+                        <option value="Others" {{ $Info->gender === "Others" ? "selected" : "" }}>Others</option>
                     </select>
                 </div>
                 <!-- Application Date -->
                 <div class="form-group">
-                    <input type="date" class="form-control" id="application_date" name="application_date" placeholder="Application Date" required>
+                    <input type="date" class="form-control" id="application_date" name="application_date" value="{{ $Info->application_datee }}" required>
                 </div>
                 <!-- Application Description -->
                 <div class="form-group">
-                    <textarea class="form-control" id="application_description" name="application_description" placeholder="Application Description" required></textarea>
+                    <textarea class="form-control" id="application_description" name="application_description" value="{{ $Info->application_description }}" required></textarea>
                 </div>
                 <!-- Applicant Name -->
                 <div class="form-group">
-                    <input type="text" class="form-control" id="applicant_name" name="applicant_name" placeholder="Applicant Name" required>
+                    <input type="text" class="form-control" id="applicant_name" name="applicant_name" value="{{ $Info->applicant_name }}" required>
                 </div>
+
+                <div class="form-group">
+                    <label for="club_name">Choose Club</label>
+                    <select class="form-control" id="club_name" name="club_name" required>
+                        <option value="">Select Club</option>
+                        @foreach ($Info as $row)
+                            <option value="{{ $row->club_name }}">{{ $row->club_name }}</option>
+                            
+                        @endforeach
+                    </select>
+                </div>
+
                 <!-- Department Selection -->
                 <div class="form-group shadow p-3 m-5 bg-white rounded">
                     <h3 class="text-center">Select Departments</h3>
@@ -91,7 +103,7 @@
                 </div>
                 <!-- Add more department checkboxes as needed -->
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary bg-info">Update</button>
+                    <button type="submit" class="btn btn-primary bg-info">Edit</button>
                 </div>
             </form>
             @if (session('success'))
