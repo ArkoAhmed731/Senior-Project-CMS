@@ -60,26 +60,26 @@
         @if(Auth::user()->user_type === 'super admin')
 
         <!-- {{-- cards --}} -->
-        <div class= " card-section site-section d-flex justify-content-between flex-wrap p-3 ">
+        <div class= " card-section site-section d-flex justify-content-around flex-wrap p-3 ">
 
             <!-- {{-- single card --}} -->
-            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>
             <!-- {{-- single card end --}} -->
 
-            <a href="/superAdmin/manage-clubs" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/superAdmin/manage-clubs" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Manage Clubs</h6>
             </a>
 
-            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Manage Posts</h6>
             </a>
 
-            <a href="/superAdmin/manage-users" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/superAdmin/manage-users" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Manage Users</h6>
             </a>

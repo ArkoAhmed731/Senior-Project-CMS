@@ -36,13 +36,13 @@
     <div class="table-responsive">
     <table class = "table table-hover">
       <thread>
-        <th>application_id</th>
-        <th>application_title</th>
-        <th>application_type</th>
-        <th>application_date</th>
-        <th>application_description</th>
-        <th>applicant_name</th>
-        <th>club_name</th>
+        <th>Application ID</th>
+        <th>Application Title</th>
+        <th>Application Type</th>
+        <th>Application Date</th>
+        <th>Application Description</th>
+        <th>Applicant Name</th>
+        <th>Club Name</th>
         <th>Actions</th>
       </thread>
       <tbody>
@@ -59,17 +59,17 @@
           <td>
             <div class = "btn-group">
               @if(Auth::user()->user_type === 'offcial')
-                <a href="post-approval/{{ $item->application_id }}" class="btn btn-primary btn-xs">Respond</a>
-                <a href="application-approval-progress/{{ $item->application_id }}" class="btn btn-secondary btn-xs">View Progress</a>
+                <a href="post-approval/{{ $item->application_id }}" class="btn btn-primary btn-xs rounded">Respond</a>
+                <a href="application-approval-progress/{{ $item->application_id }}" class="btn btn-secondary btn-xs rounded" style="margin-left: 5px;">View Progress</a>
               @elseif(Auth::user()->user_type === 'club admin')
-                <a href="application-approval-progress/{{ $item->application_id }}" class="btn btn-secondary btn-xs">View Progress</a>
-                <a href="/applications/edit-application/{$item->application_id}" class="btn btn-info btn-xs">Edit</a>
-                <a href="delete/{{ $item->application_id }}" class="btn btn-danger btn-xs">Delete</a>
+                <a href="application-approval-progress/{{ $item->application_id }}" class="btn btn-secondary btn-xs rounded">View Progress</a>
+                <a href="/applications/edit-application/{$item->application_id}" class="btn btn-info btn-xs rounded" style="margin-left: 5px;">Edit</a>
+                <a href="delete/{{ $item->application_id }}" class="btn btn-danger btn-xs rounded" style="margin-left: 5px;">Delete</a>
               @elseif(Auth::user()->user_type === 'super admin')
-                <a href="post-approval/{{ $item->application_id }}" class="btn btn-primary btn-xs">Respond</a>
-                <a href="application-approval-progress/{{ $item->application_id }}" class="btn btn-secondary btn-xs">View Progress</a>
-                <a href="/applications/edit-application/{$item->application_id}" class="btn btn-info btn-xs">Edit</a>
-                <a href="delete/{{ $item->application_id }}" class="btn btn-danger btn-xs">Delete</a>
+                <a href="post-approval/{{ $item->application_id }}" class="btn btn-primary btn-xs rounded">Respond</a>
+                <a href="application-approval-progress/{{ $item->application_id }}" class="btn btn-secondary btn-xs rounded" style="margin-left: 5px;">View Progress</a>
+                <a href="/applications/edit-application/{$item->application_id}" class="btn btn-info btn-xs rounded" style="margin-left: 5px;">Edit</a>
+                <a href="delete/{{ $item->application_id }}" class="btn btn-danger btn-xs rounded" style="margin-left: 5px;">Delete</a>
               @endif
               
             </div>

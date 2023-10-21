@@ -20,6 +20,11 @@ class AuthController extends Controller
     {
         return view('login.login');
     }
+    // delete... only for testing
+    public function showLoginForm2()
+    {
+        return view('test');
+    }
 
     /**
      * Handle a login request to the application.

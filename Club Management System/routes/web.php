@@ -48,6 +48,9 @@ Route::get('/club-admin', [globalController::class, 'load_clubAdmin'])->name("cl
 Route::get('/my-profile', [globalController::class, 'load_myProfile'])->name("general.myProfile");
 
 // ... Other global routes ...
+Route::get('/test', [AuthController::class, 'showLoginForm2']);
+
+
 
 // CRUD routes
 Route::post('add', [LaravelCrud::class, 'add']);
