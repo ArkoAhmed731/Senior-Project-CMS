@@ -9,13 +9,21 @@
     <!-- Include your custom CSS files -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/manageUsers.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
-    <div class="site-wrap">
-        {{-- Nav Bar --}}
+    <div class="site-wrap pb-5">
+
+        {{-- nav bar --}}
+
         @include('menu.navBar')
+        {{-- nav bar end --}}
+
+        <div class = "he ml-3 mr-3">Club Name</div>
         <div class="p-5 w-75 mx-auto shadow p-3 bg-white rounded">
-            <h1 class="text-center">Add Member</h1>
+            <h3 class="text-center"> Manage Members</h3>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
