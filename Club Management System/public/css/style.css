@@ -115,3 +115,50 @@ body {
  .card-section a:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; }
 
+  /*  */
+  /*  */
+
+  .card1 {
+    max-width: 100%;
+    border-radius: 16px; /* Set the border radius for the card */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    position: relative;
+    transition: transform 1s; /* Add the transition for smooth animation */
+}
+
+.card1 .card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit; /* Inherit text color from parent */
+    border-radius: 16px; /* Set the border radius for the link */
+    padding: 0; /* Remove anchor padding to fit the card size */
+}
+
+.card1:hover {
+    transform: scale(1.05); /* Enlarge the card by 5% on hover */
+}
+
+.card1 .card-link:hover {
+    text-decoration: none;
+    background-color: transparent; /* Remove background color on hover */
+}
+
+.card1 .card-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px; /* Adjust padding as needed */
+    background: rgba(255, 255, 255, 0.65);
+    cursor: pointer;
+    border-radius: 16px;
+}
+
+.card1 .card-title {
+    margin: 0;
+}
+
+.card1 i.bi {
+    font-size: 1.5rem; /* Adjust the size as needed */
+    color: #000; /* Set the icon color if needed */
+}

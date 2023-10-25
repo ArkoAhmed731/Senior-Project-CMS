@@ -9,12 +9,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/homeupgrade.css"> -->
 
 </head>
 
 <body>
 
-    <div class="site-wrap">
+    <div class="site-wrap" style = "background-image: url('https://w0.peakpx.com/wallpaper/38/499/HD-wallpaper-thresh-lol.jpg');">
 
         {{-- nav bar --}}
 
@@ -89,11 +90,19 @@
         <div class="admin-panel">
             <h4 class="text-center">Admin Panel</h4>
           
-            <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+            <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Create Post for Club</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
+
+            <div class="card1">
+                <a href="/applications/create" class="card-link">
+                    <div class="card-body">
+                        <h5 class="card-title">Create Post for Club</h5><i class="bi bi-caret-right-fill"></i>
+                    </div>
+                </a>
+            </div>
 
             <a href="/applications/create" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
