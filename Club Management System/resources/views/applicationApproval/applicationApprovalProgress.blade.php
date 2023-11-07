@@ -48,12 +48,15 @@
             padding: 10px;
             margin: 20px;
         }
-        .arrow-button, .hello-button {
+
+        .arrow-button,
+        .hello-button {
             cursor: pointer;
             background-color: #f3f3f3;
             border: 1px solid #ccc;
             padding: 5px 10px;
         }
+
         .show-message .message-box {
             display: block;
         }
@@ -78,12 +81,13 @@
             <h2 class="text-center">Application Approval Progress</h2>
             <hr>
 
-                <h3>Title: {{ $Info->application_title }}</h3>
+            <h3>Title: {{ $Info->application_title }}</h3>
 
-           <p><strong>Application ID: {{ $Info->application_id }}</strong></p> 
-                <button id="viewApplication" type="button" onclick="" class="btn btn-primary bg-info text-center">View Application</button>
+            <p><strong>Application ID: {{ $Info->application_id }}</strong></p>
+            <button id="viewApplication" type="button" onclick="" class="btn btn-primary bg-info text-center">View
+                Application</button>
 
-        
+
             <div class="progress m-4 ">
                 <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"
                     style="width: 50%" aria-valuenow="{{ $percentageOnes }}" aria-valuemin="0" aria-valuemax="100">
@@ -100,60 +104,65 @@
             <!-- <div id = progress> -->
             <div id = "Main departments">
 
-                <h4 class="text-center">Main Departments</h4>
+                <h4 class="text-center">Responses from Departments</h4>
 
                 <div>
                     {{-- Main Departments --}}
                     <div class="wrapper">
+                        <div id="DOSA">
+                            <div class="m-2 d-flex justify-content-between">
+                                <strong class="text-success">&#10003; DOSA</strong>
+                                <button class="message-button btn btn-primary bg-info text-center"
+                                    onclick="showMessage('message1')">Show Details</button>
 
-                        <ul class="StepProgress ">
-                            <div class="StepProgress-item mb-2 current d-flex justify-content-between">
-                                <strong>DOSA</strong>
-                                
-                                <button class="message-button" onclick="showMessage('message1')">Show Details</button>
-    
                             </div>
                             <div id="message1" class="message-box">
                                 This is the response of message 1
                             </div>
                             <hr>
-                            
-                        
-                            <div class="StepProgress-item mb-2 current d-flex justify-content-between">
-                                <strong>Dean</strong>
-                                
-                                <button class="message-button" onclick="showMessage('message2')">Show Details</button>
-    
-                            </div>
-                            <div id="message2" class="message-box">
-                                This is the response of message 2
-                            </div>
-                            <hr>
+                        </div>
+
+                        <div id="Dean">
+                        <div class="m-2 d-flex justify-content-between">
+                            <strong class="text-success">&#10003; Dean</strong> <!-- Checkmark (Green) -->
+
+                            <button class="message-button  btn btn-primary bg-info text-center"
+                                onclick="showMessage('message2')">Show Details</button>
+
+                        </div>
+                        <div id="message2" class="message-box">
+                            This is the response of message 2
+                        </div>
+                        <hr>
+                        </div>
 
 
-                              
-                            <div class="StepProgress-item mb-2 current d-flex justify-content-between">
-                                <strong>VC</strong>
-                                
-                                <button class="message-button" onclick="showMessage('message3')">Show Details</button>
-    
-                            </div>
-                            <div id="message3" class="message-box">
-                                This is the response of message 3
-                            </div>
-                            <hr>
+                        <div id="VC">
+                        <div class="m-2 d-flex justify-content-between">
+                            <strong class="text-danger">&#10007; VC</strong> <!-- Cross (Red) -->
 
-                            <div class="StepProgress-item mb-2 current d-flex justify-content-between">
-                                <strong>Department Head</strong>
-                                <button class="message-button" onclick="showMessage('message4')">Show Details</button>
-                            
-                            </div>
-                            <div id="message4" class="message-box">
-                                This is the response of message 4
-                            </div>
-                            <hr>
+                            <button class="message-button  btn btn-primary bg-info text-center"
+                                onclick="showMessage('message3')">Show Details</button>
 
-                        </ul>
+                        </div>
+                        <div id="message3" class="message-box">
+                            This is the response of message 3
+                        </div>
+                        <hr>
+                        </div>
+                        <div id="DepartmentHead" style="display: none;">
+                        <div class="m-2 d-flex justify-content-between">
+                            <strong class="text-danger">&#10007; Department Head</strong> <!-- Cross (Red) -->
+                            <button class="message-button  btn btn-primary bg-info text-center"
+                                onclick="showMessage('message4')">Show Details</button>
+                        </div>
+                        <div id="message4" class="message-box">
+                            This is the response of message 4
+                        </div>
+                        <hr>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
