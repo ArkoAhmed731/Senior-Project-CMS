@@ -64,7 +64,7 @@
         <div class= " card-section site-section d-flex justify-content-around flex-wrap p-3 ">
 
             <!-- {{-- single card --}} -->
-            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
+            <a href="/Calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>

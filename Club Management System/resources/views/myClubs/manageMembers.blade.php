@@ -43,7 +43,7 @@
             <br>
 
             @csrf
-            <div class="table-responsive">
+            <div class="table-responsive pl-5 pr-5">
 
                 <table class="table table-hover ">
                     <thread>
