@@ -22,7 +22,7 @@
         {{-- nav bar end --}}
 
         <div class = "he ml-3 mr-3">Club Name</div>
-        <div class="p-5 w-75 mx-auto shadow p-3 bg-white rounded">
+        <div class="p-5 w-50 mx-auto my-auto shadow-lg bg-white rounded-lg">
             <h3 class="text-center"> Manage Members</h3>
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -49,7 +49,6 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="application_type">Gender</label>
                     <select class="form-control" id="gender" name="gender" required>
                         <option value="">Select Gender</option>
                         <option value="Male">Male</option>
@@ -59,9 +58,8 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="application_type">Club Postition</label>
                     <select class="form-control" id="club_position" name="club_position" required>
-                        <option value="">Select Members position in club</option>
+                        <option value="">Position in Club</option>
                         <option value="Normal">Normal</option>
                         <option value="Treasurer">Treasurer</option>
                         <option value="Vice President">Vice President</option>

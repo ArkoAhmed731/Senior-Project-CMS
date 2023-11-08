@@ -27,6 +27,14 @@ Route::get('/connection', function () {
     }
 });
 
+// redirect to login page
+Route::get('/', function () {
+    return redirect('/login');
+});
+
+
+
+
 // Forms
 Route::post('/form', [formController::class, 'formLoad'])->name("loadForm");
 
@@ -40,7 +48,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
 
 // Global routes
-Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
+// Route::get('/', [globalController::class, 'load_homePage'])->name("homePage");
 Route::get('/signup', [globalController::class, 'load_signup'])->name("signup");
 Route::post('/signup', [NewUserRequestsController::class, 'store'])->name('signup.store');
 Route::get('/forgot-password', [globalController::class, 'load_forgotPassword'])->name("forgotPassword");

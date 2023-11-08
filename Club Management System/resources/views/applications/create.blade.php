@@ -14,7 +14,7 @@
     <div class="site-wrap">
         {{-- Nav Bar --}}
         @include('menu.navBar')
-        <div class="p-5 w-75 mx-auto shadow p-3 bg-white rounded">
+        <div class="p-5 w-50 mx-auto mt-5 mb-5 shadow-lg bg-white rounded-lg">
             <h1 class="text-center">Create Application</h1>
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -33,7 +33,6 @@
                 </div>
                 <!-- Application Type (Combo Box) -->
                 <div class="form-group">
-                    <label for="application_type">Application Type</label>
                     <select class="form-control" id="application_type" name="application_type" required>
                         <option value="">Select Application Type</option>
                         <option value="General application">General Application</option>
@@ -64,7 +63,6 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="club_name">Choose Club</label>
                     <select class="form-control" id="club_name" name="club_name" required>
                         <option value="">Select Club</option>
                         @foreach ($Info as $row)
