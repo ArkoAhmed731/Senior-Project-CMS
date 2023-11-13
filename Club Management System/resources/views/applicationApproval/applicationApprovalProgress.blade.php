@@ -109,6 +109,7 @@
                 <div>
                     {{-- Main Departments --}}
                     <div class="wrapper">
+
                         <div id="DOSA">
                             <div class="m-2 d-flex justify-content-between">
                                 <strong class="text-success">&#10003; DOSA</strong>
@@ -123,33 +124,165 @@
                         </div>
 
                         <div id="Dean">
-                        <div class="m-2 d-flex justify-content-between">
-                            <strong class="text-success">&#10003; Dean</strong> <!-- Checkmark (Green) -->
+                            <div class="m-2 d-flex justify-content-between">
+                                <strong class="text-success">&#10003; Dean</strong> <!-- Checkmark (Green) -->
 
-                            <button class="message-button  btn btn-primary bg-info text-center"
-                                onclick="showMessage('message2')">Show Details</button>
+                                <button class="message-button  btn btn-primary bg-info text-center"
+                                    onclick="showMessage('message2')">Show Details</button>
 
-                        </div>
-                        <div id="message2" class="message-box">
-                            This is the response of message 2
-                        </div>
-                        <hr>
+                            </div>
+                            <div id="message2" class="message-box">
+                                This is the response of message 2
+                            </div>
+                            <hr>
                         </div>
 
 
                         <div id="VC">
-                        <div class="m-2 d-flex justify-content-between">
-                            <strong class="text-danger">&#10007; VC</strong> <!-- Cross (Red) -->
+                            <div class="m-2 d-flex justify-content-between">
+                                <strong class="text-danger">&#10007; VC</strong> <!-- Cross (Red) -->
 
-                            <button class="message-button  btn btn-primary bg-info text-center"
-                                onclick="showMessage('message3')">Show Details</button>
+                                <button class="message-button  btn btn-primary bg-info text-center"
+                                    onclick="showMessage('message3')">Show Details</button>
 
+                            </div>
+                            <div id="message3" class="message-box">
+                                This is the response of message 3
+                            </div>
+                            <hr>
                         </div>
-                        <div id="message3" class="message-box">
-                            This is the response of message 3
+
+
+                        @if($Info->onm_status != 3)
+                        <div id="onm">
+                            <div class="m-2 d-flex justify-content-between">
+                                <strong class="text-danger">&#10007; ONM</strong>
+
+                                <button class="message-button  btn btn-primary bg-info text-center"
+                                    onclick="showMessage('message3')">Show Details</button>
+
+                            </div>
+                            <div id="message3" class="message-box">
+                                This is the response of message 3
+                            </div>
+                            <hr>
                         </div>
-                        <hr>
+                        @endif
+
+                        @if($Info->cits_status != 3)
+                        <div id="cits">
+                            <div class="m-2 d-flex justify-content-between">
+                                <strong class="text-danger">&#10007; CITS</strong>
+
+                                <button class="message-button  btn btn-primary bg-info text-center"
+                                    onclick="showMessage('message3')">Show Details</button>
+
+                            </div>
+                            <div id="message3" class="message-box">
+                                This is the response of message 3
+                            </div>
+                            <hr>
                         </div>
+                        @endif
+
+                        @if($Info->facilities_status != 3)
+                        <div id="facilities">
+                            <div class="m-2 d-flex justify-content-between">
+                                <strong class="text-danger">&#10007; Facilities</strong>
+
+                                <button class="message-button  btn btn-primary bg-info text-center"
+                                    onclick="showMessage('message3')">Show Details</button>
+
+                            </div>
+                            <div id="message3" class="message-box">
+                                This is the response of message 3
+                            </div>
+                            <hr>
+                        </div>
+                        @endif
+
+                        @if($Info->security_status != 3)
+                        <div id="onm">
+                            <div class="m-2 d-flex justify-content-between">
+                                <strong class="text-danger">&#10007; Security</strong>
+
+                                <button class="message-button  btn btn-primary bg-info text-center"
+                                    onclick="showMessage('message3')">Show Details</button>
+
+                            </div>
+                            <div id="message3" class="message-box">
+                                This is the response of message 3
+                            </div>
+                            <hr>
+                        </div>
+                        @endif
+
+                        @if($Info->finance_status != 3)
+                        <div id="onm">
+                            <div class="m-2 d-flex justify-content-between">
+                                <strong class="text-danger">&#10007; Finance</strong>
+
+                                <button class="message-button  btn btn-primary bg-info text-center"
+                                    onclick="showMessage('message3')">Show Details</button>
+
+                            </div>
+                            <div id="message3" class="message-box">
+                                This is the response of message 3
+                            </div>
+                            <hr>
+                        </div>
+                        @endif
+
+                        @if($Info->administration_status != 3)
+                        <div id="onm">
+                            <div class="m-2 d-flex justify-content-between">
+                                <strong class="text-danger">&#10007; Administration</strong>
+
+                                <button class="message-button  btn btn-primary bg-info text-center"
+                                    onclick="showMessage('message3')">Show Details</button>
+
+                            </div>
+                            <div id="message3" class="message-box">
+                                This is the response of message 3
+                            </div>
+                            <hr>
+                        </div>
+                        @endif
+
+                        @if($Info->councilaffairs_status != 3)
+                        <div id="onm">
+                            <div class="m-2 d-flex justify-content-between">
+                                <strong class="text-danger">&#10007; Council Affairs</strong>
+
+                                <button class="message-button  btn btn-primary bg-info text-center"
+                                    onclick="showMessage('message3')">Show Details</button>
+
+                            </div>
+                            <div id="message3" class="message-box">
+                                This is the response of message 3
+                            </div>
+                            <hr>
+                        </div>
+                        @endif
+
+                        @if($Info->mpr_status != 3)
+                        <div id="onm">
+                            <div class="m-2 d-flex justify-content-between">
+                                <strong class="text-danger">&#10007; MPR</strong>
+
+                                <button class="message-button  btn btn-primary bg-info text-center"
+                                    onclick="showMessage('message3')">Show Details</button>
+
+                            </div>
+                            <div id="message3" class="message-box">
+                                This is the response of message 3
+                            </div>
+                            <hr>
+                        </div>
+                        @endif
+
+
+
                         <div id="DepartmentHead" style="display: none;">
                         <div class="m-2 d-flex justify-content-between">
                             <strong class="text-danger">&#10007; Department Head</strong> <!-- Cross (Red) -->
