@@ -15,8 +15,7 @@
 
 <body>
 
-    <div class="site-wrap" style = "background-image: url('https://w0.peakpx.com/wallpaper/38/499/HD-wallpaper-thresh-lol.jpg');">
-
+    <div class="site-wrap pb-3">
         {{-- nav bar --}}
 
         @include('menu.navBar')
@@ -61,40 +60,58 @@
         @if(Auth::user()->user_type === 'super admin')
 
         <!-- {{-- cards --}} -->
-        <div class= " card-section site-section d-flex justify-content-around flex-wrap p-3 ">
-
-            <!-- {{-- single card --}} -->
-            <a href="/Calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
+        <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>
-            <!-- {{-- single card end --}} -->
+            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-book card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">WorkShops</h6>
+            </a>
+           
 
-            <a href="/superAdmin/manage-clubs" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
+            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
-                <h6 class="card-title text-center">Manage Clubs</h6>
+                <h6 class="card-title text-center">Club Recruitment</h6>
             </a>
 
+<<<<<<< HEAD
+            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+=======
             <a href="/myClubs/manage-posts" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
+>>>>>>> 73f40eab8fcc6817570f2ee305fce2f263a353de
                 <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
-                <h6 class="card-title text-center">Manage Posts</h6>
+                <h6 class="card-title text-center">Upcoming Events</h6>
             </a>
 
-            <a href="/superAdmin/manage-users" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
-                <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>
-                <h6 class="card-title text-center">Manage Users</h6>
+            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">What's New?</h6>
             </a>
         </div>
         <!-- {{-- cards end --}} -->
+        <div class="admin-panel shadow-lg p-4 mt-4 mb-3">
+            <h4 class="text-center">Super Admin Dashboard</h4>
+            <hr>  
+            
 
+<<<<<<< HEAD
+            <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+=======
         <div class="admin-panel">
             <h4 class="text-center">Admin Panel</h4>
           
             <a href="/myClubs/manage-posts/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
+>>>>>>> 73f40eab8fcc6817570f2ee305fce2f263a353de
                 <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">Create Post for Club</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">Manage Clubs</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
+<<<<<<< HEAD
+           
+            <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
+=======
 
             <div class="card1">
                 <a href="/myClubs/manage-posts/create-post" class="card-link">
@@ -105,16 +122,35 @@
             </div>
 
             <a href="/applications/create" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+>>>>>>> 73f40eab8fcc6817570f2ee305fce2f263a353de
                 <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">Create Application</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">Show New User Requests</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
-
+            <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Manage Existing Users</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
             <a href="view-all-applications" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">View All Applications</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
+
+            <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Create New Post for a Club</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
+
+            <a href="/applications/create" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Create Application for a Club</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
+
+            
 
         </div>
 
@@ -128,7 +164,10 @@
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>
-            
+            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-book card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">WorkShops</h6>
+            </a>
             <a href="my-clubs" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">My Clubs</h6>
@@ -155,40 +194,63 @@
         <!-- club admin view -->
         @elseif(Auth::user()->user_type === 'club admin')
 
-        <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">                
+        <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">
             <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>
-            
-            <a href="" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
-                <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>
-                <h6 class="card-title text-center">Manage club</h6>
+            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-book card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">WorkShops</h6>
+            </a>
+    
+
+            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Club Recruitment</h6>
             </a>
 
-            <a href="myClubs/manage-members" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
-                <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
-                <h6 class="card-title text-center">Manage Members</h6>
+            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Upcoming Events</h6>
+            </a>
+
+            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">What's New?</h6>
             </a>
         </div>
 
+<<<<<<< HEAD
+        {{-- club admin dashboard --}}
+        <div class="admin-panel shadow-lg p-4 mt-4 mb-3">
+            <h4 class="text-center">Club Admin Dashboard</h4> 
+            <hr>         
+            <a href="myClubs/manage-members" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Manage Club Members</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
+            <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+=======
         <div class="admin-panel">
             <h4 class="text-center">Application & Post Management</h4>          
             <a href="/myClubs/manage-posts/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+>>>>>>> 73f40eab8fcc6817570f2ee305fce2f263a353de
                 <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">Create Post</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">Create a New Post</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
             <a href="/applications/create" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">Create Application</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">Create an Application</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
             <a href="view-all-applications" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">Submitted applications</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">View All Submitted Applications</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
         </div>
@@ -197,31 +259,41 @@
         <!-- departments/offcial view -->
         @elseif(Auth::user()->user_type === 'official')
 
-        <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">                
+        <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">
             <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>
-            
+            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-book card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">WorkShops</h6>
+            </a>
+          
 
-            <a href="myClubs/manage-members" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
-                <h6 class="card-title text-center">Manage Ms</h6>
+                <h6 class="card-title text-center">Club Recruitment</h6>
+            </a>
+
+            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">Upcoming Events</h6>
+            </a>
+
+            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+                <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
+                <h6 class="card-title text-center">What's New?</h6>
             </a>
         </div>
 
         <div class="admin-panel">
-            <h4 class="text-center">Application & Post Management</h4>          
-            <a href="" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
-                <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">View submitted Posts</h5><i class="bi bi-caret-right-fill"></i>
-                </div>
-            </a>
+            <h4 class="text-center">Official Dashboard</h4>          
+          
 
 
             <a href="view-all-applications" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">View Submitted applications</h5><i class="bi bi-caret-right-fill"></i>
+                    <h5 class="card-title">View Applications</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
         </div>
