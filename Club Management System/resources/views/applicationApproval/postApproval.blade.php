@@ -11,10 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>CMS</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <!-- <link rel="stylesheet" href="{{ asset('css/postApproval.css') }}"> -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('../../css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('../../css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('../../css/postApproval.css') }}">
+    <link rel="stylesheet" href="{{ asset('../../css/bootstrap.min.css') }}">
+    
 
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
     
@@ -47,33 +48,33 @@
 
   @csrf
     <div class="form-group">
-      <label for="exampleFormControlInput1">Application ID</label>
+      <label for="exampleFormControlInput1"><strong>Application ID</strong></label>
       <input name = "application_id" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_id }}" >
     </div>
 
     <div class="form-group">
-      <label for="exampleFormControlInput1">application_title</label>
+      <label for="exampleFormControlInput1"><strong>Application Title</strong></label>
       <input name = "name" type="text"  readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_title }}">
     </div>
 
     <div class="form-group">
-      <label for="exampleFormControlInput1">application_type</label>
+      <label for="exampleFormControlInput1"><strong>Application Type</strong></label>
       <input name = "email" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_type }}">
     </div>
 
     <div class="form-group">
-      <label for="exampleFormControlInput1">application_date</label>
+      <label for="exampleFormControlInput1"><strong>Application Date</strong></label>
       <input name = "contact" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_date }}">
     </div>
 
     <div class="form-group">
-      <label for="exampleFormControlInput1">application_description</label>
+      <label for="exampleFormControlInput1"><strong>Application Description</strong></label>
       <input name = "contact" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_description }}">
     </div>
 
     <div class="form-group">
-      <label for="exampleFormControlInput1">applicant_name</label>    
-      <input name = "contact" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->applicant_name }}">
+      <label for="exampleFormControlInput1"><strong>Applicant Name</strong></label>
+      <span class="form-control-plaintext" id="exampleFormControlInput1">{{ $Info->applicant_name }}</span>
     </div>
 
 
@@ -86,6 +87,11 @@
     <div class="form-group row">
       <div class="col-sm-10">
         <button name = "decline_button" type="submit" class="btn btn-secondary">Decline</button>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button name = "view_application" type="submit" class="btn btn">View Application</button>
       </div>
     </div>
     

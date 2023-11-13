@@ -58,7 +58,7 @@
           <td>{{ $item->club_name }}</td>
           <td>
             <div class = "btn-group">
-              @if(Auth::user()->user_type === 'offcial')
+              @if(Auth::user()->user_type === 'official')
                 <a href="post-approval/{{ $item->application_id }}" class="btn btn-primary btn-xs rounded">Respond</a>
                 <a href="application-approval-progress/{{ $item->application_id }}" class="btn btn-secondary btn-xs rounded" style="margin-left: 5px;">View Progress</a>
               @elseif(Auth::user()->user_type === 'club admin')

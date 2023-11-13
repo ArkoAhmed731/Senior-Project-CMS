@@ -49,14 +49,17 @@
                         <option value="Others">Others</option>
                     </select>
                 </div>
+
                 <!-- Application Date -->
                 <div class="form-group">
                     <input type="date" class="form-control" id="application_date" name="application_date" placeholder="Application Date" required>
                 </div>
+
                 <!-- Application Description -->
                 <div class="form-group">
                     <textarea class="form-control" id="application_description" name="application_description" placeholder="Application Description" required></textarea>
                 </div>
+
                 <!-- Applicant Name -->
                 <div class="form-group">
                     <input type="text" class="form-control" id="applicant_name" name="applicant_name" placeholder="Applicant Name" required>
@@ -98,16 +101,21 @@
                         </div>
                     </div>
                 </div>
+                
                 <!-- Add more department checkboxes as needed -->
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary bg-info">Create</button>
                 </div>
+
             </form>
+
             @if (session('success'))
                 <div class="alert alert-success mt-3">
                     {{ session('success') }}
                 </div>
             @endif
+
+
         </div>
     </div>
     {{-- Include Footer --}}

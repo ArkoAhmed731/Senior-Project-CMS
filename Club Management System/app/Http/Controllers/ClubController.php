@@ -166,4 +166,57 @@ class ClubController extends Controller
         return back() ->with('success', 'Successfull!!!!');
     }
 
+
+
+
+    /////////////////////
+    /// Event post management
+    /////////////////////
+
+    public function load_managePosts()
+    {
+        $data = array(
+            'list' => DB::table("post_info")->get()
+        );
+     
+        return view ('myClubs.managePosts', $data);
+    }
+
+    
+    public function load_createPost()
+    {
+        // return view ('myClubs.createPost');
+        return view ('myClubs.creato');
+    }
+
+
+    public function addNewPost(Request $request)
+    {
+        $clubName = Auth::user()->user_name;
+
+        $tableName = 'post_info';
+
+        // Assuming $data contains the fields you want to insert
+        $data = $request->all();
+
+        $request->validate([
+            'post_title'=>'required',
+            'post_type'=>'required',
+            'post_date'=>'required',
+            'post_description'=>'required'
+        ]);
+        
+        // Use the DB facade to insert data into the dynamically determined table
+        DB::table($tableName)->insert([ 
+            'post_title' => $data['post_title'],
+            'post_type' => $data['post_type'],
+            'post_date' => $data['post_date'],
+            'post_description' => $data['post_description'],
+            'writers_name' => $clubName,
+            'club_name' => $clubName,
+        ]);
+
+        return redirect()->back()->with('success', 'Post added successfully.');
+    }
+
 }

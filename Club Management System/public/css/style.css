@@ -170,3 +170,38 @@ body {
     font-size: 1.5rem; /* Adjust the size as needed */
     color: #000; /* Set the icon color if needed */
 }
+
+/* image upload container */
+/*  */
+.drop-container {
+  background-color: #f2f2f2; /* Slightly darker background color */
+  padding: 2em; /* Adjust padding with em units */
+  text-align: center;
+  margin: auto; /* Center the div */
+  width: 70%; /* Adjust the width as needed with percentage */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+}
+
+.drop-title {
+  font-size: 1.5em; /* Adjust font size with em units */
+  font-weight: bold;
+}
+
+#images {
+  display: none; /* Hide the default file input */
+}
+
+label {
+  cursor: pointer; /* Change cursor to pointer when hovering over the label */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .drop-container {
+      width: 90%; /* Adjust width for smaller screens */
+  }
+
+  .drop-title {
+      font-size: 1.2em; /* Adjust font size for smaller screens */
+  }
+}

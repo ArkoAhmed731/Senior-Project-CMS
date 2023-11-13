@@ -75,7 +75,7 @@
                 <h6 class="card-title text-center">Manage Clubs</h6>
             </a>
 
-            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
+            <a href="/myClubs/manage-posts" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Manage Posts</h6>
             </a>
@@ -90,14 +90,14 @@
         <div class="admin-panel">
             <h4 class="text-center">Admin Panel</h4>
           
-            <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
+            <a href="/myClubs/manage-posts/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Create Post for Club</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
             <div class="card1">
-                <a href="/applications/create" class="card-link">
+                <a href="/myClubs/manage-posts/create-post" class="card-link">
                     <div class="card-body">
                         <h5 class="card-title">Create Post for Club</h5><i class="bi bi-caret-right-fill"></i>
                     </div>
@@ -174,7 +174,7 @@
 
         <div class="admin-panel">
             <h4 class="text-center">Application & Post Management</h4>          
-            <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+            <a href="/myClubs/manage-posts/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Create Post</h5><i class="bi bi-caret-right-fill"></i>
                 </div>

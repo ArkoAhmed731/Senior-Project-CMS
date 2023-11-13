@@ -100,7 +100,10 @@ Route::post('approve_update', [approvalController::class, 'approve_update'])->na
 Route::get('/myClubs/manage-members', [ClubController::class, 'load_manageMembers'])->name("manageMembers");
 Route::get('/myClubs/add-member', [ClubController::class, 'load_addMember'])->name("addMember");
 Route::post('/myClubs/add-member', [ClubController::class, 'addNewMember'])->name('club.addNewMember');
-Route::get('/delete/{id}', [ClubController::class, 'deleteMember'])->name('club.deleteMember');
-Route::get('/myClubs/edit-member/{id}', [ClubController::class, 'load_editMember'])->name("club.editMember");
-Route::post('/myClubs/edit-member/{id}', [ClubController::class, 'updateMember'])->name("club.updateMember");
+Route::get('/myClubs/manage=members/delete/{id}', [ClubController::class, 'deleteMember'])->name('club.deleteMember');
+Route::get('/myClubs/manage=members/edit-member/{id}', [ClubController::class, 'load_editMember'])->name("club.editMember");
+Route::post('/myClubs/manage=members/edit-member/{id}', [ClubController::class, 'updateMember'])->name("club.updateMember");
 
+Route::get('/myClubs/manage-posts', [ClubController::class, 'load_managePosts'])->name("managePosts");
+Route::get('/myClubs/manage-posts/create-post', [ClubController::class, 'load_createPost'])->name("createPost");
+Route::post('/myClubs/manage-posts/create-post', [ClubController::class, 'addNewPost'])->name('club.addNewPost');
