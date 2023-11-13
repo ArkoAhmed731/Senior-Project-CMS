@@ -159,11 +159,11 @@
                                 <strong class="text-danger">&#10007; ONM</strong>
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
-                                    onclick="showMessage('message3')">Show Details</button>
+                                    onclick="showMessage('message4')">Show Details</button>
 
                             </div>
-                            <div id="message3" class="message-box">
-                                This is the response of message 3
+                            <div id="message4" class="message-box">
+                                {{$Info->onm_response}}
                             </div>
                             <hr>
                         </div>
@@ -175,11 +175,11 @@
                                 <strong class="text-danger">&#10007; CITS</strong>
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
-                                    onclick="showMessage('message3')">Show Details</button>
+                                    onclick="showMessage('message5')">Show Details</button>
 
                             </div>
-                            <div id="message3" class="message-box">
-                                This is the response of message 3
+                            <div id="message5" class="message-box">
+                                {{$Info->cits_response}}
                             </div>
                             <hr>
                         </div>
@@ -191,91 +191,91 @@
                                 <strong class="text-danger">&#10007; Facilities</strong>
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
-                                    onclick="showMessage('message3')">Show Details</button>
+                                    onclick="showMessage('message6')">Show Details</button>
 
                             </div>
-                            <div id="message3" class="message-box">
-                                This is the response of message 3
+                            <div id="message6" class="message-box">
+                                {{$Info->facilities_response}}
                             </div>
                             <hr>
                         </div>
                         @endif
 
                         @if($Info->security_status != 3)
-                        <div id="onm">
+                        <div id="security">
                             <div class="m-2 d-flex justify-content-between">
                                 <strong class="text-danger">&#10007; Security</strong>
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
-                                    onclick="showMessage('message3')">Show Details</button>
+                                    onclick="showMessage('message7')">Show Details</button>
 
                             </div>
-                            <div id="message3" class="message-box">
-                                This is the response of message 3
+                            <div id="message7" class="message-box">
+                                {{$Info->security_response}}
                             </div>
                             <hr>
                         </div>
                         @endif
 
                         @if($Info->finance_status != 3)
-                        <div id="onm">
+                        <div id="finance">
                             <div class="m-2 d-flex justify-content-between">
                                 <strong class="text-danger">&#10007; Finance</strong>
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
-                                    onclick="showMessage('message3')">Show Details</button>
+                                    onclick="showMessage('message8')">Show Details</button>
 
                             </div>
-                            <div id="message3" class="message-box">
-                                This is the response of message 3
+                            <div id="message8" class="message-box">
+                                {{$Info->facilities_response}}
                             </div>
                             <hr>
                         </div>
                         @endif
 
                         @if($Info->administration_status != 3)
-                        <div id="onm">
+                        <div id="administration">
                             <div class="m-2 d-flex justify-content-between">
                                 <strong class="text-danger">&#10007; Administration</strong>
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
-                                    onclick="showMessage('message3')">Show Details</button>
+                                    onclick="showMessage('message9')">Show Details</button>
 
                             </div>
-                            <div id="message3" class="message-box">
-                                This is the response of message 3
+                            <div id="message9" class="message-box">
+                                {{$Info->administration_response}}
                             </div>
                             <hr>
                         </div>
                         @endif
 
                         @if($Info->councilaffairs_status != 3)
-                        <div id="onm">
+                        <div id="councilaffairs">
                             <div class="m-2 d-flex justify-content-between">
                                 <strong class="text-danger">&#10007; Council Affairs</strong>
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
-                                    onclick="showMessage('message3')">Show Details</button>
+                                    onclick="showMessage('message10')">Show Details</button>
 
                             </div>
-                            <div id="message3" class="message-box">
-                                This is the response of message 3
+                            <div id="message10" class="message-box">
+                                {{$Info->councilaffairs_response}}
                             </div>
                             <hr>
                         </div>
                         @endif
 
                         @if($Info->mpr_status != 3)
-                        <div id="onm">
+                        <div id="mpr">
                             <div class="m-2 d-flex justify-content-between">
                                 <strong class="text-danger">&#10007; MPR</strong>
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
-                                    onclick="showMessage('message3')">Show Details</button>
+                                    onclick="showMessage('message11')">Show Details</button>
 
                             </div>
-                            <div id="message3" class="message-box">
-                                This is the response of message 3
+                            <div id="message11" class="message-box">
+                                {{$Info->mpr_response}}
                             </div>
                             <hr>
                         </div>

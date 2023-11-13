@@ -156,9 +156,11 @@ class approvalController extends Controller
         //Application approval/decline function
         //status == 1 == approved
         // status == 2 == declined
-        // 
-        $clubName = Auth::user()->user_name;
-        $columnName = $clubName . "_status";
+        // status == 0 == pending
+        //
+        $userName = Auth::user()->user_name;
+        $columnName = $userName . "_status";
+        $responseColumnName = $userName . "_response";
     
         try {
             if (isset($_POST['approve_button'])) {
@@ -166,12 +168,16 @@ class approvalController extends Controller
                 // dd($request->input('application_id'));
                 
                 // Update action
+                $response = $request->input('response');
+                // if defualt msg needed
+                // $response = $request->input('response', 'All good. Approved');
                 
                 $updating = DB::table('application_info')
                     ->where('application_id', $request->input('application_id'))
                     //need to check if status == 3/0
                     ->update([
-                        $columnName=> '1'
+                        $columnName=> '1',
+                        $responseColumnName => $response
                     ]);
                 
                 // Debugging output to check if update succeeded
@@ -181,10 +187,12 @@ class approvalController extends Controller
 
 
             } else if (isset($_POST['decline_button'])) {
+                $response = $request->input('response');
                 $updating = DB::table('application_info')
                     ->where('application_id', $request->input('application_id'))  
                     ->update([
-                        $columnName=> '2'
+                        $columnName=> '2',
+                        $responseColumnName => $response
                     ]);
             } else {
                 // No button pressed

@@ -77,6 +77,12 @@
       <span class="form-control-plaintext" id="exampleFormControlInput1">{{ $Info->applicant_name }}</span>
     </div>
 
+    <div class="form-group">
+      <label for="exampleFormControlInput1"><strong>Reason for your approval/disapproval</strong></label>
+      <input name = "response" type="text" class="form-control-plaintext" id="exampleFormControlInput1" placeholder="Enter the reason for your response" value="">
+    </div>
+    
+
 
     <div class="form-group row">
       <div class="col-sm-10">
