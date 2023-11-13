@@ -76,11 +76,7 @@
                 <h6 class="card-title text-center">Club Recruitment</h6>
             </a>
 
-<<<<<<< HEAD
             <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
-=======
-            <a href="/myClubs/manage-posts" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
->>>>>>> 73f40eab8fcc6817570f2ee305fce2f263a353de
                 <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Upcoming Events</h6>
             </a>
@@ -95,34 +91,11 @@
             <h4 class="text-center">Super Admin Dashboard</h4>
             <hr>  
             
-
-<<<<<<< HEAD
-            <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
-=======
-        <div class="admin-panel">
-            <h4 class="text-center">Admin Panel</h4>
-          
-            <a href="/myClubs/manage-posts/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
->>>>>>> 73f40eab8fcc6817570f2ee305fce2f263a353de
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Manage Clubs</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
-<<<<<<< HEAD
-           
-            <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
-=======
 
-            <div class="card1">
-                <a href="/myClubs/manage-posts/create-post" class="card-link">
-                    <div class="card-body">
-                        <h5 class="card-title">Create Post for Club</h5><i class="bi bi-caret-right-fill"></i>
-                    </div>
-                </a>
-            </div>
-
-            <a href="/applications/create" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
->>>>>>> 73f40eab8fcc6817570f2ee305fce2f263a353de
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Show New User Requests</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
@@ -221,7 +194,6 @@
             </a>
         </div>
 
-<<<<<<< HEAD
         {{-- club admin dashboard --}}
         <div class="admin-panel shadow-lg p-4 mt-4 mb-3">
             <h4 class="text-center">Club Admin Dashboard</h4> 
@@ -232,11 +204,7 @@
                 </div>
             </a>
             <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
-=======
-        <div class="admin-panel">
-            <h4 class="text-center">Application & Post Management</h4>          
-            <a href="/myClubs/manage-posts/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
->>>>>>> 73f40eab8fcc6817570f2ee305fce2f263a353de
+
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Create a New Post</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
