@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 08, 2023 at 03:28 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Host: localhost:8889
+-- Generation Time: Nov 13, 2023 at 08:43 PM
+-- Server version: 5.7.34
+-- PHP Version: 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,28 +29,34 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `application_info` (
   `application_id` bigint(20) UNSIGNED NOT NULL,
-  `application_title` varchar(255) NOT NULL,
-  `application_type` varchar(255) NOT NULL,
+  `application_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `application_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `application_date` date NOT NULL,
-  `application_description` text NOT NULL,
-  `applicant_name` varchar(255) NOT NULL,
-  `club_name` varchar(255) NOT NULL,
-  `onm_status` tinyint(4) NOT NULL DEFAULT 3,
-  `cits_status` tinyint(4) NOT NULL DEFAULT 3,
-  `facilities_status` tinyint(4) NOT NULL DEFAULT 3,
-  `security_status` tinyint(4) NOT NULL DEFAULT 3,
-  `finance_status` tinyint(4) NOT NULL DEFAULT 3,
-  `adminisrtration_status` tinyint(4) NOT NULL DEFAULT 3,
-  `councilaffairs_status` tinyint(4) NOT NULL DEFAULT 3,
-  `mpr_status` tinyint(4) NOT NULL DEFAULT 3,
-  `onm_response` text DEFAULT NULL,
-  `cits_response` text DEFAULT NULL,
-  `facilities_response` text DEFAULT NULL,
-  `security_response` text DEFAULT NULL,
-  `finance_response` text DEFAULT NULL,
-  `adminisrtration_response` text DEFAULT NULL,
-  `councilaffairs_response` text DEFAULT NULL,
-  `mpr_response` text DEFAULT NULL,
+  `application_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `applicant_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `club_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `onm_status` tinyint(4) NOT NULL DEFAULT '3',
+  `cits_status` tinyint(4) NOT NULL DEFAULT '3',
+  `facilities_status` tinyint(4) NOT NULL DEFAULT '3',
+  `security_status` tinyint(4) NOT NULL DEFAULT '3',
+  `finance_status` tinyint(4) NOT NULL DEFAULT '3',
+  `administration_status` tinyint(4) NOT NULL DEFAULT '3',
+  `councilaffairs_status` tinyint(4) NOT NULL DEFAULT '3',
+  `mpr_status` tinyint(4) NOT NULL DEFAULT '3',
+  `vc_status` tinyint(4) NOT NULL DEFAULT '3',
+  `dosa_status` tinyint(4) NOT NULL DEFAULT '3',
+  `dean_status` tinyint(4) NOT NULL DEFAULT '3',
+  `onm_response` text COLLATE utf8mb4_unicode_ci,
+  `cits_response` text COLLATE utf8mb4_unicode_ci,
+  `facilities_response` text COLLATE utf8mb4_unicode_ci,
+  `security_response` text COLLATE utf8mb4_unicode_ci,
+  `finance_response` text COLLATE utf8mb4_unicode_ci,
+  `administration_response` text COLLATE utf8mb4_unicode_ci,
+  `councilaffairs_response` text COLLATE utf8mb4_unicode_ci,
+  `mpr_response` text COLLATE utf8mb4_unicode_ci,
+  `vc_response` text COLLATE utf8mb4_unicode_ci,
+  `dosa_response` text COLLATE utf8mb4_unicode_ci,
+  `dean_response` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -59,17 +65,18 @@ CREATE TABLE `application_info` (
 -- Dumping data for table `application_info`
 --
 
-INSERT INTO `application_info` (`application_id`, `application_title`, `application_type`, `application_date`, `application_description`, `applicant_name`, `club_name`, `onm_status`, `cits_status`, `facilities_status`, `security_status`, `finance_status`, `adminisrtration_status`, `councilaffairs_status`, `mpr_status`, `onm_response`, `cits_response`, `facilities_response`, `security_response`, `finance_response`, `adminisrtration_response`, `councilaffairs_response`, `mpr_response`, `created_at`, `updated_at`) VALUES
-(1, 'IUB Tech Fest', 'Festival', '2023-08-18', 'dasd', 'sadas', '', 2, 0, 3, 3, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 06:30:39', '2023-08-16 06:30:39'),
-(2, 'IUB Tech Fest', 'Festival', '2023-08-19', 'asdasdgfsgetg efewfew fdsfsdf fdsfsdfdfsd', 'Azwad', '', 3, 0, 0, 3, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 06:31:38', '2023-08-16 06:31:38'),
-(3, 'IUB music club festival', 'Seminar', '2023-08-31', 'dasdas', 'dsad', '', 3, 3, 0, 3, 3, 3, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 06:40:30', '2023-08-16 06:40:30'),
-(4, 'IUB music competition', 'Competition', '2023-08-26', 'cxzczxc', 'czxczx', '', 3, 0, 3, 0, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 06:42:47', '2023-08-16 06:42:47'),
-(5, 'IUB Tech Fest', 'General application', '2023-08-19', 'dasdsa', 'dasdas', '', 3, 3, 3, 3, 0, 0, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 07:27:49', '2023-08-16 07:27:49'),
-(6, 'dasdas', 'Competition', '2023-08-18', 'dasdas', 'dasd', 'chess club', 3, 3, 3, 3, 3, 0, 0, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 07:30:31', '2023-08-16 07:30:31'),
-(7, 'Azwad', 'Workshop', '2023-08-17', 'dasd', 'dasd', '', 0, 0, 3, 3, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 07:33:24', '2023-08-16 07:33:24'),
-(8, 'Utshob', 'Show', '2023-08-12', 'hi whats up', 'rahat', '', 2, 0, 0, 3, 3, 0, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-23 03:46:28', '2023-08-23 03:46:28'),
-(9, 'hsagf', 'Workshop', '2023-08-26', 'hhhhh', 'rahat', '', 2, 0, 3, 3, 3, 0, 3, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-23 03:50:21', '2023-08-23 03:50:21'),
-(10, 'Party', 'Party', '2023-10-11', 'Partyyyyyy!!!', 'gad', 'chess club', 1, 0, 0, 0, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-10-07 01:48:21', '2023-10-07 01:48:21');
+INSERT INTO `application_info` (`application_id`, `application_title`, `application_type`, `application_date`, `application_description`, `applicant_name`, `club_name`, `onm_status`, `cits_status`, `facilities_status`, `security_status`, `finance_status`, `administration_status`, `councilaffairs_status`, `mpr_status`, `vc_status`, `dosa_status`, `dean_status`, `onm_response`, `cits_response`, `facilities_response`, `security_response`, `finance_response`, `administration_response`, `councilaffairs_response`, `mpr_response`, `vc_response`, `dosa_response`, `dean_response`, `created_at`, `updated_at`) VALUES
+(1, 'IUB Tech Fest', 'Festival', '2023-08-18', 'dasd', 'sadas', '', 2, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 06:30:39', '2023-08-16 06:30:39'),
+(2, 'IUB Tech Fest', 'Festival', '2023-08-19', 'asdasdgfsgetg efewfew fdsfsdf fdsfsdfdfsd', 'Azwad', '', 3, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 06:31:38', '2023-08-16 06:31:38'),
+(3, 'IUB music club festival', 'Seminar', '2023-08-31', 'dasdas', 'dsad', '', 3, 3, 0, 3, 3, 3, 3, 0, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 06:40:30', '2023-08-16 06:40:30'),
+(4, 'IUB music competition', 'Competition', '2023-08-26', 'cxzczxc', 'czxczx', '', 3, 0, 3, 0, 3, 3, 3, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 06:42:47', '2023-08-16 06:42:47'),
+(5, 'IUB Tech Fest', 'General application', '2023-08-19', 'dasdsa', 'dasdas', '', 3, 3, 3, 3, 0, 0, 3, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 07:27:49', '2023-08-16 07:27:49'),
+(6, 'dasdas', 'Competition', '2023-08-18', 'dasdas', 'dasd', 'chess club', 3, 3, 3, 3, 3, 0, 0, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 07:30:31', '2023-08-16 07:30:31'),
+(7, 'Azwad', 'Workshop', '2023-08-17', 'dasd', 'dasd', '', 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-16 07:33:24', '2023-08-16 07:33:24'),
+(8, 'Utshob', 'Show', '2023-08-12', 'hi whats up', 'rahat', '', 2, 0, 0, 3, 3, 0, 3, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-23 03:46:28', '2023-08-23 03:46:28'),
+(9, 'hsagf', 'Workshop', '2023-08-26', 'hhhhh', 'rahat', '', 2, 0, 3, 3, 3, 0, 3, 0, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-08-23 03:50:21', '2023-08-23 03:50:21'),
+(10, 'Party', 'Party', '2023-10-11', 'Partyyyyyy!!!', 'gad', 'chess club', 1, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-10-07 01:48:21', '2023-10-07 01:48:21'),
+(11, 'concert 101', 'Competition', '2023-10-19', 'codoodd', 'rahat', 'chess club', 3, 1, 3, 0, 3, 0, 3, 3, 3, 3, 3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2023-10-10 03:03:47', '2023-10-10 03:03:47');
 
 -- --------------------------------------------------------
 
@@ -80,11 +87,11 @@ INSERT INTO `application_info` (`application_id`, `application_title`, `applicat
 CREATE TABLE `blub club` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
-  `contact_number` varchar(255) NOT NULL,
-  `gender` enum('male','female','other') NOT NULL,
-  `club_position` varchar(255) NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` enum('male','female','other') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `club_position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -98,11 +105,11 @@ CREATE TABLE `blub club` (
 CREATE TABLE `chess club` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
-  `contact_number` varchar(255) NOT NULL,
-  `gender` enum('male','female','other') NOT NULL,
-  `club_position` varchar(255) NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` enum('male','female','other') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `club_position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -114,7 +121,8 @@ CREATE TABLE `chess club` (
 INSERT INTO `chess club` (`id`, `user_id`, `user_name`, `user_email`, `contact_number`, `gender`, `club_position`, `created_at`, `updated_at`) VALUES
 (1, 128232, 'rraasd', 'qwew@gnas.com', '134134134', 'male', 'Normal', NULL, NULL),
 (3, 1233221, 'Henry Ford', 'henry@gmail.com', '123123123', 'male', 'Treasurer', NULL, NULL),
-(4, 1231234, 'rht', 'rh999@gmail.com', '12124', 'male', 'Normal', NULL, NULL);
+(4, 1231234, 'rht', 'rh999@gmail.com', '12124', 'male', 'Normal', NULL, NULL),
+(5, 13213443, 'Mehedi', 'mehedi@gmail.com', '01232323454', 'male', 'Treasurer', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -129,7 +137,7 @@ CREATE TABLE `club2` (
   `contact` int(14) NOT NULL,
   `gender` text NOT NULL,
   `position` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `club2`
@@ -150,7 +158,7 @@ INSERT INTO `club2` (`id`, `name`, `email`, `contact`, `gender`, `position`) VAL
 CREATE TABLE `club_list` (
   `club_id` int(3) NOT NULL,
   `club_name` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `club_list`
@@ -176,23 +184,11 @@ INSERT INTO `club_list` (`club_id`, `club_name`) VALUES
 CREATE TABLE `dance club` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
-  `contact_number` varchar(255) NOT NULL,
-  `gender` enum('male','female','other') NOT NULL,
-  `club_position` varchar(255) NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `departments`
---
-
-CREATE TABLE `departments` (
-  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` enum('male','female','other') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `club_position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -206,11 +202,11 @@ CREATE TABLE `departments` (
 CREATE TABLE `iub music club` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
-  `contact_number` varchar(255) NOT NULL,
-  `gender` enum('male','female','other') NOT NULL,
-  `club_position` varchar(255) NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` enum('male','female','other') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `club_position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -224,11 +220,11 @@ CREATE TABLE `iub music club` (
 CREATE TABLE `karate_club` (
   `id` int(10) UNSIGNED NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
-  `contact_number` varchar(255) NOT NULL,
-  `gender` enum('male','female','other') NOT NULL,
-  `club_position` varchar(255) NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` enum('male','female','other') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `club_position` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -248,7 +244,7 @@ INSERT INTO `karate_club` (`id`, `user_id`, `user_name`, `user_email`, `contact_
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) NOT NULL,
+  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -278,12 +274,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 --
 
 CREATE TABLE `new_user_requests` (
-  `user_id` varchar(255) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
-  `contact_number` varchar(255) NOT NULL,
-  `gender` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -304,8 +300,8 @@ INSERT INTO `new_user_requests` (`user_id`, `user_name`, `user_email`, `contact_
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) NOT NULL,
-  `token` varchar(255) NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -317,11 +313,11 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `personal_access_tokens` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `tokenable_type` varchar(255) NOT NULL,
+  `tokenable_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tokenable_id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `token` varchar(64) NOT NULL,
-  `abilities` text DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `abilities` text COLLATE utf8mb4_unicode_ci,
   `last_used_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -335,26 +331,13 @@ CREATE TABLE `personal_access_tokens` (
 
 CREATE TABLE `post_info` (
   `post_id` bigint(20) UNSIGNED NOT NULL,
-  `post_title` varchar(255) NOT NULL,
-  `post_type` varchar(255) NOT NULL,
+  `post_title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `post_type` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `post_date` date NOT NULL,
-  `post_description` text NOT NULL,
-  `writers_name` varchar(255) NOT NULL,
-  `club_name` varchar(255) NOT NULL
+  `post_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `writers_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `club_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `testeventapply`
---
-
-CREATE TABLE `testeventapply` (
-  `Name` text NOT NULL,
-  `Type` text NOT NULL,
-  `Date` date NOT NULL,
-  `Summary` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -364,12 +347,12 @@ CREATE TABLE `testeventapply` (
 
 CREATE TABLE `upcoming_events` (
   `event_id` bigint(20) UNSIGNED NOT NULL,
-  `event_name` varchar(255) NOT NULL,
-  `club_name` varchar(255) NOT NULL,
+  `event_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `club_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `description` text NOT NULL,
-  `picture` varchar(255) DEFAULT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `picture` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -381,14 +364,14 @@ CREATE TABLE `upcoming_events` (
 --
 
 CREATE TABLE `users` (
-  `user_id` varchar(255) NOT NULL,
-  `user_name` varchar(255) NOT NULL,
-  `user_email` varchar(255) NOT NULL,
-  `contact_number` varchar(255) NOT NULL,
-  `gender` enum('male','female') NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `bio` text DEFAULT NULL,
-  `user_type` enum('super admin','club admin','official','general') NOT NULL,
+  `user_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `user_email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `gender` enum('male','female') COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bio` text COLLATE utf8mb4_unicode_ci,
+  `user_type` enum('super admin','club admin','official','general') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -438,12 +421,6 @@ ALTER TABLE `chess club`
 -- Indexes for table `dance club`
 --
 ALTER TABLE `dance club`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `departments`
---
-ALTER TABLE `departments`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -512,7 +489,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `application_info`
 --
 ALTER TABLE `application_info`
-  MODIFY `application_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `application_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `blub club`
@@ -524,19 +501,13 @@ ALTER TABLE `blub club`
 -- AUTO_INCREMENT for table `chess club`
 --
 ALTER TABLE `chess club`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `dance club`
 --
 ALTER TABLE `dance club`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `departments`
---
-ALTER TABLE `departments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `iub music club`
