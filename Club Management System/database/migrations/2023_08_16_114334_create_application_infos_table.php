@@ -26,9 +26,9 @@ class CreateApplicationInfosTable extends Migration
             $table->tinyInteger('administration_status')->default(3);
             $table->tinyInteger('councilaffairs_status')->default(3);
             $table->tinyInteger('mpr_status')->default(3);
-            $table->tinyInteger('vc_status')->default(3);
-            $table->tinyInteger('dean_status')->default(3);
-            $table->tinyInteger('dosa_status')->default(3);
+            $table->tinyInteger('vc_status')->default(0);
+            $table->tinyInteger('dean_status')->default(0);
+            $table->tinyInteger('dosa_status')->default(0);
 
             // Department responses
             $table->text('onm_response')->nullable();
