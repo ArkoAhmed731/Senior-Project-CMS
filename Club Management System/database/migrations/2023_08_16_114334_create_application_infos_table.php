@@ -23,9 +23,12 @@ class CreateApplicationInfosTable extends Migration
             $table->tinyInteger('facilities_status')->default(3);
             $table->tinyInteger('security_status')->default(3);
             $table->tinyInteger('finance_status')->default(3);
-            $table->tinyInteger('adminisrtration_status')->default(3);
+            $table->tinyInteger('administration_status')->default(3);
             $table->tinyInteger('councilaffairs_status')->default(3);
             $table->tinyInteger('mpr_status')->default(3);
+            $table->tinyInteger('vc_status')->default(3);
+            $table->tinyInteger('dean_status')->default(3);
+            $table->tinyInteger('dosa_status')->default(3);
 
             // Department responses
             $table->text('onm_response')->nullable();
@@ -33,9 +36,12 @@ class CreateApplicationInfosTable extends Migration
             $table->text('facilities_response')->nullable();
             $table->text('security_response')->nullable();
             $table->text('finance_response')->nullable();
-            $table->text('adminisrtration_response')->nullable();
+            $table->text('administration_response')->nullable();
             $table->text('councilaffairs_response')->nullable();
             $table->text('mpr_response')->nullable();
+            $table->text('vc_response')->nullable();
+            $table->text('dean_response')->nullable();
+            $table->text('dosa_response')->nullable();
 
             $table->timestamps();
         });

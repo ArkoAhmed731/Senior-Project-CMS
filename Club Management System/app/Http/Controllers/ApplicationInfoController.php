@@ -35,9 +35,12 @@ class ApplicationInfoController extends Controller
             'facilities_status' => in_array('Facilities', $selectedDepartments) ? 0 : 3,
             'security_status' => in_array('Security', $selectedDepartments) ? 0 : 3,
             'finance_status' => in_array('Finance', $selectedDepartments) ? 0 : 3,
-            'adminisrtration_status' => in_array('Administration', $selectedDepartments) ? 0 : 3,
+            'administration_status' => in_array('Administration', $selectedDepartments) ? 0 : 3,
             'councilaffairs_status' => in_array('Council Affairs', $selectedDepartments) ? 0 : 3,
             'mpr_status' => in_array('MPR', $selectedDepartments) ? 0 : 3,
+            'dean_status' => 0, // Set dean_status to 0
+            'vc_status' => 0,   // Set vc_status to 0
+            'dosa_status' => 0, // Set dosa_status to 0
             // Add more departments here
         ];
 

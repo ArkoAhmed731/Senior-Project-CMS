@@ -20,9 +20,12 @@ class ApplicationInfo extends Model
         'facilities_status',
         'security_status',
         'finance_status',
-        'adminisrtration_status',
+        'administration_status',
         'councilaffairs_status',
         'mpr_status',
+        'vc_status',
+        'dean_status',
+        'dosa_status',
         'onm_response',
         'cits_response',
         'facilities_response',
@@ -31,5 +34,8 @@ class ApplicationInfo extends Model
         'adminisrtration_response',
         'councilaffairs_response',
         'mpr_response',
+        'vc_response',
+        'dean_response',
+        'dosa_response',
     ];
 }

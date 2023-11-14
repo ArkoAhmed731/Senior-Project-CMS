@@ -80,9 +80,6 @@
                             </div>
                         <div id="response" class="hidden">
                         <div id="messages"></div>
-                        <progress class="progress" id="file-progress" value="0">
-                            <span>0</span>%
-                        </progress>
                         </div>
                     </label>
                 </div>
@@ -111,7 +108,8 @@
     <!-- //////////////////////////// -->
     <!-- upload images script -->
     <!-- /////////////////////// -->
-    <script src = "../../js/image_upload.js"></script>
+    
+    <script src="image_upload.js"></script>
 
 
 </body>

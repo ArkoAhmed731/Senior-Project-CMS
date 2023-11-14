@@ -49,9 +49,9 @@ class approvalController extends Controller
 
         return back();
 
-
     }
 
+    
     // show edit page for an application
     function load_editApplication($id){
 
