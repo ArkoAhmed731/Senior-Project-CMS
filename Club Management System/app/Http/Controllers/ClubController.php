@@ -8,6 +8,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ClubController extends Controller
 {
@@ -190,6 +191,7 @@ class ClubController extends Controller
     }
 
 
+
     public function addNewPost(Request $request)
     {
         $clubName = Auth::user()->user_name;
@@ -203,11 +205,29 @@ class ClubController extends Controller
             'post_title'=>'required',
             'post_type'=>'required',
             'post_date'=>'required',
-            'post_description'=>'required'
+            'post_description'=>'required',
+            'fileUpload' => 'required|mimes:jpeg,png,jpg,gif|max:25600', 
+            // 'fileUpload' => 'required', 
+            // Adjust validation as needed
         ]);
-        
+
+        // Process file upload
+        if ($request->file('fileUpload')->isValid()) {
+
+            $filename = $this->getUniqueFileName($request->file('fileUpload'));
+            $filePath = 'images/post_images/' . $filename;
+
+            // Move the file to the public/images/post_images folder
+            $request->file('fileUpload')->move(public_path('images/post_images'), $filename);
+
+            // Add the file path to the data array
+            $data['file_path'] = $filePath;
+        } else {
+            return redirect()->back()->with('error', 'Invalid file.');
+        }
+
         // Use the DB facade to insert data into the dynamically determined table
-        DB::table($tableName)->insert([ 
+        DB::table($tableName)->insert([
             'post_title' => $data['post_title'],
             'post_type' => $data['post_type'],
             'post_date' => $data['post_date'],
@@ -218,5 +238,15 @@ class ClubController extends Controller
 
         return redirect()->back()->with('success', 'Post added successfully.');
     }
+
+    private function getUniqueFileName($file)
+    {
+        $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        $extension = $file->getClientOriginalExtension();
+        $id = DB::table('post_info')->max('id') + 1; // Assuming 'id' is the primary key
+
+        return "{$originalName}_{$id}.{$extension}";
+    }
+
 
 }

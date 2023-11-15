@@ -56,6 +56,9 @@
 }
  .uploader #response #messages {
 	 margin-bottom: 0.5rem;
+	 overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
 }
  .uploader #file-image {
 	 display: inline;
@@ -68,10 +71,11 @@
 	 display: none;
 }
  .uploader #notimage {
-	 display: block;
-	 float: left;
-	 clear: both;
-	 width: 100%;
+	display: block;
+	float: left;
+	clear: both;
+	width: 100%;
+	
 }
  .uploader #notimage.hidden {
 	 display: none;

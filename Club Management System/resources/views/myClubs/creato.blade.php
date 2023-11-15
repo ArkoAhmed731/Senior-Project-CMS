@@ -84,7 +84,6 @@
                     </label>
                 </div>
 
-
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary bg-info">Create</button>
                 </div>
@@ -109,7 +108,8 @@
     <!-- upload images script -->
     <!-- /////////////////////// -->
     
-    <script src="image_upload.js"></script>
+    <script src="../../js/image_upload.js"></script>
+    <script src="../../js/image_store.js"></script>
 
 
 </body>
