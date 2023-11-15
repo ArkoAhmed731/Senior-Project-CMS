@@ -38,15 +38,16 @@
   
   {{-- nav bar end--}}
 
-  <h1>Application Approval Page</h1>
+  <div class="m-5 p-2 w-100 mx-auto">
 
 
-<div class="application">
+<div class="application bg-white shadow-lg h-75">
 
 
   <form action="{{ route('approve_update') }}" method="post"> 
 
   @csrf
+  <div class="d-none">
     <div class="form-group">
       <label for="exampleFormControlInput1"><strong>Application ID</strong></label>
       <input name = "application_id" type="text" readonly class="form-control-plaintext" id="exampleFormControlInput1" placeholder="" value="{{ $Info->application_id }}" >
@@ -77,32 +78,45 @@
       <span class="form-control-plaintext" id="exampleFormControlInput1">{{ $Info->applicant_name }}</span>
     </div>
 
+  </div>
+    <h2>Title: {{ $Info->application_title }}</h2>
+
     <div class="form-group">
-      <label for="exampleFormControlInput1"><strong>Reason for your approval/disapproval</strong></label>
-      <input name = "response" type="text" class="form-control-plaintext" id="exampleFormControlInput1" placeholder="Enter the reason for your response" value="">
+      <p><b>Club: {{ $Info->club_name }}</b></p>
+    </div>
+    <p><strong>Description:</strong></p>
+    <p>{{ $Info->application_description }}</p>
+   
+
+
+
+    <div class="form-group">
+      {{-- <label for="exampleFormControlInput1"><strong>Reason for your approval/disapproval</strong></label> --}}
+      <input name = "response" type="text" class="form-control-plaintext border border-info rounded" id="exampleFormControlInput1" placeholder=" Remarks" value="">
     </div>
     
 
 
+    {{-- <div class="form-group row"> --}}
+      {{-- <div class="col-sm-10"> --}}
+        <button name = "approve_button" type="submit" class="btn btn-primary bg-info mr-2">&#10003; Approve</button>
+      {{-- </div>    
+    </div> --}}
+    {{-- <div class="form-group row">
+      <div class="col-sm-10"> --}}
+        <button name = "decline_button" type="submit" class="btn btn-secondary bg-danger">&#10007; Decline</button>
+      {{-- </div>
+    </div> --}}
     <div class="form-group row">
       <div class="col-sm-10">
-        <button name = "approve_button" type="submit" class="btn btn-primary">Approve</button>
-      </div>    
-    </div>
-    <br>
-    <div class="form-group row">
-      <div class="col-sm-10">
-        <button name = "decline_button" type="submit" class="btn btn-secondary">Decline</button>
-      </div>
-    </div>
-    <div class="form-group row">
-      <div class="col-sm-10">
-        <button name = "view_application" type="submit" class="btn btn">View Application</button>
+        <button name = "view_application" type="submit" class="btn btn mt-2">View Application</button>
       </div>
     </div>
     
   </form>
-
+</div>
+</div>
+</div>
 
 
 <!-- <h2>Event Application</h2>
@@ -121,7 +135,6 @@
     <button class="approve-btn">Approve</button>
     <button class="disapprove-btn">Decline</button>
   </div> -->
-</div>
 
 <!-- Additional application divs can be added here -->
 

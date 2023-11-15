@@ -82,10 +82,11 @@
             <hr>
 
             <h3>Title: {{ $Info->application_title }}</h3>
+            <p><strong>Club: {{ $Info->club_name }}</strong></p>
 
             <p><strong>Application ID: {{ $Info->application_id }}</strong></p>
-            <button id="viewApplication" type="button" onclick="" class="btn btn-primary bg-info text-center">View
-                Application</button>
+            <a href="/post-approval/{{ $Info->application_id }}"><button id="viewApplication" type="button" onclick="" class="btn btn-primary bg-info text-center">View
+                Application</button></a>
 
 
             <div class="progress m-4 ">

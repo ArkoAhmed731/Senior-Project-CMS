@@ -160,9 +160,9 @@
           <td>{{ $item->application_title }}</td>
           <td>{{ $item->application_type }}</td>
           <td>{{ $item->application_date }}</td>
-          <td>{{ $item->application_description }}</td>
           <td>{{ $item->applicant_name }}</td>
           <td>{{ $item->club_name }}</td>
+          {{-- <td>{{ $item->club_name }}</td> --}}
           <td>
             <div class = "btn-group">
               @if(Auth::user()->user_type === 'official')
@@ -190,20 +190,17 @@
               </table>
             </div>
 
-            <div class="row justify-content-center">
+            {{-- <div class="row justify-content-center">
                 <div class="col-12 col-md-auto">
                     <a href="/applications/create">
-                        {{-- <div class="card-body">
-                            <h5 class="card-title">Add Member</h5><i class="bi bi-caret-right-fill"></i>
-                        </div> --}}
+                        
                         <div class="text-center">
                           <button type="submit" class="btn btn-primary bg-info mb-5">Create Application</button>
                       </div>
                     </a>
                 </div>
-            </div>
+            </div> --}}
 
-        {{-- </div> --}}
 
     </div>
 
