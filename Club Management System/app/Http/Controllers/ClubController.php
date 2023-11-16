@@ -243,9 +243,9 @@ class ClubController extends Controller
     {
         $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
         $extension = $file->getClientOriginalExtension();
-        $id = DB::table('post_info')->max('id') + 1; // Assuming 'id' is the primary key
+        $id = DB::table('post_info')->max('post_id') + 1; // Assuming 'id' is the primary key
 
-        return "{$originalName}_{$id}.{$extension}";
+        return "{$id}.{$extension}";
     }
 
 
