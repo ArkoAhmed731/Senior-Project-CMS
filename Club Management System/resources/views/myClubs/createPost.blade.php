@@ -63,7 +63,7 @@
                 </div>
 
                 <div class="form-group">
-                    <textarea class="form-control" id="post_description" name="post_description" placeholder="Application Description" required></textarea>
+                    <textarea class="form-control" id="post_description" name="post_description" placeholder="Description" required></textarea>
                 </div>
 
 
