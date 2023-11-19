@@ -206,25 +206,25 @@ class ClubController extends Controller
             'post_type'=>'required',
             'post_date'=>'required',
             'post_description'=>'required',
-            'fileUpload' => 'required|mimes:jpeg,png,jpg,gif|max:25600', 
+            // 'fileUpload' => 'required|mimes:jpeg,png,jpg,gif|max:25600', 
             // 'fileUpload' => 'required', 
             // Adjust validation as needed
         ]);
 
         // Process file upload
-        if ($request->file('fileUpload')->isValid()) {
+        // if ($request->file('fileUpload')->isValid()) {
 
-            $filename = $this->getUniqueFileName($request->file('fileUpload'));
-            $filePath = 'images/post_images/' . $filename;
+        //     $filename = $this->getUniqueFileName($request->file('fileUpload'));
+        //     $filePath = 'images/post_images/' . $filename;
 
-            // Move the file to the public/images/post_images folder
-            $request->file('fileUpload')->move(public_path('images/post_images'), $filename);
+        //     // Move the file to the public/images/post_images folder
+        //     $request->file('fileUpload')->move(public_path('images/postImages'), $filename);
 
-            // Add the file path to the data array
-            $data['file_path'] = $filePath;
-        } else {
-            return redirect()->back()->with('error', 'Invalid file.');
-        }
+        //     // Add the file path to the data array
+        //     $data['file_path'] = $filePath;
+        // } else {
+        //     return redirect()->back()->with('error', 'Invalid file.');
+        // }
 
         // Use the DB facade to insert data into the dynamically determined table
         DB::table($tableName)->insert([
