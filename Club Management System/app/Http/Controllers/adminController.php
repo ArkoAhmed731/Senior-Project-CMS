@@ -109,6 +109,22 @@ class adminController extends Controller
 
     //////////////////////////////
     ///////////////////////////
+    // New User Requests
+
+
+    public function load_newUserRequests()
+    {
+
+        $data = array(
+            'list' => DB::table('new_user_requests')->get()
+        );
+        
+
+        return view ('superAdmin.newUserRequests', $data);
+    }
+
+    //////////////////////////////
+    ///////////////////////////
     // CLUBS
 
     public function load_manageClubs()

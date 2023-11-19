@@ -91,7 +91,7 @@
 
             <div class="progress m-4 ">
                 <div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar"
-                    style="width: 50%" aria-valuenow="{{ $percentageOnes }}" aria-valuemin="0" aria-valuemax="100">
+                    style="width: 0%" aria-valuenow="{{ $percentageOnes }}" aria-valuemin="0" aria-valuemax="100">
                     {{ $percentageOnes }}%</div>
             </div>
 
@@ -113,27 +113,42 @@
 
                         <div id="DOSA">
                             <div class="m-2 d-flex justify-content-between">
-                                <strong class="text-success">&#10003; DOSA</strong>
+                                @if($Info->dosa_status == 0)
+                                <!-- pending --><!-- hourglass -->
+                                    <strong class="text-warning"> &#10711; DOSA</strong>  
+                                @elseif($Info->dosa_status == 1)
+                                <!-- approved --><!-- Checkmark (Green tick) -->
+                                    <strong class="text-success"> &#10007; DOSA</strong>
+                                @elseif($Info->dosa_status == 2)
+                                <!-- declined --><!-- Checkmark (RED CROSS) -->
+                                    <strong class="text-danger"> &#10003; DOSA</strong>
+                                @endif
                                 <button class="message-button btn btn-primary bg-info text-center"
                                     onclick="showMessage('message1')">Show Details</button>
 
                             </div>
                             <div id="message1" class="message-box">
-                                This is the response of message 1
+                                {{$Info->dosa_response}}
                             </div>
                             <hr>
                         </div>
 
                         <div id="Dean">
                             <div class="m-2 d-flex justify-content-between">
-                                <strong class="text-success">&#10003; Dean</strong> <!-- Checkmark (Green) -->
+                                @if($Info->dean_status == 0)
+                                    <strong class="text-warning"> &#10711; Dean</strong>  
+                                @elseif($Info->dean_status == 1)
+                                    <strong class="text-success"> &#10003; Dean</strong>
+                                @elseif($Info->dean_status == 2)
+                                    <strong class="text-danger"> &#10007; Dean</strong>
+                                @endif
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
                                     onclick="showMessage('message2')">Show Details</button>
 
                             </div>
                             <div id="message2" class="message-box">
-                                This is the response of message 2
+                                {{$Info->dean_response}}
                             </div>
                             <hr>
                         </div>
@@ -141,14 +156,20 @@
 
                         <div id="VC">
                             <div class="m-2 d-flex justify-content-between">
-                                <strong class="text-danger">&#10007; VC</strong> <!-- Cross (Red) -->
+                                @if($Info->vc_status == 0)
+                                    <strong class="text-warning"> &#10711; VC</strong>  
+                                @elseif($Info->vc_status == 1)
+                                    <strong class="text-success"> &#10003; VC</strong>
+                                @elseif($Info->vc_status == 2)
+                                    <strong class="text-danger"> &#10007; VC</strong>
+                                @endif
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
                                     onclick="showMessage('message3')">Show Details</button>
 
                             </div>
                             <div id="message3" class="message-box">
-                                This is the response of message 3
+                                {{$Info->vc_response}}
                             </div>
                             <hr>
                         </div>
@@ -157,7 +178,17 @@
                         @if($Info->onm_status != 3)
                         <div id="onm">
                             <div class="m-2 d-flex justify-content-between">
-                                <strong class="text-danger">&#10007; ONM</strong>
+                                @if($Info->onm_status == 0)
+                                <!-- pending -->
+                                    <strong class="text-warning"> &#10711; ONM</strong>  
+                                @elseif($Info->onm_status == 1)
+                                <!-- approved -->
+                                    <strong class="text-success"> &#10003; ONM</strong>
+                                @elseif($Info->onm_status == 2)
+                                <!-- declined -->
+                                    <strong class="text-danger"> &#10007; ONM</strong>
+                                @endif    
+                                    
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
                                     onclick="showMessage('message4')">Show Details</button>
@@ -173,7 +204,13 @@
                         @if($Info->cits_status != 3)
                         <div id="cits">
                             <div class="m-2 d-flex justify-content-between">
-                                <strong class="text-danger">&#10007; CITS</strong>
+                            @if($Info->cits_status == 0)
+                                    <strong class="text-warning"> &#10711; CITS</strong>  
+                                @elseif($Info->cits_status == 1)
+                                    <strong class="text-success"> &#10003; CITS</strong>
+                                @elseif($Info->cits_status == 2)
+                                    <strong class="text-danger"> &#10007; CITS</strong>
+                                @endif
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
                                     onclick="showMessage('message5')">Show Details</button>
@@ -189,7 +226,13 @@
                         @if($Info->facilities_status != 3)
                         <div id="facilities">
                             <div class="m-2 d-flex justify-content-between">
-                                <strong class="text-danger">&#10007; Facilities</strong>
+                                @if($Info->facilities_status == 0)
+                                    <strong class="text-warning"> &#10711; Facilities</strong>  
+                                @elseif($Info->facilities_status == 1)
+                                    <strong class="text-success"> &#10003; Facilities</strong>
+                                @elseif($Info->facilities_status == 2)
+                                    <strong class="text-danger"> &#10007; Facilities</strong>
+                                @endif
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
                                     onclick="showMessage('message6')">Show Details</button>
@@ -205,7 +248,13 @@
                         @if($Info->security_status != 3)
                         <div id="security">
                             <div class="m-2 d-flex justify-content-between">
-                                <strong class="text-danger">&#10007; Security</strong>
+                                @if($Info->security_status == 0)
+                                    <strong class="text-warning"> &#10711; Security</strong>  
+                                @elseif($Info->security_status == 1)
+                                    <strong class="text-success"> &#10003; Security</strong>
+                                @elseif($Info->security_status == 2)
+                                    <strong class="text-danger"> &#10007; Security</strong>
+                                @endif
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
                                     onclick="showMessage('message7')">Show Details</button>
@@ -221,14 +270,20 @@
                         @if($Info->finance_status != 3)
                         <div id="finance">
                             <div class="m-2 d-flex justify-content-between">
-                                <strong class="text-danger">&#10007; Finance</strong>
+                                @if($Info->finance_status == 0)
+                                    <strong class="text-warning"> &#10711; Finance</strong>  
+                                @elseif($Info->finance_status == 1)
+                                    <strong class="text-success"> &#10003; Finance</strong>
+                                @elseif($Info->finance_status == 2)
+                                    <strong class="text-danger"> &#10007; Finance</strong>
+                                @endif
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
                                     onclick="showMessage('message8')">Show Details</button>
 
                             </div>
                             <div id="message8" class="message-box">
-                                {{$Info->facilities_response}}
+                                {{$Info->finance_response}}
                             </div>
                             <hr>
                         </div>
@@ -237,7 +292,13 @@
                         @if($Info->administration_status != 3)
                         <div id="administration">
                             <div class="m-2 d-flex justify-content-between">
-                                <strong class="text-danger">&#10007; Administration</strong>
+                                @if($Info->administration_status == 0)
+                                    <strong class="text-warning"> &#10711; Administration</strong>  
+                                @elseif($Info->administration_status == 1)
+                                    <strong class="text-success"> &#10003; Administration</strong>
+                                @elseif($Info->administration_status == 2)
+                                    <strong class="text-danger"> &#10007; Administration</strong>
+                                @endif
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
                                     onclick="showMessage('message9')">Show Details</button>
@@ -253,7 +314,13 @@
                         @if($Info->councilaffairs_status != 3)
                         <div id="councilaffairs">
                             <div class="m-2 d-flex justify-content-between">
-                                <strong class="text-danger">&#10007; Council Affairs</strong>
+                                @if($Info->councilaffairs_status == 0)
+                                    <strong class="text-warning"> &#10711; Council Affairs</strong>  
+                                @elseif($Info->councilaffairs_status == 1)
+                                    <strong class="text-success"> &#10003; Council Affairs</strong>
+                                @elseif($Info->councilaffairs_status == 2)
+                                    <strong class="text-danger"> &#10007; Council Affairs</strong>
+                                @endif
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
                                     onclick="showMessage('message10')">Show Details</button>
@@ -269,7 +336,14 @@
                         @if($Info->mpr_status != 3)
                         <div id="mpr">
                             <div class="m-2 d-flex justify-content-between">
-                                <strong class="text-danger">&#10007; MPR</strong>
+                                @if($Info->mpr_status == 0)
+                                    <strong class="text-warning"> &#10711; MPR</strong>  
+                                @elseif($Info->mpr_status == 1)
+                                    <strong class="text-success"> &#10003; MPR</strong>
+                                @elseif($Info->mpr_status == 2)
+                                    <strong class="text-danger"> &#10007; MPR</strong>
+                                @endif
+
 
                                 <button class="message-button  btn btn-primary bg-info text-center"
                                     onclick="showMessage('message11')">Show Details</button>

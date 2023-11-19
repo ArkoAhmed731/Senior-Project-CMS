@@ -65,12 +65,12 @@
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>
+
             <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-book card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">WorkShops</h6>
             </a>
            
-
             <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
                 <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Club Recruitment</h6>
@@ -91,16 +91,19 @@
             <h4 class="text-center">Super Admin Dashboard</h4>
             <hr>  
             
+            <a href="/superAdmin/manage-clubs" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Manage Clubs</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
+            <a href="/superAdmin/new-user-requests" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Show New User Requests</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
-            <a href="#" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
+
+            <a href="/superAdmin/manage-users" class="card text-white bg-info m-3 p-3" style="max-width: 100%; backdrop-filter: blur(6px);">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Manage Existing Users</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
@@ -111,7 +114,7 @@
                 </div>
             </a>
 
-            <a href="/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+            <a href="/manage-posts/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Create New Post for a Club</h5><i class="bi bi-caret-right-fill"></i>
                 </div>

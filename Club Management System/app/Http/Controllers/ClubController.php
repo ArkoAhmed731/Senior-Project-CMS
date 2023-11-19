@@ -187,7 +187,7 @@ class ClubController extends Controller
     public function load_createPost()
     {
         // return view ('myClubs.createPost');
-        return view ('myClubs.creato');
+        return view ('myClubs.createPost');
     }
 
 

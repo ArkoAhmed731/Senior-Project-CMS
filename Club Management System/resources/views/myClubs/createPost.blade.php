@@ -1,42 +1,26 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <html>
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>CMS</title>
-    <link rel="stylesheet" href="{{ asset('../../css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('../../css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('../../css/applyForEvent.css') }}">
-    <link rel="stylesheet" href="{{ asset('../../css/bootstrap.min.css') }}">
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+    <title>Create Post</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Include Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Include your custom CSS files -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/createPost.css') }}">
 </head>
 
+
 <body>
-
     <div class="site-wrap">
-
-        {{-- nav bar --}}
+        {{-- Nav Bar --}}
         @include('menu.navBar')
+        <div class="p-5 w-50 mx-auto mt-5 mb-5 shadow-lg bg-white rounded-lg">
+            <h1 class="text-center">Create Post</h1>
 
-        {{-- nav bar end --}}
-
-
-        <div class="signup-container">
-
-            <div class="right-container bg-light p-4">
-                <h2 class="mx-auto">Create Post</h2>
-
-                @if ($errors->any())
+            @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -44,87 +28,89 @@
                         @endforeach
                     </ul>
                 </div>
-                @endif
+            @endif
 
-                <form method="POST" action="{{ route('club.addNewPost') }}">
-                    <div class="set">
-                        <div class="form-group">
-                            <input class="form-control" id="eventName" name="eventName" placeholder="Post title" type="text">
-                        </div>
-                    </div>
-
-                    <input class="form-control" id="eventDescr" name="eventDescr" placeholder="Description" type="text" class="p-3 mb-3">
-
-                    <div class="set">
-
-                        <div class="form-group">
-                            <label for="eventType">Event Type</label>
-                            <select class="form-control" id="eventType" name="eventType">
-                                <option value="Activation">Seminar</option>
-                                <option value="Activation">Festival</option>
-                                <option value="Activation">Exhibitions</option>
-                                <option value="Activation">Workshop</option>
-                                <option value="Activation">Sports</option>
-                                <option value="Activation">Competition</option>
-                                <option value="Activation">Charity</option>
-                                <option value="Activation">Show</option>
-                                <option value="Activation">Party</option>
-                                <option value="Activation">Activation</option>
-                                <option value="Cultural">Cultural</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="eventDate">Event Date</label>
-                            <input class="form-control" id="eventDate" name="eventDate" type="date"></input>
-                        </div>
-
-                    </div>
+            <form method="POST" action="{{ route('club.addNewPost') }}" enctype="multipart/form-data">
                 
-                    <div class="drop-container">
-                        <label for="images">
-                            <span class="drop-title">Drop Poster Here</span>
-                            <br>
-                            &emsp; &emsp; &emsp; or
-                            <input type="file" id="images" accept="image/*">
-                        </label>
-                    </div>
+                @csrf
+
+                <div class="form-group">
+                    <input type="text" class="form-control" id="application_title" name="post_title" placeholder="Post Title" required>
+                </div>
 
 
-                    <button id="next" class="submit-button mx-auto m-3">Submit</button>
-                
-                </form>
+                <div class="form-group">
+                    <select class="form-control" id="post_type" name="post_type" required>
+                        <option value="">Select Post Type</option>
+                        <option value="General">General Application</option>
+                        <option value="Seminar">Seminar</option>
+                        <option value="Festival">Festival</option>
+                        <option value="Exhibitions">Exhibitions</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Competition">Competition</option>
+                        <option value="Charity">Charity</option>
+                        <option value="Show">Show</option>
+                        <option value="Party">Party</option>
+                        <option value="Cultural">Cultural</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
 
-                @if (session('success'))
+
+                <div class="form-group">
+                    <input type="date" class="form-control" id="post_date" name="post_date" placeholder="Application Date" required>
+                </div>
+
+                <div class="form-group">
+                    <textarea class="form-control" id="post_description" name="post_description" placeholder="Application Description" required></textarea>
+                </div>
+
+
+                <div id="file-upload-form" class="uploader">
+                    <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+                    <label for="file-upload" id="file-drag">
+                        <img id="file-image" src="#" alt="Preview" class="hidden">
+                            <div id="start">
+                                <i class="fa fa-download" aria-hidden="true"></i>
+                                <div>Select an image or drag here</div>
+                                <div id="notimage" class="hidden">Please select an image</div>
+                                <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+                            </div>
+                        <div id="response" class="hidden">
+                        <div id="messages"></div>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary bg-info">Create</button>
+                </div>
+
+            </form>
+
+            @if (session('success'))
                 <div class="alert alert-success mt-3">
                     {{ session('success') }}
                 </div>
-                @endif
+            @endif
 
-            </div>
+
         </div>
     </div>
-
-
-
-
-    {{-- footer --}}
+    {{-- Include Footer --}}
     @include('menu.footer')
-    {{-- footer end --}}
+    <!-- Include Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery-ui.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/aos.js"></script>
-
-    <script src="js/main.js"></script>
+    <!-- //////////////////////////// -->
+    <!-- upload images script -->
+    <!-- /////////////////////// -->
+    
+    <script src="../../js/image_upload.js"></script>
+    <script src="../../js/image_store.js"></script>
 
 
 </body>
-
 </html>

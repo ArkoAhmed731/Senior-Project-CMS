@@ -76,6 +76,8 @@ Route::get('/delete/{id}', [adminController::class, 'deleteUser'])->name('superA
 Route::get('/superAdmin/edit-user/{id}', [adminController::class, 'load_editUser'])->name("superAdmin.editUser");
 Route::post('/superAdmin/edit-user/{id}', [adminController::class, 'updateUser'])->name('superAdmin.updateUser');
 
+Route::get('/superAdmin/new-user-requests', [adminController::class, 'load_newUserRequests'])->name('newUserRequests');
+
 Route::get('/superAdmin/manage-clubs', [adminController::class, 'load_manageClubs'])->name('manageClubs');
 Route::get('/superAdmin/add-club', [ClubController::class, 'createClubForm'])->name('showCreateForm');
 Route::post('/superAdmin/add-club', [ClubController::class, 'createClub'])->name('createClub');

@@ -15,7 +15,7 @@
         {{-- Nav Bar --}}
         @include('menu.navBar')
         <div class="p-5 w-75 mx-auto shadow p-3 bg-white rounded">
-            <h1 class="text-center">Add Member</h1>
+            <h1 class="text-center">Add User</h1>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -25,6 +25,7 @@
                     </ul>
                 </div>
             @endif
+
             <form method="POST" action="{{ route('superAdmin.addNewUser') }}">
                 @csrf
                 <div class="form-group">
@@ -60,11 +61,6 @@
                         <option value="Female">Female</option>
                         <option value="Other">Other</option>
                     </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="bio">Bio</label>
-                    <textarea class="form-control" id="bio" name="bio" placeholder="Write something about yourself"></textarea>
                 </div>
 
                 <div class="form-group">
