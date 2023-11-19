@@ -30,7 +30,7 @@
                 </div>
             @endif
 
-            <form method="POST" action="{{ route('club.addNewPost') }}">
+            <form method="POST" action="{{ route('club.addNewPost') }}" enctype="multipart/form-data">
                 
                 @csrf
 
