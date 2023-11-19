@@ -137,11 +137,11 @@ class ClubController extends Controller
     function updateMember(Request $request){
 
         $clubName = Auth::user()->user_name;
+        $currentEmail = Auth::user()->user_email;
 
         $request->validate([
             'member_id'=>'required',
             'member_name'=>'required',
-            'email'=>'required|email|unique:{$clubName}',
             'contact_number'=>'required',
             'gender'=>'required',
             'club_position'=>'required'
