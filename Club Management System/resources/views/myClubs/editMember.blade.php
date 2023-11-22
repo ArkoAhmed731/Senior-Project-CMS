@@ -34,7 +34,7 @@
                     <input type="text" class="form-control" id="member_name" name="member_name" value="{{ $Info->user_name }}" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="email" name="email" value="{{ $Info->user_email }}" required>
+                    <input type="text" class="form-control" id="email" name="email" value="{{ $Info->user_email }}" readonly>
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" id="contact_number" name="contact_number" value="{{ $Info->contact_number }}" required>
