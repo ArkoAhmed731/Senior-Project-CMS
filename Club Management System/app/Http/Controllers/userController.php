@@ -1,19 +1,92 @@
 <?php
 
-namespace App\Http\Controllers;
+// namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use GrahamCampbell\ResultType\Success;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
+// use Carbon\Carbon;
+// use GrahamCampbell\ResultType\Success;
+// use Illuminate\Http\Request;
+// use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\Hash;
 
-class userController extends Controller
-{
-    public function __construct()
-    {
-        $this->middleware('userAuth');
-    }
+// class userController extends Controller
+// {
+//     public function __construct()
+//     {
+//         $this->middleware('userAuth');
+//     }
 
  
+// }
+
+
+// UserController.php
+
+// UserController.php
+
+// UserController.php
+
+// UserController.php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Str;
+
+class UserController extends Controller
+{
+    /**
+     * Show the user's profile.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showProfile()
+    {
+        $user = Auth::user();
+        return view('profile', compact('user'));
+    }
+
+    /**
+     * Update the user's profile.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function updateProfile(Request $request)
+    {
+        $user = Auth::user();
+
+        $request->validate([
+            'contact_number' => 'nullable|string|max:255',
+            'password' => 'nullable|string|min:8|confirmed',
+            'bio' => 'nullable|string|max:500',
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480', // 20MB limit
+        ]);
+
+        // Update user fields
+        $user->contact_number = $request->input('contact_number', $user->contact_number);
+        $user->bio = $request->input('bio', $user->bio);
+
+        // Update password if provided
+        if ($request->filled('password')) {
+            $user->password = bcrypt($request->input('password'));
+        }
+
+        // Update profile picture if provided
+        if ($request->hasFile('profile_picture')) {
+            $profilePicture = $request->file('profile_picture');
+            $filename = $user->user_id . '.' . $profilePicture->getClientOriginalExtension();
+
+            // Ensure that the user_id is used as the filename
+            Storage::putFileAs('public/images/users', $profilePicture, $filename);
+
+            $user->profile_picture = $filename;
+        }
+
+        $user->save();
+
+        return redirect()->route('profile')->with('success', 'Profile updated successfully!');
+    }
 }

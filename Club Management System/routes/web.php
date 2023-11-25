@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\formController;
-use App\Http\Controllers\userController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\globalController;
 use App\Http\Controllers\LaravelCrud;
@@ -13,6 +13,7 @@ use App\Http\Controllers\HomeController; // Make sure to include HomeController
 
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\ApplicationInfoController;
+
 
 
 
@@ -109,3 +110,22 @@ Route::post('/myClubs/manage=members/edit-member/{id}', [ClubController::class, 
 Route::get('/myClubs/manage-posts', [ClubController::class, 'load_managePosts'])->name("managePosts");
 Route::get('/myClubs/manage-posts/create-post', [ClubController::class, 'load_createPost'])->name("createPost");
 Route::post('/myClubs/manage-posts/create-post', [ClubController::class, 'addNewPost'])->name('club.addNewPost');
+
+
+// profile route
+
+
+// web.php or routes/web.php
+
+// use App\Http\Controllers\UserController;
+
+// web.php or routes/web.php
+
+
+// web.php or routes/web.php
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/profile', [UserController::class, 'showProfile'])->name('profile');
+    Route::put('/profile/update', [UserController::class, 'updateProfile'])->name('update-profile');
+});

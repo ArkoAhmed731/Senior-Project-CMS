@@ -198,7 +198,7 @@
         </div>
 
         {{-- club admin dashboard --}}
-        <div class="admin-panel shadow-lg p-4 mt-4 mb-5 bg-primary">
+        <div class="admin-panel shadow-lg p-4 mt-4 mb-5">
             <h4 class="text-center">Club Admin Dashboard</h4> 
             <hr>         
             <a href="myClubs/manage-members" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
