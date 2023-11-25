@@ -115,8 +115,8 @@ function ekUpload(){
             if (xhr.readyState == 4) {
               // Everything is good!
   
-              // progress.className = (xhr.status == 200 ? "success" : "failure");
-              // document.location.reload(true);
+              progress.className = (xhr.status == 200 ? "success" : "failure");
+              document.location.reload(true);
             }
           };
   

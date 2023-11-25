@@ -9,6 +9,7 @@
     <!-- Include your custom CSS files -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/createPost.css') }}">
 </head>
 <body>
     <div class="site-wrap">
@@ -25,7 +26,7 @@
                     </ul>
                 </div>
             @endif
-            <form method="POST" action="{{ route('applications.store') }}">
+            <form method="POST" action="{{ route('applications.store') }}" enctype="multipart/form-data">
                 @csrf
                 <!-- Application Title -->
                 <div class="form-group">
@@ -65,6 +66,11 @@
                     <input type="text" class="form-control" id="applicant_name" name="applicant_name" placeholder="Applicant Name" required>
                 </div>
 
+                @if (Auth::user()->user_type === 'club admin')
+                <div class="form-group">
+                    <input type="text" class="form-control" id="club_name" name="club_name" value = "{{Auth::user()->user_name}}" readonly>
+                </div>
+                @elseif(Auth::user()->user_type === 'super admin')
                 <div class="form-group">
                     <select class="form-control" id="club_name" name="club_name" required>
                         <option value="">Select Club</option>
@@ -73,6 +79,7 @@
                         @endforeach
                     </select>
                 </div>
+                @endif
 
                 <!-- Department Selection -->
                 <div class="form-group shadow p-3 m-5 bg-white rounded">
@@ -101,6 +108,23 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- <div id="file-upload-form" class="uploader">
+                    <input id="file-upload" type="file" name="fileUpload" accept=".pdf" />
+
+                    <label for="file-upload" id="file-drag">
+                        <img id="file-image" src="#" alt="Preview" class="hidden">
+                        <div id="start">
+                            <i class="fa fa-download" aria-hidden="true"></i>
+                            <div>Select a PDF file or drag here</div>
+                            <div id="notimage" class="hidden">Please select a PDF file</div>
+                            <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+                        </div>
+                        <div id="response" class="hidden">
+                            <div id="messages"></div>
+                        </div>
+                    </label>
+                </div> -->
                 
                 <!-- Add more department checkboxes as needed -->
                 <div class="text-center">
@@ -122,5 +146,6 @@
     @include('menu.footer')
     <!-- Include Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../../js/application_pdf_upload.js"></script>
 </body>
 </html>

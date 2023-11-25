@@ -192,39 +192,78 @@ class ClubController extends Controller
 
 
 
+    // public function addNewPost(Request $request)
+    // {
+    //     $clubName = Auth::user()->user_name;
+
+    //     $tableName = 'post_info';
+
+    //     // Assuming $data contains the fields you want to insert
+    //     $data = $request->all();
+
+    //     $request->validate([
+    //         'post_title'=>'required',
+    //         'post_type'=>'required',
+    //         'post_date'=>'required',
+    //         'post_description'=>'required',
+    //         // 'fileUpload' => 'required|mimes:jpeg,png,jpg,gif|max:25600', 
+    //         // 'fileUpload' => 'required', 
+    //         // Adjust validation as needed
+    //     ]);
+
+
+
+    //     // Use the DB facade to insert data into the dynamically determined table
+    //     DB::table($tableName)->insert([
+    //         'post_title' => $data['post_title'],
+    //         'post_type' => $data['post_type'],
+    //         'post_date' => $data['post_date'],
+    //         'post_description' => $data['post_description'],
+    //         'writers_name' => $clubName,
+    //         'club_name' => $clubName,
+    //     ]);
+
+    //     return redirect()->back()->with('success', 'Post added successfully.');
+    // }
+
+    private function getUniqueFileName($file)
+    {
+        $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
+        $extension = $file->getClientOriginalExtension();
+        $id = DB::table('post_info')->max('post_id') + 1; // Assuming 'id' is the primary key
+
+        return "{$id}.{$extension}";
+    }
+
     public function addNewPost(Request $request)
     {
         $clubName = Auth::user()->user_name;
-
         $tableName = 'post_info';
 
-        // Assuming $data contains the fields you want to insert
         $data = $request->all();
 
         $request->validate([
-            'post_title'=>'required',
-            'post_type'=>'required',
-            'post_date'=>'required',
-            'post_description'=>'required',
-            // 'fileUpload' => 'required|mimes:jpeg,png,jpg,gif|max:25600', 
-            // 'fileUpload' => 'required', 
-            // Adjust validation as needed
+            'post_title' => 'required',
+            'post_type' => 'required',
+            'post_date' => 'required',
+            'post_description' => 'required',
+            'fileUpload' => 'required|image|mimes:jpeg,png,jpg,gif|max:25600',
         ]);
 
-        // Process file upload
-        // if ($request->file('fileUpload')->isValid()) {
+        if ($request->hasFile('fileUpload')) {
+            $file = $request->file('fileUpload');
 
-        //     $filename = $this->getUniqueFileName($request->file('fileUpload'));
-        //     $filePath = 'images/post_images/' . $filename;
+            if ($file->isValid()) {
+                $filename = $this->getUniqueFileName($file);
 
-        //     // Move the file to the public/images/post_images folder
-        //     $request->file('fileUpload')->move(public_path('images/postImages'), $filename);
+                $file->move(public_path('images/post_images'), $filename);
 
-        //     // Add the file path to the data array
-        //     $data['file_path'] = $filePath;
-        // } else {
-        //     return redirect()->back()->with('error', 'Invalid file.');
-        // }
+            } else {
+                return redirect()->back()->with('error', 'Invalid file.');
+            }
+        } else {
+            return redirect()->back()->with('error', 'File not found.');
+        }
 
         // Use the DB facade to insert data into the dynamically determined table
         DB::table($tableName)->insert([
@@ -237,15 +276,7 @@ class ClubController extends Controller
         ]);
 
         return redirect()->back()->with('success', 'Post added successfully.');
-    }
 
-    private function getUniqueFileName($file)
-    {
-        $originalName = pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME);
-        $extension = $file->getClientOriginalExtension();
-        $id = DB::table('post_info')->max('post_id') + 1; // Assuming 'id' is the primary key
-
-        return "{$id}.{$extension}";
     }
 
 

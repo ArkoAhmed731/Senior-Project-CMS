@@ -59,7 +59,6 @@ class adminController extends Controller
             'password' => $data['password'],
             'contact_number' => $data['contact_number'],
             'gender' => $data['gender'],
-            'bio' => $data['bio'],
             'user_type' => $data['user_type'],
             
         ]);
