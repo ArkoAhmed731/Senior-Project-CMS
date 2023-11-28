@@ -27,17 +27,37 @@
                             </div>
                         @endif
 
+                        
+
                         <div class="text-center mb-4">
                             <div class="profile-picture">
-                                @if($user->profile_picture)
-                                    <img src="{{ asset('storage/images/users/' . $user->profile_picture) }}"
-                                        class="rounded-circle" alt="Profile Picture">
-                                @else
-                                    <div class="no-picture-frame rounded-circle"></div>
-                                @endif
+                                <div class = "profile-img">
+                                    <?php
+                                    $userId = Auth::user()->user_id;
+                                    $imageExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+                                    // $profilePicturePath = public_path('images/users/' . $user_id . '.png');
+                                    $profilePicturePath = null;
+                                    foreach ($imageExtensions as $extension) {
+                                        $potentialPath = public_path("images/users/{$userId}.{$extension}");
+                                        if (File::exists($potentialPath)) {
+                                            $profilePicturePath = asset("images/users/{$userId}.{$extension}");
+                                            break;
+                                        }
+                                    }
+                                    ?>
+                                    
+                                    @if($profilePicturePath)
+                                        <img src="{{ $profilePicturePath }}" class="rounded-circle" alt="Profile Picture">
+                                        <!-- <img src="{{ asset('images/users/1883002.jpg') }}" class="rounded-circle" alt="Default Profile Picture"
+                                        style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 50%;"> -->
+                                    @else
+                                        <img src="{{ asset('images/users/user_default.png') }}" class="rounded-circle" alt="Default Profile Picture"
+                                        style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 50%;">
+                                    @endif
+                                </div>
                                 <label for="profile_picture" class="btn btn-primary mt-2">Upload Picture</label>
-                                <input type="file" class="form-control-file" id="profile_picture" name="profile_picture"
-                                    style="display: none;">
+                                <input type="file" class="form-control-file" id="profile_picture" name="profile_picture" style="display: none;">
+                                
                             </div>
                         </div>
 

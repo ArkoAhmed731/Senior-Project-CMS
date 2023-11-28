@@ -13,3 +13,12 @@
 }
 
 /* Add more styles as needed */
+
+.profile-img{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+
