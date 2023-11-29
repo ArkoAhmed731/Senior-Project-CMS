@@ -53,5 +53,15 @@ class EventsController extends Controller
         return view('clubEvents.viewEvents', ['content' => $content, 'contentType' => $contentType]);
     }
 
+    public function load_event($post_id)
+    {
+        // Fetch upcoming events from the post_info table
+        $post = DB::table('post_info')
+            ->where('post_id', $post_id)
+            ->first();
+
+        return view('clubEvents.eventPost', ['post' => $post]);
+    }
+
     
 }

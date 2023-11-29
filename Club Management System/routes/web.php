@@ -65,6 +65,8 @@ Route::post('/profile/update-profile-picture', [userController::class, 'updatePr
 Route::get('/upcoming-events', [EventsController::class, 'load_upcomingEvents'])->name("viewAllPosts");
 // Route::get('/view-events', [EventsController::class, 'load_Events'])->name("viewPosts");
 Route::get('/view-events/{contentType}', [EventsController::class, 'loadContent'])->name('loadContent');
+Route::get('/view-event/{post_id}', [EventsController::class, 'load_event'])->name("viewPost");
+
 
 
 
