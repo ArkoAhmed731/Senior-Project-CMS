@@ -26,6 +26,11 @@
                                 {{ session('success') }}
                             </div>
                         @endif
+                        @if(session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        @endif
 
                         
 
@@ -45,9 +50,10 @@
                                         }
                                     }
                                     ?>
-                                    
+                            
                                     @if($profilePicturePath)
-                                        <img src="{{ $profilePicturePath }}" class="rounded-circle" alt="Profile Picture">
+                                        <img src="{{ $profilePicturePath }}" class="rounded-circle" alt="Profile Picture"
+                                        style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 50%;">
                                         <!-- <img src="{{ asset('images/users/1883002.jpg') }}" class="rounded-circle" alt="Default Profile Picture"
                                         style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 50%;"> -->
                                     @else
@@ -55,9 +61,12 @@
                                         style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 50%;">
                                     @endif
                                 </div>
-                                <label for="profile_picture" class="btn btn-primary mt-2">Upload Picture</label>
-                                <input type="file" class="form-control-file" id="profile_picture" name="profile_picture" style="display: none;">
                                 
+                                <form id="profilePictureForm" action="{{ route('updateProfilePicture') }}" method="post" enctype="multipart/form-data">
+                                    @csrf       
+                                    <label for="profile_picture" class="btn btn-primary mt-2">Upload Picture</label>
+                                    <input type="file" class="form-control-file" id="profile_picture" name="profile_picture" style="display: none;" onchange="submitForm()">
+                                </form>
                             </div>
                         </div>
 
@@ -121,12 +130,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-    <script>
+    <!-- <script>
         // JavaScript to trigger file input when clicking on the "Upload Picture" button
         document.getElementById('profile_picture').addEventListener('click', function() {
             document.getElementById('profile_picture').click();
         });
+    </script> -->
+    <script>
+        function submitForm() {
+            document.getElementById("profilePictureForm").submit();
+        }
     </script>
+    <script src="../../js/image_upload.js"></script>
+    <script src="../../js/image_store.js"></script>
 </body>
 
 </html>

@@ -247,7 +247,7 @@ class ClubController extends Controller
             'post_type' => 'required',
             'post_date' => 'required',
             'post_description' => 'required',
-            'fileUpload' => 'required|image|mimes:jpeg,png,jpg,gif|max:25600',
+            'fileUpload' => 'image|mimes:jpeg,png,jpg,gif|max:25600',
         ]);
 
         if ($request->hasFile('fileUpload')) {
