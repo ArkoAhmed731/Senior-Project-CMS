@@ -62,7 +62,6 @@ class UserController extends Controller
             'contact_number' => 'nullable|string|max:255',
             'password' => 'nullable|string|min:8|confirmed',
             'bio' => 'nullable|string|max:500',
-            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480', // 20MB limit
         ]);
 
         // Update user fields
@@ -72,17 +71,6 @@ class UserController extends Controller
         // Update password if provided
         if ($request->filled('password')) {
             $user->password = bcrypt($request->input('password'));
-        }
-
-        // Update profile picture if provided
-        if ($request->hasFile('profile_picture')) {
-            $profilePicture = $request->file('profile_picture');
-            $filename = $user->user_id . '.' . $profilePicture->getClientOriginalExtension();
-
-            // Ensure that the user_id is used as the filename
-            Storage::putFileAs('public/images/users', $profilePicture, $filename);
-
-            $user->profile_picture = $filename;
         }
 
         $user->save();

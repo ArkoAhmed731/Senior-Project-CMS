@@ -73,8 +73,7 @@
                                 @if($profilePicturePath)
                                     <img src="{{ $profilePicturePath }}" class="rounded-circle" alt="Profile Picture"
                                     style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 50%;">
-                                    <!-- <img src="{{ asset('images/users/1883002.jpg') }}" class="rounded-circle" alt="Default Profile Picture"
-                                    style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 50%;"> -->
+
                                 @else
                                     <img src="{{ asset('images/users/user_default.png') }}" class="rounded-circle" alt="Default Profile Picture"
                                     style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 50%;">

@@ -171,27 +171,27 @@
         @elseif(Auth::user()->user_type === 'club admin')
 
         <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">
-            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>
-            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-book card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">WorkShops</h6>
             </a>
     
 
-            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Club Recruitment</h6>
             </a>
 
-            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Upcoming Events</h6>
             </a>
 
-            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">What's New?</h6>
             </a>
@@ -201,25 +201,25 @@
         <div class="admin-panel shadow-lg p-4 mt-4 mb-5">
             <h4 class="text-center">Club Admin Dashboard</h4> 
             <hr>         
-            <a href="myClubs/manage-members" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+            <a href="myClubs/manage-members" class="card text-white bg-info m-3 p-3" style="max-width: 100%; border-radius: 10px;">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Manage Club Members</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
-            <a href="/myClubs/manage-posts/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+            <a href="/myClubs/manage-posts/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%; border-radius: 10px;">
 
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Create a New Post</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
-            <a href="/applications/create" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+            <a href="/applications/create" class="card text-white bg-info m-3 p-3" style="max-width: 100%; border-radius: 10px;">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Create an Application</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
-            <a href="view-all-applications" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+            <a href="view-all-applications" class="card text-white bg-info m-3 p-3" style="max-width: 100%; border-radius: 10px;">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">View All Submitted Applications</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
