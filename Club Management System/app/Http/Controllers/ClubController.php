@@ -87,6 +87,7 @@ class ClubController extends Controller
             ->where('user_id', $id);
 
         $delete->delete();
+        
 
         return back();
     }
@@ -247,7 +248,7 @@ class ClubController extends Controller
             'post_type' => 'required',
             'post_date' => 'required',
             'post_description' => 'required',
-            'fileUpload' => 'image|mimes:jpeg,png,jpg,gif|max:25600',
+            'fileUpload' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:25600',
         ]);
 
         if ($request->hasFile('fileUpload')) {

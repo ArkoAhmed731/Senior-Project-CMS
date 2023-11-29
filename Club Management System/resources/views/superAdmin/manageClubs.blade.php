@@ -47,8 +47,7 @@
         <div class = "btn-group">
           <a href="{{ route('superAdmin.editClub', $club->club_id) }}" class="btn btn-primary btn-xs">Edit</a>
           
-          
-          <a href="delete/{{ $club->club_id }}" class="btn btn-danger btn-xs">Delete</a>
+          <a href="{{ route('superAdmin.deleteClub', $club->club_id) }}" class="btn btn-danger btn-xs">Delete</a>
           
         </div>
       </td>

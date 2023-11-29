@@ -86,12 +86,12 @@ class globalController extends Controller
         return view('applicationApproval/postApproval');
     }
 
-    public function load_upcomingEvents()
-    {
+    // public function load_upcomingEvents()
+    // {
 
 
-        return view('clubEvents/upcomingEvents');
-    }
+    //     return view('clubEvents/upcomingEvents');
+    // }
 
     public function load_eventPost()
     {

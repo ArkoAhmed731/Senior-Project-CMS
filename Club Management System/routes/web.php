@@ -13,6 +13,7 @@ use App\Http\Controllers\HomeController; // Make sure to include HomeController
 
 use App\Http\Controllers\ClubController;
 use App\Http\Controllers\ApplicationInfoController;
+use App\Http\Controllers\EventsController;
 
 
 
@@ -61,6 +62,8 @@ Route::get('/test', [AuthController::class, 'showLoginForm2']);
 
 Route::post('/profile/update-profile-picture', [userController::class, 'updateProfilePicture'])->name('updateProfilePicture');
 
+Route::get('/upcoming-events', [EventsController::class, 'load_upcomingEvents'])->name("viewAllPosts");
+
 
 
 // CRUD routes
@@ -84,7 +87,7 @@ Route::get('/superAdmin/new-user-requests', [adminController::class, 'load_newUs
 Route::get('/superAdmin/manage-clubs', [adminController::class, 'load_manageClubs'])->name('manageClubs');
 Route::get('/superAdmin/add-club', [ClubController::class, 'createClubForm'])->name('showCreateForm');
 Route::post('/superAdmin/add-club', [ClubController::class, 'createClub'])->name('createClub');
-Route::post('/delete/{id}', [adminController::class, 'deleteClub'])->name('superAdmin.deleteClub');
+Route::post('/delete/{id}', [adminController::class, 'deleteClub'])->name("superAdmin.deleteClub");
 Route::get('/superAdmin/edit-club/{id}', [adminController::class, 'load_editClub'])->name("superAdmin.editClub");
 Route::post('/superAdmin/edit-club/{id}', [adminController::class, 'updateClub'])->name("superAdmin.updateClub");
 

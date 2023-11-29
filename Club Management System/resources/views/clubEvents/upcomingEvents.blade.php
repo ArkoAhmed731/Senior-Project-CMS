@@ -13,6 +13,16 @@
 </head>
 
 <body>
+        @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
 
     <div class="site-wrap">
 
@@ -24,7 +34,7 @@
 
         </div>
 
-        <div class=" p-3">
+        <!-- <div class=" p-3">
 
             <div class="m-2 card-section">
                 <a href="event-post" class="card text-white bg-info m-auto w-90">
@@ -34,7 +44,7 @@
                                     <p class=text-center>Aug</p>
                         </div>
                         <div class="p-2" style="width: 60%">
-                            <h3 class="">Musical Flashmob</h3>
+                            <h3 class="event-name">Musical Flashmob</h3>
                             <h6 class=" text-truncate">IUB Music Club</h6>
 
                             <p class=" text-truncate">Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -124,7 +134,32 @@
 
 
 
+        </div> -->
+
+        <div class="p-3">
+            <div class="m-2 card-section" style="overflow-x: auto; white-space: nowrap;">
+                @foreach($upcomingEvents as $post)
+                    <a href="{{ url('event-post/' . $post->post_id) }}" class="card text-white bg-info m-auto w-90">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="p-2 pt-5 border-right border-2" style="width: 30%">
+                                <h3 class="text-center">{{ \Carbon\Carbon::parse($post->post_date)->format('d') }}</h3>
+                                <p class="text-center">{{ \Carbon\Carbon::parse($post->post_date)->format('M') }}</p>
+                            </div>
+                            <div class="p-2" style="width: 60%">
+                                <h3 class="event-name">{{ $post->post_title }}</h3>
+                                <h6 class="text-truncate">{{ $post->club_name }}</h6>
+                                <p class="text-truncate">{{ $post->post_description }}</p>
+                                
+                                <p>10-11am</p>
+                            </div>
+                            <div class="p-5" style="width: 10%"><i class="bi bi-caret-right-fill"></i></div>
+                        </div>
+                    </a>
+                @endforeach
+            </div>
         </div>
+
+
     </div>
 
     @include('menu.footer')
