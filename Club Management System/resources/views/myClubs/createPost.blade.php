@@ -68,9 +68,9 @@
 
 
                 <div id="file-upload-form" class="uploader">
-                    <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+                    <input id="file-upload" type="file" name="file-upload" accept="image/*" />
 
-                    <label for="file-upload" id="file-drag">
+                    <label for="file-upload" id="file-drag" for="file-upload">
                         <img id="file-image" src="#" alt="Preview" class="hidden">
                             <div id="start">
                                 <i class="fa fa-download" aria-hidden="true"></i>
@@ -94,6 +94,11 @@
                 <div class="alert alert-success mt-3">
                     {{ session('success') }}
                 </div>
+            @endif
+            @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
             @endif
 
 

@@ -248,11 +248,11 @@ class ClubController extends Controller
             'post_type' => 'required',
             'post_date' => 'required',
             'post_description' => 'required',
-            'fileUpload' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:25600',
+            'file-upload' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:25600',
         ]);
 
-        if ($request->hasFile('fileUpload')) {
-            $file = $request->file('fileUpload');
+        if ($request->hasFile('file-upload')) {
+            $file = $request->file('file-upload');
 
             if ($file->isValid()) {
                 $filename = $this->getUniqueFileName($file);
@@ -262,21 +262,25 @@ class ClubController extends Controller
             } else {
                 return redirect()->back()->with('error', 'Invalid file.');
             }
-        } else {
-            return redirect()->back()->with('error', 'File not found.');
         }
 
         // Use the DB facade to insert data into the dynamically determined table
-        DB::table($tableName)->insert([
-            'post_title' => $data['post_title'],
-            'post_type' => $data['post_type'],
-            'post_date' => $data['post_date'],
-            'post_description' => $data['post_description'],
-            'writers_name' => $clubName,
-            'club_name' => $clubName,
-        ]);
-
-        return redirect()->back()->with('success', 'Post added successfully.');
+        try {
+            // Use the DB facade to insert data into the dynamically determined table
+            DB::table($tableName)->insert([
+                'post_title' => $data['post_title'],
+                'post_type' => $data['post_type'],
+                'post_date' => $data['post_date'],
+                'post_description' => $data['post_description'],
+                'writers_name' => $clubName,
+                'club_name' => $clubName,
+            ]);
+    
+            return redirect()->back()->with('success', 'Post added successfully.');
+    
+        } catch (QueryException $e) {
+            return redirect()->back()->with('error', 'Error adding the post. Please try again.');
+        }
 
     }
 

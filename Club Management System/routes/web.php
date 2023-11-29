@@ -63,6 +63,9 @@ Route::get('/test', [AuthController::class, 'showLoginForm2']);
 Route::post('/profile/update-profile-picture', [userController::class, 'updateProfilePicture'])->name('updateProfilePicture');
 
 Route::get('/upcoming-events', [EventsController::class, 'load_upcomingEvents'])->name("viewAllPosts");
+// Route::get('/view-events', [EventsController::class, 'load_Events'])->name("viewPosts");
+Route::get('/view-events/{contentType}', [EventsController::class, 'loadContent'])->name('loadContent');
+
 
 
 
