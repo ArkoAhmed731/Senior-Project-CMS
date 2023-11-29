@@ -38,7 +38,7 @@
         <div class="p-3">
             <div class="m-2 card-section" style="overflow-x: auto; white-space: nowrap;">
                 @foreach($content as $post)
-                    <a href="{{ url('event-post/' . $post->post_id) }}" class="card text-white bg-info m-auto w-90">
+                    <a href="{{ url('view-event/' . $post->post_id) }}" class="card text-white bg-info m-auto w-90">
                         <div class="card-body d-flex justify-content-between">
                             <div class="p-2 pt-5 border-right border-2" style="width: 30%">
                                 <h3 class="text-center">{{ \Carbon\Carbon::parse($post->post_date)->format('d') }}</h3>
