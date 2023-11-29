@@ -59,6 +59,8 @@ Route::get('/my-profile', [globalController::class, 'load_myProfile'])->name("ge
 // ... Other global routes ...
 Route::get('/test', [AuthController::class, 'showLoginForm2']);
 
+Route::post('/profile/update-profile-picture', [userController::class, 'updateProfilePicture'])->name('updateProfilePicture');
+
 
 
 // CRUD routes

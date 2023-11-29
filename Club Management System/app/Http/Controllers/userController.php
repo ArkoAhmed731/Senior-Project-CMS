@@ -89,4 +89,48 @@ class UserController extends Controller
 
         return redirect()->route('profile')->with('success', 'Profile updated successfully!');
     }
+
+
+
+    public function updateProfilePicture(Request $request)
+    {
+
+        $userID = Auth::user()->user_id;
+
+        $request->validate([
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:20480', // 20MB limit
+        ]);
+
+
+        if ($request->hasFile('profile_picture')) {
+            $file = $request->file('profile_picture');
+
+            if ($file->isValid()) {
+                $filename = $userID;
+
+                $extension = $file->getClientOriginalExtension();
+                $newFilename = "{$filename}.{$extension}";
+
+
+                // Delete any existing file with the same name (ignoring extension)
+                // .* checks for all extensions
+                $existingFiles = glob(public_path("images/users/{$filename}.*"));
+                foreach ($existingFiles as $existingFile) {
+                    unlink($existingFile);
+                }
+                
+                // save new picture
+                $file->move(public_path('images/users'), $newFilename);
+
+            return redirect()->back()->with('success', 'Profile picture updated successfully');
+
+            } else {
+                return redirect()->back()->with('error', 'Invalid file.');
+            }
+        } else {
+            return redirect()->back()->with('error', 'File not found.');
+        }
+    }
+
+
 }

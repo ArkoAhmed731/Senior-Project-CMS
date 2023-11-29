@@ -23,13 +23,25 @@
 
 <body>
 
+    <div class="card-body">
+        @if (session('success'))
+            <div class="alert alert-success" role="alert">
+                {{ session('success') }}
+            </div>
+        @endif
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+        @endif
     <div class="site-wrap">
 
         {{-- nav bar --}}
         @include('menu.navBar')
 
+                        
         {{-- nav bar end --}}
-
+                            
 
         {{-- <div class="signup-container"> --}}
 
@@ -43,28 +55,36 @@
             
                     <div class="text-center mb-4">
                         <div class="profile-picture">
-                            <?php
-                            $userId = Auth::user()->user_id;
-                            $profilePicturePath = asset("images/users/{$userId}.jpg");
-                            $defaultPicturePath = asset("images/users/user_default.png");
-                            ?>
-                    
-                            <img src="{{ file_exists(public_path("images/users/{$userId}.jpg")) ? $profilePicturePath : $defaultPicturePath }}"
-                                class="rounded-circle" alt="Profile Picture"
-                                style="max-width: 30%; max-height: 30%; width: auto; height: auto; border-radius: 50%;">
-                    
-                            <form method="POST" action="{{ route('update-profile') }}" enctype="multipart/form-data" id="update-profile-form">
-                                @csrf
-                                @method('PUT')
-                    
-                                <!-- Add a hidden input to send the current profile picture filename to the server -->
-                                <input type="hidden" name="current_profile_picture" value="{{ $userId }}.jpg">
-                    
-                                <label for="profile_picture" class="btn btn-primary mt-2" id="upload-picture-btn">Upload Picture</label>
-                                <input type="file" class="form-control-file" id="profile_picture" name="profile_picture" style="display: none;">
-                    
-                                <!-- The button to submit the form -->
-                                <button type="submit" class="btn btn-success mt-2" id="submit-form-btn" style="display: none;">Update Profile</button>
+                            <div class = "profile-img">
+                                <?php
+                                $userId = Auth::user()->user_id;
+                                $imageExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+                                // $profilePicturePath = public_path('images/users/' . $user_id . '.png');
+                                $profilePicturePath = null;
+                                foreach ($imageExtensions as $extension) {
+                                    $potentialPath = public_path("images/users/{$userId}.{$extension}");
+                                    if (File::exists($potentialPath)) {
+                                        $profilePicturePath = asset("images/users/{$userId}.{$extension}");
+                                        break;
+                                    }
+                                }
+                                ?>
+                        
+                                @if($profilePicturePath)
+                                    <img src="{{ $profilePicturePath }}" class="rounded-circle" alt="Profile Picture"
+                                    style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 50%;">
+                                    <!-- <img src="{{ asset('images/users/1883002.jpg') }}" class="rounded-circle" alt="Default Profile Picture"
+                                    style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 50%;"> -->
+                                @else
+                                    <img src="{{ asset('images/users/user_default.png') }}" class="rounded-circle" alt="Default Profile Picture"
+                                    style="max-width: 100%; max-height: 100%; width: auto; height: auto; border-radius: 50%;">
+                                @endif
+                            </div>
+                            
+                            <form id="profilePictureForm" action="{{ route('updateProfilePicture') }}" method="post" enctype="multipart/form-data">
+                                @csrf       
+                                <label for="profile_picture" class="btn btn-primary mt-2">Upload Picture</label>
+                                <input type="file" class="form-control-file" id="profile_picture" name="profile_picture" style="display: none;" onchange="submitForm()">
                             </form>
                         </div>
                     </div>
@@ -126,6 +146,13 @@
     </div>
 
 
+    <script>
+        function submitForm() {
+            document.getElementById("profilePictureForm").submit();
+        }
+    </script>
+    <script src="../../js/image_upload.js"></script>
+    <script src="../../js/image_store.js"></script>
 
 
     {{-- footer --}}
