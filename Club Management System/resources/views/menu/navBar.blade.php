@@ -4,20 +4,19 @@
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
-        <ul class="navbar-nav  text-center nav-ul pl-4">
+  
+    <div class="collapse navbar-collapse pr-5" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto text-center nav-ul  pl-4">
             <li class="nav-item text-center">
-                <a class="nav-link text-white" href="/home"><i class="bi bi-house-fill nav-icon-size"></i><br>Home<span
+                <a class="nav-link text-white" href="/home"><i class="bi bi-house-fill nav-icon-size"></i><br>Home <span
                         class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="/notification"><i
                         class="bi bi-bell-fill nav-icon-size"></i><br>Notification</a>
             </li>
-
+  
             @if(auth()->check())
-
             <li class="nav-item text-center">
                 <a class="nav-link text-white" href="/profile"><i class="bi bi-person-fill nav-icon-size"></i><br>Profile<span
                         class="sr-only">(current)</span></a>
@@ -25,8 +24,6 @@
             <li class="nav-item text-center">
                 <a class="nav-link text-white" href="/logout"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-right  nav-icon-size"></i><br>Sign out<span
                     class="sr-only">(current)</span></a>
-            </li>
-            
             @else
             <li class="nav-item">
                 <a class="nav-link text-white" href="/login"><i
@@ -34,8 +31,6 @@
             </li>
             @endif
         </ul>
-
-        <!-- New list item for "abcd" on the rightmost side, hidden in mobile view -->
         <ul class="navbar-nav d-none d-lg-block">
             <li class="nav-item">
                 <span class="nav-link text-white text-right">Signed in as <br>{{ auth()->user()->user_name }}
@@ -43,8 +38,9 @@
             </li>
         </ul>
     </div>
-</nav>
-
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+  </nav>
+  
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
     @csrf
-</form>
+  </form>
+  
