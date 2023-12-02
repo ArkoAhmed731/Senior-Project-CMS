@@ -30,8 +30,29 @@
 
             <h5 class=" "><b>Time: </b>3:00PM-5:00PM</h5>
 
-            <img src="../../images/eventImage/music-club-flash-mob.jpg" class=" rounded img-fluid mx-auto"
-                alt="Responsive image">
+            <!-- <img src="../../images/eventImage/music-club-flash-mob.jpg" class=" rounded img-fluid mx-auto" alt="Responsive image"> -->
+            
+            @php
+                $imagePath = public_path('images/post_images/' . $post->post_id);
+                $extensions = ['jpeg', 'png', 'jpg', 'gif'];
+                $foundExtension = null;
+
+                foreach ($extensions as $extension) {
+                    if (file_exists($imagePath . '.' . $extension)) {
+                        $foundExtension = $extension;
+                        break;
+                    }
+                }
+            @endphp
+            
+            <div class="mx-auto p-4 text-center">
+            @if ($foundExtension)
+                <img src="{{ asset('images/post_images/' . $post->post_id . '.' . $foundExtension) }}" class="rounded img-fluid mx-auto" alt="Responsive image" style="margin: 15px;">
+            @else
+                <p>No image available</p>
+            @endif
+            </div>
+
             <p class=" mt-3"><b>Description: </b>
             {{$post->post_description}}
             </p>
