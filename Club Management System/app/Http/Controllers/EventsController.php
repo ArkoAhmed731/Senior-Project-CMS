@@ -36,9 +36,9 @@ class EventsController extends Controller
                     ->get();
                 break;
                 
-            case 'Club Recruitements':
+            case 'Club Recruitments':
                 $content = DB::table('post_info')
-                    ->where('post_type', 'Recruitement')
+                    ->where('post_type', 'Recruitment')
                     ->orderBy('post_date')
                     ->get();
                 break;

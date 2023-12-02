@@ -46,7 +46,7 @@
                     <select class="form-control" id="gender" name="gender" required>
                         <option value="male" {{ $Info->gender === "male" ? "selected" : "" }}>Male</option>
                         <option value="female" {{ $Info->gender === "female" ? "selected" : "" }}>Female</option>
-                        <option value="other" {{ $Info->gender === "other" ? "selected" : "" }}>Other</option>
+                        {{-- <option value="other" {{ $Info->gender === "other" ? "selected" : "" }}>Other</option> --}}
                     </select>
                 </div>
 

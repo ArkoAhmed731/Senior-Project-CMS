@@ -12,8 +12,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/manageUsers.css') }}">
 </head>
 
 <body>
@@ -25,17 +26,20 @@
 
         @include('menu.navBar')
         {{-- nav bar end --}}
+        <h1 class = "he">Edit Club</h1>
+
 
         <div class="container w-50 vh-100">
-            <h1 class="text-center m-5">Edit club</h1>
+
+
 
             <form method="post" action="{{ route('superAdmin.updateClub', $Info->club_id) }}">
                 @csrf
                 <div class="form-group text-center">
-                    <label for="">Logo</label>
+                    {{-- <label for="">Logo</label>
                     <input type="number" name="logo" id="logo" class="form-control"
-                        placeholder="" value="{{ $Info->club_id }}" required>
-                    <label for="">Club Id</label>
+                        placeholder="" value="{{ $Info->club_id }}" required> --}}
+                    <label for="">Club ID</label>
                     <input type="number" name="club_id" id="club_id" class="form-control"
                         placeholder="" value="{{ $Info->club_id }}" required>
                     <br>

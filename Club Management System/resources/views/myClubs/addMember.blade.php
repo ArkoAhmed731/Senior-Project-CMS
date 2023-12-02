@@ -61,7 +61,9 @@
                 <div class="form-group">
                     <select class="form-control" id="club_position" name="club_position" required>
                         <option value="">Position in Club</option>
-                        <option value="Normal">Normal</option>
+                        <option value="Normal">General member</option>
+                        <option value="Normal">Excecutive member</option>
+
                         <option value="Treasurer">Treasurer</option>
                         <option value="Vice President">Vice President</option>
                         <option value="President">President</option>

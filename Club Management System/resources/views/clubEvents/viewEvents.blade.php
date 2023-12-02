@@ -49,11 +49,13 @@
                                 <h6 class="text-truncate">{{ $post->club_name }}</h6>
                                 <p class="text-truncate">{{ $post->post_description }}</p>
                                 
-                                <p>10-11am</p>
+                                {{-- <p>10-11am</p> --}}
                             </div>
                             <div class="p-5" style="width: 10%"><i class="bi bi-caret-right-fill"></i></div>
                         </div>
                     </a>
+                    <br>
+
                 @endforeach
             </div>
         </div>

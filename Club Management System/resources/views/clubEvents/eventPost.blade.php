@@ -27,8 +27,11 @@
         <div class=" mx-auto p-4 ">
 
             <h5 class=" "><b>Date: </b>{{$post->post_date}}</h5>
+            <p class=" mt-3"><b>Description: </b>
+                {{$post->post_description}}
+                </p>
 
-            <h5 class=" "><b>Time: </b>3:00PM-5:00PM</h5>
+            {{-- <h5 class=" "><b>Time: </b>3:00PM-5:00PM</h5> --}}
 
             <!-- <img src="../../images/eventImage/music-club-flash-mob.jpg" class=" rounded img-fluid mx-auto" alt="Responsive image"> -->
             
@@ -49,13 +52,11 @@
             @if ($foundExtension)
                 <img src="{{ asset('images/post_images/' . $post->post_id . '.' . $foundExtension) }}" class="rounded img-fluid mx-auto" alt="Responsive image" style="margin: 15px;">
             @else
-                <p>No image available</p>
+                {{-- <p>No image available</p> --}}
             @endif
             </div>
 
-            <p class=" mt-3"><b>Description: </b>
-            {{$post->post_description}}
-            </p>
+           
 
 
         </div>

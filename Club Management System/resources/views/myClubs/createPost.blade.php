@@ -42,7 +42,8 @@
                 <div class="form-group">
                     <select class="form-control" id="post_type" name="post_type" required>
                         <option value="">Select Post Type</option>
-                        <option value="General">General Application</option>
+                        <option value="General">General Post</option>
+                        <option value="Recruitment">Recruitment</option>
                         <option value="Seminar">Seminar</option>
                         <option value="Festival">Festival</option>
                         <option value="Exhibitions">Exhibitions</option>

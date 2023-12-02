@@ -12,8 +12,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
         {{-- nav bar end --}}
 
         <div class="container w-50 vh-100">
-            <h1 class="text-center m-5">Create a new club</h1>
+            <h1 class="text-center m-5">Create a New club</h1>
 
             <form method="post" action="{{ route('addClub') }}">
                 @csrf
@@ -65,6 +65,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+                
             @endif
         </div>
 
@@ -72,9 +73,7 @@
     </div>
 
 
-    {{-- admin end --}}
-
-    {{-- footer --}}
+ 
     @include('menu.footer')
 
 

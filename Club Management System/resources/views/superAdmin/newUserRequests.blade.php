@@ -1,85 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/manageUsers.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/manageUsers.css') }}">
 
     <title>New User Request</title>
 </head>
+
 <body>
 
-<div class = "he">All Requests</div>
+    <div class="site-wrap">
+
+        {{-- nav bar --}}
+
+        @include('menu.navBar')
 
 
-<div class="container-fluid">
+        <div class = "he">New User Requests</div>
 
-@if(Session::get('success'))
-    <div class="alert alert-success">
-        {{ Session::get('success') }}
-    </div>
-@endif
 
-@if(Session::get('fail'))
-    <div class="alert alert-danger">
-        {{ Session::get('fail') }}
-    </div>
-@endif
+        <div class="container-fluid">
 
-<br>
-
-<div class="table-responsive">
-
-<table class="table table-hover ">
-  <thead>
-    <th>user_id</th>
-    <th>user_name</th>
-    <th>user_email</th>
-    <th>contact_number</th>
-    <th>gender</th>
-    <!-- <th>password</th> -->
-  </tread>
-  <tbody>
-
-    @foreach ($data['list'] as $user)
-    <tr>
-      <td>{{ $user->user_id }}</td>
-      <td>{{ $user->user_name }}</td>
-      <td>{{ $user->user_email }}</td>
-      <td>{{ $user->contact_number }}</td>
-      <td>{{ $user->gender }}</td>
-      <!-- <td>{{ $user->password }}</td> -->
-
-      <td>
-        <div class = "btn-group">
-          <a href="{{ route('superAdmin.editUser', $user->user_id) }}" class="btn btn-primary btn-xs">Edit</a>
-          
-
-          <a href="delete/{{ $user->user_id }}" class="btn btn-danger btn-xs">Delete</a>
-          
-        </div>
-      </td>
-    </tr>
-    @endforeach
-    
-  </tbody>
-  
-
-</table>
-</div>
-
-<div class="row justify-content-center">
-        <div class="col-12 col-md-auto">
-            <a href="/superAdmin/add-user" class="card text-white bg-info m-3 p-3 text-center">
-                <div class="card-body">
-                    <h5 class="card-title">Add User</h5><i class="bi bi-caret-right-fill"></i>
+            @if (Session::get('success'))
+                <div class="alert alert-success">
+                    {{ Session::get('success') }}
                 </div>
-            </a>
+            @endif
+
+            @if (Session::get('fail'))
+                <div class="alert alert-danger">
+                    {{ Session::get('fail') }}
+                </div>
+            @endif
+
+            <br>
+
+            <div class="table-responsive">
+
+                <table class="table table-hover ">
+                    <thead>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Contact Number</th>
+                        <th>Gender</th>
+                        <!-- <th>password</th> -->
+                        </tread>
+                    <tbody>
+
+                        @foreach ($data['list'] as $user)
+                            <tr>
+                                <td>{{ $user->user_id }}</td>
+                                <td>{{ $user->user_name }}</td>
+                                <td>{{ $user->user_email }}</td>
+                                <td>{{ $user->contact_number }}</td>
+                                <td>{{ $user->gender }}</td>
+                                <!-- <td>{{ $user->password }}</td> -->
+
+                                <td>
+                                    <div class = "btn-group">
+                                        <a href="{{ route('superAdmin.editUser', $user->user_id) }}"
+                                            class="btn btn-info btn-xs">Edit</a>
+
+
+                                        <a href="delete/{{ $user->user_id }}" class="btn btn-danger btn-xs">Delete</a>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+
+                    </tbody>
+
+
+                </table>
+            </div>
+
+
+            <div class="text-center">
+          
+              <a class="btn btn-info p-3 " href="/superAdmin/add-user" role="button">Add User</a>
+
+          </div>
+
         </div>
     </div>
-
-</div>
+    @include('menu.footer')
 
 </body>
+
 </html>
