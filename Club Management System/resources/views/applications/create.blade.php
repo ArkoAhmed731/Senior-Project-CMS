@@ -10,11 +10,15 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/createPost.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/manageUsers.css') }}">
+
 </head>
 <body>
     <div class="site-wrap">
         {{-- Nav Bar --}}
         @include('menu.navBar')
+        {{-- <div class = "he ml-3 mr-3">{{Auth::user()->user_name}}</div> --}}
+
         <div class="p-5 w-50 mx-auto mt-5 mb-5 shadow-lg bg-white rounded-lg">
             <h1 class="text-center">Create Application</h1>
             @if ($errors->any())

@@ -22,9 +22,9 @@
         @include('menu.navBar')
 
 
-        <div class = "he ml-3 mr-3 ">{{ $clubName }}</div>
+        <h1 class = "he ml-3 mr-3 ">{{ $clubName }}</h1>
         <div class="p-5 w-50 mx-auto my-auto shadow-lg bg-white rounded-lg">
-            <h1 class="text-center">Edit Member Details</h1>
+            <h2 class="text-center">Edit Member Details</h2>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>

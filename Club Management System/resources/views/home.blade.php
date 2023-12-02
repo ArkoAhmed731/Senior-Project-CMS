@@ -61,27 +61,27 @@
 
         <!-- {{-- cards --}} -->
         <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">
-            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>
 
-            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-book card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">WorkShops</h6>
             </a>
            
-            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Club Recruitment</h6>
             </a>
 
-            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Upcoming Events</h6>
             </a>
 
-            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">What's New?</h6>
             </a>
@@ -136,30 +136,30 @@
         @elseif(Auth::user()->user_type === 'general')
         
         <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">
-            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>
-            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-book card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">WorkShops</h6>
             </a>
-            <a href="my-clubs" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="my-clubs" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-people-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">My Clubs</h6>
             </a>
 
-            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Club Recruitment</h6>
             </a>
 
-            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Upcoming Events</h6>
             </a>
 
-            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">What's New?</h6>
             </a>
@@ -176,19 +176,19 @@
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>
             <!-- <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;"> -->
-            <a href="{{ route('loadContent', ['contentType' => 'Workshops']) }}" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="{{ route('loadContent', ['contentType' => 'Workshops']) }}" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-book card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">WorkShops</h6>
             </a>
     
 
-            <a href="{{ route('loadContent', ['contentType' => 'Club Recruitements']) }}" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="{{ route('loadContent', ['contentType' => 'Club Recruitements']) }}" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Club Recruitment</h6>
             </a>
 
             <!-- <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;"> -->
-            <a href="{{ route('loadContent', ['contentType' => 'Upcoming Events']) }}" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="{{ route('loadContent', ['contentType' => 'Upcoming Events']) }}" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Upcoming Events</h6>
             </a>
@@ -233,27 +233,27 @@
         @elseif(Auth::user()->user_type === 'official')
 
         <div class=" card-section site-section d-flex justify-content-between flex-wrap p-3">
-            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/calendar/calendar08052023.pdf" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar3 card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Academic Calender</h6>
             </a>
-            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/workshops" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-book card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">WorkShops</h6>
             </a>
           
 
-            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/club-recruitment" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-ui-checks card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Club Recruitment</h6>
             </a>
 
-            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="/upcoming-events" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-calendar-event-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">Upcoming Events</h6>
             </a>
 
-            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem">
+            <a href="#" class="card text-white bg-info m-2" style="width: 10rem; height:10rem; border-radius: 20px;">
                 <i class="bi bi-info-circle-fill card-icon-size text-center mb-2"></i>
                 <h6 class="card-title text-center">What's New?</h6>
             </a>
