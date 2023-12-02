@@ -102,7 +102,7 @@ Route::post('/superAdmin/edit-club/{id}', [adminController::class, 'updateClub']
 Route::get('/applications/create', [ApplicationInfoController::class, 'create'])->name('applications.create');
 Route::post('/applications', [ApplicationInfoController::class, 'store'])->name('applications.store');
 Route::get('/applications/edit-application/{id}', [approvalController::class, 'load_editApplication'])->name('applications.editApplication');
-Route::post('/applications/edit-application/{id}', [approvalController::class, 'updateApplication'])->name("applications.updateApplication");
+Route::post('/applications/edit-application/{id}', [approvalController::class, 'updateApplication'])->name('applications.updateApplication');
 
 // Approval progress routes
 Route::get('/application-approval-progress/{id}', [approvalController::class, 'calculateProgress']);

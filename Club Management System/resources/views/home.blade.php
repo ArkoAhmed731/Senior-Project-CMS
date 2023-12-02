@@ -115,19 +115,25 @@
                 </div>
             </a>
 
-            <a href="/manage-posts/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
-                <div class="card-body d-flex justify-content-between">
-                    <h5 class="card-title">Create New Post for a Club</h5><i class="bi bi-caret-right-fill"></i>
-                </div>
-            </a>
-
             <a href="/applications/create" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Create Application for a Club</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 
-            
+            <a href="/myClubs/manage-posts/create-post" class="card text-white bg-info m-3 p-3" style="max-width: 100%;">
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Create New Post for a Club</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
+
+            <a href="/myClubs/manage-posts" class="card text-white bg-info m-3 p-3" style="max-width: 100%; border-radius: 10px;">
+
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Manage Posts of Clubs</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
+   
 
         </div>
 
@@ -217,6 +223,13 @@
 
                 <div class="card-body d-flex justify-content-between">
                     <h5 class="card-title">Create a New Post</h5><i class="bi bi-caret-right-fill"></i>
+                </div>
+            </a>
+
+            <a href="/myClubs/manage-posts" class="card text-white bg-info m-3 p-3" style="max-width: 100%; border-radius: 10px;">
+
+                <div class="card-body d-flex justify-content-between">
+                    <h5 class="card-title">Manage Posts</h5><i class="bi bi-caret-right-fill"></i>
                 </div>
             </a>
 

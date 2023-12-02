@@ -66,7 +66,26 @@
                 <div class="form-group">
                     <textarea class="form-control" id="post_description" name="post_description" placeholder="Description" required></textarea>
                 </div>
+                
+                <div class="form-group">
+                    <input type="text" class="form-control" id="author" placeholder="Author" required>
+                </div>
 
+                @if(Auth::user()->user_type === 'super admin')
+                <div class="form-group">
+                    <select class="form-control" id="club_name" name="club_name" required>
+                        <option value="">Select Club</option>
+                        @foreach ($clubList as $row)
+                            <option value="{{ $row->club_name }}">{{ $row->club_name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                
+                @elseif (Auth::user()->user_type === 'club admin')
+                <div class="form-group">
+                    <input type="text" class="form-control" id="club_name" name="club_name" value = "{{Auth::user()->user_name}}" readonly>
+                </div>
+                @endif
 
                 <div id="file-upload-form" class="uploader">
                     <input id="file-upload" type="file" name="file-upload" accept="image/*" />
@@ -120,3 +139,5 @@
 
 </body>
 </html>
+
+

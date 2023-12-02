@@ -58,16 +58,19 @@ class approvalController extends Controller
         $row = DB::table('application_info')
             ->where('application_id', $id)
             ->first();
+
+        $clubList = DB::table('club_list')
+            ->get();
         
         $data = [
-            'Info'=> $row
+            'Info'=> $row,
+            'clubListInfo' => $clubList
         ];
 
         return view ('applications.editApplication', $data);
     }
 
     function updateApplication(Request $request){
-
 
         $request->validate([
             'application_title'=>'required',
@@ -82,18 +85,14 @@ class approvalController extends Controller
         $updating = DB::table('application_info')
             ->where('application_id', $request->input('application_id'))
             ->update([
-                'user_id'=> $request->input('member_id'),
-                'user_name'=> $request->input('member_name'),
-                'user_email'=> $request->input('email'),
-                'contact_number'=> $request->input('contact_number'),
-                'gender'=> $request->input('gender'),
-                'club_position'=> $request->input('club_position')
+                'application_title'=> $request->input('application_title'),
+                'application_type'=> $request->input('application_type'),
+                'application_date'=> $request->input('application_date'),
+                'applicant_name'=> $request->input('applicant_name'),
+                'application_description'=> $request->input('application_description'),
+                'club_name'=> $request->input('club_name')
             ]);
             
-            
-        // $data = array(
-        //     'list' => DB::table($clubName)->get()
-        // );
         
         return back() ->with('success', 'Successfull!!!!');
     }

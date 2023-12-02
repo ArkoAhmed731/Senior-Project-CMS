@@ -76,12 +76,21 @@
                 <a href="application-approval-progress/{{ $item->application_id }}" class="btn btn-secondary btn-xs rounded">View Progress</a>
                 <a href="/applications/edit-application/{$item->application_id}" class="btn btn-info btn-xs rounded" style="margin-left: 5px;">Edit</a>
                 <a href="delete/{{ $item->application_id }}" class="btn btn-danger btn-xs rounded" style="margin-left: 5px;">Delete</a>
+
               @elseif(Auth::user()->user_type === 'super admin')
-                <a href="post-approval/{{ $item->application_id }}" class="btn btn-primary btn-xs rounded">Respond</a>
-                <a href="application-approval-progress/{{ $item->application_id }}" class="btn btn-secondary btn-xs rounded" style="margin-left: 5px;">View Progress</a>
-                <a href="/applications/edit-application/{$item->application_id}" class="btn btn-info btn-xs rounded" style="margin-left: 5px;">Edit</a>
-                <a href="delete/{{ $item->application_id }}" class="btn btn-danger btn-xs rounded" style="margin-left: 5px;">Delete</a>
+                @if($item)
+                    <a href="post-approval/{{ $item->application_id }}" class="btn btn-primary btn-xs rounded">Respond</a>
+                    <a href="application-approval-progress/{{ $item->application_id }}" class="btn btn-secondary btn-xs rounded" style="margin-left: 5px;">View Progress</a>
+                    <a href="/applications/edit-application/{{$item->application_id}}" class="btn btn-info btn-xs rounded" style="margin-left: 5px;">Edit</a>
+                    <a href="delete/{{ $item->application_id }}" class="btn btn-danger btn-xs rounded" style="margin-left: 5px;">Delete</a>
+                @else
+                    <!-- Handle the case when $item is null (optional) -->
+                    <span class="text-danger">Item not found for application_id: {{ $item->application_id }}</span>
+                @endif
               @endif
+
+              
+
               
             </div>
           </td>

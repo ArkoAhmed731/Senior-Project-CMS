@@ -187,9 +187,22 @@ class ClubController extends Controller
 
     public function load_managePosts()
     {
-        $data = array(
-            'list' => DB::table("post_info")->get()
-        );
+
+
+        if (Auth::user()->user_type == 'super admin'){
+            $data = array(
+                'list' => DB::table("post_info")->get()
+            );
+        }
+
+        elseif (Auth::user()->user_type == 'club admin'){
+            $clubName = Auth::user()->user_name;
+            $data = array(
+                'list' => DB::table("post_info")
+                ->where('club_name', $clubName)
+                ->get()
+            );
+        }
 
         return view('myClubs.managePosts', $data);
     }
@@ -197,8 +210,14 @@ class ClubController extends Controller
 
     public function load_createPost()
     {
-        // return view ('myClubs.createPost');
-        return view('myClubs.createPost');
+        $row = DB::table('club_list')
+        ->get();
+        
+        $data = [
+            'clubList'=> $row
+        ];
+
+        return view('myClubs.createPost', $data);
     }
 
 
