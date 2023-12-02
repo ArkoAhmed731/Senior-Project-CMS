@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/manageUsers.css">
     <link rel="stylesheet" href="../../css/style.css">
+    
 </head>
 <body>
     <div class="site-wrap pb-5">
@@ -21,9 +22,9 @@
         @include('menu.navBar')
         {{-- nav bar end --}}
 
-        <div class = "he ml-3 mr-3">Club Name</div>
+        <div class = "he ml-3 mr-3">{{ $clubName }}</div>
         <div class="p-5 w-50 mx-auto my-auto shadow-lg bg-white rounded-lg">
-            <h3 class="text-center"> Manage Members</h3>
+            <h3 class="text-center"> Add a New Member</h3>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create Application</title>
+    <title>Edit Member Details</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <!-- Include Google Fonts -->
@@ -9,12 +9,21 @@
     <!-- Include your custom CSS files -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/manageUsers.css') }}">
+
+
+
+    
+    
 </head>
 <body>
-    <div class="site-wrap">
+    <div class="site-wrap pb-5">
         {{-- Nav Bar --}}
         @include('menu.navBar')
-        <div class="p-5 w-75 mx-auto shadow p-3 bg-white rounded">
+
+
+        <div class = "he ml-3 mr-3 ">{{ $clubName }}</div>
+        <div class="p-5 w-50 mx-auto my-auto shadow-lg bg-white rounded-lg">
             <h1 class="text-center">Edit Member Details</h1>
             @if ($errors->any())
                 <div class="alert alert-danger">
@@ -66,7 +75,9 @@
                     <button type="submit" class="btn btn-primary bg-info">Save Information</button>
                     
                 </div>
-                <button action = "{{ route('manageMembers') }}" type="" class="btn btn-primary bg-danger">Cancel</button>
+                {{-- <a class="btn btn-outline-info" href="myClubs/manage-members" role="button">Back</a>
+                
+                <button action = "{{ route('manageMembers') }}" type="" class="btn btn-primary bg-danger">Cancel</button> --}}
             </form>
             @if (session('success'))
                 <div class="alert alert-success mt-3">

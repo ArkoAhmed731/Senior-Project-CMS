@@ -22,8 +22,8 @@
         @include('menu.navBar')
         {{-- nav bar end --}}
 
-        <div class = "he ml-3 mr-3">Club Name</div>
-        <h3 class="text-center"> Manage Members</h3>
+        <div class="he ml-3 mr-3">{{ $clubName }}</div>
+                <h3 class="text-center"> Manage Members</h3>
 
 
         {{-- <div class="container-fluid"> --}}
