@@ -113,13 +113,11 @@ class adminController extends Controller
 
     public function load_newUserRequests()
     {
-
         $data = array(
             'list' => DB::table('new_user_requests')->get()
         );
-        
 
-        return view ('superAdmin.newUserRequests', $data);
+        return view ('superAdmin.newUserRequests', compact('data'));
     }
 
     //////////////////////////////

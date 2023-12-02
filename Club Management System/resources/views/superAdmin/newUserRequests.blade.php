@@ -6,61 +6,57 @@
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/manageUsers.css">
 
-<title>Add new user</title>
-
+    <title>New User Request</title>
 </head>
 <body>
 
-<div class = "he">All Current Users</div>
+<div class = "he">All Requests</div>
 
 
 <div class="container-fluid">
 
 @if(Session::get('success'))
-    <div class = "alert alert-success">
+    <div class="alert alert-success">
         {{ Session::get('success') }}
     </div>
 @endif
 
 @if(Session::get('fail'))
-    <div class = "alert alert-danger">
+    <div class="alert alert-danger">
         {{ Session::get('fail') }}
     </div>
 @endif
 
 <br>
 
-@csrf
 <div class="table-responsive">
 
 <table class="table table-hover ">
-  <thread>
+  <thead>
     <th>user_id</th>
     <th>user_name</th>
     <th>user_email</th>
     <th>contact_number</th>
     <th>gender</th>
-    <th>password</th>
-
-  </thread>
+    <!-- <th>password</th> -->
+  </tread>
   <tbody>
 
-    @foreach ($list as $user)
+    @foreach ($data['list'] as $user)
     <tr>
       <td>{{ $user->user_id }}</td>
       <td>{{ $user->user_name }}</td>
       <td>{{ $user->user_email }}</td>
       <td>{{ $user->contact_number }}</td>
       <td>{{ $user->gender }}</td>
-      <td>{{ $user->password }}</td>
+      <!-- <td>{{ $user->password }}</td> -->
 
       <td>
         <div class = "btn-group">
-            <a href="{{ route('superAdmin.editUser', $user->user_id) }}" class="btn btn-primary btn-xs">Accept User</a>
+          <a href="{{ route('superAdmin.editUser', $user->user_id) }}" class="btn btn-primary btn-xs">Edit</a>
           
-            <a href="{{ route('superAdmin.editUser', $user->user_id) }}" class="btn btn-primary btn-xs">Edit</a>
-          
-            <a href="delete/{{ $user->user_id }}" class="btn btn-danger btn-xs">Delete</a>
+
+          <a href="delete/{{ $user->user_id }}" class="btn btn-danger btn-xs">Delete</a>
           
         </div>
       </td>

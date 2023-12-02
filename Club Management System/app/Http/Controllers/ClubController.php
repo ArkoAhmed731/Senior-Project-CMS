@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Validation\Rules\Image;
 
 class ClubController extends Controller
 {
@@ -256,31 +257,61 @@ class ClubController extends Controller
 
             if ($file->isValid()) {
                 $filename = $this->getUniqueFileName($file);
-
-                $file->move(public_path('images/post_images'), $filename);
-
+        
+                // Attempt to move the file to the specified directory
+                try{
+                    if ($file->move(public_path('images/post_images'), $filename)) {
+                        // Use the DB facade to insert data into the dynamically determined table
+                        try {
+                            DB::table($tableName)->insert([
+                                'post_title' => $data['post_title'],
+                                'post_type' => $data['post_type'],
+                                'post_date' => $data['post_date'],
+                                'post_description' => $data['post_description'],
+                                'writers_name' => $clubName,
+                                'club_name' => $clubName,
+                            ]);
+            
+                            return redirect()->back()->with('success', 'Post added successfully');
+                        } catch (QueryException $e) {
+                            // Handle database insertion error
+                            return redirect()->back()->with('error', 'Error adding the post. Please try again.');
+                        }
+                    } else {
+                        // Handle move failure
+                        return redirect()->back()->with('error', 'Error moving the file. Please try again.');
+                    }
+                }catch (\Exception $e) {
+                    // Log the error
+                    // Log::error('Error moving file: ' . $e->getMessage());
+        
+                    // Include a generic error message
+                    return redirect()->back()->with('error', 'An error occurred while processing the file. Please try again.');
+                }
+                
             } else {
+                // Handle invalid file
                 return redirect()->back()->with('error', 'Invalid file.');
             }
         }
 
         // Use the DB facade to insert data into the dynamically determined table
-        try {
-            // Use the DB facade to insert data into the dynamically determined table
-            DB::table($tableName)->insert([
-                'post_title' => $data['post_title'],
-                'post_type' => $data['post_type'],
-                'post_date' => $data['post_date'],
-                'post_description' => $data['post_description'],
-                'writers_name' => $clubName,
-                'club_name' => $clubName,
-            ]);
+        // try {
+        //     // Use the DB facade to insert data into the dynamically determined table
+        //     DB::table($tableName)->insert([
+        //         'post_title' => $data['post_title'],
+        //         'post_type' => $data['post_type'],
+        //         'post_date' => $data['post_date'],
+        //         'post_description' => $data['post_description'],
+        //         'writers_name' => $clubName,
+        //         'club_name' => $clubName,
+        //     ]);
     
-            return redirect()->back()->with('success', 'Post added successfully.');
+        //     return redirect()->back()->with('success', 'Post added successfully.');
     
-        } catch (QueryException $e) {
-            return redirect()->back()->with('error', 'Error adding the post. Please try again.');
-        }
+        // } catch (QueryException $e) {
+        //     return redirect()->back()->with('error', 'Error adding the post. Please try again.');
+        // }
 
     }
 
