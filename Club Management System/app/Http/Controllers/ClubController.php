@@ -22,7 +22,7 @@ class ClubController extends Controller
     {
         $clubName = $request->input('club_name');
         $clubID = $request->input('club_id');
-        
+
         // $request->validate([
         //     'club_id'=>'required',
         //     'club_name'=>'required'
@@ -32,10 +32,10 @@ class ClubController extends Controller
         if (!Schema::hasTable($clubName)) {
 
             $query = DB::table('club_list')->insert([
-                'club_id'=>$clubID,
-                'club_name'=>$clubName
+                'club_id' => $clubID,
+                'club_name' => $clubName
             ]);
-            
+
 
             Schema::create($clubName, function (Blueprint $table) {
                 $table->increments('id');
@@ -48,7 +48,7 @@ class ClubController extends Controller
                 $table->timestamps();
             });
 
-            
+
 
             // Set success message in the session
             Session::flash('message', "Club '$clubName' table created successfully!");
@@ -73,14 +73,17 @@ class ClubController extends Controller
         $clubName = Auth::user()->user_name;
 
         $data = array(
-            'list' => DB::table($clubName)->get()
+
+            'list' => DB::table($clubName)->get(),
+            'clubName' => $clubName,
         );
         // return view('myClubs\manage-members', $data, compact('clubName'));
-        return view ('myClubs.manageMembers', $data);
+        return view('myClubs.manageMembers', $data);
     }
 
-    
-    function deleteMember($id){
+
+    function deleteMember($id)
+    {
 
         $clubName = Auth::user()->user_name;
 
@@ -88,15 +91,18 @@ class ClubController extends Controller
             ->where('user_id', $id);
 
         $delete->delete();
-        
+
 
         return back();
     }
 
-    
-    function load_addMember(){
 
-        return view ('myClubs.addMember');
+    function load_addMember()
+    {
+        $clubName = Auth::user()->user_name;
+
+
+        return view('myClubs.addMember', ['clubName' => $clubName]);
     }
 
     public function addNewMember(Request $request)
@@ -108,65 +114,68 @@ class ClubController extends Controller
 
         // Use the DB facade to insert data into the dynamically determined table
         DB::table($clubName)->insert([
-            'user_id' => $data['member_id'], 
+            'user_id' => $data['member_id'],
             'user_name' => $data['member_name'],
             'user_email' => $data['email'],
             'contact_number' => $data['contact_number'],
             'gender' => $data['gender'],
             'club_position' => $data['club_position'],
-            
+
         ]);
 
         return redirect()->back()->with('success', 'Member added successfully.');
     }
 
-    function load_editMember($id){
+    function load_editMember($id)
+    {
 
         $clubName = Auth::user()->user_name;
 
         $row = DB::table($clubName)
             ->where('user_id', $id)
             ->first();
-        
+
         $data = [
-            'Info'=> $row
+            'Info' => $row,
+            'clubName' => $clubName,
         ];
 
-        return view ('myClubs.editMember', $data);
+        return view('myClubs.editMember', $data);
     }
 
 
-    function updateMember(Request $request){
+    function updateMember(Request $request)
+    {
 
         $clubName = Auth::user()->user_name;
         $currentEmail = Auth::user()->user_email;
 
         $request->validate([
-            'member_id'=>'required',
-            'member_name'=>'required',
-            'contact_number'=>'required',
-            'gender'=>'required',
-            'club_position'=>'required'
+            'member_id' => 'required',
+            'member_name' => 'required',
+            'contact_number' => 'required',
+            'gender' => 'required',
+            'club_position' => 'required'
         ]);
 
 
         $updating = DB::table($clubName)
             ->where('user_id', $request->input('member_id'))
             ->update([
-                'user_id'=> $request->input('member_id'),
-                'user_name'=> $request->input('member_name'),
-                'user_email'=> $request->input('email'),
-                'contact_number'=> $request->input('contact_number'),
-                'gender'=> $request->input('gender'),
-                'club_position'=> $request->input('club_position')
+                'user_id' => $request->input('member_id'),
+                'user_name' => $request->input('member_name'),
+                'user_email' => $request->input('email'),
+                'contact_number' => $request->input('contact_number'),
+                'gender' => $request->input('gender'),
+                'club_position' => $request->input('club_position')
             ]);
-            
-            
+
+
         // $data = array(
         //     'list' => DB::table($clubName)->get()
         // );
-        
-        return back() ->with('success', 'Successfull!!!!');
+
+        return back()->with('success', 'Successfull!!!!');
     }
 
 
@@ -181,15 +190,15 @@ class ClubController extends Controller
         $data = array(
             'list' => DB::table("post_info")->get()
         );
-     
-        return view ('myClubs.managePosts', $data);
+
+        return view('myClubs.managePosts', $data);
     }
 
-    
+
     public function load_createPost()
     {
         // return view ('myClubs.createPost');
-        return view ('myClubs.createPost');
+        return view('myClubs.createPost');
     }
 
 
@@ -257,9 +266,9 @@ class ClubController extends Controller
 
             if ($file->isValid()) {
                 $filename = $this->getUniqueFileName($file);
-        
+
                 // Attempt to move the file to the specified directory
-                try{
+                try {
                     if ($file->move(public_path('images/post_images'), $filename)) {
                         // Use the DB facade to insert data into the dynamically determined table
                         try {
@@ -271,7 +280,7 @@ class ClubController extends Controller
                                 'writers_name' => $clubName,
                                 'club_name' => $clubName,
                             ]);
-            
+
                             return redirect()->back()->with('success', 'Post added successfully');
                         } catch (QueryException $e) {
                             // Handle database insertion error
@@ -281,14 +290,14 @@ class ClubController extends Controller
                         // Handle move failure
                         return redirect()->back()->with('error', 'Error moving the file. Please try again.');
                     }
-                }catch (\Exception $e) {
+                } catch (\Exception $e) {
                     // Log the error
                     // Log::error('Error moving file: ' . $e->getMessage());
-        
+
                     // Include a generic error message
                     return redirect()->back()->with('error', 'An error occurred while processing the file. Please try again.');
                 }
-                
+
             } else {
                 // Handle invalid file
                 return redirect()->back()->with('error', 'Invalid file.');
@@ -306,9 +315,9 @@ class ClubController extends Controller
         //         'writers_name' => $clubName,
         //         'club_name' => $clubName,
         //     ]);
-    
+
         //     return redirect()->back()->with('success', 'Post added successfully.');
-    
+
         // } catch (QueryException $e) {
         //     return redirect()->back()->with('error', 'Error adding the post. Please try again.');
         // }
