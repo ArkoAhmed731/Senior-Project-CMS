@@ -83,11 +83,12 @@ Route::get('/view-all-applications', [approvalController::class, 'index']);
 Route::get('/superAdmin/manage-users', [adminController::class, 'load_manageUsers'])->name('manageUsers');
 Route::get('/superAdmin/add-user', [adminController::class, 'load_addUser'])->name("addUser");
 Route::post('/superAdmin/add-user', [adminController::class, 'addNewUser'])->name('superAdmin.addNewUser');
-Route::get('/delete/{id}', [adminController::class, 'deleteUser'])->name('superAdmin.deleteUser');
-Route::get('/superAdmin/edit-user/{id}', [adminController::class, 'load_editUser'])->name("superAdmin.editUser");
+Route::get('/delete-user/{id}', [adminController::class, 'deleteUser'])->name('superAdmin.deleteUser');
+Route::get('/superAdmin/edit-user/{id}', [adminController::class, 'load_editUser'])->name('superAdmin.editUser');
 Route::post('/superAdmin/edit-user/{id}', [adminController::class, 'updateUser'])->name('superAdmin.updateUser');
 
 Route::get('/superAdmin/new-user-requests', [adminController::class, 'load_newUserRequests'])->name('newUserRequests');
+Route::get('/superAdmin/edit-user-request/{id}', [adminController::class, 'load_acceptUserRequest'])->name('acceptUserRequest');
 
 Route::get('/superAdmin/manage-clubs', [adminController::class, 'load_manageClubs'])->name('manageClubs');
 Route::get('/superAdmin/add-club', [ClubController::class, 'createClubForm'])->name('showCreateForm');
@@ -103,6 +104,7 @@ Route::get('/applications/create', [ApplicationInfoController::class, 'create'])
 Route::post('/applications', [ApplicationInfoController::class, 'store'])->name('applications.store');
 Route::get('/applications/edit-application/{id}', [approvalController::class, 'load_editApplication'])->name('applications.editApplication');
 Route::post('/applications/edit-application/{id}', [approvalController::class, 'updateApplication'])->name('applications.updateApplication');
+Route::get('/applications/delete/{id}', [approvalController::class, 'delete'])->name('applications.delete');
 
 // Approval progress routes
 Route::get('/application-approval-progress/{id}', [approvalController::class, 'calculateProgress']);

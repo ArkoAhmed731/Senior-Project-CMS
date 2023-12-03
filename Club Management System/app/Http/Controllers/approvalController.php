@@ -41,15 +41,20 @@ class approvalController extends Controller
     }
 
     // delete application from database
-    function delete($id){
-
+    function delete($id)
+    {
         $delete = DB::table('application_info')
             ->where('application_id', $id)
             ->delete();
-
-        return back();
-
+    
+        // Check if the record was deleted successfully
+        if ($delete) {
+            return back()->with('success', 'Application Deleted!');
+        } else {
+            return back()->with('error', 'Failed to delete application.');
+        }
     }
+    
 
     
     // show edit page for an application

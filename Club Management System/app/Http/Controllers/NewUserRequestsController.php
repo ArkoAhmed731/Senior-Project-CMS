@@ -36,7 +36,7 @@ class NewUserRequestsController extends Controller
         $newUserRequest->save();
     
         // Optionally, you can send a response or redirect to a success page
-        Session::flash('success', 'Account created successfully. We\'ll send you an email shortly after verifying your data.');
+        Session::flash('success', 'Account created successfully. We will send you an email shortly after verifying your data.');
 
         return redirect('/login')->with('success', 'Your request has been submitted.');
     }

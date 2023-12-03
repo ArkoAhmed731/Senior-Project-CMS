@@ -49,6 +49,7 @@
                         <th>Gender</th>
                         {{-- <th>Bio</th> --}}
                         <th>User Type</th>
+                        <th>Actions</th>
                     </thread>
                     <tbody>
 
@@ -63,11 +64,10 @@
                                 <td>{{ $user->user_type }}</td>
                                 <td>
                                     <div class = "btn-group">
-                                        <a href="{{ route('superAdmin.editUser', $user->user_id) }}"
-                                            class="btn btn-info btn-xs">Edit</a>
-
-
-                                        <a href="delete/{{ $user->user_id }}" class="btn btn-danger btn-xs">Delete</a>
+                                        
+                                        <a href="/superAdmin/edit-user/{{ $user->user_id }}"class="btn btn-info btn-xs" style="margin-left: 5px; border-radius: 10px">Edit</a>
+                                        
+                                        <a href="/delete-user/{{ $user->user_id }}" class="btn btn-danger btn-xs" style="margin-left: 5px; border-radius: 10px">Delete</a>
 
                                     </div>
                                 </td>
@@ -83,7 +83,7 @@
       
             <div class="text-center">
           
-              <a class="btn btn-info p-3 " href="/superAdmin/add-user" role="button">Add User</a>
+              <a class="btn btn-info p-3 " href="/superAdmin/add-user" role="button" style="margin-left: 5px; border-radius: 10px">Add New User</a>
 
           </div>
 

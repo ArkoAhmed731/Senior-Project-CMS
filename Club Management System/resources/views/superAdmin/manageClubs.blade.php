@@ -59,10 +59,10 @@
                                 <td>
                                     <div class = "btn-group">
                                         <a href="{{ route('superAdmin.editClub', $club->club_id) }}"
-                                            class="btn btn-primary btn-xs">Edit</a>
+                                            class="btn btn-primary btn-xs" style="margin-left: 5px; border-radius: 10px">Edit</a>
 
                                         <a href="{{ route('superAdmin.deleteClub', $club->club_id) }}"
-                                            class="btn btn-danger btn-xs">Delete</a>
+                                            class="btn btn-danger btn-xs" style="margin-left: 5px; border-radius: 10px">Delete</a>
 
                                     </div>
                                 </td>

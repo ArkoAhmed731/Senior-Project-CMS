@@ -48,7 +48,7 @@
                         <th>Email</th>
                         <th>Contact Number</th>
                         <th>Gender</th>
-                        <!-- <th>password</th> -->
+                        <th>Actions</th>
                         </tread>
                     <tbody>
 
@@ -59,17 +59,12 @@
                                 <td>{{ $user->user_email }}</td>
                                 <td>{{ $user->contact_number }}</td>
                                 <td>{{ $user->gender }}</td>
-                                <!-- <td>{{ $user->password }}</td> -->
 
                                 <td>
-                                    <div class = "btn-group">
-                                        <a href="{{ route('superAdmin.editUser', $user->user_id) }}"
-                                            class="btn btn-info btn-xs">Edit</a>
-
-
-                                        <a href="delete/{{ $user->user_id }}" class="btn btn-danger btn-xs">Delete</a>
-
-                                    </div>
+                                <div class = "btn-group">
+                                    <a href="{{ route('acceptUserRequest', $user->user_id) }}" class="btn btn-primary btn-xs" style="margin-left: 5px; border-radius: 10px">Set type and accept user</a>
+                                    <a href="delete/{{ $user->user_id }}" class="btn btn-danger btn-xs" style="margin-left: 5px; border-radius: 10px">Delete</a>
+                                </div>
                                 </td>
                             </tr>
                         @endforeach

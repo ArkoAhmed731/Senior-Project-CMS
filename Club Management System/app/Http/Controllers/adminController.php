@@ -63,6 +63,13 @@ class adminController extends Controller
             
         ]);
 
+        $deleteDuplicate = DB::table('new_user_requests')
+            ->where('user_id', $data['user_id']);
+
+            if ($deleteDuplicate->delete()) {
+                // The record in new_user_requests table with the specified user_id has been deleted successfully.
+            }
+
         return redirect()->back()->with('success', 'User added successfully.');
     }
 
@@ -71,13 +78,20 @@ class adminController extends Controller
         $row = DB::table('users')
             ->where('user_id', $id)
             ->first();
-        
+    
+        if (!$row) {
+            abort(404); // Or handle this case appropriately
+        }
+    
         $data = [
             'Info'=> $row
         ];
-
-        return view ("superAdmin/editUser", $data);
+    
+        // dd($data); // Uncomment this line to debug
+    
+        return view('superAdmin.editUser', $data);
     }
+    
 
 
     function updateUser(Request $request){
@@ -118,6 +132,21 @@ class adminController extends Controller
         );
 
         return view ('superAdmin.newUserRequests', compact('data'));
+    }
+
+    public function load_acceptUserRequest($id)
+    {
+
+        $newUser = DB::table('new_user_requests')
+            ->where('user_id', $id)
+            ->first();
+        
+        $data = [
+            'Info'=> $newUser
+        ];
+
+        return view ("superAdmin/editUserRequest", $data);
+
     }
 
     //////////////////////////////

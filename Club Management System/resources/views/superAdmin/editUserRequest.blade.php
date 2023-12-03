@@ -25,7 +25,7 @@
                     </ul>
                 </div>
             @endif
-            <form method="POST" action="{{ route('superAdmin.updateUser', $Info->user_id) }}">
+            <form method="post" action="{{ route('superAdmin.addNewUser') }}">
                 @csrf
                 <div class="form-group">
                     <label for="user_id">User ID</label>
@@ -38,6 +38,10 @@
                 <div class="form-group">
                     <label for="user_email">Email</label>
                     <input type="text" class="form-control" id="user_email" name="user_email" value="{{ $Info->user_email }}" required>
+                </div>
+                <div class="form-group">
+                    <label for="passwor">Password</label>
+                    <input type="text" readonly class="form-control" id="password" name="password" value="{{ $Info->password }}" required>
                 </div>
                 <div class="form-group">
                     <label for="contact_number">Contact Number</label>
@@ -57,16 +61,16 @@
                 <div class="form-group">
                     <label for="user_type">User Type</label>
                     <select class="form-control" id="user_type" name="user_type" required>
-                        <option value="general" {{ $Info->user_type === "general" ? "selected" : "" }}>general</option>
-                        <option value="official" {{ $Info->user_type === "Normal" ? "selected" : "" }}>official</option>
-                        <option value="club admin" {{ $Info->user_type === "club admin" ? "selected" : "" }}>club admin</option>
+                        <option value="general">general</option>
+                        <option value="official">official</option>
+                        <option value="club admin">club admin</option>
                     </select>
                 </div>
 
 
                 <div class="form-group">
                     <label for="bio">Bio</label>
-                    <input type="text" class="form-control" id="bio" name="bio" value="{{ $Info->bio }}">
+                    <input type="text" class="form-control" id="bio" name="bio" value="">
                 </div>
                 
                 
@@ -77,7 +81,6 @@
                 </div>
                 
             </form>
-
             <!-- <button action = "{{ route('manageUsers') }}" type="button" class="btn btn-primary bg-danger">Cancel</button> -->
             <a href="{{ route('manageUsers') }}" class="btn btn-primary bg-danger">Cancel</a>
 

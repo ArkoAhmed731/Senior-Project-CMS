@@ -386,9 +386,14 @@
     <script>
         function showMessage(messageId) {
             var messageDiv = document.getElementById(messageId);
-            messageDiv.style.display = "block";
+            if (messageDiv.style.display === "block") {
+                messageDiv.style.display = "none";
+            } else {
+                messageDiv.style.display = "block";
+            }
         }
     </script>
+
 
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/jquery-ui.js"></script>
