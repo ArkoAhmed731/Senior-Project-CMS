@@ -61,8 +61,8 @@
                                         <a href="{{ route('superAdmin.editClub', $club->club_id) }}"
                                             class="btn btn-primary btn-xs" style="margin-left: 5px; border-radius: 10px">Edit</a>
 
-                                        <a href="{{ route('superAdmin.deleteClub', $club->club_id) }}"
-                                            class="btn btn-danger btn-xs" style="margin-left: 5px; border-radius: 10px">Delete</a>
+                                        <!-- <a href="{{ route('superAdmin.deleteClub', $club->club_id) }}"
+                                            class="btn btn-danger btn-xs" style="margin-left: 5px; border-radius: 10px">Delete</a> -->
 
                                     </div>
                                 </td>
@@ -77,7 +77,7 @@
 
             <div class="text-center">
           
-                <a class="btn btn-info p-3 " href="/superAdmin/add-club" role="button">Add Club</a>
+                <a class="btn btn-info p-3 " href="/superAdmin/add-club" role="button">Add New Club</a>
 
             </div>
 

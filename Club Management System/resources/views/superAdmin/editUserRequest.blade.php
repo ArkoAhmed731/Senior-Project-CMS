@@ -40,8 +40,8 @@
                     <input type="text" class="form-control" id="user_email" name="user_email" value="{{ $Info->user_email }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="passwor">Password</label>
-                    <input type="text" readonly class="form-control" id="password" name="password" value="{{ $Info->password }}" required>
+                    <!-- <label for="password">Password</label> -->
+                    <input type="hidden" readonly class="form-control" id="password" name="password" value="{{ $Info->password }}" required>
                 </div>
                 <div class="form-group">
                     <label for="contact_number">Contact Number</label>
@@ -82,7 +82,7 @@
                 
             </form>
             <!-- <button action = "{{ route('manageUsers') }}" type="button" class="btn btn-primary bg-danger">Cancel</button> -->
-            <a href="{{ route('manageUsers') }}" class="btn btn-primary bg-danger">Cancel</a>
+            <a href="{{ route('newUserRequests') }}" class="btn btn-primary bg-danger">Cancel</a>
 
             @if (session('success'))
                 <div class="alert alert-success mt-3">

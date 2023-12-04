@@ -123,9 +123,9 @@ class ApplicationInfoController extends Controller
         
 
         // // Rename the PDF file to the application_id
-        // if ($request->hasFile('fileUpload') && $request->file('fileUpload')->isValid())
+        // if ($request->hasFile('file-upload') && $request->file('file-upload')->isValid())
         // {
-        //     $file = $request->file('fileUpload');
+        //     $file = $request->file('file-upload');
 
         //     // Get the original file extension
         //     $extension = $file->getClientOriginalExtension();

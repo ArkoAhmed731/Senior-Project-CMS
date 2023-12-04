@@ -168,7 +168,8 @@ class adminController extends Controller
     function deleteClub($id){
 
         $delete = DB::table('club_list')
-            ->where('club_id', $id);
+            ->where('club_id', $id)
+            ->first();
 
         $delete->delete();
 

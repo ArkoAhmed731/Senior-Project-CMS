@@ -34,6 +34,9 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
+//testing
+Route::get('/home2', [HomeController::class, 'index2'])->name('home2');
+//testing
 
 
 
@@ -93,7 +96,7 @@ Route::get('/superAdmin/edit-user-request/{id}', [adminController::class, 'load_
 Route::get('/superAdmin/manage-clubs', [adminController::class, 'load_manageClubs'])->name('manageClubs');
 Route::get('/superAdmin/add-club', [ClubController::class, 'createClubForm'])->name('showCreateForm');
 Route::post('/superAdmin/add-club', [ClubController::class, 'createClub'])->name('createClub');
-Route::post('/delete/{id}', [adminController::class, 'deleteClub'])->name("superAdmin.deleteClub");
+Route::get('/delete-club/{id}', [adminController::class, 'deleteClub'])->name("superAdmin.deleteClub");
 Route::get('/superAdmin/edit-club/{id}', [adminController::class, 'load_editClub'])->name("superAdmin.editClub");
 Route::post('/superAdmin/edit-club/{id}', [adminController::class, 'updateClub'])->name("superAdmin.updateClub");
 
@@ -105,10 +108,12 @@ Route::post('/applications', [ApplicationInfoController::class, 'store'])->name(
 Route::get('/applications/edit-application/{id}', [approvalController::class, 'load_editApplication'])->name('applications.editApplication');
 Route::post('/applications/edit-application/{id}', [approvalController::class, 'updateApplication'])->name('applications.updateApplication');
 Route::get('/applications/delete/{id}', [approvalController::class, 'delete'])->name('applications.delete');
+Route::get('/applications/view-application-file/{id}', [approvalController::class, 'viewApplicationFile']);
 
 // Approval progress routes
 Route::get('/application-approval-progress/{id}', [approvalController::class, 'calculateProgress']);
-Route::get('/post-approval/{id}', [approvalController::class, 'postApproval']);
+Route::get('/post-approval/{id}', [approvalController::class, 'load_postApproval']);
+
 Route::post('approve_update', [approvalController::class, 'approve_update'])->name('approve_update');
 
 // Club Admin routes

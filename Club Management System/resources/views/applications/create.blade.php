@@ -113,8 +113,8 @@
                     </div>
                 </div>
 
-                <!-- <div id="file-upload-form" class="uploader">
-                    <input id="file-upload" type="file" name="fileUpload" accept=".pdf" />
+                <div id="file-upload-form" class="uploader">
+                    <input id="file-upload" type="file" name="file-upload" accept=".pdf" />
 
                     <label for="file-upload" id="file-drag">
                         <img id="file-image" src="#" alt="Preview" class="hidden">
@@ -128,7 +128,7 @@
                             <div id="messages"></div>
                         </div>
                     </label>
-                </div> -->
+                </div>
                 
                 <!-- Add more department checkboxes as needed -->
                 <div class="text-center">

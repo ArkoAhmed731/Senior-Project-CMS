@@ -85,7 +85,7 @@
             <p><strong>Club: {{ $Info->club_name }}</strong></p>
 
             <p><strong>Application ID: {{ $Info->application_id }}</strong></p>
-            <a href="/post-approval/{{ $Info->application_id }}"><button id="viewApplication" type="button" onclick="" class="btn btn-primary bg-info text-center">View
+            <a href="/applications/view-application-file/{{ $Info->application_id }}"><button id="viewApplication" type="button" onclick="" class="btn btn-primary bg-info text-center">View
                 Application</button></a>
 
 

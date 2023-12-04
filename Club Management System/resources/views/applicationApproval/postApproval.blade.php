@@ -109,7 +109,8 @@
     </div> --}}
     <div class="form-group row">
       <div class="col-sm-10">
-        <button name = "view_application" type="submit" class="btn btn mt-2">View Application</button>
+        <a href="/applications/view-application-file/{{ $Info->application_id }}" class="btn btn mt-2">View Application</a>
+        <!-- <button name = "/applications/view_application/{{ $Info->application_id }}" type="submit" class="btn btn mt-2">View Application</button> -->
       </div>
     </div>
     
@@ -117,26 +118,6 @@
 </div>
 </div>
 </div>
-
-
-<!-- <h2>Event Application</h2>
-  <p><strong>Name:</strong> Abdus Salam</p>
-  <p><strong>Email:</strong> absudsalam@example.com</p>
-  <p><strong>Event:</strong> Concert for the rohingyas</p>
-  <p><strong>Event Summary:</strong></p>
-  <p></p>
-
-  <div class="file">
-
-    <button class="downloadFile"><a href="#" class="file-link">Download Application</a></button>
-  </div>
-  
-  <div class="buttonsA">
-    <button class="approve-btn">Approve</button>
-    <button class="disapprove-btn">Decline</button>
-  </div> -->
-
-<!-- Additional application divs can be added here -->
 
 <script src="script.js"></script>
 

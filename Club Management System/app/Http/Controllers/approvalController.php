@@ -138,7 +138,7 @@ class approvalController extends Controller
 
     }
 
-    function postApproval($id){
+    function load_postApproval($id){
         
         $row = DB::table('application_info')
             ->where('application_id', $id)
@@ -209,6 +209,19 @@ class approvalController extends Controller
             // Log the exception for debugging
             \Log::error($e);
             // Handle the exception as needed
+        }
+    }
+
+    public function viewApplicationFile($id)
+    {
+        $filename = $id . '.pdf'; // Assuming the file has a PDF extension
+    
+        $path = public_path('application_pdf/' . $filename);
+    
+        if (file_exists($path)) {
+            return response()->file($path);
+        } else {
+            return response()->json(['error' => 'File not found.']);
         }
     }
 

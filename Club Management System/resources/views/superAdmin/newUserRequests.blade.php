@@ -62,8 +62,8 @@
 
                                 <td>
                                 <div class = "btn-group">
-                                    <a href="{{ route('acceptUserRequest', $user->user_id) }}" class="btn btn-primary btn-xs" style="margin-left: 5px; border-radius: 10px">Set type and accept user</a>
-                                    <a href="delete/{{ $user->user_id }}" class="btn btn-danger btn-xs" style="margin-left: 5px; border-radius: 10px">Delete</a>
+                                    <a href="{{ route('acceptUserRequest', $user->user_id) }}" class="btn btn-info btn-xs" style="margin-left: 5px; border-radius: 10px">Set type and accept user</a>
+                                    <a href="delete/{{ $user->user_id }}" class="btn btn-danger btn-xs" style="margin-left: 5px; border-radius: 10px">Reject & Delete</a>
                                 </div>
                                 </td>
                             </tr>
@@ -78,7 +78,7 @@
 
             <div class="text-center">
           
-              <a class="btn btn-info p-3 " href="/superAdmin/add-user" role="button">Add User</a>
+              <a class="btn btn-info p-3 " href="/superAdmin/add-user" role="button">Add New User</a>
 
           </div>
 
